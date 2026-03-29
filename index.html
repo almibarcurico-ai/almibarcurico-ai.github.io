@@ -9,7 +9,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
     <link rel="manifest" href="./manifest.json">
     <style id="expo-reset">
       html, body { height: 100%; margin: 0; padding: 0; }
@@ -29,40 +28,16 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="./_expo/static/js/web/index-9ddb21a030d1444fb9216234a7bd82dc.js" defer></script>
+  <script src="./_expo/static/js/web/index-e133928b035c0b80d8155ae77f957a4f.js" defer></script>
 <script>
 (function() {
   var dpr = window.devicePixelRatio || 1;
-  var ua = navigator.userAgent;
-  var isIOS = /iPad|iPhone|iPod/.test(ua);
-  var isAndroid = /Android/.test(ua);
+  var isAndroid = /Android/.test(navigator.userAgent);
   if (isAndroid && dpr > 2.5) {
     var vp = document.getElementById('vpmeta');
     if (vp) vp.setAttribute('content', 'width=360, user-scalable=no, viewport-fit=cover');
   }
 })();
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(function(r) {
-    r.forEach(function(reg) { reg.unregister(); });
-  });
-}
-</script>
-<script>
-(function() {
-  var dpr = window.devicePixelRatio || 1;
-  var ua = navigator.userAgent;
-  var isIOS = /iPad|iPhone|iPod/.test(ua);
-  var isAndroid = /Android/.test(ua);
-  if (isAndroid && dpr > 2.5) {
-    var vp = document.getElementById('vpmeta');
-    if (vp) vp.setAttribute('content', 'width=360, user-scalable=no, viewport-fit=cover');
-  }
-})();
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(function(r) {
-    r.forEach(function(reg) { reg.unregister(); });
-  });
-}
 </script>
 </body>
 </html>
