@@ -5,7 +5,7 @@
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <title>Almíbar</title>
     <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" id="vpmeta" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="manifest" href="./manifest.json">
@@ -30,16 +30,19 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="./_expo/static/js/web/index-9060d55fa86cfc0720dcf7b94ec2c63b.js?v=-4536110257760870687" defer></script>
+  <script src="./_expo/static/js/web/index-9060d55fa86cfc0720dcf7b94ec2c63b.js" defer></script>
+
 <script>
 (function() {
   var dpr = window.devicePixelRatio || 1;
-  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-  var isMobile = window.innerWidth < 500;
-  if (isMobile && !isIOS && dpr > 2.5) {
-    var scale = 1 + (dpr - 2) * 0.12;
-    scale = Math.min(scale, 1.4);
-    document.documentElement.style.zoom = scale;
+  var ua = navigator.userAgent;
+  var isIOS = /iPad|iPhone|iPod/.test(ua);
+  var isAndroid = /Android/.test(ua);
+  if (isAndroid && dpr > 2.5) {
+    // Force viewport width to 360px - standard Android logical width
+    // High DPR devices (S23 Ultra etc) report wider logical widths
+    var vp = document.getElementById('vpmeta');
+    if (vp) vp.setAttribute('content', 'width=360, user-scalable=no, viewport-fit=cover');
   }
 })();
 </script>
