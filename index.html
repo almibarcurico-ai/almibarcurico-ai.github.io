@@ -30,6 +30,19 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
+<script>
+// Force clear old caches
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+    registrations.forEach(function(r) { r.unregister(); });
+  });
+}
+if ('caches' in window) {
+  caches.keys().then(function(names) {
+    names.forEach(function(name) { caches.delete(name); });
+  });
+}
+</script>
   <script src="./_expo/static/js/web/index-9060d55fa86cfc0720dcf7b94ec2c63b.js" defer></script>
 
 <script>
