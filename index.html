@@ -9,7 +9,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <link rel="apple-touch-icon" sizes="192x192" href="./icons/icon-192x192.png">
     <link rel="manifest" href="./manifest.json">
     <style id="expo-reset">
       html, body { height: 100%; margin: 0; padding: 0; }
@@ -29,7 +28,7 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="./_expo/static/js/web/index-e133928b035c0b80d8155ae77f957a4f.js" defer></script>
+  <script src="./_expo/static/js/web/index-a02cc2d3de28c94d77e1b0d4b9adcbb6.js" defer></script>
 <script>
 (function() {
   var dpr = window.devicePixelRatio || 1;
@@ -39,6 +38,7 @@
     if (vp) vp.setAttribute('content', 'width=360, user-scalable=no, viewport-fit=cover');
   }
 })();
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js'); }
 </script>
 </body>
 </html>
