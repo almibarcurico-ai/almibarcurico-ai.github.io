@@ -14,14 +14,7 @@
       body { overflow: hidden; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
       #root { display: flex; height: 100%; flex: 1; }
       
-      /* Mobile zoom - all phones */
-      @media screen and (max-width: 500px) {
-        #root { transform: scale(1.25); transform-origin: top left; width: 80%; }
-      }
-      /* iOS override - already scales correctly */
-      @supports (-webkit-touch-callout: none) {
-        #root { transform: none !important; width: 100% !important; }
-      }
+
       
       * { box-sizing: border-box; }
       input, textarea, select, button { font-size: 16px !important; }
@@ -37,6 +30,18 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="./_expo/static/js/web/index-9060d55fa86cfc0720dcf7b94ec2c63b.js" defer></script>
+  <script src="./_expo/static/js/web/index-9060d55fa86cfc0720dcf7b94ec2c63b.js?v=-4536110257760870687" defer></script>
+<script>
+(function() {
+  var dpr = window.devicePixelRatio || 1;
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  var isMobile = window.innerWidth < 500;
+  if (isMobile && !isIOS && dpr > 2.5) {
+    var scale = 1 + (dpr - 2) * 0.12;
+    scale = Math.min(scale, 1.4);
+    document.documentElement.style.zoom = scale;
+  }
+})();
+</script>
 </body>
 </html>
