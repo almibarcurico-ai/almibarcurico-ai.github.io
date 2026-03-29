@@ -5,19 +5,22 @@
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <title>Almíbar</title>
     <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
-    <meta name="viewport" id="vpmeta" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="manifest" href="./manifest.json">
     <style id="expo-reset">
-      html, body { height: 100%; margin: 0; padding: 0; }
-      body { overflow: hidden; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
-      #root { display: flex; height: 100%; flex: 1; }
-      
-
-      
-      * { box-sizing: border-box; }
-      input, textarea, select, button { font-size: 16px !important; }
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
     </style>
   <meta name="theme-color" content="#C8952A">
 <meta name="description" content="Almíbar · Cocina y Bar · Curicó">
@@ -30,34 +33,6 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-<script>
-// Force clear old caches
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(function(registrations) {
-    registrations.forEach(function(r) { r.unregister(); });
-  });
-}
-if ('caches' in window) {
-  caches.keys().then(function(names) {
-    names.forEach(function(name) { caches.delete(name); });
-  });
-}
-</script>
-  <script src="./_expo/static/js/web/index-9060d55fa86cfc0720dcf7b94ec2c63b.js" defer></script>
-
-<script>
-(function() {
-  var dpr = window.devicePixelRatio || 1;
-  var ua = navigator.userAgent;
-  var isIOS = /iPad|iPhone|iPod/.test(ua);
-  var isAndroid = /Android/.test(ua);
-  if (isAndroid && dpr > 2.5) {
-    // Force viewport width to 360px - standard Android logical width
-    // High DPR devices (S23 Ultra etc) report wider logical widths
-    var vp = document.getElementById('vpmeta');
-    if (vp) vp.setAttribute('content', 'width=360, user-scalable=no, viewport-fit=cover');
-  }
-})();
-</script>
+  <script src="./_expo/static/js/web/index-9ddb21a030d1444fb9216234a7bd82dc.js" defer></script>
 </body>
 </html>
