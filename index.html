@@ -14,24 +14,13 @@
       body { overflow: hidden; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
       #root { display: flex; height: 100%; flex: 1; }
       
-      /* Android high-DPI fix */
-      @media screen and (min-resolution: 2dppx) and (max-width: 480px) {
-        html { font-size: 18px; }
-        #root { zoom: 1.15; }
+      /* Mobile zoom - all phones */
+      @media screen and (max-width: 500px) {
+        #root { transform: scale(1.25); transform-origin: top left; width: 80%; }
       }
-      @media screen and (min-resolution: 2.5dppx) and (max-width: 480px) {
-        html { font-size: 20px; }
-        #root { zoom: 1.25; }
-      }
-      @media screen and (min-resolution: 3dppx) and (max-width: 480px) {
-        html { font-size: 22px; }
-        #root { zoom: 1.35; }
-      }
-      
-      /* iOS stays normal */
+      /* iOS override - already scales correctly */
       @supports (-webkit-touch-callout: none) {
-        #root { zoom: 1 !important; }
-        html { font-size: 16px !important; }
+        #root { transform: none !important; width: 100% !important; }
       }
       
       * { box-sizing: border-box; }
