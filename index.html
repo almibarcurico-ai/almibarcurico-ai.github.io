@@ -47,5 +47,22 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+<script>
+(function() {
+  var dpr = window.devicePixelRatio || 1;
+  var ua = navigator.userAgent;
+  var isIOS = /iPad|iPhone|iPod/.test(ua);
+  var isAndroid = /Android/.test(ua);
+  if (isAndroid && dpr > 2.5) {
+    var vp = document.getElementById('vpmeta');
+    if (vp) vp.setAttribute('content', 'width=360, user-scalable=no, viewport-fit=cover');
+  }
+})();
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(function(r) {
+    r.forEach(function(reg) { reg.unregister(); });
+  });
+}
+</script>
 </body>
 </html>
