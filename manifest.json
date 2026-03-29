@@ -1,0 +1,19 @@
+{
+  "name": "Almíbar",
+  "short_name": "Almíbar",
+  "description": "Almíbar · Cocina y Bar · Curicó",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A0908",
+  "theme_color": "#C8952A",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "./assets/src/assets/logo.063b1dd6cf3c5ba6bf4b50c0a2c89134.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
