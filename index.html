@@ -2,43 +2,43 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <title>Almíbar</title>
-    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
-    <meta name="viewport" id="vpmeta" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <link rel="manifest" href="./manifest.json">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta id="vpmeta" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#0A0908" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta name="description" content="Almíbar · Cocina y Bar · Curicó" />
+    <title>Almíbar</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./icons/icon-192x192.png" />
+    <link rel="icon" href="./favicon.ico" />
     <style id="expo-reset">
-      html, body { height: 100%; margin: 0; padding: 0; }
-      body { overflow: hidden; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
+      html, body { height: 100%; background-color: #0A0908; }
+      body { overflow: hidden; }
       #root { display: flex; height: 100%; flex: 1; }
-      * { box-sizing: border-box; }
-      input, textarea, select, button { font-size: 16px !important; }
     </style>
-  <meta name="theme-color" content="#C8952A">
-<meta name="description" content="Almíbar · Cocina y Bar · Curicó">
-<link rel="icon" href="./favicon.ico" /></head>
-
+  </head>
   <body>
-    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <!-- The root element for your Expo app. -->
+    <noscript>Necesitas JavaScript para usar esta app.</noscript>
     <div id="root"></div>
-  <script src="./_expo/static/js/web/index-a02cc2d3de28c94d77e1b0d4b9adcbb6.js" defer></script>
-<script>
-(function() {
-  var dpr = window.devicePixelRatio || 1;
-  var isAndroid = /Android/.test(navigator.userAgent);
-  if (isAndroid && dpr > 2.5) {
-    var vp = document.getElementById('vpmeta');
-    if (vp) vp.setAttribute('content', 'width=360, user-scalable=no, viewport-fit=cover');
-  }
-})();
-if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js'); }
-</script>
-</body>
+    <script src="./_expo/static/js/web/index-e9010aaa38fb346fea4a2a7833c2304c.js" defer></script>
+    <script>
+      // Samsung high-DPR fix
+      (function() {
+        var dpr = window.devicePixelRatio || 1;
+        var isAndroid = /Android/.test(navigator.userAgent);
+        if (isAndroid && dpr > 2.5) {
+          var vp = document.getElementById('vpmeta');
+          if (vp) vp.setAttribute('content', 'width=360, user-scalable=no, viewport-fit=cover');
+        }
+      })();
+      // Service Worker registration
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('./sw.js').catch(function() {});
+        });
+      }
+    </script>
+  </body>
 </html>
