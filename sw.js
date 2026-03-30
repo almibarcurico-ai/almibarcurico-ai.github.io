@@ -1,4 +1,4 @@
-const CACHE_NAME = 'almibar-v1';
+const CACHE_NAME = 'almibar-v3';
 const URLS_TO_CACHE = ['./'];
 
 self.addEventListener('install', function(event) {
