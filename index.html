@@ -34,27 +34,6 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="/_expo/static/js/web/index-02285db63dd2a6b26b85819d1dd341e8.js" defer></script>
-<script>
-(function(){
-  var currentHash='';
-  function checkUpdate(){
-    fetch(location.origin+'/?_t='+Date.now(),{method:'HEAD',cache:'no-store'}).then(function(r){
-      var h=r.headers.get('etag')||r.headers.get('last-modified')||'';
-      if(!currentHash){currentHash=h;return}
-      if(h&&h!==currentHash){
-        var d=document.createElement('div');
-        d.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#C8952A;color:#fff;padding:12px 24px;border-radius:12px;font-family:system-ui;font-size:14px;font-weight:700;z-index:99999;box-shadow:0 4px 20px rgba(0,0,0,.3);cursor:pointer';
-        d.innerHTML='🔄 Nueva versión — Toca para actualizar';
-        d.onclick=function(){location.reload(true)};
-        document.body.appendChild(d);
-        setTimeout(function(){location.reload(true)},15000);
-      }
-    }).catch(function(){});
-  }
-  setInterval(checkUpdate,120000);
-  setTimeout(checkUpdate,5000);
-})();
-</script>
-</body>
+  <script src="/_expo/static/js/web/index-a90e3bdf52d5581afaa916ee53572945.js" defer></script>
+<script>(function(){var h='';function c(){fetch(location.origin+'/?_t='+Date.now(),{method:'HEAD',cache:'no-store'}).then(function(r){var e=r.headers.get('etag')||r.headers.get('last-modified')||'';if(!h){h=e;return}if(e&&e!==h){var d=document.createElement('div');d.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#C8952A;color:#fff;padding:12px 24px;border-radius:12px;font-family:system-ui;font-size:14px;font-weight:700;z-index:99999;box-shadow:0 4px 20px rgba(0,0,0,.3);cursor:pointer';d.innerHTML='🔄 Nueva versión — Toca para actualizar';d.onclick=function(){location.reload(true)};document.body.appendChild(d);setTimeout(function(){location.reload(true)},15000)}}).catch(function(){})}setInterval(c,120000);setTimeout(c,5000)})();</script></body>
 </html>
