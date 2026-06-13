@@ -37,5 +37,18 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   <script src="/_expo/static/js/web/index-872c60f6f141590366d351c4d1ab9bd8.js" defer></script>
+  <script>
+    // Registro del SW (network-first, v17). Reemplaza SW viejos que quedaban
+    // pegados sirviendo la versión vieja (clientes no podían marcar).
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').catch(function () {});
+      });
+      var _swReloaded = false;
+      navigator.serviceWorker.addEventListener('controllerchange', function () {
+        if (_swReloaded) return; _swReloaded = true; window.location.reload();
+      });
+    }
+  </script>
 </body>
 </html>
