@@ -36,46 +36,46 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-  <script src="/_expo/static/js/web/index-2d8ff3f8973fec242216bb9766cb146d.js" defer></script>
-  <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})});var _r=false;navigator.serviceWorker.addEventListener("controllerchange",function(){if(_r)return;_r=true;window.location.reload()})}</script>
-  <script>
-  /* Fondo floral Almíbar — pinta las flores de marca detrás del contenido en las
-     pantallas de fondo claro (arena #FBF7F1). No toca layout, theme ni bundle. */
-  (function(){
-    var FLORES=[
-      {u:'/flores-soft/flor-amarilla-soft.png',s:'210px',p:'left -55px top 95px'},
-      {u:'/flores-soft/flor-roja-soft.png',s:'195px',p:'right -60px top 380px'},
-      {u:'/flores-soft/flor-azul-soft.png',s:'195px',p:'left -58px top 690px'},
-      {u:'/flores-soft/flor-naranja-soft.png',s:'220px',p:'right -50px bottom 70px'}
-    ];
-    function apply(){
-      var root=document.getElementById('root'); if(!root) return;
-      var divs=root.getElementsByTagName('div'), target=null, best=0;
-      for(var i=0;i<divs.length;i++){
-        var d=divs[i];
-        if(getComputedStyle(d).backgroundColor==='rgb(251, 247, 241)'){
-          var h=d.getBoundingClientRect().height;
-          if(h>best){best=h;target=d;}
+    <script>
+    /* Fondo floral Almíbar — pinta las flores de marca detrás del contenido en las
+       pantallas de fondo claro (arena #FBF7F1). No toca layout, theme ni bundle. */
+    (function(){
+      var FLORES=[
+        {u:'/flores-soft/flor-amarilla-soft.png',s:'210px',p:'left -55px top 95px'},
+        {u:'/flores-soft/flor-roja-soft.png',s:'195px',p:'right -60px top 380px'},
+        {u:'/flores-soft/flor-azul-soft.png',s:'195px',p:'left -58px top 690px'},
+        {u:'/flores-soft/flor-naranja-soft.png',s:'220px',p:'right -50px bottom 70px'}
+      ];
+      function apply(){
+        var root=document.getElementById('root'); if(!root) return;
+        var divs=root.getElementsByTagName('div'), target=null, best=0;
+        for(var i=0;i<divs.length;i++){
+          var d=divs[i];
+          if(getComputedStyle(d).backgroundColor==='rgb(251, 247, 241)'){
+            var h=d.getBoundingClientRect().height;
+            if(h>best){best=h;target=d;}
+          }
+        }
+        if(target && target.getAttribute('data-flores')!=='1'){
+          target.setAttribute('data-flores','1');
+          target.style.backgroundImage=FLORES.map(function(f){return 'url('+f.u+')';}).join(',');
+          target.style.backgroundRepeat='no-repeat,no-repeat,no-repeat,no-repeat';
+          target.style.backgroundSize=FLORES.map(function(f){return f.s;}).join(',');
+          target.style.backgroundPosition=FLORES.map(function(f){return f.p;}).join(',');
+          target.style.backgroundAttachment='fixed,fixed,fixed,fixed';
         }
       }
-      if(target && target.getAttribute('data-flores')!=='1'){
-        target.setAttribute('data-flores','1');
-        target.style.backgroundImage=FLORES.map(function(f){return 'url('+f.u+')';}).join(',');
-        target.style.backgroundRepeat='no-repeat,no-repeat,no-repeat,no-repeat';
-        target.style.backgroundSize=FLORES.map(function(f){return f.s;}).join(',');
-        target.style.backgroundPosition=FLORES.map(function(f){return f.p;}).join(',');
-        target.style.backgroundAttachment='fixed,fixed,fixed,fixed';
+      function boot(){
+        apply();
+        try{var obs=new MutationObserver(function(){requestAnimationFrame(apply);});
+          obs.observe(document.getElementById('root'),{childList:true,subtree:true});}catch(e){}
+        setInterval(apply,1500);
       }
-    }
-    function boot(){
-      apply();
-      try{var obs=new MutationObserver(function(){requestAnimationFrame(apply);});
-        obs.observe(document.getElementById('root'),{childList:true,subtree:true});}catch(e){}
-      setInterval(apply,1500);
-    }
-    if(document.readyState!=='loading') setTimeout(boot,1200);
-    else document.addEventListener('DOMContentLoaded',function(){setTimeout(boot,1200);});
-  })();
-  </script>
+      if(document.readyState!=='loading') setTimeout(boot,1200);
+      else document.addEventListener('DOMContentLoaded',function(){setTimeout(boot,1200);});
+    })();
+    </script>
+  <script src="/_expo/static/js/web/index-18916f55493e2168463dfc810eb69b59.js" defer></script>
+  <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})});var _r=false;navigator.serviceWorker.addEventListener("controllerchange",function(){if(_r)return;_r=true;window.location.reload()})}</script>
 </body>
 </html>
