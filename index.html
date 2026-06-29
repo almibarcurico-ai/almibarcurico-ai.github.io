@@ -36,6 +36,13 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-  <script src="/_expo/static/js/web/index-19cc670ebb8bffe93d1da8da4d4daba2.js" defer></script>
+  <script src="/_expo/static/js/web/index-35b92b98bbf2214f36f560ad62ee7dd5.js" defer></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () { navigator.serviceWorker.register("/sw.js").catch(function () {}); });
+      var _swReloaded = false;
+      navigator.serviceWorker.addEventListener("controllerchange", function () { if (_swReloaded) return; _swReloaded = true; window.location.reload(); });
+    }
+  </script>
 </body>
 </html>
