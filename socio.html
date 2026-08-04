@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Club Almíbar · Hazte socio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--petro:#0B2D36;--petro2:#071f26;--arena:#D9C29C;--ambar:#D08B3E;--ambarhi:#e6a456;--blanco:#F5F1EA;--turq:#3FA7A3;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Montserrat',sans-serif;background:var(--petro);color:var(--blanco);min-height:100vh;
+       background:radial-gradient(120% 60% at 50% 0%, #123a45 0%, var(--petro) 45%, var(--petro2) 100%);
+       display:flex;justify-content:center;padding:26px 18px 40px}
+  .card{width:100%;max-width:460px}
+  .top{text-align:center;margin-bottom:6px}
+  svg{display:block;margin:0 auto 10px}
+  .kick{font-size:13px;letter-spacing:.32em;color:var(--arena);font-weight:600;text-transform:uppercase}
+  h1{font-family:'Anton',sans-serif;font-size:56px;line-height:.96;color:var(--blanco);letter-spacing:.01em;margin:8px 0 2px;text-transform:uppercase}
+  .accent{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:var(--ambarhi);margin-bottom:14px}
+  .benef{background:rgba(63,167,163,.10);border:1px solid rgba(63,167,163,.35);border-radius:14px;padding:12px 14px;margin:6px 0 20px;
+         font-size:13.5px;color:var(--arena);text-align:center;line-height:1.5}
+  .benef b{color:var(--blanco)}
+  label{display:block;font-size:12px;letter-spacing:.06em;color:var(--arena);text-transform:uppercase;margin:14px 0 6px;font-weight:600}
+  input{width:100%;padding:14px 15px;border-radius:12px;border:1px solid rgba(217,194,156,.30);background:rgba(255,255,255,.05);
+        color:var(--blanco);font-size:16px;font-family:inherit;outline:none}
+  input::placeholder{color:rgba(245,241,234,.4)}
+  input:focus{border-color:var(--ambar);background:rgba(255,255,255,.08)}
+  .opt{color:rgba(217,194,156,.6);text-transform:none;letter-spacing:0}
+  button{width:100%;margin-top:26px;padding:17px;border:none;border-radius:40px;background:var(--ambar);color:#20140a;
+         font-family:'Anton',sans-serif;font-size:20px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:.2s}
+  button:hover{background:var(--ambarhi)}
+  button:disabled{opacity:.6;cursor:default}
+  .foot{text-align:center;margin-top:22px;font-size:12px;letter-spacing:.14em;color:rgba(217,194,156,.7)}
+  .foot .brand{font-size:15px;letter-spacing:.28em;color:var(--arena);display:block;margin-bottom:3px}
+  .ok{display:none;text-align:center;padding:40px 10px}
+  .ok h2{font-family:'Anton',sans-serif;font-size:42px;color:var(--ambarhi);margin:14px 0 8px;text-transform:uppercase}
+  .ok p{color:var(--arena);font-size:15px;line-height:1.6}
+  .err{color:#f0a; text-align:center;font-size:13px;margin-top:10px;min-height:16px}
+  .wave{stroke:var(--turq);stroke-width:3;fill:none}
+</style>
+</head>
+<body>
+<div class="card">
+  <div id="form">
+    <div class="top">
+      <svg width="70" height="42" viewBox="0 0 70 42"><path d="M20 30 A15 15 0 0 1 50 30" fill="none" stroke="#D08B3E" stroke-width="3"/><line x1="14" y1="30" x2="56" y2="30" stroke="#D08B3E" stroke-width="3"/><g stroke="#D08B3E" stroke-width="3"><line x1="35" y1="4" x2="35" y2="12"/><line x1="17" y1="11" x2="22" y2="17"/><line x1="53" y1="11" x2="48" y2="17"/><line x1="6" y1="24" x2="13" y2="26"/><line x1="64" y1="24" x2="57" y2="26"/></g><path class="wave" d="M8 39 q6 -5 12 0 t12 0 t12 0 t12 0"/></svg>
+      <div class="kick">Club Almíbar</div>
+      <h1>Hazte<br>socio</h1>
+      <div class="accent">y vive Almíbar como se debe</div>
+    </div>
+    <div class="benef">Happy Hour a <b>$2.900</b> · <b>40%</b> los miércoles · sorpresas solo para socios. <b>Gratis</b>, sin costo.</div>
+
+    <label>Nombre completo</label>
+    <input id="nombre" placeholder="Tu nombre" autocomplete="name">
+    <label>WhatsApp</label>
+    <input id="telefono" type="tel" placeholder="+56 9 ..." autocomplete="tel">
+    <label>Cumpleaños <span class="opt">(para tu regalo)</span></label>
+    <input id="cumple" type="date">
+    <label>Email <span class="opt">(opcional)</span></label>
+    <input id="email" type="email" placeholder="tucorreo@mail.com" autocomplete="email">
+
+    <button id="btn" onclick="enviar()">Unirme al Club</button>
+    <div class="err" id="err"></div>
+    <div class="foot"><span class="brand">ALMÍBAR</span>Cocina &amp; Bar · Francisco Moreno 418, Curicó</div>
+  </div>
+
+  <div class="ok" id="ok">
+    <svg width="80" height="48" viewBox="0 0 70 42"><path d="M20 30 A15 15 0 0 1 50 30" fill="none" stroke="#e6a456" stroke-width="3"/><line x1="14" y1="30" x2="56" y2="30" stroke="#e6a456" stroke-width="3"/><g stroke="#e6a456" stroke-width="3"><line x1="35" y1="4" x2="35" y2="12"/><line x1="17" y1="11" x2="22" y2="17"/><line x1="53" y1="11" x2="48" y2="17"/></g></svg>
+    <h2>¡Bienvenido!</h2>
+    <p>Ya eres parte del <b>Club Almíbar</b>.<br>Nos vemos esta noche 🌅<br>Muestra este registro a tu garzón y activa tus beneficios.</p>
+    <div class="foot" style="margin-top:26px"><span class="brand">ALMÍBAR</span>Cocina &amp; Bar</div>
+  </div>
+</div>
+
+<script>
+  const SB='https://czdnllosfvakyibdijmb.supabase.co';
+  const KEY='sb_publishable_AC1gh749J8psmBZgTEPU7A_qcRD3CkN';
+  async function enviar(){
+    const nombre=document.getElementById('nombre').value.trim();
+    const telefono=document.getElementById('telefono').value.trim();
+    const cumple=document.getElementById('cumple').value||null;
+    const email=document.getElementById('email').value.trim()||null;
+    const err=document.getElementById('err'); err.textContent='';
+    if(nombre.length<2){err.textContent='Escribe tu nombre.';return}
+    if(telefono.replace(/\D/g,'').length<8){err.textContent='Escribe un WhatsApp válido.';return}
+    const btn=document.getElementById('btn'); btn.disabled=true; btn.textContent='Enviando...';
+    try{
+      const r=await fetch(SB+'/rest/v1/club_inscripciones',{method:'POST',
+        headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+        body:JSON.stringify({nombre,telefono,cumple,email,origen:'instagram'})});
+      if(!r.ok) throw new Error(await r.text());
+      document.getElementById('form').style.display='none';
+      document.getElementById('ok').style.display='block';
+      window.scrollTo(0,0);
+    }catch(e){ err.textContent='Ups, algo falló. Intenta de nuevo.'; btn.disabled=false; btn.textContent='Unirme al Club'; }
+  }
+</script>
+</body>
+</html>
