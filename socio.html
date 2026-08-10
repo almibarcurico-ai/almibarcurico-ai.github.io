@@ -62,9 +62,19 @@
   .chk b{color:var(--blanco);font-weight:600}
   .privlink{display:block;text-align:center;margin-top:18px;font-size:12px;letter-spacing:.02em}
   .privlink a{color:rgba(217,194,156,.85);text-decoration:underline;text-underline-offset:2px}
+  /* Motivo floral de marca (mismo lenguaje visual que la app) */
+  .flores{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .flores img{position:absolute;opacity:.38;filter:saturate(.9) brightness(1.02)}
+  .flores .f1{top:-58px;left:-72px;width:158px;transform:rotate(-12deg)}
+  .flores .f2{bottom:-64px;right:-66px;width:172px;transform:rotate(9deg)}
+  .card{position:relative;z-index:1}
 </style>
 </head>
 <body>
+<div class="flores" aria-hidden="true">
+  <img class="f1" src="/flores-soft/flor-naranja-soft.png" alt="" decoding="async" fetchpriority="low">
+  <img class="f2" src="/flores-soft/flor-roja-soft.png" alt="" decoding="async" loading="lazy">
+</div>
 <div class="card">
   <div id="form">
     <div class="top">
