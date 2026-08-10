@@ -1,14 +1,36 @@
 {
-  "name": "Almíbar Curicó",
+  "id": "/",
+  "lang": "es-CL",
+  "dir": "ltr",
+  "name": "Almíbar · Bar Nikkei Curicó",
   "short_name": "Almíbar",
-  "description": "Carta digital y reservas Almíbar",
-  "start_url": "/",
+  "description": "Carta digital, delivery y Club de socios de Almíbar, bar nikkei en Curicó. Fusión peruana, chilena y japonesa.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#1a1a1a",
-  "theme_color": "#E8562A",
+  "orientation": "portrait",
+  "background_color": "#0B2D36",
+  "theme_color": "#0B2D36",
+  "categories": ["food", "lifestyle", "entertainment"],
   "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
     { "src": "/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ver la carta",
+      "short_name": "Carta",
+      "description": "Cocina, barra y combos de la casa",
+      "url": "/?shortcut=carta",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Hazte socio del Club",
+      "short_name": "Hazte socio",
+      "description": "Únete gratis al Club Almíbar",
+      "url": "/socio.html",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
   ]
 }
