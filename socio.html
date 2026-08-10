@@ -2,8 +2,11 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Club Almíbar · Hazte socio</title>
+<meta name="description" content="Únete gratis al Club Almíbar: Happy Hour a $2.900, 40% los miércoles y sorpresas solo para socios. Bar nikkei en Curicó.">
+<meta name="theme-color" content="#0B2D36">
+<link rel="canonical" href="https://almibarcurico-ai.github.io/socio.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -36,8 +39,16 @@
   .ok{display:none;text-align:center;padding:40px 10px}
   .ok h2{font-family:'Anton',sans-serif;font-size:42px;color:var(--ambarhi);margin:14px 0 8px;text-transform:uppercase}
   .ok p{color:var(--arena);font-size:15px;line-height:1.6}
-  .err{color:#f0a; text-align:center;font-size:13px;margin-top:10px;min-height:16px}
+  .err{color:#F2917B; text-align:center;font-size:13px;margin-top:10px;min-height:16px}
   .wave{stroke:var(--turq);stroke-width:3;fill:none}
+  .consent{margin-top:20px}
+  .chk{display:flex;align-items:flex-start;gap:11px;margin:12px 0;cursor:pointer;
+       font-size:13px;line-height:1.5;color:var(--arena);text-transform:none;letter-spacing:0;font-weight:400}
+  .chk input{width:20px;height:20px;min-width:20px;margin-top:1px;accent-color:var(--ambar);cursor:pointer}
+  .chk a{color:var(--ambarhi);text-decoration:underline;text-underline-offset:2px}
+  .chk b{color:var(--blanco);font-weight:600}
+  .privlink{display:block;text-align:center;margin-top:18px;font-size:12px;letter-spacing:.02em}
+  .privlink a{color:rgba(217,194,156,.85);text-decoration:underline;text-underline-offset:2px}
 </style>
 </head>
 <body>
@@ -58,10 +69,26 @@
     <label>Cumpleaños <span class="opt">(para tu regalo)</span></label>
     <input id="cumple" type="date">
     <label>Email <span class="opt">(opcional)</span></label>
-    <input id="email" type="email" placeholder="tucorreo@mail.com" autocomplete="email">
+    <input id="email" type="email" placeholder="tucorreo@mail.com" autocomplete="email" inputmode="email" autocapitalize="none" autocorrect="off" spellcheck="false">
+
+    <div class="consent">
+      <label class="chk" for="edad">
+        <input type="checkbox" id="edad">
+        <span>Declaro ser <b>mayor de 18 años</b>.</span>
+      </label>
+      <label class="chk" for="acepto">
+        <input type="checkbox" id="acepto">
+        <span>He leído y acepto la <a href="/privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a> y autorizo el tratamiento de mis datos para gestionar mi membresía del Club Almíbar.</span>
+      </label>
+      <label class="chk" for="promos">
+        <input type="checkbox" id="promos">
+        <span>Quiero recibir promociones y sorpresas por WhatsApp o email. <span class="opt">(opcional)</span></span>
+      </label>
+    </div>
 
     <button id="btn" onclick="enviar()">Unirme al Club</button>
-    <div class="err" id="err"></div>
+    <div class="err" id="err" role="alert"></div>
+    <div class="privlink"><a href="/privacidad.html" target="_blank" rel="noopener">Cómo cuidamos tus datos · Política de Privacidad</a></div>
     <div class="foot"><span class="brand">ALMÍBAR</span>Cocina &amp; Bar · Francisco Moreno 418, Curicó</div>
   </div>
 
@@ -74,21 +101,48 @@
 </div>
 
 <script>
+  /* IMPORTANTE (privacidad/cumplimiento):
+     Para guardar la prueba de consentimiento, la tabla club_inscripciones debe tener estas columnas:
+       acepto_privacidad boolean, acepta_promos boolean, consent_version text, consent_ts timestamptz
+     Migración sugerida:
+       alter table public.club_inscripciones
+         add column if not exists acepto_privacidad boolean,
+         add column if not exists acepta_promos    boolean,
+         add column if not exists consent_version   text,
+         add column if not exists consent_ts        timestamptz;
+     NOTA: el proyecto 'almibar-pos' (czdnllosfvakyibdijmb) está INACTIVE; hoy el formulario no guarda
+     inscripciones. Repuntar SB/KEY al proyecto activo correcto antes de publicar. */
   const SB='https://czdnllosfvakyibdijmb.supabase.co';
   const KEY='sb_publishable_AC1gh749J8psmBZgTEPU7A_qcRD3CkN';
+  const CONSENT_VERSION='2026-08-10';
+  function esMayorDe18(fechaISO){
+    if(!fechaISO) return false;
+    const n=new Date(fechaISO); if(isNaN(n)) return false;
+    const hoy=new Date(); let edad=hoy.getFullYear()-n.getFullYear();
+    const m=hoy.getMonth()-n.getMonth();
+    if(m<0||(m===0&&hoy.getDate()<n.getDate())) edad--;
+    return edad>=18;
+  }
   async function enviar(){
     const nombre=document.getElementById('nombre').value.trim();
     const telefono=document.getElementById('telefono').value.trim();
     const cumple=document.getElementById('cumple').value||null;
     const email=document.getElementById('email').value.trim()||null;
+    const edadOk=document.getElementById('edad').checked;
+    const acepto=document.getElementById('acepto').checked;
+    const promos=document.getElementById('promos').checked;
     const err=document.getElementById('err'); err.textContent='';
     if(nombre.length<2){err.textContent='Escribe tu nombre.';return}
     if(telefono.replace(/\D/g,'').length<8){err.textContent='Escribe un WhatsApp válido.';return}
+    if(!edadOk){err.textContent='El Club es solo para mayores de 18 años.';return}
+    if(cumple&&!esMayorDe18(cumple)){err.textContent='Debes ser mayor de 18 años para unirte al Club.';return}
+    if(!acepto){err.textContent='Necesitas aceptar la Política de Privacidad para continuar.';return}
     const btn=document.getElementById('btn'); btn.disabled=true; btn.textContent='Enviando...';
     try{
       const r=await fetch(SB+'/rest/v1/club_inscripciones',{method:'POST',
         headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
-        body:JSON.stringify({nombre,telefono,cumple,email,origen:'instagram'})});
+        body:JSON.stringify({nombre,telefono,cumple,email,origen:'instagram',
+          acepto_privacidad:true,acepta_promos:promos,consent_version:CONSENT_VERSION,consent_ts:new Date().toISOString()})});
       if(!r.ok) throw new Error(await r.text());
       document.getElementById('form').style.display='none';
       document.getElementById('ok').style.display='block';
