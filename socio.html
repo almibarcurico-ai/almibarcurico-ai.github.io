@@ -101,19 +101,12 @@
 </div>
 
 <script>
-  /* IMPORTANTE (privacidad/cumplimiento):
-     Para guardar la prueba de consentimiento, la tabla club_inscripciones debe tener estas columnas:
-       acepto_privacidad boolean, acepta_promos boolean, consent_version text, consent_ts timestamptz
-     Migración sugerida:
-       alter table public.club_inscripciones
-         add column if not exists acepto_privacidad boolean,
-         add column if not exists acepta_promos    boolean,
-         add column if not exists consent_version   text,
-         add column if not exists consent_ts        timestamptz;
-     NOTA: el proyecto 'almibar-pos' (czdnllosfvakyibdijmb) está INACTIVE; hoy el formulario no guarda
-     inscripciones. Repuntar SB/KEY al proyecto activo correcto antes de publicar. */
-  const SB='https://czdnllosfvakyibdijmb.supabase.co';
-  const KEY='sb_publishable_AC1gh749J8psmBZgTEPU7A_qcRD3CkN';
+  /* Proyecto activo 'restoia-platform'. La tabla public.club_inscripciones tiene RLS que permite
+     a anon INSERTAR solo con consentimiento (acepto_privacidad=true) y para Almíbar, pero NO LEER
+     la lista de socios. Columnas: nombre, telefono, cumple, email, origen, acepto_privacidad,
+     acepta_promos, consent_version, consent_ts (restaurant_id se completa por defecto). */
+  const SB='https://gxjzwyickfrqxnhaajwv.supabase.co';
+  const KEY='sb_publishable_1PB5Th-ci7WU22PhPRFimg_usyfrysE';
   const CONSENT_VERSION='2026-08-10';
   function esMayorDe18(fechaISO){
     if(!fechaISO) return false;
