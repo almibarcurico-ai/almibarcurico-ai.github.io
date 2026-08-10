@@ -2,25 +2,48 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Almíbar</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+    <title>Almíbar · Bar Nikkei Curicó</title>
+    <meta name="description" content="Almíbar, bar nikkei en Curicó. Carta digital, delivery, Club de socios y fusión de sabores peruanos, chilenos y japoneses. Francisco Moreno 418." />
+    <link rel="canonical" href="https://almibarcurico-ai.github.io/" />
+
     <!-- PWA install: manifest + iconos propios -->
     <link rel="manifest" href="/manifest.json" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-    <meta name="theme-color" content="#E8562A" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0B2D36" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#071F26" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Almíbar" />
+
+    <!-- Social / Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Almíbar" />
+    <meta property="og:title" content="Almíbar · Bar Nikkei Curicó" />
+    <meta property="og:description" content="Carta digital, delivery y Club de socios. Fusión peruana, chilena y japonesa en Curicó." />
+    <meta property="og:url" content="https://almibarcurico-ai.github.io/" />
+    <meta property="og:image" content="https://almibarcurico-ai.github.io/promo-2x.jpg" />
+    <meta property="og:locale" content="es_CL" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Almíbar · Bar Nikkei Curicó" />
+    <meta name="twitter:description" content="Carta digital, delivery y Club de socios en Curicó." />
+    <meta name="twitter:image" content="https://almibarcurico-ai.github.io/promo-2x.jpg" />
+
+    <!-- Precarga del logo del splash (mismo origen, sin requests externas) -->
+    <link rel="preload" href="/icon-192.png" as="image" />
+
     <!-- The `react-native-web` recommended style reset -->
     <style id="expo-reset">
       html,
       body {
         height: 100%;
       }
+      html { background: #0B2D36; }
       body {
         overflow: hidden;
       }
@@ -30,12 +53,77 @@
         flex: 1;
       }
     </style>
-  <meta name="theme-color" content="#E8562A">
-<meta name="description" content="Almíbar · Cocina y Bar · Curicó">
-<link rel="icon" href="/favicon.ico" /></head>
+
+    <!-- Splash de marca Almíbar: se pinta al instante mientras carga el bundle -->
+    <style id="almibar-splash-css">
+      #almibar-splash{position:fixed;inset:0;z-index:9999;
+        display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;
+        background:radial-gradient(120% 55% at 50% 0%, #123a45 0%, #0B2D36 45%, #071f26 100%);
+        color:#F5F1EA;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+        opacity:1;transition:opacity .45s ease}
+      #almibar-splash.out{opacity:0;pointer-events:none}
+      #almibar-splash .logo{width:132px;height:132px;border-radius:50%;
+        box-shadow:0 10px 40px rgba(0,0,0,.35);animation:sp-pulse 2.4s ease-in-out infinite}
+      #almibar-splash .brand{font-size:14px;letter-spacing:.34em;text-indent:.34em;color:#D9C29C;font-weight:600;margin-top:4px}
+      #almibar-splash .sub{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:15px;color:#E6A456;letter-spacing:.02em}
+      #almibar-splash .dots{display:flex;gap:7px;margin-top:6px}
+      #almibar-splash .dots i{width:7px;height:7px;border-radius:50%;background:#D08B3E;display:block;animation:sp-dot 1.3s infinite ease-in-out}
+      #almibar-splash .dots i:nth-child(2){animation-delay:.16s}
+      #almibar-splash .dots i:nth-child(3){animation-delay:.32s}
+      @keyframes sp-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.95);opacity:.9}}
+      @keyframes sp-dot{0%,80%,100%{transform:translateY(0);opacity:.4}40%{transform:translateY(-6px);opacity:1}}
+      #almibar-splash .fail{display:none;max-width:280px;font-size:14px;line-height:1.5;color:#D9C29C}
+      #almibar-splash.failed .dots{display:none}
+      #almibar-splash.failed .sub{display:none}
+      #almibar-splash.failed .fail{display:block}
+      #almibar-splash .fail button{margin-top:14px;padding:12px 28px;border:0;border-radius:40px;
+        background:#D08B3E;color:#20140a;font-size:15px;font-weight:700;cursor:pointer}
+      @media (prefers-reduced-motion:reduce){#almibar-splash .logo,#almibar-splash .dots i{animation:none}}
+    </style>
+  </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div style="position:fixed;inset:0;background:#0B2D36;color:#F5F1EA;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;font-family:sans-serif">
+        Activa JavaScript para usar la app de Almíbar.<br />O escríbenos por Instagram @almibar.bar
+      </div>
+    </noscript>
+
+    <div id="almibar-splash" role="status" aria-label="Cargando Almíbar">
+      <img class="logo" src="/icon-192.png" alt="" width="132" height="132" />
+      <div class="brand">ALMÍBAR</div>
+      <div class="sub">Bar Nikkei · Curicó</div>
+      <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="fail">
+        La app está tardando más de lo normal.
+        <br /><button onclick="location.reload()">Reintentar</button>
+      </div>
+    </div>
+
     <div id="root"></div>
+
+    <script>
+    /* Desmonta el splash cuando la app Expo monta en #root (o ante fallo). */
+    (function(){
+      var splash=document.getElementById('almibar-splash'), done=false;
+      function hide(){ if(done)return; done=true; splash.classList.add('out');
+        setTimeout(function(){ if(splash&&splash.parentNode) splash.parentNode.removeChild(splash); },500); }
+      function mounted(){
+        var root=document.getElementById('root');
+        return root && root.children.length>0 && root.firstElementChild &&
+               root.firstElementChild.getBoundingClientRect().height>0;
+      }
+      try{
+        var obs=new MutationObserver(function(){ if(mounted()){ obs.disconnect(); setTimeout(hide,120); } });
+        obs.observe(document.getElementById('root'),{childList:true,subtree:true});
+      }catch(e){}
+      var poll=setInterval(function(){ if(done){clearInterval(poll);return;} if(mounted()){clearInterval(poll);hide();} },250);
+      window.addEventListener('error',function(ev){
+        if(ev&&ev.target&&ev.target.tagName==='SCRIPT'&&!done) splash.classList.add('failed');
+      },true);
+      setTimeout(function(){ if(!done) splash.classList.add('failed'); },15000);
+    })();
+    </script>
+
     <script>
     /* Fondo floral Almíbar — pinta las flores de marca detrás del contenido en las
        pantallas de fondo claro (arena #FBF7F1). No toca layout, theme ni bundle. */
