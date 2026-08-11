@@ -124,10 +124,10 @@
 </div>
 
 <script>
-  /* Proyecto activo 'restoia-platform'. La tabla public.club_inscripciones tiene RLS que permite
-     a anon INSERTAR solo con consentimiento (acepto_privacidad=true) y para Almíbar, pero NO LEER
-     la lista de socios. Columnas: nombre, telefono, cumple, email, origen, acepto_privacidad,
-     acepta_promos, consent_version, consent_ts (restaurant_id se completa por defecto). */
+  /* Proyecto activo 'restoia-platform'. La RPC public.almibar_socio_vip_register
+     (SECURITY DEFINER, otorgada a anon) hace al registrante SOCIO VIP por 30 días corridos
+     en public.clients y además deja el registro de consentimiento en public.club_inscripciones.
+     Params: p_name, p_phone, p_birthday, p_email, p_acepta_promos, p_consent_version. */
   const SB='https://gxjzwyickfrqxnhaajwv.supabase.co';
   const KEY='sb_publishable_1PB5Th-ci7WU22PhPRFimg_usyfrysE';
   const CONSENT_VERSION='2026-08-10';
@@ -155,11 +155,12 @@
     if(!acepto){err.textContent='Necesitas aceptar la Política de Privacidad para continuar.';return}
     const btn=document.getElementById('btn'); btn.disabled=true; btn.textContent='Enviando...';
     try{
-      const r=await fetch(SB+'/rest/v1/club_inscripciones',{method:'POST',
-        headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
-        body:JSON.stringify({nombre,telefono,cumple,email,origen:'instagram',
-          acepto_privacidad:true,acepta_promos:promos,consent_version:CONSENT_VERSION,consent_ts:new Date().toISOString()})});
+      const r=await fetch(SB+'/rest/v1/rpc/almibar_socio_vip_register',{method:'POST',
+        headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json'},
+        body:JSON.stringify({p_name:nombre, p_phone:telefono, p_birthday:cumple, p_email:email,
+          p_acepta_promos:promos, p_consent_version:CONSENT_VERSION})});
       if(!r.ok) throw new Error(await r.text());
+      const _d=await r.json(); if(_d && _d.ok===false) throw new Error('datos');
       document.getElementById('form').style.display='none';
       document.getElementById('ok').classList.add('show');
       window.scrollTo(0,0);
