@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Comilón · Cocina Casera Chilena en Concón</title>
-  <meta name="description" content="Comilón, cocina casera chilena en Concón. Pastel de choclo, pastel de jaiba, pastel de papa, empanadas y menú del día. Delivery por Rappi y retiro en Calle 7 744, Concón." />
+  <title>Comilón · Sánguches, Churrascos y Hamburguesas en Concón</title>
+  <meta name="description" content="Comilón Concón, tu mejor opción desde 2008. Churrascos, lomitos, hamburguesas, completos, pollo asado y papas fritas preparados al momento. Pide en línea para retiro o delivery en Concón." />
   <link rel="canonical" href="https://almibarcurico-ai.github.io/comilon/" />
   <meta name="theme-color" content="#8C2F1B" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍲</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥪</text></svg>" />
 
   <!-- Social / Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Comilón Concón" />
-  <meta property="og:title" content="Comilón · Cocina Casera Chilena en Concón" />
-  <meta property="og:description" content="Pasteles caseros, empanadas y menú del día. Pide por Rappi o retira en Calle 7 744, Concón." />
+  <meta property="og:title" content="Comilón · Sánguches, Churrascos y Hamburguesas en Concón" />
+  <meta property="og:description" content="Churrascos, lomitos, hamburguesas, completos y pollo asado preparados al momento. Pide en línea para retiro o delivery en Concón." />
   <meta property="og:url" content="https://almibarcurico-ai.github.io/comilon/" />
   <meta property="og:locale" content="es_CL" />
   <meta name="twitter:card" content="summary" />
@@ -24,7 +24,7 @@
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Comilón",
-    "servesCuisine": "Cocina casera chilena",
+    "servesCuisine": "Sándwiches, churrascos y hamburguesas",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Calle 7 744",
@@ -34,8 +34,7 @@
     },
     "telephone": "+56963469013",
     "sameAs": [
-      "https://www.instagram.com/comilonconcon/",
-      "https://wa.me/c/56963469013"
+      "https://www.instagram.com/comilonconcon/"
     ],
     "url": "https://almibarcurico-ai.github.io/comilon/"
   }
@@ -86,11 +85,10 @@
     .btn{
       display:inline-block;padding:14px 30px;border-radius:40px;font-weight:700;font-size:16px;
       text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;
+      border:none;cursor:pointer;
     }
     .btn:hover{transform:translateY(-2px)}
-    .btn-wsp{background:#25D366;color:#0b3d22;box-shadow:0 8px 24px rgba(37,211,102,.35)}
-    .btn-rappi{background:#FF441F;color:#fff;box-shadow:0 8px 24px rgba(255,68,31,.35)}
-    .btn-ig{background:transparent;color:var(--crema);border:2px solid rgba(251,244,230,.65)}
+    .btn-carta{background:#F4D9A6;color:var(--greda-osc);box-shadow:0 8px 24px rgba(0,0,0,.25)}
     /* onda separadora */
     header svg.onda{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:42px;display:block}
 
@@ -108,15 +106,28 @@
     .sec-head p{max-width:560px;margin:10px auto 0;color:#6b5245}
 
     /* ---------- Cards de productos ---------- */
+    .grupo{
+      display:flex;align-items:center;gap:12px;margin:40px 0 18px;
+      font-family:Georgia,serif;font-size:clamp(20px,4vw,26px);color:var(--greda-osc);
+    }
+    .grupo::after{content:"";flex:1;height:1px;background:#E6CFAF}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
     .card{
       background:var(--papel);border-radius:20px;box-shadow:var(--sombra);
       padding:26px 24px 22px;display:flex;flex-direction:column;gap:10px;
-      border-top:5px solid var(--greda);
+      border-top:5px solid var(--greda);overflow:hidden;
     }
     .card.estrella{border-top-color:var(--dorado)}
+    .card .foto{
+      width:calc(100% + 48px);margin:-26px -24px 4px;display:block;
+      aspect-ratio:4/3;object-fit:cover;background:#F3E4C8;
+    }
     .card .icono{font-size:40px;line-height:1}
-    .card h3{font-family:Georgia,serif;font-size:22px;color:var(--greda-osc)}
+    .card h3{font-family:Georgia,serif;font-size:21px;color:var(--greda-osc)}
+    .card .precio{font-family:Georgia,serif;font-size:22px;font-weight:700;color:var(--greda)}
+    .card .precio .antes{
+      font-size:14px;color:#9b7d6b;text-decoration:line-through;font-weight:400;margin-left:8px;
+    }
     .card p{font-size:15px;color:#5d4638;flex:1}
     .chips{display:flex;flex-wrap:wrap;gap:6px}
     .chip{
@@ -128,6 +139,18 @@
       align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
       background:var(--dorado);color:#fff;padding:4px 12px;border-radius:20px;
     }
+    .badge-oferta{
+      align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+      background:var(--oliva);color:#fff;padding:4px 12px;border-radius:20px;
+    }
+    .btn-add{
+      margin-top:6px;width:100%;padding:12px 16px;border:none;border-radius:14px;
+      background:var(--greda);color:var(--crema);font-weight:700;font-size:15px;cursor:pointer;
+      transition:background .15s ease, transform .1s ease;
+    }
+    .btn-add:hover{background:var(--greda-osc)}
+    .btn-add:active{transform:scale(.97)}
+    .btn-add.ok{background:var(--oliva)}
     .nota-precios{
       margin-top:26px;text-align:center;font-size:14px;color:#7a6152;
       background:#F6EBD6;border-radius:14px;padding:14px 18px;
@@ -147,7 +170,6 @@
     }
     .paso h3{font-size:17px;color:var(--greda-osc);margin-bottom:6px}
     .paso p{font-size:14px;color:#5d4638}
-    .paso a{font-weight:700}
 
     /* ---------- Ubicación ---------- */
     .ubicacion{
@@ -161,26 +183,114 @@
     /* ---------- Footer ---------- */
     footer{
       margin-top:64px;background:var(--greda-osc);color:#E8CBB2;text-align:center;
-      padding:36px 24px;font-size:14px;
+      padding:36px 24px 96px;font-size:14px;
     }
     footer .marca{font-family:Georgia,serif;font-size:22px;color:var(--crema);letter-spacing:.04em}
     footer a{color:#F4D9A6}
     footer .fino{margin-top:14px;font-size:12px;color:#B98F73}
 
-    @media (prefers-reduced-motion:reduce){.btn:hover{transform:none}}
+    /* ---------- Carrito ---------- */
+    #cart-fab{
+      position:fixed;right:18px;bottom:18px;z-index:60;
+      display:flex;align-items:center;gap:10px;
+      background:var(--greda);color:var(--crema);border:none;cursor:pointer;
+      padding:14px 22px;border-radius:50px;font-weight:800;font-size:16px;
+      box-shadow:0 10px 30px rgba(94,29,16,.45);
+      transition:transform .15s ease;
+    }
+    #cart-fab:hover{transform:translateY(-2px)}
+    #cart-fab .cnt{
+      background:var(--crema);color:var(--greda-osc);border-radius:50%;
+      min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;
+      font-size:14px;padding:0 6px;
+    }
+    #cart-fab.vacio{display:none}
+    #cart-overlay{
+      position:fixed;inset:0;background:rgba(44,26,18,.55);z-index:70;
+      opacity:0;pointer-events:none;transition:opacity .2s ease;
+    }
+    #cart-overlay.abierto{opacity:1;pointer-events:auto}
+    #cart-panel{
+      position:fixed;top:0;right:0;bottom:0;width:min(430px,100%);z-index:80;
+      background:var(--crema);box-shadow:-16px 0 40px rgba(0,0,0,.3);
+      transform:translateX(105%);transition:transform .25s ease;
+      display:flex;flex-direction:column;
+    }
+    #cart-panel.abierto{transform:translateX(0)}
+    .cart-head{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:18px 20px;background:var(--greda);color:var(--crema);
+    }
+    .cart-head h3{font-family:Georgia,serif;font-size:20px}
+    .cart-head button{
+      background:transparent;border:none;color:var(--crema);font-size:26px;cursor:pointer;line-height:1;
+    }
+    .cart-body{flex:1;overflow-y:auto;padding:16px 20px}
+    .cart-item{
+      display:flex;align-items:center;gap:10px;background:var(--papel);
+      border-radius:14px;padding:12px 14px;margin-bottom:10px;box-shadow:0 4px 14px rgba(94,29,16,.08);
+    }
+    .cart-item .info{flex:1;min-width:0}
+    .cart-item .nom{font-weight:700;font-size:14px;color:var(--greda-osc)}
+    .cart-item .pu{font-size:13px;color:#7a6152}
+    .qty{display:flex;align-items:center;gap:8px}
+    .qty button{
+      width:28px;height:28px;border-radius:50%;border:none;background:#F3E4C8;color:var(--greda-osc);
+      font-weight:800;font-size:16px;cursor:pointer;
+    }
+    .qty span{min-width:20px;text-align:center;font-weight:700}
+    .cart-vacio{text-align:center;color:#7a6152;padding:40px 10px}
+    .cart-foot{padding:16px 20px;border-top:1px solid #E6CFAF;background:var(--papel)}
+    .cart-total{
+      display:flex;justify-content:space-between;font-family:Georgia,serif;
+      font-size:20px;font-weight:700;color:var(--greda-osc);margin-bottom:12px;
+    }
+    .btn-enviar{
+      width:100%;padding:15px;border:none;border-radius:14px;background:var(--oliva);
+      color:#fff;font-weight:800;font-size:16px;cursor:pointer;
+    }
+    .btn-enviar:disabled{opacity:.6;cursor:wait}
+    .cart-form label{display:block;font-size:13px;font-weight:700;color:var(--greda-osc);margin:10px 0 4px}
+    .cart-form input[type=text], .cart-form input[type=tel], .cart-form textarea, .cart-form select{
+      width:100%;padding:11px 12px;border:1px solid #E0C9A8;border-radius:12px;background:#fff;
+      font-size:15px;font-family:inherit;color:var(--tinta);
+    }
+    .cart-form textarea{resize:vertical;min-height:56px}
+    .modo-row{display:flex;gap:8px;margin-top:4px}
+    .modo-row label{
+      flex:1;margin:0;display:flex;align-items:center;justify-content:center;gap:6px;
+      border:2px solid #E0C9A8;border-radius:12px;padding:10px;cursor:pointer;
+      font-size:14px;font-weight:700;color:#7a6152;background:#fff;
+    }
+    .modo-row input{display:none}
+    .modo-row label.sel{border-color:var(--greda);color:var(--greda-osc);background:#F6EBD6}
+    .cart-msj{margin-top:10px;font-size:13px;color:#7a6152}
+    .cart-error{
+      margin-top:10px;font-size:14px;color:#8C2F1B;background:#F9E2DB;
+      border-radius:10px;padding:10px 12px;display:none;
+    }
+    .cart-exito{text-align:center;padding:36px 16px}
+    .cart-exito .big{font-size:54px}
+    .cart-exito h4{font-family:Georgia,serif;font-size:24px;color:var(--greda-osc);margin:8px 0}
+    .cart-exito .nro{
+      display:inline-block;font-family:Georgia,serif;font-size:30px;font-weight:700;color:var(--greda);
+      background:var(--papel);border-radius:14px;padding:8px 26px;margin:10px 0;
+      box-shadow:0 4px 14px rgba(94,29,16,.12);
+    }
+    .cart-exito p{color:#5d4638;font-size:14px}
+
+    @media (prefers-reduced-motion:reduce){.btn:hover,#cart-fab:hover{transform:none}}
   </style>
 </head>
 <body>
 
   <header>
-    <div class="plato" aria-hidden="true">🍲</div>
+    <div class="plato" aria-hidden="true">🥪</div>
     <h1>Comilón</h1>
-    <p class="tag">Cocina casera chilena, hecha con cariño en Concón</p>
+    <p class="tag">Sánguches, churrascos y hamburguesas al momento · desde 2008</p>
     <span class="ubic">📍 Calle 7 744 · Concón</span>
     <div class="cta-row">
-      <a class="btn btn-wsp" href="https://wa.me/c/56963469013" target="_blank" rel="noopener">🛒 Catálogo y pedidos por WhatsApp</a>
-      <a class="btn btn-rappi" href="https://www.rappi.cl/restaurantes/900018313-comilon" target="_blank" rel="noopener">Pedir por Rappi</a>
-      <a class="btn btn-ig" href="https://www.instagram.com/comilonconcon/" target="_blank" rel="noopener">@comilonconcon</a>
+      <a class="btn btn-carta" href="#productos">🛒 Ver la carta y pedir en línea</a>
     </div>
     <svg class="onda" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
       <path d="M0,24 C240,48 480,0 720,16 C960,32 1200,8 1440,28 L1440,48 L0,48 Z" fill="#FBF4E6"/>
@@ -194,75 +304,417 @@
       <div class="sec-head">
         <span class="kicker">La carta</span>
         <h2>Nuestros productos</h2>
-        <p>Recetas de casa, de las de olla y horno: pasteles contundentes, empanadas doradas y almuerzos que saben a domingo donde la abuela.</p>
+        <p>Sándwiches, churrascos, lomitos, hamburguesas, completos y papas fritas preparados al momento con ingredientes de calidad. Agrega al carrito y pide en línea.</p>
       </div>
 
+      <h3 class="grupo">🥪 Churrascos y sánguches gigantes · 26 cm</h3>
       <div class="grid">
         <article class="card estrella">
+          <img class="foto" src="img/churrasco-especial-gigante.webp" alt="Churrasco especial gigante 26 cm" loading="lazy" />
           <span class="badge-estrella">⭐ El favorito</span>
-          <span class="icono" aria-hidden="true">🌽</span>
-          <h3>Pastel de Choclo</h3>
-          <p>El clásico de los clásicos: pino de carne molida, presa de pollo y aceitunas, coronado con pastelera de choclo dorada al horno.</p>
+          <h3>Churrasco especial gigante 26 cm · porción 3 a 4 personas</h3>
+          <div class="precio">$14.990</div>
+          <p>Pan frica del día, carne jugosa de vacuno, tomate fresco, abundante queso fundido a la plancha, palta cremosa y mayonesa casera.</p>
           <div class="chips">
-            <span class="chip">Carne molida</span><span class="chip">Pollo</span>
-            <span class="chip">Aceitunas</span><span class="chip">Choclo</span>
+            <span class="chip">Vacuno</span><span class="chip">Queso fundido</span>
+            <span class="chip">Palta</span><span class="chip verde">Para compartir</span>
           </div>
+          <button class="btn-add" data-id="9c9d6510-9d51-4890-b31b-5235f12ebe10" data-name="Churrasco especial gigante 26 cm (3 a 4 personas)" data-price="14990">Agregar al carrito</button>
         </article>
 
         <article class="card">
-          <span class="icono" aria-hidden="true">🦀</span>
-          <h3>Pastel de Jaiba</h3>
-          <p>Cremoso y marino, como corresponde frente a la costa de Concón: mariscos con crema, leche y queso gratinado.</p>
+          <img class="foto" src="img/churrasco-italiano.webp" alt="Churrasco de vacuno italiano gigante" loading="lazy" />
+          <h3>Churrasco de vacuno italiano gigante</h3>
+          <div class="precio">$13.990</div>
+          <p>Pan frica del día, carne jugosa de vacuno, tomate fresco, palta cremosa y mayonesa casera.</p>
           <div class="chips">
-            <span class="chip">Mariscos</span><span class="chip">Crema</span>
-            <span class="chip">Queso</span><span class="chip verde">Lácteos</span>
+            <span class="chip">Vacuno</span><span class="chip">Palta</span>
+            <span class="chip verde">Para compartir</span>
           </div>
+          <button class="btn-add" data-id="ab1263da-70aa-4946-ac8d-c565e6a5f0ed" data-name="Churrasco de vacuno italiano gigante" data-price="13990">Agregar al carrito</button>
         </article>
 
         <article class="card">
-          <span class="icono" aria-hidden="true">🥔</span>
-          <h3>Pastel de Papa</h3>
-          <p>Puré suave y doradito sobre pino de carne molida con huevo y aceitunas. Puro abrazo en fuente.</p>
+          <img class="foto" src="img/barros-luco-gigante.webp" alt="Barros luco gigante 26 cm" loading="lazy" />
+          <h3>Barros luco gigante 26 cm</h3>
+          <div class="precio">$13.990</div>
+          <p>Pan frica del día, carne jugosa de vacuno y abundante queso fundido a la plancha.</p>
           <div class="chips">
-            <span class="chip">Carne molida</span><span class="chip">Huevo</span>
-            <span class="chip">Aceitunas</span><span class="chip">Puré</span>
+            <span class="chip">Vacuno</span><span class="chip">Queso fundido</span>
+            <span class="chip verde">Para compartir</span>
           </div>
+          <button class="btn-add" data-id="1dc6613d-602d-43e6-a2e3-794d25365814" data-name="Barros luco gigante 26 cm" data-price="13990">Agregar al carrito</button>
         </article>
 
         <article class="card">
-          <span class="icono" aria-hidden="true">🥟</span>
-          <h3>Empanadas</h3>
-          <p>Masa casera y relleno generoso, al estilo de siempre. Pregunta por las variedades del día.</p>
+          <img class="foto" src="img/lomito-luco-gigante.webp" alt="Lomito luco gigante 26 cm" loading="lazy" />
+          <span class="badge-oferta">🔥 Oferta</span>
+          <h3>Lomito luco gigante 26 cm</h3>
+          <div class="precio">$9.990 <span class="antes">$12.990</span></div>
+          <p>Pan frica del día, carne jugosa de cerdo y abundante queso fundido a la plancha.</p>
           <div class="chips">
-            <span class="chip">Horneadas</span><span class="chip">Masa casera</span>
+            <span class="chip">Cerdo</span><span class="chip">Queso fundido</span>
+            <span class="chip verde">Para compartir</span>
           </div>
+          <button class="btn-add" data-id="8f7e963a-3c78-4236-8be6-059cdc161983" data-name="Lomito luco gigante 26 cm" data-price="9990">Agregar al carrito</button>
+        </article>
+      </div>
+
+      <h3 class="grupo">🥖 Churrascos tamaño normal · 16 cm</h3>
+      <div class="grid">
+        <article class="card">
+          <img class="foto" src="img/churrasco-chacarero.webp" alt="Churrasco chacarero tamaño normal 16 cm" loading="lazy" />
+          <h3>Churrasco chacarero tamaño normal 16 cm</h3>
+          <div class="precio">$7.800</div>
+          <p>Pan frica del día, carne jugosa de vacuno, tomate fresco, ají verde picante y mayonesa casera. ¡Brutal!</p>
+          <div class="chips">
+            <span class="chip">Vacuno</span><span class="chip">Ají verde</span>
+            <span class="chip verde">Picante</span>
+          </div>
+          <button class="btn-add" data-id="9aace857-bb19-44db-a22b-2d0648b4c156" data-name="Churrasco chacarero tamaño normal 16 cm" data-price="7800">Agregar al carrito</button>
         </article>
 
         <article class="card">
-          <span class="icono" aria-hidden="true">🍛</span>
-          <h3>Menú del Día</h3>
-          <p>Almuerzo casero que cambia según la olla del día. Ideal para colación de la pega o para no cocinar en casa.</p>
+          <img class="foto" src="img/churrasco-italiano.webp" alt="Churrasco italiano tamaño normal 16 cm" loading="lazy" />
+          <h3>Churrasco italiano tamaño normal 16 cm</h3>
+          <div class="precio">$6.990</div>
+          <p>Pan frica del día, carne jugosa de vacuno, tomate fresco, palta cremosa y mayonesa casera.</p>
           <div class="chips">
-            <span class="chip verde">Cambia a diario</span><span class="chip">Contundente</span>
+            <span class="chip">Vacuno</span><span class="chip">Palta</span><span class="chip">Tomate</span>
           </div>
+          <button class="btn-add" data-id="5ed8ef2a-5afd-4d2b-a5d5-900fdd46df9e" data-name="Churrasco italiano tamaño normal 16 cm" data-price="6990">Agregar al carrito</button>
         </article>
 
         <article class="card">
-          <span class="icono" aria-hidden="true">🍲</span>
-          <h3>Especiales de la Casa</h3>
-          <p>Preparaciones de temporada y antojos que van rotando. Síguenos en Instagram para pillar el especial de la semana.</p>
+          <img class="foto" src="img/barros-luco-normal.webp" alt="Barros luco tamaño normal 16 cm" loading="lazy" />
+          <h3>Barros luco tamaño normal 16 cm</h3>
+          <div class="precio">$6.990</div>
+          <p>Pan frica del día, carne jugosa de vacuno y abundante queso fundido a la plancha.</p>
           <div class="chips">
-            <span class="chip">Temporada</span><span class="chip verde">Anúnciate en IG</span>
+            <span class="chip">Vacuno</span><span class="chip">Queso fundido</span>
           </div>
+          <button class="btn-add" data-id="d829b32f-5194-4e76-9465-792d0a40f215" data-name="Barros luco tamaño normal 16 cm" data-price="6990">Agregar al carrito</button>
+        </article>
+      </div>
+
+      <h3 class="grupo">🥩 As · pan de mesa</h3>
+      <div class="grid">
+        <article class="card">
+          <img class="foto" src="img/as-italiano-normal.webp" alt="As italiano tamaño normal 16 cm" loading="lazy" />
+          <h3>As italiano tamaño normal 16 cm</h3>
+          <div class="precio">$4.200</div>
+          <p>Pan de mesa del día, carne jugosa de vacuno, tomate fresco, palta cremosa y mayonesa casera.</p>
+          <div class="chips">
+            <span class="chip">Vacuno</span><span class="chip">Palta</span><span class="chip">Tomate</span>
+          </div>
+          <button class="btn-add" data-id="1a95f2f1-739c-436f-a89b-de66588cab8d" data-name="As italiano tamaño normal 16 cm" data-price="4200">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/as-italiano-gigante.webp" alt="As italiano tamaño gigante 29 cm" loading="lazy" />
+          <h3>As italiano tamaño gigante 29 cm</h3>
+          <div class="precio">$6.990</div>
+          <p>Pan de mesa del día, carne jugosa de vacuno, tomate fresco, palta cremosa y mayonesa casera.</p>
+          <div class="chips">
+            <span class="chip">Vacuno</span><span class="chip">Palta</span>
+            <span class="chip verde">Para compartir</span>
+          </div>
+          <button class="btn-add" data-id="e07a5825-ae7a-4989-a453-74bcc4c29210" data-name="As italiano tamaño gigante 29 cm" data-price="6990">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/as-luco-gigante.webp" alt="As luco tamaño gigante 29 cm" loading="lazy" />
+          <h3>As luco tamaño gigante 29 cm</h3>
+          <div class="precio">$6.990</div>
+          <p>Pan de mesa del día, carne jugosa de vacuno y abundante queso fundido a la plancha.</p>
+          <div class="chips">
+            <span class="chip">Vacuno</span><span class="chip">Queso fundido</span>
+            <span class="chip verde">Para compartir</span>
+          </div>
+          <button class="btn-add" data-id="97d526bc-7f67-42ef-acba-6a16b2a78194" data-name="As luco tamaño gigante 29 cm" data-price="6990">Agregar al carrito</button>
+        </article>
+      </div>
+
+      <h3 class="grupo">🍔 Hamburguesas · pan brioche</h3>
+      <div class="grid">
+        <article class="card">
+          <img class="foto" src="img/hamburguesa-rodeo.webp" alt="Hamburguesa rodeo" loading="lazy" />
+          <h3>Hamburguesa rodeo</h3>
+          <div class="precio">$7.990</div>
+          <p>Pan brioche del día, hamburguesa de vacuno jugosa, tocino ahumado, salsa barbecue y abundante queso fundido a la plancha.</p>
+          <div class="chips">
+            <span class="chip">Tocino</span><span class="chip">Barbecue</span><span class="chip">Queso</span>
+          </div>
+          <button class="btn-add" data-id="cfd85665-e78e-4734-a9ef-12995301a5d0" data-name="Hamburguesa rodeo" data-price="7990">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/hamburguesa-especial.webp" alt="Hamburguesa de vacuno jugosa especial" loading="lazy" />
+          <h3>Hamburguesa de vacuno jugosa especial</h3>
+          <div class="precio">$7.800</div>
+          <p>Pan brioche del día, hamburguesa de vacuno jugosa, tomate fresco, abundante queso fundido a la plancha, palta cremosa y mayonesa casera.</p>
+          <div class="chips">
+            <span class="chip">Queso</span><span class="chip">Palta</span><span class="chip">Tomate</span>
+          </div>
+          <button class="btn-add" data-id="768689c9-db9b-4752-856f-89cd60fa1cdb" data-name="Hamburguesa de vacuno jugosa especial" data-price="7800">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/hamburguesa-chacarera.webp" alt="Hamburguesa de vacuno chacarera" loading="lazy" />
+          <h3>Hamburguesa de vacuno chacarera</h3>
+          <div class="precio">$7.800</div>
+          <p>Pan brioche del día, hamburguesa de vacuno jugosa, tomate fresco, ají verde picante y mayonesa casera.</p>
+          <div class="chips">
+            <span class="chip">Ají verde</span><span class="chip">Tomate</span>
+            <span class="chip verde">Picante</span>
+          </div>
+          <button class="btn-add" data-id="78a7537c-debb-47b8-9b2b-7d9114d64568" data-name="Hamburguesa de vacuno chacarera" data-price="7800">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <span class="icono" aria-hidden="true">🍔</span>
+          <h3>Hamburguesa turco</h3>
+          <div class="precio">$6.990</div>
+          <p>Pan brioche del día, hamburguesa de vacuno jugosa, huevo cremoso y abundante queso fundido a la plancha.</p>
+          <div class="chips">
+            <span class="chip">Huevo</span><span class="chip">Queso fundido</span>
+          </div>
+          <button class="btn-add" data-id="a2aba977-eda0-4ffb-ad49-412fb91ba853" data-name="Hamburguesa turco" data-price="6990">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <span class="icono" aria-hidden="true">🍔</span>
+          <h3>Hamburguesa luco queso cheddar</h3>
+          <div class="precio">$6.990</div>
+          <p>Pan brioche del día, hamburguesa de vacuno jugosa y abundante queso fundido cheddar.</p>
+          <div class="chips">
+            <span class="chip">Cheddar</span>
+          </div>
+          <button class="btn-add" data-id="a1d98eb2-2303-4091-8f37-036958ee6a5c" data-name="Hamburguesa luco queso cheddar" data-price="6990">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/hamburguesa-italiana.webp" alt="Hamburguesa italiana" loading="lazy" />
+          <h3>Hamburguesa italiana</h3>
+          <div class="precio">$6.800</div>
+          <p>Pan brioche del día, hamburguesa de vacuno jugosa, tomate fresco, abundante palta cremosa y mayonesa casera.</p>
+          <div class="chips">
+            <span class="chip">Palta</span><span class="chip">Tomate</span>
+          </div>
+          <button class="btn-add" data-id="9a94f0cb-fb9a-4811-8af3-cc1c1263725e" data-name="Hamburguesa italiana" data-price="6800">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/hamburguesa-luco.webp" alt="Hamburguesa luco queso gauda" loading="lazy" />
+          <h3>Hamburguesa luco queso gauda</h3>
+          <div class="precio">$6.800</div>
+          <p>Pan brioche del día, hamburguesa de vacuno jugosa y abundante queso fundido a la plancha.</p>
+          <div class="chips">
+            <span class="chip">Queso gauda</span>
+          </div>
+          <button class="btn-add" data-id="03e6f86f-730e-45ff-b2ec-9dc8ab2ca780" data-name="Hamburguesa luco queso gauda" data-price="6800">Agregar al carrito</button>
+        </article>
+      </div>
+
+      <h3 class="grupo">🌭 Completos y papapleto</h3>
+      <div class="grid">
+        <article class="card">
+          <img class="foto" src="img/completo-italiano-normal.webp" alt="Completo italiano tamaño normal 16 cm" loading="lazy" />
+          <h3>Completo italiano tamaño normal 16 cm</h3>
+          <div class="precio">$2.600</div>
+          <p>Pan de mesa del día, salchicha premium, tomate fresco, palta cremosa y mayonesa casera.</p>
+          <div class="chips">
+            <span class="chip">Salchicha premium</span><span class="chip">Palta</span>
+          </div>
+          <button class="btn-add" data-id="2a8ee0dd-46b7-4bc0-9c37-b86a6bc69309" data-name="Completo italiano tamaño normal 16 cm" data-price="2600">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/completo-italiano-gigante.webp" alt="Completo italiano gigante 29 cm" loading="lazy" />
+          <h3>Completo italiano gigante 29 cm</h3>
+          <div class="precio">$4.200</div>
+          <p>Pan de mesa del día, salchicha XL premium, tomate fresco, abundante palta cremosa y mayonesa casera.</p>
+          <div class="chips">
+            <span class="chip">Salchicha XL</span><span class="chip">Palta</span>
+          </div>
+          <button class="btn-add" data-id="abee98af-4170-4d06-9ec6-8884c691b09a" data-name="Completo italiano gigante 29 cm" data-price="4200">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/completo-chacarero-gigante.webp" alt="Completo chacarero gigante 29 cm" loading="lazy" />
+          <h3>Completo chacarero gigante 29 cm</h3>
+          <div class="precio">$5.800</div>
+          <p>Pan de mesa del día, salchicha XL premium, tomate fresco, ají verde picante, porotos verdes tiernos y mayonesa casera.</p>
+          <div class="chips">
+            <span class="chip">Salchicha XL</span><span class="chip">Porotos verdes</span>
+            <span class="chip verde">Picante</span>
+          </div>
+          <button class="btn-add" data-id="85b1b130-00c3-4205-9e0e-b342d832e3d1" data-name="Completo chacarero gigante 29 cm" data-price="5800">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/papapleto.webp" alt="Papapleto tamaño normal 16 cm" loading="lazy" />
+          <h3>Papapleto tamaño normal 16 cm</h3>
+          <div class="precio">$2.900</div>
+          <p>Pan de mesa del día, papas fritas, tomate fresco, palta cremosa y mayonesa casera.</p>
+          <div class="chips">
+            <span class="chip">Papas fritas</span><span class="chip">Palta</span>
+          </div>
+          <button class="btn-add" data-id="ca264fba-c164-4727-8575-d1a2fd0ea307" data-name="Papapleto tamaño normal 16 cm" data-price="2900">Agregar al carrito</button>
+        </article>
+      </div>
+
+      <h3 class="grupo">🍗 Pollo asado</h3>
+      <div class="grid">
+        <article class="card">
+          <span class="icono" aria-hidden="true">🍗</span>
+          <h3>Pollo asado entero jugoso y grande</h3>
+          <div class="precio">$16.990</div>
+          <p>Pollo asado entero, jugoso por dentro y dorado por fuera.</p>
+          <div class="chips">
+            <span class="chip">Entero</span><span class="chip verde">Para compartir</span>
+          </div>
+          <button class="btn-add" data-id="9ee4b1fc-ec25-4784-83e9-73b59029cbf3" data-name="Pollo asado entero jugoso y grande" data-price="16990">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <span class="icono" aria-hidden="true">🍗</span>
+          <h3>1/2 pollo asado jugoso y grande</h3>
+          <div class="precio">$8.500</div>
+          <p>Medio pollo asado, jugoso y grande.</p>
+          <div class="chips">
+            <span class="chip">1/2 pollo</span>
+          </div>
+          <button class="btn-add" data-id="7dee6a11-9337-4598-9b27-a4ce33e88eb0" data-name="1/2 pollo asado jugoso y grande" data-price="8500">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/cuarto-pollo-papas.webp" alt="1/4 pollo asado con papas fritas" loading="lazy" />
+          <h3>1/4 pollo asado con papas fritas</h3>
+          <div class="precio">$7.500</div>
+          <p>1/4 de pollo asado jugoso, con abundantes papas fritas doradas y crujientes.</p>
+          <div class="chips">
+            <span class="chip">1/4 pollo</span><span class="chip">Papas fritas</span>
+          </div>
+          <button class="btn-add" data-id="15b842f2-3d06-4c95-8dda-299d6d72c4b7" data-name="1/4 pollo asado con papas fritas" data-price="7500">Agregar al carrito</button>
+        </article>
+      </div>
+
+      <h3 class="grupo">🍟 Salchipapas y papas fritas</h3>
+      <div class="grid">
+        <article class="card">
+          <img class="foto" src="img/salchipapas-xl.webp" alt="Salchipapas tamaño XL porción 4 a 5 personas" loading="lazy" />
+          <h3>Salchipapas tamaño XL · porción 4 a 5 personas</h3>
+          <div class="precio">$12.990</div>
+          <p>Salchipapas XL, porción para 4 a 5 personas.</p>
+          <div class="chips">
+            <span class="chip">Salchichas</span><span class="chip">Papas fritas</span>
+            <span class="chip verde">Para compartir</span>
+          </div>
+          <button class="btn-add" data-id="9f33bd1e-bb89-4933-b2e6-a69f41ff4a5c" data-name="Salchipapas tamaño XL (4 a 5 personas)" data-price="12990">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/salchipapas-grande.webp" alt="Salchipapas grande porción 2 personas" loading="lazy" />
+          <h3>Salchipapas grande · porción 2 personas</h3>
+          <div class="precio">$5.990</div>
+          <p>Caja grande de papas fritas doradas y crujientes, porción para 2 personas.</p>
+          <div class="chips">
+            <span class="chip">Salchichas</span><span class="chip">Papas fritas</span>
+          </div>
+          <button class="btn-add" data-id="ee10451d-12dd-4c80-b2e8-019814d3bd59" data-name="Salchipapas grande (2 personas)" data-price="5990">Agregar al carrito</button>
+        </article>
+      </div>
+
+      <h3 class="grupo">🧆 Fritos para picotear</h3>
+      <div class="grid">
+        <article class="card">
+          <img class="foto" src="img/aritos-cebolla.webp" alt="Aritos de cebolla 5 unidades" loading="lazy" />
+          <h3>Aritos de cebolla · 5 unidades</h3>
+          <div class="precio">$2.190</div>
+          <p>Aritos de cebolla dorados y bien sabrosos.</p>
+          <div class="chips">
+            <span class="chip">5 unidades</span>
+          </div>
+          <button class="btn-add" data-id="5fe30b7f-1f05-4de5-98fd-ec761ca9aaaf" data-name="Aritos de cebolla (5 unidades)" data-price="2190">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/empanaditas-queso.webp" alt="Empanadas de cóctel 5 unidades" loading="lazy" />
+          <h3>Empanadas de cóctel · porción 5 unidades</h3>
+          <div class="precio">$2.190</div>
+          <p>Empanadas de queso fritas, porción de 5 unidades.</p>
+          <div class="chips">
+            <span class="chip">Queso</span><span class="chip">5 unidades</span>
+          </div>
+          <button class="btn-add" data-id="078a691d-f7b7-49ed-9877-2a62077095ce" data-name="Empanadas de cóctel (5 unidades)" data-price="2190">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <img class="foto" src="img/arrollado-jamon-queso.webp" alt="Arrollado jamón queso 5 unidades" loading="lazy" />
+          <h3>Arrollado jamón queso · porción 5 unidades</h3>
+          <div class="precio">$2.990</div>
+          <p>Arrolladitos de jamón y queso, porción de 5 unidades.</p>
+          <div class="chips">
+            <span class="chip">Jamón</span><span class="chip">Queso</span><span class="chip">5 unidades</span>
+          </div>
+          <button class="btn-add" data-id="bdc99f09-5f2d-44fc-83ac-5d2ccb2644f4" data-name="Arrollado jamón queso (5 unidades)" data-price="2990">Agregar al carrito</button>
+        </article>
+      </div>
+
+      <h3 class="grupo">🍕 Pizzas</h3>
+      <div class="grid">
+        <article class="card">
+          <span class="icono" aria-hidden="true">🍕</span>
+          <h3>Pizza peperoni · porción 2 personas</h3>
+          <div class="precio">$6.800</div>
+          <p>Pizza peperoni, porción para 2 personas.</p>
+          <div class="chips">
+            <span class="chip">Peperoni</span><span class="chip verde">2 personas</span>
+          </div>
+          <button class="btn-add" data-id="36d2fdc3-e4e7-4ea4-9da6-630517a9ff6d" data-name="Pizza peperoni (2 personas)" data-price="6800">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <span class="icono" aria-hidden="true">🍕</span>
+          <h3>Pizza grande a elección · 2 personas</h3>
+          <div class="precio">$6.800</div>
+          <p>Pizzas napolitana, peperoni y 4 estaciones, porción para 2 personas. Indica tu variedad en las notas del pedido.</p>
+          <div class="chips">
+            <span class="chip">Napolitana</span><span class="chip">Peperoni</span><span class="chip">4 estaciones</span>
+          </div>
+          <button class="btn-add" data-id="4f584112-8d3f-4dc8-aa10-6d0fb0c927f6" data-name="Pizza grande a elección (2 personas)" data-price="6800">Agregar al carrito</button>
+        </article>
+      </div>
+
+      <h3 class="grupo">🥤 Bebidas</h3>
+      <div class="grid">
+        <article class="card">
+          <span class="icono" aria-hidden="true">🥤</span>
+          <h3>Bebida 1,5 L · variedades</h3>
+          <div class="precio">$2.800</div>
+          <p>Bebidas de 1,5 litros, distintas variedades. Indica tu preferencia en las notas del pedido.</p>
+          <div class="chips">
+            <span class="chip">1,5 L</span>
+          </div>
+          <button class="btn-add" data-id="63295432-6929-4fb1-9e2f-71e355c0569b" data-name="Bebida 1,5 L variedades" data-price="2800">Agregar al carrito</button>
+        </article>
+
+        <article class="card">
+          <span class="icono" aria-hidden="true">🥤</span>
+          <h3>Lata de bebida 350 cc · variedades</h3>
+          <div class="precio">$1.500</div>
+          <p>Latas de 350 cc a elección de variedades, según stock del día.</p>
+          <div class="chips">
+            <span class="chip">350 cc</span><span class="chip verde">Según stock</span>
+          </div>
+          <button class="btn-add" data-id="12497958-a250-4f1d-a2b4-fd55c7452ba6" data-name="Lata de bebida 350 cc" data-price="1500">Agregar al carrito</button>
         </article>
       </div>
 
       <p class="nota-precios">
-        💡 Los precios y la disponibilidad del día están siempre actualizados en el
-        <a href="https://wa.me/c/56963469013" target="_blank" rel="noopener">catálogo de WhatsApp</a>,
-        en <a href="https://www.rappi.cl/restaurantes/900018313-comilon" target="_blank" rel="noopener">Rappi</a>
-        y en nuestro Instagram
-        <a href="https://www.instagram.com/comilonconcon/" target="_blank" rel="noopener">@comilonconcon</a>.
+        💡 Precios oficiales del local para pedido en línea y retiro. Tu pedido llega directo a nuestra cocina;
+        te lo confirmamos al teléfono que dejes al pedir.
       </p>
     </section>
 
@@ -275,23 +727,23 @@
       <div class="pasos">
         <div class="paso">
           <div class="num">1</div>
-          <h3>Por WhatsApp</h3>
-          <p>Mira el <a href="https://wa.me/c/56963469013" target="_blank" rel="noopener">catálogo completo</a> y encarga directo al <a href="https://wa.me/56963469013" target="_blank" rel="noopener">+56 9 6346 9013</a>.</p>
+          <h3>Arma tu pedido</h3>
+          <p>Recorre la carta y presiona <strong>Agregar al carrito</strong> en lo que se te antoje.</p>
         </div>
         <div class="paso">
           <div class="num">2</div>
-          <h3>Delivery por Rappi</h3>
-          <p>Busca <strong>Comilón</strong> en la app o entra directo <a href="https://www.rappi.cl/restaurantes/900018313-comilon" target="_blank" rel="noopener">aquí</a> y recibe en tu casa.</p>
+          <h3>Revisa tu carrito</h3>
+          <p>Abre el carrito 🛒 abajo a la derecha, ajusta cantidades y confirma el total.</p>
         </div>
         <div class="paso">
           <div class="num">3</div>
-          <h3>Por Instagram</h3>
-          <p>Escríbenos al DM de <a href="https://www.instagram.com/comilonconcon/" target="_blank" rel="noopener">@comilonconcon</a> para encargos y el menú del día.</p>
+          <h3>Deja tus datos</h3>
+          <p>Nombre y teléfono, y elige <strong>retiro en local</strong> o <strong>delivery</strong> en Concón.</p>
         </div>
         <div class="paso">
           <div class="num">4</div>
-          <h3>Retiro en local</h3>
-          <p>Pasa a buscar tu pedido a <strong>Calle 7 744, Concón</strong> y llévatelo calentito.</p>
+          <h3>¡Listo!</h3>
+          <p>Tu pedido entra directo a la cocina y te contactamos para confirmarlo.</p>
         </div>
       </div>
     </section>
@@ -313,12 +765,267 @@
 
   <footer>
     <div class="marca">Comilón</div>
-    <p>Cocina casera chilena · Concón</p>
-    <p><a href="https://wa.me/56963469013" target="_blank" rel="noopener">WhatsApp +56 9 6346 9013</a> ·
-       <a href="https://www.instagram.com/comilonconcon/" target="_blank" rel="noopener">Instagram</a> ·
-       <a href="https://www.rappi.cl/restaurantes/900018313-comilon" target="_blank" rel="noopener">Rappi</a></p>
+    <p>Sánguches, churrascos y hamburguesas · Concón · desde 2008</p>
+    <p>Contacto: <a href="tel:+56963469013">+56 9 6346 9013</a> ·
+       <a href="https://www.instagram.com/comilonconcon/" target="_blank" rel="noopener">@comilonconcon</a></p>
     <p class="fino">© 2026 Comilón, Concón. Todos los derechos reservados.</p>
   </footer>
+
+  <!-- ================= Carrito ================= -->
+  <button id="cart-fab" class="vacio" aria-label="Abrir carrito">
+    🛒 <span class="cnt" id="cart-cnt">0</span> <span id="cart-fab-total"></span>
+  </button>
+  <div id="cart-overlay"></div>
+  <aside id="cart-panel" aria-label="Carrito de compras">
+    <div class="cart-head">
+      <h3>Tu pedido</h3>
+      <button id="cart-cerrar" aria-label="Cerrar carrito">×</button>
+    </div>
+    <div class="cart-body" id="cart-body"><!-- se llena por JS --></div>
+    <div class="cart-foot" id="cart-foot"><!-- se llena por JS --></div>
+  </aside>
+
+  <script>
+  (function(){
+    'use strict';
+    var SUPABASE_URL = 'https://gxjzwyickfrqxnhaajwv.supabase.co';
+    var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd4anp3eWlja2ZycXhuaGFhand2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc2OTQ5MjAsImV4cCI6MjA5MzI3MDkyMH0.BVftr6ik8Kiqh4F7u_nBuFYrWfPcCZOjjC-waIBTDGQ';
+    var SLUG = 'comilon-concon';
+    var LS_KEY = 'comilon_cart_v1';
+
+    var cart = [];
+    try { cart = JSON.parse(localStorage.getItem(LS_KEY) || '[]'); } catch(e) { cart = []; }
+    if (!Array.isArray(cart)) cart = [];
+
+    var vista = 'items'; // items | form | exito
+    var ultimoPedido = null;
+    var enviando = false;
+
+    var fab = document.getElementById('cart-fab');
+    var cnt = document.getElementById('cart-cnt');
+    var fabTotal = document.getElementById('cart-fab-total');
+    var overlay = document.getElementById('cart-overlay');
+    var panel = document.getElementById('cart-panel');
+    var body = document.getElementById('cart-body');
+    var foot = document.getElementById('cart-foot');
+
+    function clp(n){ return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+    function guardar(){ try { localStorage.setItem(LS_KEY, JSON.stringify(cart)); } catch(e){} }
+    function total(){ return cart.reduce(function(s,i){ return s + i.price * i.qty; }, 0); }
+    function unidades(){ return cart.reduce(function(s,i){ return s + i.qty; }, 0); }
+    function esc(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+
+    function pintarFab(){
+      var u = unidades();
+      fab.classList.toggle('vacio', u === 0);
+      cnt.textContent = u;
+      fabTotal.textContent = u ? clp(total()) : '';
+    }
+
+    function abrir(){ overlay.classList.add('abierto'); panel.classList.add('abierto'); pintar(); }
+    function cerrar(){
+      overlay.classList.remove('abierto'); panel.classList.remove('abierto');
+      if (vista === 'exito') { vista = 'items'; pintar(); }
+    }
+
+    function agregar(id, name, price){
+      var it = cart.find(function(i){ return i.id === id; });
+      if (it) { it.qty = Math.min(99, it.qty + 1); }
+      else { cart.push({ id:id, name:name, price:price, qty:1 }); }
+      guardar(); pintarFab();
+      if (panel.classList.contains('abierto')) pintar();
+    }
+
+    function cambiarQty(id, delta){
+      var it = cart.find(function(i){ return i.id === id; });
+      if (!it) return;
+      it.qty += delta;
+      if (it.qty <= 0) cart = cart.filter(function(i){ return i.id !== id; });
+      guardar(); pintarFab(); pintar();
+    }
+
+    function pintar(){
+      if (vista === 'exito') { pintarExito(); return; }
+      if (vista === 'form') { pintarForm(); return; }
+      pintarItems();
+    }
+
+    function pintarItems(){
+      if (!cart.length) {
+        body.innerHTML = '<div class="cart-vacio">🛒<br>Tu carrito está vacío.<br>Agrega productos desde la carta.</div>';
+        foot.innerHTML = '';
+        return;
+      }
+      body.innerHTML = cart.map(function(i){
+        return '<div class="cart-item">' +
+          '<div class="info"><div class="nom">' + esc(i.name) + '</div>' +
+          '<div class="pu">' + clp(i.price) + ' c/u · ' + clp(i.price * i.qty) + '</div></div>' +
+          '<div class="qty">' +
+            '<button data-menos="' + i.id + '" aria-label="Quitar uno">−</button>' +
+            '<span>' + i.qty + '</span>' +
+            '<button data-mas="' + i.id + '" aria-label="Agregar uno">+</button>' +
+          '</div></div>';
+      }).join('');
+      foot.innerHTML =
+        '<div class="cart-total"><span>Total</span><span>' + clp(total()) + '</span></div>' +
+        '<button class="btn-enviar" id="btn-continuar">Continuar con mis datos</button>';
+      var bc = document.getElementById('btn-continuar');
+      if (bc) bc.addEventListener('click', function(){ vista = 'form'; pintar(); });
+    }
+
+    function pintarForm(){
+      body.innerHTML =
+        '<div class="cart-form">' +
+        '<label for="f-nombre">Nombre *</label>' +
+        '<input type="text" id="f-nombre" autocomplete="name" maxlength="80" placeholder="Tu nombre" />' +
+        '<label for="f-fono">Teléfono *</label>' +
+        '<input type="tel" id="f-fono" autocomplete="tel" maxlength="16" placeholder="+56 9 …" />' +
+        '<label>¿Cómo lo quieres?</label>' +
+        '<div class="modo-row" id="modo-row">' +
+          '<label class="sel" id="lbl-retiro"><input type="radio" name="modo" value="retiro" checked />🏃 Retiro en local</label>' +
+          '<label id="lbl-delivery"><input type="radio" name="modo" value="delivery" />🛵 Delivery</label>' +
+        '</div>' +
+        '<div id="dir-wrap" style="display:none">' +
+          '<label for="f-dir">Dirección en Concón *</label>' +
+          '<input type="text" id="f-dir" autocomplete="street-address" maxlength="140" placeholder="Calle, número, depto…" />' +
+          '<p class="cart-msj">El valor del despacho se coordina contigo al confirmar el pedido.</p>' +
+        '</div>' +
+        '<label for="f-pago">Medio de pago</label>' +
+        '<select id="f-pago">' +
+          '<option value="efectivo">Efectivo</option>' +
+          '<option value="transferencia">Transferencia</option>' +
+          '<option value="tarjeta">Tarjeta en el local</option>' +
+        '</select>' +
+        '<label for="f-notas">Notas (opcional)</label>' +
+        '<textarea id="f-notas" maxlength="300" placeholder="Variedad de pizza o bebida, sin mayo, etc."></textarea>' +
+        '<div class="cart-error" id="f-error"></div>' +
+        '</div>';
+      foot.innerHTML =
+        '<div class="cart-total"><span>Total</span><span>' + clp(total()) + '</span></div>' +
+        '<button class="btn-enviar" id="btn-enviar">Enviar pedido a la cocina</button>' +
+        '<p class="cart-msj" style="text-align:center;margin-top:8px"><a href="#" id="btn-volver">← Volver al carrito</a></p>';
+
+      var radios = document.querySelectorAll('#modo-row input[name=modo]');
+      radios.forEach(function(r){
+        r.addEventListener('change', function(){
+          document.getElementById('lbl-retiro').classList.toggle('sel', r.value === 'retiro' && r.checked);
+          document.getElementById('lbl-delivery').classList.toggle('sel', r.value === 'delivery' && r.checked);
+          var esDelivery = document.querySelector('#modo-row input[name=modo]:checked').value === 'delivery';
+          document.getElementById('lbl-retiro').classList.toggle('sel', !esDelivery);
+          document.getElementById('lbl-delivery').classList.toggle('sel', esDelivery);
+          document.getElementById('dir-wrap').style.display = esDelivery ? 'block' : 'none';
+        });
+      });
+      var bv = document.getElementById('btn-volver');
+      if (bv) bv.addEventListener('click', function(e){ e.preventDefault(); vista = 'items'; pintar(); });
+      var be = document.getElementById('btn-enviar');
+      if (be) be.addEventListener('click', enviarPedido);
+    }
+
+    function mostrarError(msg){
+      var el = document.getElementById('f-error');
+      if (el) { el.textContent = msg; el.style.display = 'block'; }
+    }
+
+    function enviarPedido(){
+      if (enviando || !cart.length) return;
+      var nombre = (document.getElementById('f-nombre').value || '').trim();
+      var fono = (document.getElementById('f-fono').value || '').trim();
+      var modo = document.querySelector('#modo-row input[name=modo]:checked').value;
+      var dir = (document.getElementById('f-dir') ? document.getElementById('f-dir').value : '').trim();
+      var pago = document.getElementById('f-pago').value;
+      var notas = (document.getElementById('f-notas').value || '').trim();
+
+      if (nombre.length < 2) { mostrarError('Escribe tu nombre para poder avisarte cuando esté listo.'); return; }
+      if (fono.replace(/[^0-9]/g, '').length < 8) { mostrarError('Necesitamos un teléfono válido para confirmar el pedido.'); return; }
+      if (modo === 'delivery' && dir.length < 5) { mostrarError('Escribe la dirección de entrega en Concón.'); return; }
+
+      var etiquetaModo = modo === 'delivery' ? 'DELIVERY' : 'RETIRO EN LOCAL';
+      var payload = {
+        slug: SLUG,
+        source: 'web',
+        customer_name: nombre,
+        customer_phone: fono,
+        customer_address: modo === 'delivery' ? dir : null,
+        customer_notes: etiquetaModo + (notas ? ' — ' + notas : ''),
+        payment_method: pago,
+        delivery_fee: 0
+      };
+      var items = cart.map(function(i){
+        return { product_id: i.id, product_name: i.name, quantity: i.qty, unit_price: i.price };
+      });
+
+      enviando = true;
+      var be = document.getElementById('btn-enviar');
+      if (be) { be.disabled = true; be.textContent = 'Enviando pedido…'; }
+
+      fetch(SUPABASE_URL + '/rest/v1/rpc/create_delivery_order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON,
+          'Authorization': 'Bearer ' + SUPABASE_ANON
+        },
+        body: JSON.stringify({ p_payload: payload, p_items: items })
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        enviando = false;
+        if (res && res.ok) {
+          ultimoPedido = res;
+          cart = []; guardar(); pintarFab();
+          vista = 'exito'; pintar();
+        } else {
+          if (be) { be.disabled = false; be.textContent = 'Enviar pedido a la cocina'; }
+          mostrarError('No pudimos enviar tu pedido (' + ((res && res.error) || 'error') + '). Intenta de nuevo o llámanos al +56 9 6346 9013.');
+        }
+      })
+      .catch(function(){
+        enviando = false;
+        if (be) { be.disabled = false; be.textContent = 'Enviar pedido a la cocina'; }
+        mostrarError('Sin conexión. Revisa tu internet e intenta de nuevo, o llámanos al +56 9 6346 9013.');
+      });
+    }
+
+    function pintarExito(){
+      var nro = ultimoPedido ? ultimoPedido.order_number : '—';
+      var tot = ultimoPedido ? clp(ultimoPedido.total) : '';
+      body.innerHTML =
+        '<div class="cart-exito">' +
+        '<div class="big">✅</div>' +
+        '<h4>¡Pedido recibido!</h4>' +
+        '<div class="nro">N° ' + nro + '</div>' +
+        '<p>Total: <strong>' + tot + '</strong></p>' +
+        '<p>Tu pedido ya está en nuestra cocina. Te contactaremos al teléfono que dejaste para confirmarlo.</p>' +
+        '</div>';
+      foot.innerHTML = '<button class="btn-enviar" id="btn-listo">Seguir mirando la carta</button>';
+      var bl = document.getElementById('btn-listo');
+      if (bl) bl.addEventListener('click', function(){ vista = 'items'; cerrar(); });
+    }
+
+    // Eventos
+    document.addEventListener('click', function(e){
+      var add = e.target.closest('.btn-add');
+      if (add) {
+        agregar(add.dataset.id, add.dataset.name, parseInt(add.dataset.price, 10));
+        var txt = add.textContent;
+        add.classList.add('ok'); add.textContent = '✓ Agregado';
+        setTimeout(function(){ add.classList.remove('ok'); add.textContent = txt; }, 900);
+        return;
+      }
+      var menos = e.target.closest('[data-menos]');
+      if (menos) { cambiarQty(menos.dataset.menos, -1); return; }
+      var mas = e.target.closest('[data-mas]');
+      if (mas) { cambiarQty(mas.dataset.mas, 1); return; }
+    });
+    fab.addEventListener('click', abrir);
+    overlay.addEventListener('click', cerrar);
+    document.getElementById('cart-cerrar').addEventListener('click', cerrar);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') cerrar(); });
+
+    pintarFab();
+  })();
+  </script>
 
 </body>
 </html>
