@@ -7,7 +7,8 @@
   <meta name="description" content="Comilón Concón, tu mejor opción desde 2008. Churrascos, lomitos, hamburguesas, completos, pollo asado y papas fritas preparados al momento. Pide en línea para retiro o delivery en Concón." />
   <link rel="canonical" href="https://almibarcurico-ai.github.io/comilon/" />
   <meta name="theme-color" content="#8C2F1B" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥪</text></svg>" />
+  <link rel="icon" type="image/png" href="img/logo-icon.png" />
+  <link rel="apple-touch-icon" href="img/logo-icon.png" />
 
   <!-- Social / Open Graph -->
   <meta property="og:type" content="website" />
@@ -16,6 +17,7 @@
   <meta property="og:description" content="Churrascos, lomitos, hamburguesas, completos y pollo asado preparados al momento. Pide en línea para retiro o delivery en Concón." />
   <meta property="og:url" content="https://almibarcurico-ai.github.io/comilon/" />
   <meta property="og:locale" content="es_CL" />
+  <meta property="og:image" content="https://almibarcurico-ai.github.io/comilon/img/logo-icon.png" />
   <meta name="twitter:card" content="summary" />
 
   <!-- Datos estructurados del local -->
@@ -68,7 +70,10 @@
       color:var(--crema);text-align:center;
       padding:72px 24px 88px;position:relative;overflow:hidden;
     }
-    header .plato{font-size:64px;line-height:1;filter:drop-shadow(0 6px 16px rgba(0,0,0,.3))}
+    header .logo{
+      width:clamp(150px,32vw,220px);height:auto;display:block;margin:0 auto;
+      filter:drop-shadow(0 8px 20px rgba(0,0,0,.35));
+    }
     header h1{
       font-family:Georgia,"Times New Roman",serif;
       font-size:clamp(44px,9vw,76px);letter-spacing:.02em;margin:10px 0 4px;
@@ -285,7 +290,7 @@
 <body>
 
   <header>
-    <div class="plato" aria-hidden="true">🥪</div>
+    <img class="logo" src="img/logo.webp" alt="Logo de Comilón: personaje amarillo mordiendo un sándwich, sandwichería" width="640" height="636" />
     <h1>Comilón</h1>
     <p class="tag">Sánguches, churrascos y hamburguesas al momento · desde 2008</p>
     <span class="ubic">📍 Calle 7 744 · Concón</span>
