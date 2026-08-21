@@ -1,10 +1,10 @@
-// Almíbar PWA sw v36 — estrategia por tipo de recurso
+// Almíbar PWA sw v37 — estrategia por tipo de recurso
 // - Navegaciones (/, /socio.html, /privacidad.html): network-first (timeout 3s) para captar bundles nuevos
 // - /_expo/static/** (hash en el nombre, inmutable): cache-first  => arranque repetido casi instantáneo
 // - Imágenes/estáticos same-origin: stale-while-revalidate
 // - Fuentes de Google: cache-first (woff2 inmutables)
 // - *.supabase.co y demás APIs: NUNCA se interceptan
-var VERSION='v36';
+var VERSION='v37';
 var STATIC='almibar-static-'+VERSION;
 var PAGES='almibar-pages-'+VERSION;
 var ASSETS='almibar-assets-'+VERSION;
