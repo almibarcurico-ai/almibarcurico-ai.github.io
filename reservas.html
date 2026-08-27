@@ -1,0 +1,2028 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Almíbar · Reservar mesa</title>
+  <meta name="description" content="Reserva mesa en Almíbar Curicó. La reserva entra directo al POS del local.">
+  <link rel="canonical" href="https://almibar.restoclick.cl/reservas.html">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
+  <link rel="icon" href="./favicon.ico">
+  <meta name="theme-color" content="#071F26">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Almíbar">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Almíbar">
+  <meta property="og:title" content="Almíbar · Reservar mesa">
+  <meta property="og:description" content="Reserva mesa, cumpleaños o celebración en Almíbar Curicó.">
+  <meta property="og:url" content="https://almibar.restoclick.cl/reservas.html">
+  <meta property="og:image" content="https://almibar.restoclick.cl/promo-2x.jpg">
+  <meta property="og:locale" content="es_CL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Almíbar · Reservar mesa">
+  <meta name="twitter:description" content="Reserva mesa, cumpleaños o celebración en Almíbar Curicó.">
+  <meta name="twitter:image" content="https://almibar.restoclick.cl/promo-2x.jpg">
+  <style>
+    :root {
+      --night: #061f24;
+      --deep: #07343a;
+      --leaf: #0d4a42;
+      --teal: #12695f;
+      --paper: #fbf2dc;
+      --cream: #fff7e7;
+      --gold: #d7aa58;
+      --coral: #d86254;
+      --magenta: #af1c68;
+      --blue: #71b7d6;
+      --ink: #172226;
+      --muted: rgba(255, 247, 231, .72);
+      --line: rgba(255, 247, 231, .18);
+      --shadow: 0 30px 70px rgba(0, 0, 0, .34);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--night);
+    }
+
+    body {
+      margin: 0;
+      color: var(--cream);
+      background:
+        linear-gradient(180deg, rgba(6, 31, 36, .32), rgba(6, 31, 36, .98)),
+        url("./assets/src/assets/tropical-bg.61b0e22dfc663a60891e5a20d18f59a4.jpg") center top / cover fixed,
+        var(--night);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .34;
+      background:
+        url("./flores-soft/flor-azul-soft.png") left -120px top 70px / 330px auto no-repeat,
+        url("./flores-soft/flor-roja-soft.png") right -120px top 420px / 290px auto no-repeat,
+        url("./flores-soft/flor-naranja-soft.png") left -130px bottom 20px / 310px auto no-repeat;
+      filter: saturate(1.15);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site {
+      overflow: clip;
+    }
+
+    .hero {
+      min-height: 92svh;
+      display: grid;
+      align-items: stretch;
+      padding: 24px clamp(18px, 4vw, 64px) 38px;
+    }
+
+    .topbar {
+      align-self: start;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 12px 0;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255, 247, 231, .82);
+    }
+
+    .topbar img {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      box-shadow: 0 10px 34px rgba(0, 0, 0, .28);
+    }
+
+    .topbar nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+    }
+
+    .topbar a,
+    .mode-link {
+      border: 1px solid rgba(255, 247, 231, .22);
+      border-radius: 8px;
+      padding: 9px 12px;
+      background: rgba(6, 31, 36, .45);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-grid {
+      align-self: end;
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(340px, .82fr);
+      gap: clamp(28px, 5vw, 86px);
+      align-items: end;
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding-top: 26px;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      padding-bottom: clamp(10px, 4vh, 46px);
+    }
+
+    .brand-script {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(44px, 9vw, 118px);
+      font-weight: 700;
+      line-height: .82;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(52px, 10vw, 150px);
+      line-height: .84;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .hero-copy p {
+      max-width: 58ch;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 22px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .hero-actions a {
+      min-width: 154px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 247, 231, .24);
+    }
+
+    .hero-actions a:first-child {
+      color: #211610;
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .hero-actions a:last-child {
+      background: rgba(255, 247, 231, .08);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-prompt {
+      margin-top: 34px;
+      color: var(--gold);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(26px, 3.4vw, 46px);
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .service-strip {
+      padding: 34px clamp(18px, 4vw, 64px);
+      background:
+        linear-gradient(90deg, rgba(76, 18, 65, .9), rgba(7, 52, 58, .92)),
+        url("./flores-soft/flor-roja-soft.png") right -100px center / 260px auto no-repeat;
+      border-block: 1px solid rgba(255, 247, 231, .14);
+    }
+
+    .service-grid {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .service-card {
+      min-height: 158px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      border: 1px solid rgba(255, 247, 231, .18);
+      border-radius: 8px;
+      padding: 18px;
+      color: var(--cream);
+      background: rgba(5, 25, 28, .38);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, .18);
+    }
+
+    .service-card b {
+      display: block;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(27px, 3.3vw, 42px);
+      line-height: .92;
+    }
+
+    .service-card span {
+      display: block;
+      margin-top: 9px;
+      color: rgba(255, 247, 231, .72);
+      font-size: 14px;
+    }
+
+    .service-card a,
+    .contact-actions a {
+      width: fit-content;
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: #211610;
+      background: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .story-cover {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      align-items: center;
+      padding: clamp(62px, 8vw, 110px) clamp(18px, 4vw, 64px);
+      overflow: hidden;
+      color: var(--cream);
+      background:
+        linear-gradient(90deg, rgba(5, 25, 28, .98) 0%, rgba(5, 25, 28, .78) 45%, rgba(5, 25, 28, .34) 100%),
+        url("./portada-letrero-almibar.jpg") center 42% / cover no-repeat;
+    }
+
+    .story-cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .34;
+      background:
+        url("./flores-soft/flor-azul-soft.png") right -130px top 10% / 360px auto no-repeat,
+        url("./flores-soft/flor-amarilla-soft.png") left -120px bottom 6% / 310px auto no-repeat;
+      pointer-events: none;
+    }
+
+    .story-cover .topbar {
+      position: relative;
+      z-index: 1;
+      align-self: start;
+      padding-top: 0;
+    }
+
+    .story-wrap {
+      position: relative;
+      align-self: center;
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .72fr) minmax(300px, .58fr);
+      gap: clamp(32px, 6vw, 86px);
+      align-items: center;
+    }
+
+    .story-title {
+      max-width: 760px;
+      margin: 0;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(52px, 8.8vw, 128px);
+      line-height: .86;
+      letter-spacing: 0;
+    }
+
+    .story-lead {
+      max-width: 64ch;
+      margin: 28px 0 0;
+      color: rgba(255, 247, 231, .78);
+      font-size: clamp(18px, 2vw, 23px);
+    }
+
+    .story-note {
+      display: grid;
+      gap: 16px;
+      border-radius: 8px;
+      padding: clamp(22px, 3vw, 34px);
+      background: rgba(11, 38, 44, .82);
+      border: 1px solid rgba(212, 155, 90, .28);
+      box-shadow: var(--shadow);
+    }
+
+    .story-note p {
+      margin: 0;
+      color: rgba(255, 247, 231, .82);
+      font-size: clamp(15px, 1.5vw, 17px);
+    }
+
+    .story-note strong {
+      display: block;
+      color: var(--gold);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: .95;
+    }
+
+    .story-lines {
+      display: grid;
+      gap: 10px;
+      margin-top: 26px;
+      color: rgba(255, 247, 231, .72);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .story-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .story-actions a {
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: #211610;
+      background: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .story-actions a:last-child {
+      color: var(--cream);
+      background: rgba(255, 247, 231, .1);
+      border: 1px solid rgba(255, 247, 231, .2);
+    }
+
+    .photo-board {
+      position: relative;
+      min-height: 600px;
+    }
+
+    .photo-frame {
+      position: absolute;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      background: var(--paper);
+    }
+
+    .photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 8px solid rgba(255, 247, 231, .92);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-main {
+      right: 0;
+      bottom: 44px;
+      width: min(430px, 74vw);
+      aspect-ratio: 3 / 4;
+      transform: rotate(2.4deg);
+      animation: hero-photo-main 8s cubic-bezier(.16, 1, .3, 1) infinite alternate;
+    }
+
+    .photo-wide {
+      left: 0;
+      top: 28px;
+      width: min(390px, 70vw);
+      aspect-ratio: 16 / 10;
+      transform: rotate(-3deg);
+    }
+
+    .photo-small {
+      left: 56px;
+      bottom: 0;
+      width: min(230px, 46vw);
+      aspect-ratio: 3 / 4;
+      transform: rotate(5deg);
+      animation: hero-photo-small 7s cubic-bezier(.16, 1, .3, 1) infinite alternate;
+      animation-delay: -1.6s;
+    }
+
+    @keyframes hero-photo-main {
+      from {
+        transform: translate3d(0, 0, 0) rotate(2.4deg);
+      }
+
+      to {
+        transform: translate3d(0, -16px, 0) rotate(.8deg);
+      }
+    }
+
+    @keyframes hero-photo-small {
+      from {
+        transform: translate3d(0, 0, 0) rotate(5deg);
+      }
+
+      to {
+        transform: translate3d(12px, -18px, 0) rotate(8deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .photo-main,
+      .photo-small {
+        animation: none;
+      }
+    }
+
+    .quickbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-block: 1px solid rgba(255, 247, 231, .16);
+      background: rgba(5, 25, 28, .91);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, .22);
+    }
+
+    .quickbar-inner {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .station-nav {
+      display: flex;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .station-nav a {
+      border-radius: 8px;
+      padding: 10px 13px;
+      color: #24190f;
+      background: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .category-rail {
+      min-width: 0;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .category-rail::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-rail a {
+      flex: 0 0 auto;
+      border: 1px solid rgba(255, 247, 231, .18);
+      border-radius: 8px;
+      padding: 9px 12px;
+      color: rgba(255, 247, 231, .86);
+      background: rgba(255, 247, 231, .06);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .category-rail a.active,
+    .category-rail a:focus-visible,
+    .topbar a:focus-visible,
+    .hero-actions a:focus-visible {
+      outline: 3px solid rgba(215, 170, 88, .5);
+      outline-offset: 2px;
+      background: rgba(215, 170, 88, .18);
+    }
+
+    .section-head {
+      position: relative;
+      min-height: 74svh;
+      display: grid;
+      align-items: end;
+      padding: clamp(70px, 10vw, 130px) clamp(18px, 4vw, 64px) clamp(42px, 7vw, 92px);
+      isolation: isolate;
+    }
+
+    .section-head::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: var(--head-image) center / cover no-repeat;
+      filter: saturate(1.08);
+    }
+
+    .section-head::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, rgba(5, 25, 28, .92), rgba(5, 25, 28, .48), rgba(5, 25, 28, .78));
+    }
+
+    .section-head-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .88fr) minmax(250px, .45fr);
+      gap: clamp(28px, 5vw, 70px);
+      align-items: end;
+    }
+
+    .section-kicker {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(58px, 11vw, 156px);
+      line-height: .85;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 52ch;
+      margin: 24px 0 0;
+      color: rgba(255, 247, 231, .78);
+      font-size: clamp(17px, 2vw, 21px);
+    }
+
+    .section-count {
+      border-left: 1px solid rgba(255, 247, 231, .28);
+      padding-left: 22px;
+      color: rgba(255, 247, 231, .82);
+    }
+
+    .section-count strong {
+      display: block;
+      color: var(--cream);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(42px, 7vw, 92px);
+      line-height: .9;
+    }
+
+    .menu-band {
+      position: relative;
+      padding: clamp(56px, 7vw, 92px) clamp(18px, 4vw, 64px);
+      background:
+        url("./flores-soft/flor-amarilla-soft.png") right -140px top 90px / 280px auto no-repeat,
+        var(--paper);
+      color: var(--ink);
+    }
+
+    .menu-band.dark {
+      background:
+        url("./flores-soft/flor-azul-soft.png") left -120px top 120px / 300px auto no-repeat,
+        linear-gradient(180deg, #071f26, #092d31 58%, #061f24);
+      color: var(--cream);
+    }
+
+    .menu-layout {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+      gap: clamp(34px, 5vw, 76px);
+      align-items: start;
+    }
+
+    .menu-layout.flip {
+      grid-template-columns: minmax(260px, 420px) minmax(0, 1fr);
+    }
+
+    .menu-layout.flip .chapter-copy {
+      order: 2;
+    }
+
+    .menu-layout.flip .media-column {
+      order: 1;
+    }
+
+    .chapter-title {
+      margin: 0 0 28px;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(42px, 6.2vw, 86px);
+      line-height: .9;
+      letter-spacing: 0;
+      color: inherit;
+    }
+
+    .chapter-title small {
+      display: block;
+      margin-top: 7px;
+      color: var(--coral);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .dark .chapter-title small {
+      color: var(--blue);
+    }
+
+    .menu-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .dish {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(23, 34, 38, .18);
+    }
+
+    .dark .dish {
+      border-color: rgba(255, 247, 231, .16);
+    }
+
+    .dish h3 {
+      margin: 0;
+      font-size: clamp(17px, 1.7vw, 22px);
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+
+    .dish p {
+      max-width: 62ch;
+      margin: 6px 0 0;
+      color: rgba(23, 34, 38, .66);
+      font-size: clamp(14px, 1.3vw, 16px);
+    }
+
+    .dark .dish p {
+      color: rgba(255, 247, 231, .67);
+    }
+
+    .price {
+      padding-top: 1px;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(19px, 2.2vw, 30px);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .media-column {
+      position: sticky;
+      top: 92px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .media-card {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      background: var(--deep);
+    }
+
+    .media-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      object-fit: cover;
+    }
+
+    .media-card.tall {
+      aspect-ratio: 4 / 5;
+    }
+
+    .media-card.wide {
+      aspect-ratio: 16 / 10;
+    }
+
+    .callout {
+      display: grid;
+      gap: 12px;
+      padding: 22px;
+      border-radius: 8px;
+      color: var(--cream);
+      background: #4c1241;
+      box-shadow: 0 22px 42px rgba(0, 0, 0, .25);
+    }
+
+    .callout b {
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: 34px;
+      line-height: .95;
+    }
+
+    .callout span {
+      color: rgba(255, 247, 231, .72);
+      font-size: 14px;
+    }
+
+    .benefits-band {
+      padding: clamp(58px, 7vw, 96px) clamp(18px, 4vw, 64px);
+      background:
+        url("./flores-soft/flor-naranja-soft.png") left -130px top 70px / 310px auto no-repeat,
+        linear-gradient(135deg, #4c1241 0%, #071f26 54%, #0d4a42 100%);
+      color: var(--cream);
+    }
+
+    .benefits-wrap {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .72fr) minmax(0, 1fr);
+      gap: clamp(32px, 5vw, 76px);
+      align-items: start;
+    }
+
+    .benefits-title {
+      margin: 0;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(50px, 8vw, 116px);
+      line-height: .86;
+      letter-spacing: 0;
+    }
+
+    .benefits-copy p {
+      max-width: 50ch;
+      margin: 22px 0 0;
+      color: rgba(255, 247, 231, .74);
+      font-size: clamp(16px, 1.8vw, 20px);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .benefit-item {
+      min-height: 152px;
+      border: 1px solid rgba(255, 247, 231, .16);
+      border-radius: 8px;
+      padding: 18px;
+      background: rgba(5, 25, 28, .36);
+    }
+
+    .benefit-item strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.12;
+    }
+
+    .benefit-item span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 247, 231, .7);
+      font-size: 14px;
+    }
+
+    .contact-band {
+      padding: clamp(54px, 7vw, 86px) clamp(18px, 4vw, 64px);
+      background:
+        linear-gradient(90deg, rgba(5, 25, 28, .94), rgba(5, 25, 28, .7)),
+        url("./assets/src/assets/almibar-hero.704919b3aa0bc7ca5403bb164550713e.jpg") center / cover no-repeat;
+      color: var(--cream);
+    }
+
+    .contact-wrap {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .75fr) minmax(280px, .55fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: end;
+    }
+
+    .contact-title {
+      margin: 0;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(46px, 7vw, 98px);
+      line-height: .9;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 24px;
+      color: rgba(255, 247, 231, .8);
+      font-size: 17px;
+    }
+
+    .contact-list b {
+      color: var(--cream);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .contact-actions a:nth-child(2),
+    .contact-actions a:nth-child(3) {
+      color: var(--cream);
+      background: rgba(255, 247, 231, .1);
+      border: 1px solid rgba(255, 247, 231, .2);
+    }
+
+    .sushi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .sushi-tile {
+      position: relative;
+      min-height: 168px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #092d31;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, .28);
+    }
+
+    .sushi-tile img {
+      width: 100%;
+      height: 100%;
+      min-height: 168px;
+      object-fit: cover;
+    }
+
+    .sushi-tile span {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border-radius: 8px;
+      padding: 8px 10px;
+      background: rgba(5, 25, 28, .76);
+      color: var(--cream);
+      font-size: 13px;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
+    }
+
+    .footer {
+      padding: 46px 18px 56px;
+      color: rgba(255, 247, 231, .72);
+      text-align: center;
+      background: #05191c;
+    }
+
+    .footer strong {
+      color: var(--cream);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .section-head-inner,
+      .menu-layout,
+      .menu-layout.flip,
+      .story-wrap,
+      .benefits-wrap,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .photo-board {
+        min-height: 430px;
+      }
+
+      .photo-main {
+        width: min(330px, 78vw);
+        right: 4vw;
+      }
+
+      .photo-wide {
+        width: min(320px, 78vw);
+      }
+
+      .photo-small {
+        left: 18vw;
+      }
+
+      .section-count {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 247, 231, .28);
+        padding: 18px 0 0;
+      }
+
+      .menu-layout.flip .chapter-copy,
+      .menu-layout.flip .media-column {
+        order: initial;
+      }
+
+      .media-column {
+        position: relative;
+        top: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .media-column .callout {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 680px) {
+      body::before {
+        opacity: .24;
+        background-size: 230px auto, 220px auto, 250px auto;
+      }
+
+      .hero {
+        padding-inline: 16px;
+      }
+
+      .topbar {
+        display: block;
+        align-items: flex-start;
+      }
+
+      .topbar nav {
+        width: 100%;
+        margin-left: 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .topbar a {
+        padding: 8px 10px;
+        font-size: 11px;
+      }
+
+      .story-title {
+        max-width: 6.2em;
+        font-size: clamp(42px, 13vw, 50px);
+      }
+
+      .story-wrap,
+      .story-wrap > *,
+      .story-note {
+        width: 100%;
+        max-width: calc(100vw - 40px);
+        min-width: 0;
+      }
+
+      .story-lead {
+        max-width: 31ch;
+        font-size: 17px;
+      }
+
+      .story-lines {
+        max-width: 31ch;
+        font-size: 12px;
+        letter-spacing: .06em;
+      }
+
+      .story-lines span,
+      .story-note p {
+        overflow-wrap: anywhere;
+      }
+
+      .story-note {
+        padding: 22px;
+      }
+
+      .story-note strong {
+        font-size: 32px;
+      }
+
+      .hero-copy p {
+        margin-top: 20px;
+      }
+
+      .quickbar-inner {
+        width: calc(100% - 18px);
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .station-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .station-nav a {
+        text-align: center;
+      }
+
+      .section-head {
+        min-height: 65svh;
+        padding-inline: 16px;
+      }
+
+      .menu-band {
+        padding-inline: 16px;
+      }
+
+      .dish {
+        gap: 12px;
+        padding: 16px 0;
+      }
+
+      .price {
+        font-size: 21px;
+      }
+
+      .media-column,
+      .sushi-grid,
+      .service-grid,
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card,
+      .benefit-item {
+        min-height: auto;
+      }
+
+      .story-cover {
+        min-height: auto;
+      }
+    }
+    }
+    }
+      .addon-list {
+        grid-template-columns: 1fr;
+      }
+    }
+      .addon-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* generated menu detail styles */
+    .media-spritz .media-card.tall {
+      aspect-ratio: 1 / 1;
+    }
+
+    .media-spritz .media-card img {
+      object-fit: contain;
+      background: transparent;
+    }
+
+    .menu-layout.full {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .menu-layout.full .chapter-copy {
+      max-width: none;
+    }
+
+    [id^="barra-"],
+    [id^="cocina-"],
+    [id^="club-"] {
+      scroll-margin-top: 136px;
+    }
+
+    .menu-list.dense {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(24px, 4vw, 54px);
+    }
+
+    .menu-list.dense .dish:nth-child(1),
+    .menu-list.dense .dish:nth-child(2) {
+      border-top-color: rgba(23, 34, 38, .18);
+    }
+
+    .dark .menu-list.dense .dish:nth-child(1),
+    .dark .menu-list.dense .dish:nth-child(2) {
+      border-top-color: rgba(255, 247, 231, .16);
+    }
+
+    .menu-note {
+      max-width: 58ch;
+      margin: 16px 0 0;
+      color: rgba(255, 247, 231, .7);
+      font-size: 15px;
+    }
+
+    .photo-frame img {
+      transition: opacity .5s ease, filter .5s ease, transform .5s ease;
+    }
+
+    .photo-frame img.is-changing {
+      opacity: .1;
+      filter: blur(4px);
+      transform: scale(1.035);
+    }
+
+    .menu-addon {
+      margin-top: 28px;
+      padding: 18px 20px 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(23, 34, 38, .18);
+      background: rgba(255, 255, 255, .35);
+    }
+
+    .dark .menu-addon {
+      border-color: rgba(255, 247, 231, .16);
+      background: rgba(255, 247, 231, .08);
+    }
+
+    .menu-addon h3 {
+      margin: 0 0 4px;
+      font-size: clamp(20px, 2.2vw, 29px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .menu-addon h3 small {
+      display: block;
+      margin-top: 5px;
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .dark .menu-addon h3 small {
+      color: var(--blue);
+    }
+
+    .category-rail[hidden],
+    .station-pane[hidden] {
+      display: none;
+    }
+
+    .station-nav a[aria-pressed="true"] {
+      color: #24190f;
+      background: var(--gold);
+    }
+
+    /* "Promociones": categoría destacada, siempre con color visible. */
+    .station-nav a[data-station-toggle="promos"] {
+      background: linear-gradient(135deg, #E0533B 0%, #E8A33C 100%);
+      color: #fff;
+      border-color: transparent;
+      font-weight: 800;
+    }
+    .station-nav a[data-station-toggle="promos"][aria-pressed="true"] {
+      color: #fff;
+      background: linear-gradient(135deg, #E0533B 0%, #E8A33C 100%);
+      box-shadow: 0 8px 20px -8px rgba(224, 83, 59, .6);
+    }
+    .section-head-promos .section-title {
+      color: #F2B84B;
+    }
+
+    /* ==== Tenedor Libre (jueves) — bloque desmontable ==== */
+    .tl-band {
+      padding: clamp(30px, 5vw, 66px) clamp(16px, 4vw, 48px);
+      background:
+        radial-gradient(120% 90% at 0% 0%, rgba(224, 83, 59, .18), transparent 55%),
+        #0b262c;
+      border-top: 1px solid rgba(212, 155, 90, .25);
+      border-bottom: 1px solid rgba(212, 155, 90, .25);
+    }
+    .tl-inner { max-width: 1120px; margin: 0 auto; }
+    .tl-kicker {
+      margin: 0 0 6px; font-size: 13px; font-weight: 800;
+      letter-spacing: .28em; text-transform: uppercase; color: #E8A33C;
+    }
+    .tl-title {
+      margin: 0; line-height: .95; color: #F5F1EA;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 700; font-size: clamp(46px, 9vw, 92px);
+    }
+    .tl-sub { margin: 10px 0 14px; max-width: 44ch; color: #D8D2C6; font-size: clamp(16px, 2.2vw, 20px); }
+    .tl-sub .tl-lead { color: #F2B84B; font-weight: 800; font-size: 1.15em; letter-spacing: .005em; }
+    .tl-noadd { margin: 0 0 26px; max-width: 56ch; color: #EDC988; font-size: 14.5px; line-height: 1.55; font-weight: 600; }
+    .tl-priceline { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin: 6px 0 4px; }
+    .tl-priceline-main { font-size: clamp(30px, 6vw, 48px); font-weight: 900; color: #F2B84B; line-height: 1; }
+    .tl-priceline-main em { font-style: normal; font-size: .42em; font-weight: 700; color: #D8D2C6; letter-spacing: .02em; }
+    .tl-priceline-kids { font-size: clamp(15px, 2.4vw, 19px); font-weight: 700; color: #E5DFD3; }
+    .tl-compare { margin: 0 0 22px; font-style: italic; font-size: 13.5px; color: #B9B2A4; }
+    .tl-drinks { margin: 0 0 20px; padding: 16px 18px; border-radius: 14px; background: rgba(11, 38, 44, .75); border: 1px solid rgba(232, 163, 60, .4); }
+    .tl-drinks h4 { margin: 0 0 6px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: #E8A33C; }
+    .tl-drinks p { margin: 0; font-size: clamp(15px, 2.2vw, 18px); font-weight: 600; line-height: 1.5; color: #F5F1EA; }
+    .tl-tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .tl-tier {
+      background: rgba(11, 38, 44, .7); border: 1px solid rgba(212, 155, 90, .28);
+      border-radius: 14px; padding: 18px;
+    }
+    .tl-tier-premium {
+      border-color: #E0533B;
+      background: linear-gradient(160deg, rgba(224, 83, 59, .16), rgba(11, 38, 44, .7));
+    }
+    .tl-tier h3 { margin: 0 0 8px; font-size: 20px; font-weight: 800; color: #F5F1EA; }
+    .tl-price { margin: 0; font-size: 26px; font-weight: 900; color: #F2B84B; }
+    .tl-price span { display: block; font-size: 12px; font-weight: 600; letter-spacing: .04em; color: #B9B2A4; }
+    .tl-price-alt { margin: 2px 0 10px; font-size: 13px; color: #C9BCA8; }
+    .tl-inc { margin: 0; font-size: 13px; line-height: 1.5; color: #C9C2B4; }
+    .tl-schop {
+      display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px;
+      margin-top: 16px; padding: 16px 18px; border-radius: 14px;
+      background: rgba(11, 38, 44, .75); border: 1px solid rgba(232, 163, 60, .5);
+    }
+    .tl-schop-price { font-size: clamp(22px, 4vw, 30px); font-weight: 900; color: #F2B84B; }
+    .tl-schop-copy { font-size: 14.5px; line-height: 1.5; color: #D8D2C6; }
+    .tl-schop-copy em { color: #B9B2A4; font-style: normal; }
+    .tl-cols { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-top: 20px; align-items: start; }
+    .tl-how h4, .tl-nowaste h4 {
+      margin: 0 0 10px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: #E8A33C;
+    }
+    .tl-how ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+    .tl-how li { font-size: 14px; line-height: 1.5; color: #D3CCBE; }
+    .tl-nowaste { background: rgba(11, 38, 44, .82); border: 1px solid rgba(212, 155, 90, .32); border-top: 3px solid #E66A5B; border-radius: 16px; padding: 22px; }
+    .tl-nowaste h4 { color: #D9C29C; }
+    .tl-nowaste p { margin: 0; font-size: 15px; line-height: 1.6; font-weight: 500; color: #F5F1EA; }
+    @media (max-width: 760px) {
+      .tl-tiers { grid-template-columns: 1fr; }
+      .tl-cols { grid-template-columns: 1fr; }
+    }
+
+    /* ==== Marcador de visitas (Club) ==== */
+    .visit-tracker {
+      display: flex; align-items: center; gap: 14px;
+      margin: 4px 0 18px; padding: 14px 16px;
+      background: rgba(11, 38, 44, .55);
+      border: 1px solid rgba(212, 155, 90, .3); border-radius: 14px;
+    }
+    .visit-stamps { display: flex; gap: 8px; flex-shrink: 0; }
+    .visit-stamps .stamp {
+      width: 30px; height: 30px; border-radius: 50%;
+      border: 2px dashed rgba(212, 155, 90, .6); background: transparent; position: relative;
+    }
+    .visit-stamps .stamp.filled {
+      border-style: solid; border-color: #E8A33C;
+      background: linear-gradient(135deg, #E0533B, #E8A33C);
+    }
+    .visit-stamps .stamp.filled::after {
+      content: "★"; position: absolute; inset: 0;
+      display: grid; place-items: center; color: #2a0f0a; font-size: 15px;
+    }
+    .visit-tracker-copy { display: grid; gap: 2px; min-width: 0; }
+    .visit-tracker-copy strong { color: #F5F1EA; font-size: 15px; }
+    .visit-tracker-copy span { color: #C9BCA8; font-size: 12.5px; }
+
+    /* Portada: foto de la fachada con el letrero iluminado, anclada abajo en la
+       columna derecha (proporción natural 4:3 → letrero completo, sin recortar,
+       y deja ver la muralla del fondo por arriba). */
+    .story-photo {
+      margin: 0; align-self: center; position: relative;
+      aspect-ratio: 16 / 6; border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(212, 155, 90, .38);
+      box-shadow: 0 26px 64px rgba(0, 0, 0, .55);
+    }
+    .story-photo img {
+      display: block; width: 100%; height: 100%;
+      object-fit: cover; object-position: 50% 30%;
+    }
+    @media (max-width: 900px) { .story-photo { aspect-ratio: 16 / 8; } }
+
+    /* Botón "Estoy en Almíbar" para marcar visita (solo socios reconocidos) */
+    .visit-actions { margin: -6px 0 18px; display: grid; gap: 8px; }
+    .visit-mark-btn {
+      display: inline-flex; align-items: center; gap: 12px; width: 100%;
+      padding: 13px 16px; border: none; border-radius: 14px; cursor: pointer;
+      background: linear-gradient(135deg, #E0533B, #E8A33C); color: #2a0f0a;
+      text-align: left; font: inherit;
+      box-shadow: 0 8px 20px rgba(224, 83, 59, .28);
+      transition: transform .16s ease, box-shadow .16s ease, opacity .16s ease;
+    }
+    .visit-mark-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 26px rgba(224, 83, 59, .34); }
+    .visit-mark-btn:active { transform: translateY(0); }
+    .visit-mark-btn[disabled] { opacity: .65; cursor: default; box-shadow: none; transform: none; }
+    .visit-mark-btn__pin { font-size: 22px; flex-shrink: 0; }
+    .visit-mark-btn__txt { display: grid; gap: 1px; }
+    .visit-mark-btn__txt strong { font-size: 15.5px; font-weight: 800; }
+    .visit-mark-btn__txt span { font-size: 12px; opacity: .85; }
+    .visit-mark-status { margin: 0; font-size: 12.5px; color: #C9BCA8; min-height: 1em; }
+    .visit-mark-status.ok { color: #8FE3A6; }
+    .visit-mark-status.err { color: #F1B0A2; }
+
+    /* Botón flotante de ayuda por WhatsApp */
+    .wa-fab {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 12px 18px 12px 14px; border-radius: 999px;
+      background: #25D366; color: #063d1e; text-decoration: none;
+      font-weight: 700; font-size: 15px; letter-spacing: .1px;
+      box-shadow: 0 10px 26px rgba(3, 40, 20, .38), 0 2px 6px rgba(0, 0, 0, .25);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .wa-fab:hover { transform: translateY(-2px); background: #22c15e; box-shadow: 0 14px 32px rgba(3, 40, 20, .45); }
+    .wa-fab:active { transform: translateY(0); }
+    .wa-fab__icon { flex-shrink: 0; }
+    .wa-fab__label { white-space: nowrap; }
+    @media (max-width: 620px) {
+      .wa-fab { right: 14px; bottom: 14px; padding: 13px; gap: 0; }
+      .wa-fab__label { display: none; }
+    }
+
+    .station-rails {
+      min-width: 0;
+      width: 100%;
+    }
+
+    .addon-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(18px, 3vw, 34px);
+    }
+
+    .addon-list .dish {
+      padding: 12px 0;
+    }
+
+    .addon-list .dish h3 {
+      font-size: clamp(15px, 1.5vw, 18px);
+    }
+
+    .addon-list .dish p {
+      font-size: 13px;
+    }
+
+    @media (max-width: 680px) {
+      .quickbar-inner,
+      .station-nav,
+      .station-rails,
+      .category-rail {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .station-nav {
+        width: 100%;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow: hidden;
+      }
+
+      .station-nav a {
+        min-width: 0;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 12.5px;
+        letter-spacing: 0;
+        padding-left: 6px;
+        padding-right: 6px;
+      }
+
+      .category-rail {
+        width: 100%;
+      }
+
+      .section-head {
+        min-height: 42svh;
+        padding: 56px 16px 42px;
+      }
+
+      .section-title {
+        font-size: 58px;
+      }
+
+      .section-head p {
+        margin-top: 16px;
+        font-size: 16px;
+      }
+
+      .section-count {
+        padding-top: 14px;
+      }
+
+      .section-count strong {
+        font-size: 54px;
+      }
+
+      .dish h3,
+      .dish p {
+        overflow-wrap: anywhere;
+      }
+
+      .category-rail {
+        padding-bottom: 3px;
+        scroll-snap-type: x proximity;
+      }
+
+      .category-rail a {
+        scroll-snap-align: start;
+      }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .reservation-page {
+      min-height: 100svh;
+      overflow-x: hidden;
+      color: var(--cream);
+      background:
+        linear-gradient(180deg, rgba(6, 31, 36, .34), rgba(6, 31, 36, .98)),
+        url("./assets/src/assets/tropical-bg.61b0e22dfc663a60891e5a20d18f59a4.jpg") center top / cover fixed,
+        var(--night);
+    }
+
+    .reservation-hero {
+      position: relative;
+      min-height: 100svh;
+      padding: clamp(20px, 4vw, 48px) clamp(18px, 4vw, 64px) clamp(34px, 6vw, 72px);
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(5, 25, 28, .96), rgba(5, 25, 28, .76) 46%, rgba(91, 27, 67, .42)),
+        url("./portada-letrero-almibar.jpg") center 44% / cover no-repeat;
+    }
+
+    .reservation-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .32;
+      background:
+        url("./flores-soft/flor-azul-soft.png") right -118px top 8% / 330px auto no-repeat,
+        url("./flores-soft/flor-amarilla-soft.png") left -105px bottom 8% / 290px auto no-repeat;
+      pointer-events: none;
+    }
+
+    .reservation-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .reservation-topbar {
+      width: min(1180px, 100%);
+      margin: 0 auto clamp(34px, 6vw, 74px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .reservation-topbar nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+    }
+
+    .reservation-topbar a {
+      border: 1px solid rgba(255, 247, 231, .22);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: rgba(6, 31, 36, .48);
+      color: rgba(255, 247, 231, .86);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(14px);
+    }
+
+    .reservation-layout {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .76fr) minmax(360px, .74fr);
+      gap: clamp(28px, 5vw, 76px);
+      align-items: start;
+      min-width: 0;
+    }
+
+    .reservation-copy {
+      max-width: 650px;
+      padding-top: clamp(4px, 5vw, 42px);
+    }
+
+    .reservation-title {
+      margin: 0;
+      color: var(--cream);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(58px, 9vw, 126px);
+      line-height: .86;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .reservation-lead {
+      max-width: 58ch;
+      margin: 26px 0 0;
+      color: rgba(255, 247, 231, .78);
+      font-size: clamp(18px, 2vw, 22px);
+    }
+
+    .reservation-facts {
+      display: grid;
+      gap: 11px;
+      margin-top: 30px;
+      color: rgba(255, 247, 231, .73);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .reservation-facts span {
+      overflow-wrap: anywhere;
+    }
+
+    .reservation-panel {
+      min-width: 0;
+      border-radius: 8px;
+      padding: clamp(20px, 3vw, 34px);
+      color: var(--ink);
+      background: rgba(251, 242, 220, .96);
+      box-shadow: var(--shadow);
+    }
+
+    .reservation-panel h2 {
+      margin: 0 0 6px;
+      color: var(--ink);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: .95;
+      letter-spacing: 0;
+    }
+
+    .reservation-panel > p {
+      margin: 0 0 22px;
+      color: rgba(23, 34, 38, .72);
+      font-size: 14px;
+    }
+
+    .reserve-section {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(23, 34, 38, .14);
+    }
+
+    .reserve-section:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .reserve-section legend,
+    .reserve-label {
+      display: block;
+      margin: 0 0 9px;
+      color: rgba(23, 34, 38, .82);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .reserve-section fieldset {
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .motivo-grid,
+    .slot-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .motivo-option,
+    .slot-option {
+      min-width: 0;
+      min-height: 44px;
+      border: 1px solid rgba(23, 34, 38, .2);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, .48);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 850;
+      cursor: pointer;
+      transition: transform .16s ease, border-color .16s ease, background .16s ease, color .16s ease;
+    }
+
+    .motivo-option:hover,
+    .slot-option:hover {
+      transform: translateY(-1px);
+      border-color: rgba(175, 28, 104, .42);
+    }
+
+    .motivo-option.active,
+    .slot-option.active {
+      border-color: var(--gold);
+      color: #211610;
+      background: var(--gold);
+    }
+
+    .slot-option:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .reserve-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .reserve-field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .reserve-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .reserve-field input,
+    .reserve-field textarea {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid rgba(23, 34, 38, .2);
+      border-radius: 8px;
+      padding: 12px 13px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, .66);
+      font: inherit;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .reserve-field textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .reserve-field input::placeholder,
+    .reserve-field textarea::placeholder {
+      color: rgba(23, 34, 38, .46);
+    }
+
+    .reserve-field input:focus,
+    .reserve-field textarea:focus,
+    .motivo-option:focus-visible,
+    .slot-option:focus-visible,
+    .reserve-submit:focus-visible,
+    .reservation-topbar a:focus-visible {
+      outline: 3px solid rgba(216, 98, 84, .3);
+      outline-offset: 2px;
+      border-color: var(--coral);
+    }
+
+    .reserve-help {
+      margin: 8px 0 0;
+      color: rgba(23, 34, 38, .62);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .reserve-submit {
+      width: 100%;
+      min-height: 56px;
+      margin-top: 22px;
+      border: 0;
+      border-radius: 8px;
+      color: #211610;
+      background: var(--gold);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, .2);
+    }
+
+    .reserve-submit:disabled {
+      opacity: .62;
+      cursor: wait;
+      box-shadow: none;
+    }
+
+    .reserve-status {
+      min-height: 20px;
+      margin-top: 14px;
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .reserve-status.ok {
+      color: #0f6b52;
+    }
+
+    .reservation-success {
+      display: none;
+      padding: 30px 0 6px;
+    }
+
+    .reservation-success.show {
+      display: grid;
+      gap: 12px;
+    }
+
+    .reservation-success strong {
+      color: var(--magenta);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(36px, 4vw, 54px);
+      line-height: .96;
+    }
+
+    .reservation-success p {
+      margin: 0;
+      color: rgba(23, 34, 38, .76);
+    }
+
+    .success-benefits {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(15, 107, 82, .18);
+      background: rgba(15, 107, 82, .08);
+    }
+
+    .success-benefits span {
+      color: #0f6b52;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .success-benefits ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding-left: 18px;
+      color: rgba(23, 34, 38, .78);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .reservation-success a {
+      width: fit-content;
+      margin-top: 10px;
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: #211610;
+      background: var(--gold);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .menu-layout.full {
+        grid-template-columns: 1fr;
+      }
+
+      .reservation-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .reservation-copy {
+        padding-top: 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .menu-list.dense {
+        grid-template-columns: 1fr;
+      }
+
+      .addon-list {
+        grid-template-columns: 1fr;
+      }
+
+      .reservation-hero {
+        padding-inline: 16px;
+      }
+
+      .reservation-topbar {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+      }
+
+      .reservation-topbar nav {
+        width: 100%;
+        margin-left: 0;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+      }
+
+      .reservation-topbar a {
+        text-align: center;
+        padding-inline: 9px;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .reserve-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reservation-panel {
+        padding: 20px 16px 22px;
+      }
+
+      .reservation-title {
+        font-size: clamp(42px, 13vw, 56px);
+      }
+
+      .reservation-lead {
+        font-size: 16px;
+      }
+
+      .reservation-facts {
+        font-size: 12px;
+        letter-spacing: .045em;
+      }
+
+      .motivo-option {
+        flex: 1 1 100%;
+      }
+
+      .slot-option {
+        flex: 1 1 calc(33.333% - 8px);
+        padding-inline: 8px;
+      }
+    }
+
+  </style>
+</head>
+<body class="reservation-page">
+  <!--
+    THESIS: Reservar en Almíbar debe sentirse como tomar lugar en la noche del local, no como llenar un formulario genérico.
+    OWN-WORLD: fondo vegetal real, teal profundo, papel cálido, controles dorados y lenguaje de mesa nocturna.
+    STORY: el cliente elige motivo, fecha, hora y contacto; la reserva entra al POS con la misma RPC pública vigente.
+    FIRST VIEWPORT: título grande a la izquierda, datos de operación y formulario completo visible a la derecha.
+    FORM: extensión directa del mundo visual de la carta; seed manual-user-reference.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+  -->
+  <main class="site">
+    <section class="reservation-hero">
+      <div class="reservation-topbar">
+        <a href="./">Almíbar</a>
+        <nav aria-label="Navegación de reservas">
+          <a href="./#carta">Carta</a>
+          <a href="./socio.html">Club</a>
+          <a href="./#contacto">Contacto</a>
+        </nav>
+      </div>
+
+      <div class="reservation-layout">
+        <div class="reservation-copy">
+          <h1 class="reservation-title">Reservar mesa</h1>
+          <p class="reservation-lead">Completa tus datos y la solicitud entra directo al POS de Almíbar para que el equipo la gestione desde el mismo flujo de reservas.</p>
+          <div class="reservation-facts">
+            <span>Francisco Moreno 418 · Plaza San Francisco</span>
+            <span>Lun-Sáb desde las 17:00</span>
+            <span>Viernes y sábado hasta las 03:00</span>
+            <span>Reservas, cumpleaños, grupos y celebraciones</span>
+          </div>
+        </div>
+
+        <section class="reservation-panel" aria-label="Formulario de reserva">
+          <h2>Datos de la reserva</h2>
+          <p>Selecciona motivo, día y hora. Los horarios después de medianoche pertenecen a la noche elegida.</p>
+
+          <form id="reservation-form" novalidate>
+            <section class="reserve-section">
+              <fieldset>
+                <legend>Motivo</legend>
+                <input type="hidden" id="motivo" name="motivo" value="Celebración">
+                <div class="motivo-grid" id="motivo-grid">
+                  <button class="motivo-option" type="button" data-motivo="Cumpleaños">Cumpleaños</button>
+                  <button class="motivo-option active" type="button" data-motivo="Celebración">Celebración</button>
+                  <button class="motivo-option" type="button" data-motivo="Reunión">Reunión</button>
+                  <button class="motivo-option" type="button" data-motivo="Empresa">Empresa</button>
+                  <button class="motivo-option" type="button" data-motivo="Otro">Otro</button>
+                </div>
+              </fieldset>
+            </section>
+
+            <section class="reserve-section">
+              <div class="reserve-grid">
+                <label class="reserve-field">
+                  <span class="reserve-label">Personas</span>
+                  <input id="personas" name="personas" type="number" inputmode="numeric" min="2" max="50" value="2" required>
+                </label>
+                <label class="reserve-field">
+                  <span class="reserve-label">Fecha</span>
+                  <input id="fecha" name="fecha" type="date" required>
+                </label>
+                <label class="reserve-field">
+                  <span class="reserve-label">Nombre completo</span>
+                  <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required>
+                </label>
+                <label class="reserve-field">
+                  <span class="reserve-label">WhatsApp</span>
+                  <input id="celular" name="celular" type="tel" inputmode="tel" autocomplete="tel" placeholder="+56 9 ..." required>
+                </label>
+              </div>
+            </section>
+
+            <section class="reserve-section">
+              <fieldset>
+                <legend>Hora</legend>
+                <input type="hidden" id="hora" name="hora" required>
+                <div class="slot-grid" id="slot-grid"></div>
+                <p class="reserve-help" id="hour-help">Los turnos disponibles se ajustan al día elegido.</p>
+              </fieldset>
+            </section>
+
+            <section class="reserve-section">
+              <label class="reserve-field full">
+                <span class="reserve-label">Notas opcionales</span>
+                <textarea id="notas" name="notas" placeholder="Mesa interior o terraza, cumpleaños, restricciones alimentarias, coche, decoración, etc."></textarea>
+              </label>
+            </section>
+
+            <button class="reserve-submit" id="reserve-submit" type="submit">Enviar reserva al POS</button>
+            <div class="reserve-status" id="reservation-status" role="status" aria-live="polite"></div>
+          </form>
+
+          <div class="reservation-success" id="reservation-success">
+            <strong>Tu reserva está confirmada!!</strong>
+            <p id="success-copy">El equipo de Almíbar ya puede verla en el POS.</p>
+            <div class="success-benefits" id="success-benefits"></div>
+            <a href="./">Volver a la carta</a>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="./reservas.js"></script>
+</body>
+</html>

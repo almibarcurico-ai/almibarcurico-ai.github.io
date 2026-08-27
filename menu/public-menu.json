@@ -1,0 +1,2161 @@
+{
+  "enabled": true,
+  "products": [
+    {
+      "id": "8a6906c9-5204-4f77-a408-b745f86d1c8e",
+      "name": "Ceviche Salmón",
+      "price": 14900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000001",
+      "description": null
+    },
+    {
+      "id": "0d91e62d-3181-4f52-8472-8da6bcaf4478",
+      "name": "Ceviche Salmón-Camarón",
+      "price": 17900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000001",
+      "description": "Salmón, camarón, cebolla morada, pimentón, cilantro y leche de tigre"
+    },
+    {
+      "id": "5b37a42d-0a8c-4552-ba02-ee3bf5c0fc96",
+      "name": "Promo 20 Piezas",
+      "price": 15900,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/promo-20-piezas.png",
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Mix de 20 rolls. Perfecto para compartir."
+    },
+    {
+      "id": "47161be7-ca3c-4dd3-943d-0254212efd4d",
+      "name": "Promo 40 Piezas",
+      "price": 28900,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/promo-40-piezas.png",
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Mix de 40 rolls. Perfecto para compartir."
+    },
+    {
+      "id": "47f10370-5eef-454b-b28a-16f5f42c1179",
+      "name": "Salmón Roll",
+      "price": 8990,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/salmon.png",
+      "sort_order": 10,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Salmón, queso crema y palta envuelto en palta."
+    },
+    {
+      "id": "1a4558fd-ab09-400d-8956-c321421ca72c",
+      "name": "Ebi Roll",
+      "price": 8490,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/ebi.png",
+      "sort_order": 20,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Camarón, pepino y ciboulette envuelto en palta."
+    },
+    {
+      "id": "3d63c01e-5314-42a3-92ee-61f77bc34661",
+      "name": "Sake Sésamo Roll",
+      "price": 8990,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/sake-sesamo.png",
+      "sort_order": 30,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Salmón y palta envuelto en ciboulette y sésamo."
+    },
+    {
+      "id": "9ab62157-a30f-47ca-94ba-e4667124afbc",
+      "name": "Rainbow Roll",
+      "price": 9990,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/rainbow.png",
+      "sort_order": 40,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Camarón, queso crema y palta envuelto en láminas de salmón."
+    },
+    {
+      "id": "1fa4337d-d858-488b-8517-2cc10eabf0a5",
+      "name": "Tuna Roll",
+      "price": 9490,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/tuna.png",
+      "sort_order": 50,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Atún, palta y ciboulette envuelto en queso crema (sin nori)."
+    },
+    {
+      "id": "96ae64e0-cf23-47ed-984c-dc5f87f99f64",
+      "name": "Pollo Crispy Roll",
+      "price": 8990,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/pollo-crispy.png",
+      "sort_order": 110,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Pollo, queso crema y palta apanado en panko."
+    },
+    {
+      "id": "27f3586f-cb21-4486-81d4-1d144c0350fd",
+      "name": "Pollo Champi Roll",
+      "price": 8990,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/pollo-champi.png",
+      "sort_order": 120,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Pollo y champiñón apanado en panko."
+    },
+    {
+      "id": "6d2cab8f-5014-4829-aca9-83aab7ca82bc",
+      "name": "Camarón Panko Roll",
+      "price": 9490,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/camaron-panko.png",
+      "sort_order": 130,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Camarón, queso crema y palta apanado en panko."
+    },
+    {
+      "id": "11c84ad9-811d-40eb-baae-02424dbea1fe",
+      "name": "Ebi Crispy Roll",
+      "price": 9490,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/ebi-crispy.png",
+      "sort_order": 140,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Camarón, queso crema y cebollín apanado en panko."
+    },
+    {
+      "id": "8be90b0b-d8b7-44db-b913-1db4a4d8d046",
+      "name": "Salmón Panko Roll",
+      "price": 9490,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/salmon-panko.png",
+      "sort_order": 150,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Salmón, queso crema y palta apanado en panko."
+    },
+    {
+      "id": "2afbfdef-3037-4a86-b3be-fb2713143923",
+      "name": "Veggie Panko Roll",
+      "price": 8490,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/veggie-panko.png",
+      "sort_order": 160,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Pepino, pimentón, palta y cebollín apanado en panko."
+    },
+    {
+      "id": "f3cdd0ec-3e90-4b0a-9164-18fd159aecf5",
+      "name": "Atún Panko Roll",
+      "price": 9990,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/atun-panko.png",
+      "sort_order": 170,
+      "category_id": "d0000000-0000-0000-0000-000000000050",
+      "description": "Atún, palta y ciboulette apanado en panko."
+    },
+    {
+      "id": "d0339084-bdbe-4db9-83d3-390c095314e7",
+      "name": "Camarones al Pil Pil o al Ajillo",
+      "price": 9300,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000002",
+      "description": "12 camarones al Pil pil o ajillo"
+    },
+    {
+      "id": "40b371a6-3e5e-4bf0-a15a-bd16f4916f58",
+      "name": "Tabla Almíbar",
+      "price": 26000,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000002",
+      "description": "Empanadas camarón queso, ceviche salmón, bombas de queso, bruschettas atún, brochetas pollo"
+    },
+    {
+      "id": "2d6929e5-7f9f-4649-b24c-3ae479ad4b69",
+      "name": "Tabla Carnes",
+      "price": 28800,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000002",
+      "description": "Lomo cerdo BBQ, salteado peruano, pinchos de pollo con tocino, papas fritas"
+    },
+    {
+      "id": "8cfb38ff-df56-43af-b862-3ac7fb99903a",
+      "name": "Tabla Pacífico",
+      "price": 20100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000002",
+      "description": "Ceviche salmón, camarones ecuatorianos apanados, empanadas camarón"
+    },
+    {
+      "id": "3a9f3772-ba43-4021-9100-e636ad8958a8",
+      "name": "Mix Fritos",
+      "price": 19500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000002",
+      "description": "Empanadas camarón queso, esferas queso, aros cebolla, tiras pollo, papas fritas"
+    },
+    {
+      "id": "3052e05f-5cef-4a36-90de-b48a99e0963a",
+      "name": "Esferas de Queso",
+      "price": 8600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 6,
+      "category_id": "d0000000-0000-0000-0000-000000000002",
+      "description": null
+    },
+    {
+      "id": "7575fffb-e352-438f-b826-0d13a45f46c0",
+      "name": "Trilogía Empanadas",
+      "price": 10400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 7,
+      "category_id": "d0000000-0000-0000-0000-000000000002",
+      "description": null
+    },
+    {
+      "id": "cc41f9e7-c148-4838-8283-47132310904a",
+      "name": "Pil Pil",
+      "price": 10400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 8,
+      "category_id": "d0000000-0000-0000-0000-000000000002",
+      "description": "Pollo, champiñones y camarones con tostadas. Picor leve"
+    },
+    {
+      "id": "f0754d81-53ad-4e4a-bf7f-96c6b0cddfb9",
+      "name": "Pizza la Suprema",
+      "price": 15990,
+      "available": false,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Pepperoni, jamón pierna, champiñón, aceitunas negras, pimentón, cebolla"
+    },
+    {
+      "id": "da32b505-2593-499f-b652-424061f10a20",
+      "name": "Pizza Napolitana Cargada",
+      "price": 14600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Jamón pierna, tomate fresco, aceitunas negras, champiñón, pesto de albahaca"
+    },
+    {
+      "id": "bb9276ed-20a0-445f-b903-0f5a23fb80f0",
+      "name": "Pizza Pollo Crema",
+      "price": 15900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Base crema, pollo, champiñón, tocino, cebolla, choclo"
+    },
+    {
+      "id": "dfcff23c-6bd1-4724-bf6d-b476a5a20601",
+      "name": "Pizza Pollo Doble",
+      "price": 15900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Pollo, tocino, champiñón, cebolla, salsa BBQ"
+    },
+    {
+      "id": "45fd6793-b546-4093-8bde-e07c43c66540",
+      "name": "Pizza Ricotta",
+      "price": 14900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Masa fresca de 35 cm, salsa pomodoro artesanal, queso mozarella, ricotta, pesto de albahaca, tomates cherry y hojas de albahaca."
+    },
+    {
+      "id": "3c3e5e67-7252-43ec-8e8e-bd699cf5ce15",
+      "name": "Pizza Todas las carnes",
+      "price": 17800,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Pepperoni, jamón pierna, salame, tocino, carne mechada"
+    },
+    {
+      "id": "471ed3e7-65ed-4a24-9845-22dc50f51a8a",
+      "name": "Pizza Lomo Saltado",
+      "price": 17900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Preparación peruana hecha pizza"
+    },
+    {
+      "id": "c25e30a0-ae2a-4142-ae3c-685741d0411e",
+      "name": "Pizza Mechona",
+      "price": 16600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Carne mechada, champiñón, pimentón, cebolla caramelizada"
+    },
+    {
+      "id": "8f305cfc-8aac-4da0-9b1b-02351936a936",
+      "name": "Pizza Al Ajillo",
+      "price": 16600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Camarón, pollo, cebollín, ajo asado, crema de leche"
+    },
+    {
+      "id": "af747ad0-9c78-43d3-afe6-00d0586527b9",
+      "name": "Pizza Desmechada",
+      "price": 15500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Carne mechada, tomate, aceituna negra, cebolla morada"
+    },
+    {
+      "id": "78f56fd3-104d-4614-b97e-29b086128baa",
+      "name": "Pizza Ranchera",
+      "price": 16400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 6,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Pollo, champiñones, choclo con crema, cebolla morada"
+    },
+    {
+      "id": "e3a34af2-fe82-4c7f-8d82-b875df633941",
+      "name": "Pizza Pollo BBQ",
+      "price": 14400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 7,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Pollo, tocino, cebolla morada, salsa BBQ"
+    },
+    {
+      "id": "38639884-4859-4885-97d1-5689053b361d",
+      "name": "Pizza Napolitana",
+      "price": 12400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 8,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Tomate, jamón, aceituna, orégano"
+    },
+    {
+      "id": "47263ce1-74d2-4af3-8f94-6c8975eee4e5",
+      "name": "Pizza Vegetariana",
+      "price": 14900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 9,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Masa fresca de 35 cm, salsa pomodoro artesanal, queso mozzarella, tomate cherry, pimentón, champiñón y choclo. Bañado en pesto de albahaca"
+    },
+    {
+      "id": "9a487cb1-126b-4742-9935-ce9f3e459b64",
+      "name": "Pizza Doble Pepperoni",
+      "price": 14100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 10,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": "Extra pepperoni"
+    },
+    {
+      "id": "923aaf43-7777-47d1-bc46-a3aad0ec378f",
+      "name": "Doble Queso (extra)",
+      "price": 4000,
+      "available": true,
+      "image_url": null,
+      "sort_order": 14,
+      "category_id": "d0000000-0000-0000-0000-000000000004",
+      "description": null
+    },
+    {
+      "id": "64bfdb4f-bc97-4500-ab3c-a0c104878105",
+      "name": "Papas Pil Pil",
+      "price": 17700,
+      "available": false,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000005",
+      "description": null
+    },
+    {
+      "id": "7a5850ea-965b-4519-a040-6ef0b2577a67",
+      "name": "Papas Fritas",
+      "price": 7400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000005",
+      "description": "Papas fritas crocantes con salsa de la casa"
+    },
+    {
+      "id": "c2d55ee3-e75c-4ede-857d-78bf515a3d81",
+      "name": "Papas La Mortal",
+      "price": 18800,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000005",
+      "description": "600g papas fritas crocantes, generosa porción de carne desmechada, queso cheddar y cebollín fresco"
+    },
+    {
+      "id": "684eef21-6d5d-49b3-a018-8a4cdde9ce2a",
+      "name": "La Peruana",
+      "price": 20800,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000005",
+      "description": "Salteado al estilo peruano, trozos de carne de vacuno, tomate, cebolla morada y salsa de ostras sobre papas fritas"
+    },
+    {
+      "id": "70a27c93-d693-4181-a491-89b23eab0969",
+      "name": "La Suprema",
+      "price": 16700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000005",
+      "description": "Salteado de pollo, champiñón, crema de leche, salsa de ajo y cebollín fresco sobre papas fritas"
+    },
+    {
+      "id": "45485a81-42b4-4a84-931a-9b6d1f8c5600",
+      "name": "La Chilena",
+      "price": 19800,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000005",
+      "description": "Filete de vacuno, longaniza artesanal, cebolla caramelizada y huevos fritos sobre papas fritas doradas"
+    },
+    {
+      "id": "439e6253-f7b1-4b6f-a35d-2e07b753554e",
+      "name": "Papas La Vegetal",
+      "price": 15600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000005",
+      "description": "Champiñones, pimentones, tomate cherry, cebolla morada, toques de soya y salsa tártara sobre papas fritas"
+    },
+    {
+      "id": "260344ea-7bd7-41cb-bdc5-9f3428490f19",
+      "name": "La Crocante",
+      "price": 16700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 6,
+      "category_id": "d0000000-0000-0000-0000-000000000005",
+      "description": "Pollo apanado, cebolla crispy, mayo sriracha y guacamole sobre papas fritas"
+    },
+    {
+      "id": "f17c8738-540a-46fa-be03-e50641766114",
+      "name": "Queso Derretido (extra)",
+      "price": 4000,
+      "available": true,
+      "image_url": null,
+      "sort_order": 7,
+      "category_id": "d0000000-0000-0000-0000-000000000005",
+      "description": "Baño de queso mozzarella derretido para agregar a tus papas"
+    },
+    {
+      "id": "14e3b45c-2e4b-4470-b3c6-e49aa984a917",
+      "name": "Té English",
+      "price": 1600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000007",
+      "description": null
+    },
+    {
+      "id": "5f4a27b8-89d0-44b4-a9f3-2478f57a6ba9",
+      "name": "Espresso",
+      "price": 2100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000007",
+      "description": null
+    },
+    {
+      "id": "48ad3b5b-0d9f-4b96-a0a1-db099febe63a",
+      "name": "Café Latte",
+      "price": 2300,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000007",
+      "description": null
+    },
+    {
+      "id": "bd5522f0-7e47-4e1e-bcde-20a700bcbe75",
+      "name": "cheesecake",
+      "price": 5000,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000060",
+      "description": null
+    },
+    {
+      "id": "45499093-7499-4579-83a9-ba6b2ef42888",
+      "name": "Volcán de Chocolate",
+      "price": 5900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000060",
+      "description": null
+    },
+    {
+      "id": "b4000000-0000-0000-0000-000000000001",
+      "name": "Tenedor Libre Sushi",
+      "price": 26900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "8019b4ef-3f37-4486-a4d1-1ec57187c56f",
+      "description": "Sushi ilimitado + bebestible ilimitado a elección: bebida, limonada, Mojito Cubano, Pisco Sour, Electric o schop Patagonia Hoppy Lager. 2 horas de consumo desde la primera ronda. Hasta 2 rolls por persona en cada ronda y una bebida a la vez: se pide lo siguiente cuando terminaste lo anterior. No se retira comida del local. Aplica a todos los comensales de la mesa."
+    },
+    {
+      "id": "76f2e693-cfa6-471b-8637-8720fbc89a2e",
+      "name": "Tenedor Libre Sushi Niño",
+      "price": 11500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "8019b4ef-3f37-4486-a4d1-1ec57187c56f",
+      "description": "Sushi ilimitado para niños hasta 12 años, con bebida o limonada. 2 horas, mismas rondas que la mesa."
+    },
+    {
+      "id": "ae0b30b9-95f9-43f8-acb6-ac54170161a6",
+      "name": "Bebida Lata",
+      "price": 2100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000010",
+      "description": "Pepsi, pepsi zero, ginger ale, bilz, pap, crush..."
+    },
+    {
+      "id": "8e8ef150-8411-4099-826e-ef784985f084",
+      "name": "Jugo Natural 500cc",
+      "price": 3700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000010",
+      "description": "Jugo natural preparado al momento"
+    },
+    {
+      "id": "80c657d7-3a0a-49b7-a9d6-09c42f9e0780",
+      "name": "Jugo Mix 500cc",
+      "price": 4500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000010",
+      "description": "Mezcla de 2 frutas · Preparado al momento"
+    },
+    {
+      "id": "620ca31e-025d-4ef0-9cb8-f7eb560c9df9",
+      "name": "Limonada Natural 500cc",
+      "price": 3900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000010",
+      "description": "Limonada fresca preparada al momento"
+    },
+    {
+      "id": "2e39a937-5a25-4cdc-9966-41158470c8af",
+      "name": "Agua Mineral",
+      "price": 2100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000010",
+      "description": null
+    },
+    {
+      "id": "30c26b29-1a8e-4ccb-b686-97a6729f7ddd",
+      "name": "Red Bull",
+      "price": 3000,
+      "available": true,
+      "image_url": null,
+      "sort_order": 14,
+      "category_id": "d0000000-0000-0000-0000-000000000010",
+      "description": null
+    },
+    {
+      "id": "04684f01-5927-4307-ba74-54db59282113",
+      "name": "Schop Gran Torobayo",
+      "price": 7200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000011",
+      "description": "500cc"
+    },
+    {
+      "id": "d14672a9-86f9-466e-a070-da432cb0fbda",
+      "name": "Schop Heineken",
+      "price": 5700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000011",
+      "description": "Cerveza tirada 500cc"
+    },
+    {
+      "id": "8279c385-2158-4895-a4bf-ab607602c835",
+      "name": "Schop Patagonia Hoppy",
+      "price": 5900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000011",
+      "description": null
+    },
+    {
+      "id": "80fed2f9-6df9-4734-ba36-b3b0a9242d03",
+      "name": "Schop Austral TdP",
+      "price": 6200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000011",
+      "description": null
+    },
+    {
+      "id": "4244beb1-7ec5-4364-b6a1-42dcdd677662",
+      "name": "Schop Austral Calafate",
+      "price": 6200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 6,
+      "category_id": "d0000000-0000-0000-0000-000000000011",
+      "description": "Cerveza tirada 500cc"
+    },
+    {
+      "id": "0320845d-8f84-448a-a3a1-6c0c505d2cf5",
+      "name": "Sol",
+      "price": 2600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000012",
+      "description": "Botellín 330cc"
+    },
+    {
+      "id": "94ae154f-efa7-4c04-b89b-5edb66c5dcca",
+      "name": "Austral Yagan",
+      "price": 3400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000012",
+      "description": null
+    },
+    {
+      "id": "b2b1fa36-b050-4fbc-8237-02844641c147",
+      "name": "Kunstman Miel",
+      "price": 4800,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000012",
+      "description": "Botellín de  330cc"
+    },
+    {
+      "id": "e0653ace-eae0-4b00-85fb-bfbcc92788c0",
+      "name": "Kunstman Gran Torobayo",
+      "price": 6800,
+      "available": true,
+      "image_url": null,
+      "sort_order": 8,
+      "category_id": "d0000000-0000-0000-0000-000000000012",
+      "description": null
+    },
+    {
+      "id": "06f030af-ff69-4aed-ba55-ecd1146c885d",
+      "name": "Pulpa de Frambuesa",
+      "price": 950,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000013",
+      "description": null
+    },
+    {
+      "id": "2788adf6-dcc4-4a38-8df3-c483d39d480a",
+      "name": "Pulpa de Frutilla",
+      "price": 950,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000013",
+      "description": null
+    },
+    {
+      "id": "996d2f6a-0e1f-43b7-980c-cb6d969d156c",
+      "name": "Pulpa de Mango",
+      "price": 950,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000013",
+      "description": null
+    },
+    {
+      "id": "e2ee1796-c538-402e-8589-7060c0ebd174",
+      "name": "Pulpa de Maracuyá",
+      "price": 950,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000013",
+      "description": null
+    },
+    {
+      "id": "b91c13ee-9e4c-4771-b213-7b8e0af06657",
+      "name": "Pulpa de Piña",
+      "price": 950,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000013",
+      "description": null
+    },
+    {
+      "id": "18686433-c8ff-43fa-8110-0a6b96c98509",
+      "name": "Michelada",
+      "price": 1500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000013",
+      "description": "Limón natural y sal"
+    },
+    {
+      "id": "2a92c0d1-400e-4d48-b78b-f1b4f62dec7c",
+      "name": "Chelada",
+      "price": 1100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000013",
+      "description": "Limón natural y sal"
+    },
+    {
+      "id": "1dd2cb2f-2c6e-46a5-861b-6d25d5c70fab",
+      "name": "Sal y Merkén",
+      "price": 1500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000013",
+      "description": "Limón natural, sal y merkén"
+    },
+    {
+      "id": "cd540b0e-8e93-49f9-903a-c2b2be68e7c8",
+      "name": "Daiquiri Sabores",
+      "price": 6900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": null
+    },
+    {
+      "id": "dc94af94-9b20-41e7-ba23-930d00600606",
+      "name": "maracazzotti",
+      "price": 6500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "espumante, ramazzotti, pulpa de maracuya y lemon de maracuya"
+    },
+    {
+      "id": "f33548c5-7c83-46af-800f-44a75a10b777",
+      "name": "Martini Dry",
+      "price": 7100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Martini y Gin"
+    },
+    {
+      "id": "a642686a-b4c3-448f-8737-5bfc93689ed2",
+      "name": "Mojito Sandia",
+      "price": 6800,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "tu mojito de siempre ahora en un nuevo sabor"
+    },
+    {
+      "id": "f3315d09-716d-48a4-a3f5-e6a5a0b3fc7b",
+      "name": "Mojito Cubano",
+      "price": 6000,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Ron blanco, limón, menta, agua gasificada"
+    },
+    {
+      "id": "c4720fc1-210b-4c7e-904a-6d92a6d9c7cb",
+      "name": "Mojito Sabores",
+      "price": 6800,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Frutilla, piña, maracuyá, mango, frambuesa o cubano"
+    },
+    {
+      "id": "4dbbf473-9959-4240-825a-1ed66398b089",
+      "name": "Caipirinha",
+      "price": 6500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Limón de pica, azúcar flor y cachaza"
+    },
+    {
+      "id": "bf74d39c-8f56-4a25-b2b8-3dbf3c15d5f8",
+      "name": "Electric",
+      "price": 7100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Vodka, limón, naranja, curazao y ginger ale"
+    },
+    {
+      "id": "19ff4768-e3ff-41d1-8119-e44441d19d7d",
+      "name": "Margarita",
+      "price": 6500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Tequila, triple sec, limón y goma"
+    },
+    {
+      "id": "ed785784-b7b6-4bef-bfb7-23d084301e76",
+      "name": "Tom Collins",
+      "price": 6500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 6,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Gin, limón y soda"
+    },
+    {
+      "id": "0ab6c79e-d38f-4737-8c94-2a923f4258fd",
+      "name": "Mojito Diablo",
+      "price": 6800,
+      "available": true,
+      "image_url": null,
+      "sort_order": 8,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Tequila, limón, menta, pulpa de frutilla y licor de cassis"
+    },
+    {
+      "id": "103c6aa7-7ca6-45a7-b723-788ee45ed70c",
+      "name": "Daiquiri",
+      "price": 5900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 9,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": null
+    },
+    {
+      "id": "3e559ba5-3daf-416e-9f84-4e0d596187a0",
+      "name": "Moscow Mule",
+      "price": 7200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 10,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Vodka, jugo de limon, hojas de menta y ginger beer"
+    },
+    {
+      "id": "bd423bb9-4b9c-4422-bc87-2b22a5f004ca",
+      "name": "London Mule",
+      "price": 7200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 11,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Gin, limón, menta y ginger beer"
+    },
+    {
+      "id": "47413c5c-b0d8-491b-90fc-bf8c0cce86de",
+      "name": "Tequila Sunrise",
+      "price": 6700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 12,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Jugo naranja, tequila y granadina"
+    },
+    {
+      "id": "df8c499a-dbea-4319-8f1c-e9369d29177e",
+      "name": "Copa Sangría",
+      "price": 6700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 13,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Vino merlot, sirop canela, limón, licor cassis, ramazzotti violetto"
+    },
+    {
+      "id": "0ad44153-09f6-416a-860a-688252fab621",
+      "name": "Mojito Sol",
+      "price": 7900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 15,
+      "category_id": "d0000000-0000-0000-0000-000000000014",
+      "description": "Mojito tradicional más cerveza Sol"
+    },
+    {
+      "id": "fc7b2cf1-2698-45bd-804a-c38171cfd49e",
+      "name": "Mojito Mango 1L",
+      "price": 10900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000052",
+      "description": null
+    },
+    {
+      "id": "1e2368be-fa3f-4a87-81cc-58bc29f65b04",
+      "name": "Mojito Cubano 1L",
+      "price": 9900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000052",
+      "description": null
+    },
+    {
+      "id": "71cf3dc9-9100-46ff-b838-98872a1d80d6",
+      "name": "Mojito Maracuyá 1L",
+      "price": 10900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000052",
+      "description": null
+    },
+    {
+      "id": "9e45ac51-5e7b-4dc1-b7c1-e7fbe81da0f9",
+      "name": "Mojito Frambuesa 1L",
+      "price": 10900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000052",
+      "description": "Ron Blanco, hojas de menta, jugo de limon y pulpa de fruta"
+    },
+    {
+      "id": "8493996e-24de-419a-abb8-5f0d9df71590",
+      "name": "Mojito Frutilla 1L",
+      "price": 10900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000052",
+      "description": "Ron Blanco, hojas de menta, jugo de limon y pulpa de fruta"
+    },
+    {
+      "id": "5d57b910-e506-4119-a2e2-3d7096f8aa6f",
+      "name": "Mojito Piña 1L",
+      "price": 10900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000052",
+      "description": "Ron Blanco, hojas de menta, jugo de limon y pulpa de fruta"
+    },
+    {
+      "id": "446e107d-610b-4a87-86cb-31fe5a3d9d5f",
+      "name": "Tropical Gin",
+      "price": 8200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000015",
+      "description": "Gin más Red Bull Yellow"
+    },
+    {
+      "id": "ca746c53-2a6c-48ef-bc8a-5e7841043f1c",
+      "name": "Red Bull Bomb",
+      "price": 8300,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000015",
+      "description": "Jägermeister más Red Bull"
+    },
+    {
+      "id": "7a48f03d-23b2-4a10-b9ae-e8eacaace2e3",
+      "name": "Almíbar Sour",
+      "price": 6100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000016",
+      "description": "Pisco, maracuyá, limón, licor de cassis, espuma de clara · El trago de la casa"
+    },
+    {
+      "id": "b6760ca0-2de3-43d5-80a5-003ac42d95ff",
+      "name": "Fuego Latino",
+      "price": 6500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000016",
+      "description": "Tequila, mango, ají, limón · Borde de merkén"
+    },
+    {
+      "id": "ce23f867-8fdb-48e2-ae27-ead66d0a28bc",
+      "name": "Sandía Punch",
+      "price": 6100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000016",
+      "description": "Gin, sandía, pepino, limón, soda · Refrescante y ligero"
+    },
+    {
+      "id": "6fb2e2bd-d909-4145-80eb-b901a888b2dd",
+      "name": "Atardecer Almíbar",
+      "price": 6400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000016",
+      "description": "Aperol, maracuyá, limón, tónica · Frutal y refrescante"
+    },
+    {
+      "id": "c567eeb0-a656-4721-a0c9-27560b48aa0f",
+      "name": "Rosa Salvaje",
+      "price": 7200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000016",
+      "description": "Gin, frambuesa, limón, espuma de clara · Pink drink elegante"
+    },
+    {
+      "id": "734c9e97-6e8f-436a-b896-4b63f2e1a0be",
+      "name": "Isla Pirata",
+      "price": 6500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 6,
+      "category_id": "d0000000-0000-0000-0000-000000000016",
+      "description": "Ron, curazao, piña, crema de coco, limón, goma · Estilo tiki tropical"
+    },
+    {
+      "id": "34f1c9ae-1a3b-495f-a0a7-e722de0c0094",
+      "name": "Humo & Miel",
+      "price": 7600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 7,
+      "category_id": "d0000000-0000-0000-0000-000000000016",
+      "description": "Mistral Honey, jugo de naranja, jengibre · Burbuja saborizada"
+    },
+    {
+      "id": "7417b1ef-76de-4640-a0fe-1ef72a1df17b",
+      "name": "Noche Negra",
+      "price": 7600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 8,
+      "category_id": "d0000000-0000-0000-0000-000000000016",
+      "description": "Jägermeister, frutilla, limón, Red Bull · Intenso y nocturno"
+    },
+    {
+      "id": "72b5f863-1ff1-4c58-a0d3-f97bae6e207d",
+      "name": "Medianoche",
+      "price": 7200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 9,
+      "category_id": "d0000000-0000-0000-0000-000000000016",
+      "description": "Vodka, espresso, Jäger, almíbar · Espresso Martini con twist herbal"
+    },
+    {
+      "id": "68c6e81c-8761-4828-85bb-e45044f30c71",
+      "name": "Amargo Italiano",
+      "price": 7600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 10,
+      "category_id": "d0000000-0000-0000-0000-000000000016",
+      "description": "Gin, Campari, Ramazzotti, naranja, tónica · Amargo refrescante"
+    },
+    {
+      "id": "ece88c14-7b5e-491c-8949-7a6aee2fdbe3",
+      "name": "Ramazzotti Violetto Spritz",
+      "price": 6200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000017",
+      "description": null
+    },
+    {
+      "id": "8f8965d9-33a7-44f9-81b7-e334c88e8886",
+      "name": "Ramazzotti Spritz",
+      "price": 6500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000017",
+      "description": "Ramazzotti, espumante y agua gasificada"
+    },
+    {
+      "id": "239392a6-fdcb-406e-add6-2c410d7e98ab",
+      "name": "Aperol Spritz",
+      "price": 6600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000017",
+      "description": "Aperol, espumante y agua gasificada"
+    },
+    {
+      "id": "40539bfc-d4ff-48c5-be4d-184c0f8d79d0",
+      "name": "Sour Tradicional",
+      "price": 5000,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000018",
+      "description": "Base tres R"
+    },
+    {
+      "id": "3aec7e49-04ae-4a02-bf83-00792e435633",
+      "name": "Sour Amaretto",
+      "price": 5700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000018",
+      "description": null
+    },
+    {
+      "id": "aae5e39b-c739-4f8a-97af-a7860176ef50",
+      "name": "Sour Peruano Catedral",
+      "price": 6700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000018",
+      "description": null
+    },
+    {
+      "id": "c585d50c-1275-4e4b-b127-e77d87f86931",
+      "name": "Peruano Sour",
+      "price": 5400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 21,
+      "category_id": "d0000000-0000-0000-0000-000000000018",
+      "description": "Pisco peruano Barsol, limón de pica, goma y albúmina"
+    },
+    {
+      "id": "58f3bad7-d17c-46ae-a24b-b40b517daf1c",
+      "name": "Ruso Blanco",
+      "price": 6700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000019",
+      "description": "Vodka, licor de café y crema de leche"
+    },
+    {
+      "id": "1ee639c4-d6db-4bac-a738-ac6769d9b2a8",
+      "name": "Piña Colada",
+      "price": 7200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000019",
+      "description": "Ron blanco, pulpa de piña, crema de coco y crema de leche"
+    },
+    {
+      "id": "ecfa9056-a6d7-4549-81c2-dcd4b74d94ce",
+      "name": "Amaretto Colado",
+      "price": 7200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000019",
+      "description": "Amaretto, crema de coco, pulpa de piña"
+    },
+    {
+      "id": "0fba8e39-4e4c-4084-bd69-5f6545bab5ae",
+      "name": "Negroni",
+      "price": 6700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000021",
+      "description": "Gin, campari y vermut rosso"
+    },
+    {
+      "id": "6a7399bc-a8de-4d5f-82c8-5c8ca8d84211",
+      "name": "Clavo Oxidado",
+      "price": 7200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000021",
+      "description": "Ballantines finest y drambuie"
+    },
+    {
+      "id": "a808137f-c8c1-4649-ad16-feaf281bf186",
+      "name": "Virgin Mojito",
+      "price": 5600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000022",
+      "description": "Menta, limón, almíbar, ginger ale · Sin alcohol, mismo sabor"
+    },
+    {
+      "id": "a75c00e1-ed4f-4ffe-8bc1-cb5004044452",
+      "name": "Virgin Piña Colada",
+      "price": 5900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000022",
+      "description": "Piña, crema de coco, limón · Cremoso y tropical sin alcohol"
+    },
+    {
+      "id": "0b14b8f7-53dd-457e-981a-206d6c969287",
+      "name": "Beso Boreal",
+      "price": 5600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000022",
+      "description": "Jugo arándano, limón, syrup romero, agua gasificada"
+    },
+    {
+      "id": "b7a7bb3d-0d53-42ca-8071-bd129b618f03",
+      "name": "Tropical Sunset",
+      "price": 4600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000022",
+      "description": "Jugo piña, jugo maracuyá, granadina"
+    },
+    {
+      "id": "5db4fb24-13e7-49c1-8cd1-fba38268f3f4",
+      "name": "Heineken 0,0",
+      "price": 5900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000022",
+      "description": "Botellin Heineken de 330cc sin alcohol"
+    },
+    {
+      "id": "1f8e3c33-6462-4e71-be77-6c6e06c7c867",
+      "name": "Sunset Fizz",
+      "price": 5900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000022",
+      "description": "Jugo de naranja, maracuyá, agua tónica, granadina · Refrescante y vibrante"
+    },
+    {
+      "id": "1153e37b-ec52-4f4c-b37c-0c3ffec4b508",
+      "name": "Kunstman Sin Alcohol",
+      "price": 5900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 6,
+      "category_id": "d0000000-0000-0000-0000-000000000022",
+      "description": "Botellin 330cc. sin alcohol"
+    },
+    {
+      "id": "4e93c9b8-51fa-4821-8259-6c97f12598ea",
+      "name": "Mango Chileno",
+      "price": 5900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 6,
+      "category_id": "d0000000-0000-0000-0000-000000000022",
+      "description": "Pulpa de mango, limón, jengibre, merkén, soda · Fresco con un toque picante"
+    },
+    {
+      "id": "d24e3c51-c905-4954-b7ec-14b06db35aec",
+      "name": "Beefeater",
+      "price": 7200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000023",
+      "description": "9 botánicos, naranja, enebro, cilantro"
+    },
+    {
+      "id": "f005689d-92e7-4fa9-84c6-20a8505ed6a7",
+      "name": "Beefeater Pink",
+      "price": 7200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000023",
+      "description": "Sabor a frutilla"
+    },
+    {
+      "id": "da9f96dc-18d9-4b0f-a85e-ee535b772bff",
+      "name": "Bull Dog",
+      "price": 8600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000023",
+      "description": "Flores, fruta y cítricos"
+    },
+    {
+      "id": "c7f468d7-8ccf-47bf-93d9-e976537c79a8",
+      "name": "Beefeater 24",
+      "price": 8900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 6,
+      "category_id": "d0000000-0000-0000-0000-000000000023",
+      "description": "12 botánicos, macerados 24 horas"
+    },
+    {
+      "id": "142c828e-c2a1-4c69-941f-13e2afb9a071",
+      "name": "Malfy",
+      "price": 10300,
+      "available": true,
+      "image_url": null,
+      "sort_order": 7,
+      "category_id": "d0000000-0000-0000-0000-000000000023",
+      "description": "Gin clásico estilo DRY italiano"
+    },
+    {
+      "id": "68a5a372-db6b-42cc-ac28-685d2b5d97f7",
+      "name": "Malfy Lemon",
+      "price": 10300,
+      "available": true,
+      "image_url": null,
+      "sort_order": 8,
+      "category_id": "d0000000-0000-0000-0000-000000000023",
+      "description": "Limones italianos de Amalfi"
+    },
+    {
+      "id": "7b13d066-21f4-4a03-929d-5ea36b9d96b5",
+      "name": "Hendricks",
+      "price": 10400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 9,
+      "category_id": "d0000000-0000-0000-0000-000000000023",
+      "description": "Pétalos de rosas búlgaras y pepino"
+    },
+    {
+      "id": "0d63f1a7-63c1-402e-a5ef-5f8271c7ecbc",
+      "name": "Malfy Rose",
+      "price": 10300,
+      "available": true,
+      "image_url": null,
+      "sort_order": 9,
+      "category_id": "d0000000-0000-0000-0000-000000000023",
+      "description": "Pomelos rosados sicilianos"
+    },
+    {
+      "id": "2d4fa072-543f-4530-902d-de2844c31879",
+      "name": "absolut original",
+      "price": 6200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000024",
+      "description": "vodka absolut"
+    },
+    {
+      "id": "7ba8e4ef-8f76-48fa-a047-19fef5167148",
+      "name": "Stolichnaya",
+      "price": 4600,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000024",
+      "description": "Incluye bebida 220cc"
+    },
+    {
+      "id": "62f13391-1828-4635-b355-f25cc567e84e",
+      "name": "Absolut Elyx",
+      "price": 9900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000024",
+      "description": null
+    },
+    {
+      "id": "5035d89e-6ea9-45b6-8d63-fd293a6acf3b",
+      "name": "Mistral 35",
+      "price": 5100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000025",
+      "description": "Pisco mistral 35° con bebida"
+    },
+    {
+      "id": "92d88e4d-a616-47b1-8834-3a4f9cb61ddd",
+      "name": "Republicano Moscatel",
+      "price": 6200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000025",
+      "description": "40° incluye bebida 220cc"
+    },
+    {
+      "id": "152ff3fe-a573-4754-9b3d-eb21eabadc8b",
+      "name": "Republicano Roble",
+      "price": 6200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000025",
+      "description": "40° incluye bebida 220cc"
+    },
+    {
+      "id": "bcb64aff-7ee7-4339-a692-97add5eaa238",
+      "name": "Tres R 35°",
+      "price": 4200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000025",
+      "description": null
+    },
+    {
+      "id": "90ed05eb-9cc2-4e83-a7b0-f3ac8bc61e82",
+      "name": "Espíritu De Los Andes",
+      "price": 5900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000025",
+      "description": null
+    },
+    {
+      "id": "6655f669-e958-42c9-bbcf-7b9ae843a665",
+      "name": "Alto del Carmen 35°",
+      "price": 5100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000025",
+      "description": "Incluye bebida 220cc"
+    },
+    {
+      "id": "3b5d9b58-2c18-445e-9c02-8c7a4e31db2b",
+      "name": "Mistral Cristalino",
+      "price": 6200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000025",
+      "description": null
+    },
+    {
+      "id": "aa5efd2a-1e41-44dd-ab01-f0383fc8908f",
+      "name": "Mistral Nobel",
+      "price": 6200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 6,
+      "category_id": "d0000000-0000-0000-0000-000000000025",
+      "description": "Incluye bebida 220"
+    },
+    {
+      "id": "fb514ea8-4ab8-477d-83b6-e4deb76874be",
+      "name": "Mistral Honey",
+      "price": 6200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 7,
+      "category_id": "d0000000-0000-0000-0000-000000000025",
+      "description": null
+    },
+    {
+      "id": "cda1e94b-d7e3-4f53-8930-deab7aa500da",
+      "name": "Mistral Apple",
+      "price": 6200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 8,
+      "category_id": "d0000000-0000-0000-0000-000000000025",
+      "description": null
+    },
+    {
+      "id": "fd8ec305-f303-49da-914c-2b172d5abf9b",
+      "name": "Mistral Barrica Tostada",
+      "price": 6200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 9,
+      "category_id": "d0000000-0000-0000-0000-000000000025",
+      "description": null
+    },
+    {
+      "id": "49e703cb-007b-487b-867e-dc6e1c11c7cb",
+      "name": "Horcón Quemado 3 años",
+      "price": 7000,
+      "available": true,
+      "image_url": null,
+      "sort_order": 10,
+      "category_id": "d0000000-0000-0000-0000-000000000025",
+      "description": null
+    },
+    {
+      "id": "d23f37b3-2f79-4591-bcf9-c9dd4c490baf",
+      "name": "Jack Daniels",
+      "price": 9200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000027",
+      "description": "Incluye bebida 220cc"
+    },
+    {
+      "id": "fad46e36-82ab-4e25-a203-e82299ae65bd",
+      "name": "Ballantines Finest",
+      "price": 6700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000027",
+      "description": "Incluye bebida 220"
+    },
+    {
+      "id": "2b07a31b-6cda-4a90-8576-1c21cb327730",
+      "name": "Jack Daniels Honey",
+      "price": 9200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000027",
+      "description": "Incluye bebida 220cc"
+    },
+    {
+      "id": "2479df65-1c28-4f9a-bafe-4867f6826845",
+      "name": "Jack Daniels Apple",
+      "price": 9200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000027",
+      "description": null
+    },
+    {
+      "id": "8f74c383-fce0-4edc-acc8-c9a851d9c79c",
+      "name": "Red Label",
+      "price": 7400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000027",
+      "description": "Incluye bebida 220cc"
+    },
+    {
+      "id": "abb50e55-52c8-4cdd-85e5-302825c7f570",
+      "name": "JW Black Label",
+      "price": 9300,
+      "available": true,
+      "image_url": null,
+      "sort_order": 5,
+      "category_id": "d0000000-0000-0000-0000-000000000027",
+      "description": null
+    },
+    {
+      "id": "cdac1583-934d-4152-8cad-8451abd0828d",
+      "name": "Jameson",
+      "price": 6100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 6,
+      "category_id": "d0000000-0000-0000-0000-000000000027",
+      "description": null
+    },
+    {
+      "id": "1aa8ae57-774e-43a8-aab4-be3926f74f91",
+      "name": "Chivas 12",
+      "price": 10400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 7,
+      "category_id": "d0000000-0000-0000-0000-000000000027",
+      "description": null
+    },
+    {
+      "id": "db577525-cdd9-438d-a394-0e1ce02bb3f7",
+      "name": "Shot Tequila",
+      "price": 1900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000028",
+      "description": null
+    },
+    {
+      "id": "8d99f50b-6279-4dd5-8e8b-73a526771eb9",
+      "name": "Shot Jagermeister",
+      "price": 4100,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000028",
+      "description": null
+    },
+    {
+      "id": "2c57ada3-0334-4408-a718-76f7dda9ec83",
+      "name": "Olmeca Reposado",
+      "price": 3400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000028",
+      "description": null
+    },
+    {
+      "id": "079237a1-8004-4c4d-b2a1-9b9a2c6eb6ed",
+      "name": "Jagermeister",
+      "price": 7200,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000029",
+      "description": "Incluye bebida"
+    },
+    {
+      "id": "720a45d9-3f21-4767-8b14-64497c7c3cb9",
+      "name": "Baileys Copa",
+      "price": 4900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000029",
+      "description": null
+    },
+    {
+      "id": "4818f548-84ec-4e64-9041-8050b47f5bb1",
+      "name": "Fernet Branca",
+      "price": 5900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000029",
+      "description": null
+    },
+    {
+      "id": "0141041c-2db7-4121-ae2c-2ab54124b9a9",
+      "name": "SB misiones de rengo 375",
+      "price": 8400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000030",
+      "description": null
+    },
+    {
+      "id": "591b90ca-0b75-4a0a-a89e-0f4926eb25fd",
+      "name": "viña mar 187",
+      "price": 2500,
+      "available": true,
+      "image_url": null,
+      "sort_order": 0,
+      "category_id": "d0000000-0000-0000-0000-000000000030",
+      "description": null
+    },
+    {
+      "id": "87122ebe-2d61-451a-af9f-48b4f69b2338",
+      "name": "Copa Castillo Molina CS",
+      "price": 3700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000030",
+      "description": null
+    },
+    {
+      "id": "f5bbb939-e6ba-4366-a244-a215d120632c",
+      "name": "Espumante Viña Mar 375ml",
+      "price": 7400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000030",
+      "description": null
+    },
+    {
+      "id": "d424d3c0-cfaf-4cf5-8ecf-b917535d812a",
+      "name": "2 Mojitos Sabores",
+      "price": 11400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 20,
+      "category_id": "d0000000-0000-0000-0000-000000000040",
+      "description": null
+    },
+    {
+      "id": "4707a81d-3a8f-43b7-9a58-ff727151dc07",
+      "name": "2 Piña Colada",
+      "price": 11400,
+      "available": true,
+      "image_url": null,
+      "sort_order": 20,
+      "category_id": "d0000000-0000-0000-0000-000000000040",
+      "description": null
+    },
+    {
+      "id": "80bfa7ef-f474-4134-8eca-9b6b65bb5f62",
+      "name": "2 Ramazzotti",
+      "price": 10900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 20,
+      "category_id": "d0000000-0000-0000-0000-000000000040",
+      "description": null
+    },
+    {
+      "id": "24246c96-59a8-484a-a71d-4d6a076ad063",
+      "name": "2 Sangría",
+      "price": 10900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 20,
+      "category_id": "d0000000-0000-0000-0000-000000000040",
+      "description": null
+    },
+    {
+      "id": "9aca3696-ad98-4962-867c-69ded35330e1",
+      "name": "2 Schop Patagonia Hoppy",
+      "price": 9900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 20,
+      "category_id": "d0000000-0000-0000-0000-000000000040",
+      "description": null
+    },
+    {
+      "id": "7aa982f3-6e94-435b-9c3d-1bd777a75d47",
+      "name": "2 Tropical Gin",
+      "price": 9900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 20,
+      "category_id": "d0000000-0000-0000-0000-000000000040",
+      "description": null
+    },
+    {
+      "id": "8608889b-9af3-470d-860b-4c31c9f0f636",
+      "name": "3x2 Schop",
+      "price": 11700,
+      "available": true,
+      "image_url": null,
+      "sort_order": 20,
+      "category_id": "d0000000-0000-0000-0000-000000000040",
+      "description": null
+    },
+    {
+      "id": "b3000000-0000-0000-0000-000000000001",
+      "name": "Suprema Party",
+      "price": 26800,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "d0000000-0000-0000-0000-000000000070",
+      "description": "Papas La Suprema + 2 bebidas a elección (mojito de sabores o schop Patagonia Hoppy Lager)"
+    },
+    {
+      "id": "b3000000-0000-0000-0000-000000000002",
+      "name": "Sushi para 2",
+      "price": 25900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 2,
+      "category_id": "d0000000-0000-0000-0000-000000000070",
+      "description": "Promo 20 Piezas · elige tus 4 rolls + 2 bebidas a elección"
+    },
+    {
+      "id": "b3000000-0000-0000-0000-000000000003",
+      "name": "Pizza Night",
+      "price": 22900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 3,
+      "category_id": "d0000000-0000-0000-0000-000000000070",
+      "description": "1 pizza a elección + 2 bebidas a elección · las pizzas premium tienen recargo"
+    },
+    {
+      "id": "b3000000-0000-0000-0000-000000000004",
+      "name": "Pizza & Schop",
+      "price": 26900,
+      "available": true,
+      "image_url": null,
+      "sort_order": 4,
+      "category_id": "d0000000-0000-0000-0000-000000000070",
+      "description": "Pizza Todas las Carnes o Mechona + 2 bebidas a elección"
+    },
+    {
+      "id": "31e36c4e-b48b-4da8-9fe8-10acfc8444d8",
+      "name": "Acceso VIP Club Almíbar",
+      "price": 10000,
+      "available": true,
+      "image_url": null,
+      "sort_order": 1,
+      "category_id": "c3d28fae-7796-4e53-9c5c-105ee9addb49",
+      "description": null
+    },
+    {
+      "id": "227fe44c-3ad4-4db1-9c6a-9c3a16827174",
+      "name": "Acevichado Salmón",
+      "price": 2990,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/acevichado-salmon.png",
+      "sort_order": 1,
+      "category_id": "339a2ac0-16eb-4024-9a53-b80af13c8d13",
+      "description": "Topping de salmón fresco, cebolla morada, pimentones, cilantro y leche de tigre."
+    },
+    {
+      "id": "f16e667a-6466-4bd8-b251-1237ec0e3793",
+      "name": "Acevichado Camarón",
+      "price": 1990,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/acevichado-camaron.png",
+      "sort_order": 2,
+      "category_id": "339a2ac0-16eb-4024-9a53-b80af13c8d13",
+      "description": "Topping de camarón, cebolla morada, pimentones, cilantro y leche de tigre."
+    },
+    {
+      "id": "e8d5aa4b-d765-472c-adf2-4ae8e590e2e8",
+      "name": "Acevichado Champiñón",
+      "price": 1990,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/acevichado-champinon.png",
+      "sort_order": 3,
+      "category_id": "339a2ac0-16eb-4024-9a53-b80af13c8d13",
+      "description": "Topping de champiñones frescos, cebolla morada, pimentones, cilantro y leche de tigre."
+    },
+    {
+      "id": "7b36124f-0d52-4353-850c-80a123870776",
+      "name": "Tartar de Atún",
+      "price": 2990,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/tartar-atun.png",
+      "sort_order": 4,
+      "category_id": "339a2ac0-16eb-4024-9a53-b80af13c8d13",
+      "description": "Atún fresco, palta, sésamo, cebolla morada y aceite de sésamo."
+    },
+    {
+      "id": "f62fe5e6-41f5-41f7-a282-4eecca767b9d",
+      "name": "Cubos Pollo Apanados",
+      "price": 2500,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/cubos-pollo.png",
+      "sort_order": 5,
+      "category_id": "339a2ac0-16eb-4024-9a53-b80af13c8d13",
+      "description": "Cubos de pollo apanado con salsa de la casa."
+    },
+    {
+      "id": "9a4f417c-e519-411e-b703-4e31d991ead5",
+      "name": "Cubos Camarón Apanado",
+      "price": 1990,
+      "available": true,
+      "image_url": "https://sushi-go-curico.vercel.app/cubos-camaron.png",
+      "sort_order": 6,
+      "category_id": "339a2ac0-16eb-4024-9a53-b80af13c8d13",
+      "description": "Cubos de camarón apanado con salsa de la casa."
+    }
+  ],
+  "categories": [
+    {
+      "id": "d0000000-0000-0000-0000-000000000001",
+      "name": "Platos Fríos",
+      "sort_order": 1,
+      "station": "cocina",
+      "anchor": "cocina-platos-frios"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000050",
+      "name": "Sushi",
+      "sort_order": 1,
+      "station": "cocina",
+      "anchor": "cocina-sushi"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000002",
+      "name": "Picoteos & Tablas",
+      "sort_order": 2,
+      "station": "cocina",
+      "anchor": "cocina-picoteos-y-tablas"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000004",
+      "name": "Pizzas",
+      "sort_order": 4,
+      "station": "cocina",
+      "anchor": "cocina-pizzas"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000005",
+      "name": "Papas",
+      "sort_order": 5,
+      "station": "cocina",
+      "anchor": "cocina-papas"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000007",
+      "name": "Café",
+      "sort_order": 7,
+      "station": "cocina",
+      "anchor": "cocina-cafe"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000060",
+      "name": "Postres",
+      "sort_order": 8,
+      "station": "cocina",
+      "anchor": "cocina-postres"
+    },
+    {
+      "id": "8019b4ef-3f37-4486-a4d1-1ec57187c56f",
+      "name": "Tenedor Libre",
+      "sort_order": 9,
+      "station": "promos",
+      "anchor": "promos-tenedor-libre"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000010",
+      "name": "Bebidas y Jugos",
+      "sort_order": 10,
+      "station": "barra",
+      "anchor": "barra-bebidas-y-jugos"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000011",
+      "name": "Cervezas Schop",
+      "sort_order": 11,
+      "station": "barra",
+      "anchor": "barra-cervezas-schop"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000012",
+      "name": "Botellines",
+      "sort_order": 12,
+      "station": "barra",
+      "anchor": "barra-botellines"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000013",
+      "name": "Micheladas",
+      "sort_order": 13,
+      "station": "barra",
+      "anchor": "barra-micheladas"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000014",
+      "name": "Cócteles Clásicos",
+      "sort_order": 14,
+      "station": "barra",
+      "anchor": "barra-cocteles-clasicos"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000052",
+      "name": "Mojitos 1L",
+      "sort_order": 15,
+      "station": "barra",
+      "anchor": "barra-mojitos-1l"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000015",
+      "name": "Red Bull Drinks",
+      "sort_order": 15,
+      "station": "barra",
+      "anchor": "barra-red-bull-drinks"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000016",
+      "name": "Coctelería de Autor",
+      "sort_order": 16,
+      "station": "barra",
+      "anchor": "barra-cocteleria-de-autor"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000017",
+      "name": "Spritz",
+      "sort_order": 17,
+      "station": "barra",
+      "anchor": "barra-spritz"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000018",
+      "name": "Sours",
+      "sort_order": 18,
+      "station": "barra",
+      "anchor": "barra-sours"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000019",
+      "name": "Cremosos",
+      "sort_order": 19,
+      "station": "barra",
+      "anchor": "barra-cremosos"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000021",
+      "name": "Old Schools",
+      "sort_order": 21,
+      "station": "barra",
+      "anchor": "barra-old-schools"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000022",
+      "name": "Mocktails",
+      "sort_order": 22,
+      "station": "barra",
+      "anchor": "barra-mocktails"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000023",
+      "name": "Gin",
+      "sort_order": 23,
+      "station": "barra",
+      "anchor": "barra-gin"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000024",
+      "name": "Vodka",
+      "sort_order": 24,
+      "station": "barra",
+      "anchor": "barra-vodka"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000025",
+      "name": "Pisco",
+      "sort_order": 25,
+      "station": "barra",
+      "anchor": "barra-pisco"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000027",
+      "name": "Whisky",
+      "sort_order": 27,
+      "station": "barra",
+      "anchor": "barra-whisky"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000028",
+      "name": "Shots",
+      "sort_order": 28,
+      "station": "barra",
+      "anchor": "barra-shots"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000029",
+      "name": "Licores",
+      "sort_order": 29,
+      "station": "barra",
+      "anchor": "barra-licores"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000030",
+      "name": "Vinos y Espumantes",
+      "sort_order": 30,
+      "station": "barra",
+      "anchor": "barra-vinos-y-espumantes"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000040",
+      "name": "Promos & Combos",
+      "sort_order": 40,
+      "station": "promos",
+      "anchor": "promos-promos-y-combos"
+    },
+    {
+      "id": "d0000000-0000-0000-0000-000000000070",
+      "name": "Para Compartir",
+      "sort_order": 41,
+      "station": "promos",
+      "anchor": "promos-para-compartir"
+    },
+    {
+      "id": "c3d28fae-7796-4e53-9c5c-105ee9addb49",
+      "name": "Socios",
+      "sort_order": 42,
+      "station": "club",
+      "anchor": "club-socios"
+    },
+    {
+      "id": "339a2ac0-16eb-4024-9a53-b80af13c8d13",
+      "name": "Toppings Sushi",
+      "sort_order": 1001,
+      "station": "cocina",
+      "anchor": "cocina-toppings-sushi"
+    }
+  ]
+}

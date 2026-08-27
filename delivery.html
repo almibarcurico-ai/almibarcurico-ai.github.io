@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0D0B1A">
+  <title>Delivery Almíbar</title>
+  <style>
+    html,
+    body,
+    #root {
+      height: 100%;
+      height: 100dvh;
+      min-height: 100%;
+      margin: 0;
+      background: #0D0B1A;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    #root {
+      display: flex;
+      width: 100%;
+    }
+
+    #root > * {
+      flex: 1 1 auto;
+      min-width: 0;
+      height: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      try {
+        if (!localStorage.getItem('@almibar_member')) {
+          localStorage.setItem('@almibar_guest', 'true');
+          localStorage.setItem('@almibar_onboarding_done', 'true');
+        }
+      } catch (_) {}
+
+      if (!location.pathname.startsWith('/menu')) {
+        history.replaceState(null, '', '/menu?isDelivery=true');
+        return;
+      }
+
+      var params = new URLSearchParams(location.search);
+      if (params.get('isDelivery') !== 'true') {
+        params.set('isDelivery', 'true');
+        history.replaceState(null, '', location.pathname + '?' + params.toString());
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="/_expo/static/js/web/index-f1e5c05ae1bed40fab7840a7cbc73709.js?v=delivery-direct-3" defer></script>
+</body>
+</html>

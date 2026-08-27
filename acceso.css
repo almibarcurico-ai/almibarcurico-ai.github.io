@@ -1,0 +1,100 @@
+.entry-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(6, 31, 36, .94);
+  overflow-y: auto;
+}
+
+.entry-gate[hidden] { display: none; }
+
+.entry-panel {
+  width: min(100%, 520px);
+  padding: clamp(24px, 5vw, 44px);
+  color: var(--cream);
+  background: var(--deep);
+  border: 1px solid rgba(215, 170, 88, .45);
+  border-radius: 14px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .42);
+}
+
+.entry-panel h1 {
+  max-width: 12ch;
+  margin: 0 0 10px;
+  color: var(--cream);
+  font-family: "Bodoni 72", Didot, Georgia, serif;
+  font-size: clamp(38px, 8vw, 64px);
+  line-height: .92;
+}
+
+.entry-panel p { max-width: 54ch; margin: 0 0 18px; color: var(--muted); }
+.entry-form { display: grid; gap: 12px; }
+.entry-form label { color: var(--cream); font-weight: 700; }
+.entry-form input[type="tel"],
+.entry-form input[type="text"] {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  color: var(--cream);
+  background: rgba(255, 247, 231, .08);
+  border: 1px solid rgba(255, 247, 231, .25);
+  border-radius: 8px;
+  font: inherit;
+}
+.entry-form input:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
+.entry-consent { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.entry-consent input { width: 20px; height: 20px; flex: 0 0 auto; accent-color: var(--gold); }
+.entry-consent a { color: var(--gold); }
+.entry-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 6px; }
+.entry-actions button, .entry-actions a {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  color: var(--ink);
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.entry-actions .entry-secondary { color: var(--cream); background: transparent; border-color: rgba(255, 247, 231, .32); }
+.entry-actions button:disabled { opacity: .55; cursor: wait; }
+.entry-status { min-height: 22px; margin-top: 10px; color: var(--gold); font-size: 13px; }
+.entry-status.error { color: #ffb4a8; }
+.entry-member { display: grid; gap: 12px; }
+.entry-member[hidden] { display: none; }
+.entry-member-card { padding: 16px; background: rgba(215, 170, 88, .12); border: 1px solid rgba(215, 170, 88, .45); border-radius: 10px; }
+.entry-member-card strong { display: block; color: var(--cream); font-size: 20px; }
+.entry-member-card span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; }
+
+.member-card {
+  display: none;
+  max-width: 440px;
+  margin: 22px 0 0;
+  padding: 18px;
+  color: var(--ink);
+  background: var(--paper);
+  border-radius: 12px;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, .18);
+}
+.member-card.is-visible { display: block; }
+.member-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.member-card-kicker { color: var(--teal); font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.member-card-name { margin-top: 4px; color: var(--ink); font-family: "Bodoni 72", Didot, Georgia, serif; font-size: 30px; line-height: 1; }
+.member-card-id { color: var(--teal); font-size: 12px; font-weight: 800; }
+.member-card-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 16px; color: rgba(23, 34, 38, .72); font-size: 13px; }
+.member-card-note { margin-top: 14px; padding-top: 12px; color: var(--ink); border-top: 1px solid rgba(23, 34, 38, .18); font-size: 13px; }
+
+@media (max-width: 520px) {
+  .entry-gate { align-items: start; padding: 14px; }
+  .entry-panel { margin-top: 4vh; padding: 24px 18px; }
+  .entry-actions { grid-template-columns: 1fr; }
+}

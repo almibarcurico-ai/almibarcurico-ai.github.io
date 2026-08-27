@@ -31,6 +31,20 @@
       "description": "Únete gratis al Club Almíbar",
       "url": "/socio.html",
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Reservar mesa",
+      "short_name": "Reservar",
+      "description": "Reserva mesa en Almíbar",
+      "url": "/reservas.html",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Pedir delivery",
+      "short_name": "Delivery",
+      "description": "Abre la app de pedidos de Almíbar",
+      "url": "/delivery.html",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     }
   ]
 }
