@@ -216,7 +216,8 @@
     socio_invalido: 'No pudimos identificarte. Vuelve a ingresar con tu RUT.',
     identidad_invalida: 'No pudimos verificar tu identidad. Pídele al equipo que revise el teléfono de tu ficha.',
     mesa_inexistente: 'Esa mesa no existe. Revisa el número en tu mesa.',
-    mesa_sin_cuenta: 'Tu mesa todavía no tiene cuenta abierta. Pídele al garzón que la abra.',
+    mesa_sin_cuenta: 'Esa mesa todavía no tiene cuenta abierta. Pídele al garzón que la abra y te registre en ella.',
+    mesa_no_es_tuya: 'Esa mesa está registrada a nombre de otra persona. Pídele al garzón que te registre en la tuya: es una vez y queda listo.',
     table_not_found: 'Esa mesa no existe. Revisa el número.',
     sin_items: 'Agrega algo antes de enviar el pedido.',
     no_items: 'Agrega algo antes de enviar el pedido.',
@@ -309,15 +310,16 @@
   function bodyEl() { return document.querySelector('[data-mesa-body]'); }
   function titleEl() { return document.querySelector('[data-mesa-title]'); }
 
-  function pedirNumero(msg) {
+  function pedirNumero(msg, mesaParaLlamar) {
     titleEl().textContent = 'Mi mesa';
     bodyEl().innerHTML =
-      '<p class="mesa-lead">Escribe el número que ves en tu mesa para ver tu cuenta y pedir.</p>' +
+      '<p class="mesa-lead">Escribe el número que ves en tu mesa. Para ver tu cuenta y pedir, el garzón debe haberte registrado en ella.</p>' +
       '<label class="mesa-field">Número de mesa' +
         '<input type="number" inputmode="numeric" min="1" step="1" data-mesa-num placeholder="Ej: 12">' +
       '</label>' +
       '<button type="button" class="mesa-cta" data-mesa-go>Entrar</button>' +
-      '<p class="mesa-status' + (msg ? ' err' : '') + '" data-mesa-status>' + (msg || '') + '</p>';
+      '<p class="mesa-status' + (msg ? ' err' : '') + '" data-mesa-status>' + (msg || '') + '</p>' +
+      (mesaParaLlamar ? '<div class="mesa-acciones-sec"><button type="button" class="mesa-btn-sec" data-mesa-llamar>Llamar al garzón</button></div>' : '');
     var input = bodyEl().querySelector('[data-mesa-num]');
     var go = function () {
       var n = parseInt(input.value, 10);
@@ -327,6 +329,11 @@
     };
     bodyEl().querySelector('[data-mesa-go]').addEventListener('click', go);
     input.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
+    var llamarBtn = bodyEl().querySelector('[data-mesa-llamar]');
+    if (llamarBtn) {
+      mesaState.numero = mesaParaLlamar;
+      llamarBtn.addEventListener('click', function () { llamar('llamada', this); });
+    }
     input.focus();
   }
 
@@ -345,7 +352,14 @@
       var d = await rpc('public_table_state', {
         p_client_id: m.clientId, p_verify: verifyOf(m), p_table_number: parseInt(mesaState.numero, 10)
       });
-      if (!d.ok) { saveMesa(null); pedirNumero(MESA_REASONS[d.reason] || 'No pudimos abrir tu mesa.'); return; }
+      if (!d.ok) {
+        // Sin vínculo no se puede seguir, pero sí llamar al garzón para que
+        // registre al socio: si no, el flujo queda en un callejón sin salida.
+        var puedeLlamar = (d.reason === 'mesa_sin_cuenta' || d.reason === 'mesa_no_es_tuya');
+        saveMesa(null);
+        pedirNumero(MESA_REASONS[d.reason] || 'No pudimos abrir tu mesa.', puedeLlamar ? mesaState.numero : null);
+        return;
+      }
       mesaState.data = d;
       saveMesa(mesaState.numero);
       pintarCuenta(d);
@@ -369,9 +383,9 @@
     if (!d.has_order) {
       bodyEl().innerHTML =
         '<div class="mesa-vacia"><strong>Tu mesa aún no tiene cuenta abierta</strong>' +
-        '<span>Pídele al garzón que la abra y vuelve a entrar. También puedes llamarlo desde acá.</span></div>' +
+        '<span>Pídele al garzón que la abra y te registre en ella. Puedes llamarlo desde acá.</span></div>' +
         acciones;
-      enlazarAcciones(false);
+      enlazarAcciones();
       return;
     }
 
