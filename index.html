@@ -1254,7 +1254,8 @@
     .tl-noadd { margin: 0 0 26px; max-width: 56ch; color: #EDC988; font-size: 14.5px; line-height: 1.55; font-weight: 600; }
     /* Dos formatos, dos tarjetas: el de menor precio debe leerse tan claro como
        el otro o la gente no se entera de que existe. */
-    .tl-planes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 14px 0 10px; }
+    .tl-planes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 14px 0 22px; }
+    @media (max-width: 900px) { .tl-planes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 620px) { .tl-planes { grid-template-columns: 1fr; } }
     .tl-plan {
       position: relative; display: flex; flex-direction: column;
@@ -1272,12 +1273,7 @@
     .tl-plan-per { display: block; margin-top: 2px; font-size: 14px; font-weight: 700; color: #D8D2C6; letter-spacing: .02em; }
     .tl-plan-desc { margin: 12px 0 0; font-size: clamp(15px, 2.1vw, 17px); line-height: 1.5; color: #F5F1EA; font-weight: 600; }
     .tl-plan-desc em { font-style: normal; color: #C9C2B4; font-weight: 500; }
-    .tl-kids { margin: 4px 0 18px; font-size: clamp(15px, 2.4vw, 19px); font-weight: 700; color: #E5DFD3; }
-    .tl-drinks-note { margin-top: 10px; font-size: clamp(13px, 1.9vw, 15px); color: #C9C2B4; line-height: 1.5; }
     .tl-compare { margin: 0 0 22px; font-style: italic; font-size: 13.5px; color: #B9B2A4; }
-    .tl-drinks { margin: 0 0 20px; padding: 16px 18px; border-radius: 14px; background: rgba(11, 38, 44, .75); border: 1px solid rgba(232, 163, 60, .4); }
-    .tl-drinks h4 { margin: 0 0 6px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: #E8A33C; }
-    .tl-drinks p { margin: 0; font-size: clamp(15px, 2.2vw, 18px); font-weight: 600; line-height: 1.5; color: #F5F1EA; }
     .tl-tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
     .tl-tier {
       background: rgba(11, 38, 44, .7); border: 1px solid rgba(212, 155, 90, .28);
@@ -2045,13 +2041,11 @@
             <span class="tl-plan-price">$18.900<span class="tl-plan-per">por persona</span></span>
             <p class="tl-plan-desc">Todos los rolls que quieras. <em>Las bebidas se piden y se pagan aparte.</em></p>
           </article>
-        </div>
-        <p class="tl-kids">Niños hasta 12 años · <strong>$11.500</strong></p>
-
-        <div class="tl-drinks">
-          <h4>Para tomar, ilimitado</h4>
-          <p>Bebida · Limonada · Mojito Cubano · Pisco Sour · Electric · Schop Patagonia Hoppy Lager</p>
-          <p class="tl-drinks-note">Va con el de $26.900 y aplica a toda la mesa: si alguien toma el de $18.900, las bebidas se cobran aparte para todos.</p>
+          <article class="tl-plan">
+            <p class="tl-plan-name">Niños hasta 12 años</p>
+            <span class="tl-plan-price">$11.500<span class="tl-plan-per">por niño</span></span>
+            <p class="tl-plan-desc">Los mismos rolls, sin apuro. <em>Con bebida sin alcohol incluida.</em></p>
+          </article>
         </div>
 
         <div class="tl-cols">
@@ -2062,6 +2056,7 @@
               <li><strong>Una bebida a la vez:</strong> pedimos la siguiente cuando terminaste la anterior.</li>
               <li>Tienes 2 horas y media desde que se toma la orden.</li>
               <li>Aplica a todos los comensales de la mesa.</li>
+              <li><strong>El formato se elige para toda la mesa:</strong> si alguien toma el de $18.900, las bebidas se cobran aparte para todos.</li>
             </ul>
           </div>
           <aside class="tl-nowaste">
