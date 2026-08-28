@@ -1256,6 +1256,10 @@
     .tl-priceline-main { font-size: clamp(30px, 6vw, 48px); font-weight: 900; color: #F2B84B; line-height: 1; }
     .tl-priceline-main em { font-style: normal; font-size: .42em; font-weight: 700; color: #D8D2C6; letter-spacing: .02em; }
     .tl-priceline-kids { font-size: clamp(15px, 2.4vw, 19px); font-weight: 700; color: #E5DFD3; }
+    .tl-priceline-alt { font-size: clamp(15px, 2.4vw, 19px); font-weight: 700; color: #E5DFD3; }
+    .tl-priceline-alt strong { color: #F2B84B; font-weight: 800; }
+    .tl-drinks-note { margin-top: 8px; font-size: clamp(13px, 1.9vw, 15px); color: #C9C2B4; line-height: 1.5; }
+    .tl-priceline-w { display: flex; flex-direction: column; gap: 2px; }
     .tl-compare { margin: 0 0 22px; font-style: italic; font-size: 13.5px; color: #B9B2A4; }
     .tl-drinks { margin: 0 0 20px; padding: 16px 18px; border-radius: 14px; background: rgba(11, 38, 44, .75); border: 1px solid rgba(232, 163, 60, .4); }
     .tl-drinks h4 { margin: 0 0 6px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: #E8A33C; }
@@ -2013,16 +2017,22 @@
       <div class="tl-inner">
         <p class="tl-kicker">Solo los jueves</p>
         <h2 class="tl-title">Tenedor libre de sushi</h2>
-        <p class="tl-sub"><strong class="tl-lead">Dos horas y media.</strong> Todos los rolls que quieras y todo lo que quieras tomar, sin apuro y sin contar.</p>
+        <p class="tl-sub"><strong class="tl-lead">Dos horas y media.</strong> Todos los rolls que quieras, sin apuro y sin contar. Y si quieres, también todo lo que quieras tomar.</p>
 
-        <div class="tl-priceline">
-          <span class="tl-priceline-main">$26.900 <em>por persona</em></span>
-          <span class="tl-priceline-kids">Niños hasta 12 años · $11.500</span>
+        <div class="tl-priceline-w">
+          <div class="tl-priceline">
+            <span class="tl-priceline-main">$26.900 <em>por persona, con bebestible ilimitado</em></span>
+          </div>
+          <div class="tl-priceline">
+            <span class="tl-priceline-alt">Solo los rolls, sin bebestible · <strong>$18.900</strong></span>
+            <span class="tl-priceline-kids">Niños hasta 12 años · $11.500</span>
+          </div>
         </div>
 
         <div class="tl-drinks">
-          <h4>Para tomar, ilimitado</h4>
+          <h4>Para tomar, ilimitado · con el de $26.900</h4>
           <p>Bebida · Limonada · Mojito Cubano · Pisco Sour · Electric · Schop Patagonia Hoppy Lager</p>
+          <p class="tl-drinks-note">El bebestible ilimitado va con el tenedor libre de $26.900 y aplica a toda la mesa: si alguien toma el de $18.900, las bebidas se cobran aparte para todos.</p>
         </div>
 
         <div class="tl-cols">
@@ -2133,22 +2143,26 @@
         </div>
         <div class="section-count">
           <strong>3</strong>
-          categorías · 13 productos activos.
+          categorías · 14 productos activos.
         </div>
       </div>
     </section>
       <section class="menu-band" id="promos-tenedor-libre">
       <div class="menu-layout full">
         <div class="chapter-copy">
-          <h2 class="chapter-title">Tenedor Libre <small>2 productos</small></h2>
+          <h2 class="chapter-title">Tenedor Libre <small>3 productos</small></h2>
           <div class="menu-list">
             <article class="dish">
-              <div><h3>Tenedor Libre Sushi</h3><p>Sushi ilimitado + bebestible ilimitado a elección: bebida, limonada, Mojito Cubano, Pisco Sour, Electric o schop Patagonia Hoppy Lager. 2 horas de consumo desde la primera ronda. Hasta 2 rolls por persona en cada ronda y una bebida a la vez: se pide lo siguiente cuando terminaste lo anterior. No se retira comida del local. Aplica a todos los comensales de la mesa.</p></div>
+              <div><h3>Tenedor Libre Sushi</h3><p>Sushi ilimitado + bebestible ilimitado a elección: bebida, limonada, Mojito Cubano, Pisco Sour, Electric o schop Patagonia Hoppy Lager. 2 horas y media desde que se toma la orden. Hasta 2 rolls por persona en cada ronda y una bebida a la vez: se pide lo siguiente cuando terminaste lo anterior. Si quedan más de 5 cortes sin comer, se cobran $2.500. No se retira comida del local. Aplica a todos los comensales de la mesa.</p></div>
               <strong class="price">$26.900</strong>
             </article>
             <article class="dish">
-              <div><h3>Tenedor Libre Sushi Niño</h3><p>Sushi ilimitado para niños hasta 12 años, con bebida o limonada. 2 horas, mismas rondas que la mesa.</p></div>
+              <div><h3>Tenedor Libre Sushi Niño</h3><p>Sushi ilimitado para niños hasta 12 años, con bebida o limonada. 2 horas y media desde que se toma la orden, mismas rondas que la mesa.</p></div>
               <strong class="price">$11.500</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Tenedor Libre Sushi sin bebestible</h3><p>Todos los rolls que quieras, 2 horas y media. Las bebidas se piden aparte.</p></div>
+              <strong class="price">$18.900</strong>
             </article>
           </div>
           
@@ -2301,7 +2315,7 @@
             </article>
             <article class="dish">
               <div><h3>Schop Heineken</h3><p>Cerveza tirada 500cc</p></div>
-              <strong class="price">$5.700</strong>
+              <strong class="price">$4.000</strong>
             </article>
             <article class="dish">
               <div><h3>Schop Patagonia Hoppy</h3></div>
@@ -2356,7 +2370,7 @@
               <strong class="price">$3.400</strong>
             </article>
             <article class="dish">
-              <div><h3>Kunstman Miel</h3><p>Botellín de  330cc</p></div>
+              <div><h3>Kunstman Miel</h3><p>Botellín de 330cc</p></div>
               <strong class="price">$4.800</strong>
             </article>
             <article class="dish">
@@ -2380,7 +2394,7 @@
               <strong class="price">$6.900</strong>
             </article>
             <article class="dish">
-              <div><h3>maracazzotti</h3><p>espumante, ramazzotti, pulpa de maracuya y lemon de maracuya</p></div>
+              <div><h3>maracazzotti</h3><p>Espumante, Ramazzotti, pulpa de maracuyá y limón de maracuyá</p></div>
               <strong class="price">$6.500</strong>
             </article>
             <article class="dish">
@@ -2388,7 +2402,7 @@
               <strong class="price">$7.100</strong>
             </article>
             <article class="dish">
-              <div><h3>Mojito Sandia</h3><p>tu mojito de siempre ahora en un nuevo sabor</p></div>
+              <div><h3>Mojito Sandia</h3><p>Tu mojito de siempre ahora en un nuevo sabor</p></div>
               <strong class="price">$6.800</strong>
             </article>
             <article class="dish">
@@ -2424,7 +2438,7 @@
               <strong class="price">$5.900</strong>
             </article>
             <article class="dish">
-              <div><h3>Moscow Mule</h3><p>Vodka, jugo de limon, hojas de menta y ginger beer</p></div>
+              <div><h3>Moscow Mule</h3><p>Vodka, jugo de limón, hojas de menta y ginger beer</p></div>
               <strong class="price">$7.200</strong>
             </article>
             <article class="dish">
@@ -2472,15 +2486,15 @@
               <strong class="price">$10.900</strong>
             </article>
             <article class="dish">
-              <div><h3>Mojito Frambuesa 1L</h3><p>Ron Blanco, hojas de menta, jugo de limon y pulpa de fruta</p></div>
+              <div><h3>Mojito Frambuesa 1L</h3><p>Ron blanco, hojas de menta, jugo de limón y pulpa de fruta</p></div>
               <strong class="price">$10.900</strong>
             </article>
             <article class="dish">
-              <div><h3>Mojito Frutilla 1L</h3><p>Ron Blanco, hojas de menta, jugo de limon y pulpa de fruta</p></div>
+              <div><h3>Mojito Frutilla 1L</h3><p>Ron blanco, hojas de menta, jugo de limón y pulpa de fruta</p></div>
               <strong class="price">$10.900</strong>
             </article>
             <article class="dish">
-              <div><h3>Mojito Piña 1L</h3><p>Ron Blanco, hojas de menta, jugo de limon y pulpa de fruta</p></div>
+              <div><h3>Mojito Piña 1L</h3><p>Ron blanco, hojas de menta, jugo de limón y pulpa de fruta</p></div>
               <strong class="price">$10.900</strong>
             </article>
           </div>
@@ -2716,7 +2730,7 @@
               <strong class="price">$4.600</strong>
             </article>
             <article class="dish">
-              <div><h3>Heineken 0,0</h3><p>Botellin Heineken de 330cc sin alcohol</p></div>
+              <div><h3>Heineken 0,0</h3><p>Botellín Heineken de 330cc sin alcohol</p></div>
               <strong class="price">$5.900</strong>
             </article>
             <article class="dish">
@@ -2724,7 +2738,7 @@
               <strong class="price">$5.900</strong>
             </article>
             <article class="dish">
-              <div><h3>Kunstman Sin Alcohol</h3><p>Botellin 330cc. sin alcohol</p></div>
+              <div><h3>Kunstman Sin Alcohol</h3><p>Botellín 330cc sin alcohol</p></div>
               <strong class="price">$5.900</strong>
             </article>
             <article class="dish">
@@ -2796,7 +2810,7 @@
           <h2 class="chapter-title">Vodka <small>3 productos</small></h2>
           <div class="menu-list">
             <article class="dish">
-              <div><h3>absolut original</h3><p>vodka absolut</p></div>
+              <div><h3>absolut original</h3><p>Vodka Absolut</p></div>
               <strong class="price">$6.200</strong>
             </article>
             <article class="dish">
@@ -2848,7 +2862,7 @@
               <strong class="price">$6.200</strong>
             </article>
             <article class="dish">
-              <div><h3>Mistral Nobel</h3><p>Incluye bebida 220</p></div>
+              <div><h3>Mistral Nobel</h3><p>Incluye bebida 220cc</p></div>
               <strong class="price">$6.200</strong>
             </article>
             <article class="dish">
@@ -2888,7 +2902,7 @@
               <strong class="price">$9.200</strong>
             </article>
             <article class="dish">
-              <div><h3>Ballantines Finest</h3><p>Incluye bebida 220</p></div>
+              <div><h3>Ballantines Finest</h3><p>Incluye bebida 220cc</p></div>
               <strong class="price">$6.700</strong>
             </article>
             <article class="dish">
@@ -3223,7 +3237,7 @@
               <strong class="price">$15.900</strong>
             </article>
             <article class="dish">
-              <div><h3>Pizza Ricotta</h3><p>Masa fresca de 35 cm, salsa pomodoro artesanal, queso mozarella, ricotta, pesto de albahaca, tomates cherry y hojas de albahaca.</p></div>
+              <div><h3>Pizza Ricotta</h3><p>Masa fresca de 35 cm, salsa pomodoro artesanal, queso mozzarella, ricotta, pesto de albahaca, tomates cherry y hojas de albahaca.</p></div>
               <strong class="price">$14.900</strong>
             </article>
             <article class="dish">
@@ -3492,7 +3506,7 @@
 
     <footer class="footer">
       <strong>Almíbar · Carta completa</strong><br>
-      32 categorías activas · 193 productos visibles desde la carta pública.
+      32 categorías activas · 194 productos visibles desde la carta pública.
     </footer>
   </main>
 
