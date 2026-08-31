@@ -1330,6 +1330,12 @@
       background: rgba(11, 38, 44, .72); border: 1px solid rgba(232, 163, 60, .34);
     }
     .tl-plan--top { background: rgba(232, 163, 60, .13); border-color: rgba(242, 184, 75, .78); }
+    /* El bebestible ya no es un plan alternativo sino un complemento del de
+       $18.900: se muestra como "+$8.000" y con borde punteado para que se lea
+       como algo que se suma, no como otro precio con el que hay que comparar. */
+    .tl-plan--add { border-style: dashed; border-color: rgba(232, 163, 60, .55); }
+    .tl-plan-badge--add { background: #0B262C; color: #F2B84B; border: 1px solid rgba(242, 184, 75, .78); }
+    .tl-plan-plus { font-size: .62em; vertical-align: .22em; margin-right: .04em; color: #E8A33C; }
     .tl-plan-badge {
       position: absolute; top: -10px; left: 18px; padding: 3px 10px; border-radius: 20px;
       background: #F2B84B; color: #0B262C; font-size: 11px; font-weight: 900;
@@ -2223,15 +2229,16 @@
 
         <div class="tl-planes">
           <article class="tl-plan tl-plan--top">
-            <span class="tl-plan-badge">Con todo</span>
-            <p class="tl-plan-name">Rolls + bebestible</p>
-            <span class="tl-plan-price">$26.900<span class="tl-plan-per">por persona</span></span>
-            <p class="tl-plan-desc">Todos los rolls que quieras <strong>y todo lo que quieras tomar</strong>. <em>Bebida, limonada, mojito, pisco sour, electric o schop, sin contar.</em></p>
-          </article>
-          <article class="tl-plan">
-            <p class="tl-plan-name">Solo los rolls</p>
+            <span class="tl-plan-badge">El tenedor libre</span>
+            <p class="tl-plan-name">Todos los rolls</p>
             <span class="tl-plan-price">$18.900<span class="tl-plan-per">por persona</span></span>
-            <p class="tl-plan-desc">Todos los rolls que quieras. <em>Las bebidas se piden y se pagan aparte.</em></p>
+            <p class="tl-plan-desc">Todos los rolls que quieras, sin contar. <em>Las bebidas se piden y se pagan aparte.</em></p>
+          </article>
+          <article class="tl-plan tl-plan--add">
+            <span class="tl-plan-badge tl-plan-badge--add">Agrégalo</span>
+            <p class="tl-plan-name">Bebestible ilimitado</p>
+            <span class="tl-plan-price"><span class="tl-plan-plus">+</span>$8.000<span class="tl-plan-per">por persona</span></span>
+            <p class="tl-plan-desc">Todo lo que quieras tomar, sin contar. <em>Bebida, limonada, mojito, pisco sour, electric o schop.</em></p>
           </article>
           <article class="tl-plan">
             <p class="tl-plan-name">Niños hasta 12 años</p>
@@ -2248,7 +2255,7 @@
               <li><strong>Una bebida a la vez:</strong> pedimos la siguiente cuando terminaste la anterior.</li>
               <li>Tienes 2 horas y media desde que se toma la orden.</li>
               <li>Aplica a todos los comensales de la mesa.</li>
-              <li><strong>El formato se elige para toda la mesa:</strong> si alguien toma el de $18.900, las bebidas se cobran aparte para todos.</li>
+              <li><strong>El bebestible se agrega para toda la mesa:</strong> si alguien no lo toma, las bebidas se cobran aparte para todos.</li>
             </ul>
           </div>
           <aside class="tl-nowaste">
