@@ -1230,6 +1230,73 @@
       color: #F2B84B;
     }
 
+    /* ==== Happy Hour — bloque desmontable ==== */
+    .hh-band {
+      padding: clamp(30px, 5vw, 66px) clamp(16px, 4vw, 48px);
+      background:
+        radial-gradient(120% 90% at 100% 0%, rgba(232, 163, 60, .16), transparent 58%),
+        #0e1f24;
+      border-top: 1px solid rgba(212, 155, 90, .25);
+      border-bottom: 1px solid rgba(212, 155, 90, .25);
+    }
+    .hh-inner { max-width: 1120px; margin: 0 auto; }
+    .hh-kicker {
+      margin: 0 0 6px; font-size: 13px; font-weight: 800;
+      letter-spacing: .28em; text-transform: uppercase; color: #E8A33C;
+    }
+    .hh-title {
+      margin: 0; line-height: .95; color: #F5F1EA;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 700; font-size: clamp(46px, 9vw, 92px);
+    }
+    .hh-sub { margin: 10px 0 22px; max-width: 52ch; color: #D8D2C6; font-size: clamp(16px, 2.2vw, 20px); }
+    .hh-sub .hh-lead { color: #F2B84B; font-weight: 800; }
+    /* Dos precios, dos tarjetas. El de socio manda visualmente porque es el que
+       queremos que la gente pida; el general va al lado para que se vea la brecha. */
+    .hh-precios { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0 0 30px; }
+    @media (max-width: 620px) { .hh-precios { grid-template-columns: 1fr; } }
+    .hh-precio {
+      position: relative; display: flex; flex-direction: column;
+      padding: 22px 20px 18px; border-radius: 16px;
+      background: rgba(11, 38, 44, .72); border: 1px solid rgba(232, 163, 60, .34);
+    }
+    .hh-precio--top { background: rgba(232, 163, 60, .13); border-color: rgba(242, 184, 75, .78); }
+    .hh-precio-badge {
+      position: absolute; top: -10px; left: 18px; padding: 3px 10px; border-radius: 20px;
+      background: #F2B84B; color: #0B262C; font-size: 11px; font-weight: 900;
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    .hh-precio-name { margin: 2px 0 6px; font-size: 13px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: #E8A33C; }
+    .hh-precio-price { font-size: clamp(40px, 8vw, 60px); font-weight: 900; color: #F2B84B; line-height: .95; }
+    .hh-precio-desc { margin: 12px 0 0; font-size: clamp(14.5px, 2vw, 16px); line-height: 1.5; color: #F5F1EA; font-weight: 600; }
+    .hh-precio-desc em { font-style: normal; color: #C9C2B4; font-weight: 500; }
+    .hh-listtitle {
+      margin: 0 0 14px; font-size: 13px; font-weight: 800;
+      letter-spacing: .22em; text-transform: uppercase; color: #E8A33C;
+    }
+    /* Multi-columna en vez de grid: los grupos tienen 1 a 4 productos y con
+       filas fijas los de un solo trago dejaban una fila entera vacía. Así se
+       empaquetan por altura y la sección queda un tercio más corta. */
+    .hh-grid { columns: 3; column-gap: 20px; }
+    @media (max-width: 900px) { .hh-grid { columns: 2; } }
+    @media (max-width: 560px) { .hh-grid { columns: 1; } }
+    .hh-group {
+      break-inside: avoid; -webkit-column-break-inside: avoid;
+      display: inline-block; width: 100%; margin: 0 0 12px;
+      padding: 16px 18px; border-radius: 14px;
+      background: rgba(11, 38, 44, .55); border: 1px solid rgba(212, 155, 90, .22);
+    }
+    .hh-group-name {
+      margin: 0 0 10px; font-size: 12px; font-weight: 900;
+      letter-spacing: .14em; text-transform: uppercase; color: #D49B5A;
+    }
+    .hh-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .hh-item { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .hh-item-name { color: #F5F1EA; font-size: 15.5px; font-weight: 600; line-height: 1.3; }
+    /* El precio de carta va tachado: es el ancla que hace legible el descuento. */
+    .hh-item-was { color: #9AA5A3; font-size: 14px; font-weight: 600; text-decoration: line-through; white-space: nowrap; }
+    .hh-foot { margin: 22px 0 0; font-size: 13.5px; color: #B9B2A4; font-style: italic; }
+
     /* ==== Tenedor Libre (jueves) — bloque desmontable ==== */
     .tl-band {
       padding: clamp(30px, 5vw, 66px) clamp(16px, 4vw, 48px);
@@ -2021,6 +2088,131 @@
         </div>
       </div>
     </header>
+
+
+    <!-- ==== HAPPY HOUR — bloque desmontable: borrar de aquí a "fin happy hour" ==== -->
+    <section class="hh-band" id="happy-hour" aria-label="Happy Hour de Almíbar">
+      <div class="hh-inner">
+        <p class="hh-kicker">Lunes a sábado · 17:00 a 20:00</p>
+        <h2 class="hh-title">Happy Hour</h2>
+        <p class="hh-sub">Los 15 tragos que más nos piden, a precio fijo. <strong class="hh-lead">Sin letra chica:</strong> el precio es el mismo para todos los de la lista.</p>
+
+        <div class="hh-precios">
+          <article class="hh-precio hh-precio--top">
+            <span class="hh-precio-badge">Socio VIP</span>
+            <p class="hh-precio-name">Cualquiera de la lista</p>
+            <span class="hh-precio-price">$3.900</span>
+            <p class="hh-precio-desc">Llegas a VIP en tu <strong>tercera visita</strong>. <em>Después lo mantienes con 2 visitas al mes.</em></p>
+          </article>
+          <article class="hh-precio">
+            <p class="hh-precio-name">Precio general</p>
+            <span class="hh-precio-price">$4.900</span>
+            <p class="hh-precio-desc">Para todos, con o sin registro. <em>Registrarte es gratis y es el primer paso al VIP.</em></p>
+          </article>
+        </div>
+
+        <h3 class="hh-listtitle">Qué entra en el Happy Hour</h3>
+        <div class="hh-grid">
+          <article class="hh-group">
+            <h4 class="hh-group-name">Cócteles Clásicos</h4>
+            <ul class="hh-list">
+              <li class="hh-item">
+                <span class="hh-item-name">Mojito Sabores</span>
+                <span class="hh-item-was">$6.800</span>
+              </li>
+              <li class="hh-item">
+                <span class="hh-item-name">Mojito Cubano</span>
+                <span class="hh-item-was">$6.000</span>
+              </li>
+              <li class="hh-item">
+                <span class="hh-item-name">Copa Sangría</span>
+                <span class="hh-item-was">$6.700</span>
+              </li>
+              <li class="hh-item">
+                <span class="hh-item-name">maracazzotti</span>
+                <span class="hh-item-was">$6.500</span>
+              </li>
+            </ul>
+          </article>
+          <article class="hh-group">
+            <h4 class="hh-group-name">Cervezas Schop</h4>
+            <ul class="hh-list">
+              <li class="hh-item">
+                <span class="hh-item-name">Schop Patagonia Hoppy</span>
+                <span class="hh-item-was">$5.900</span>
+              </li>
+              <li class="hh-item">
+                <span class="hh-item-name">Schop Austral Calafate</span>
+                <span class="hh-item-was">$6.200</span>
+              </li>
+              <li class="hh-item">
+                <span class="hh-item-name">Schop Austral TdP</span>
+                <span class="hh-item-was">$6.200</span>
+              </li>
+            </ul>
+          </article>
+          <article class="hh-group">
+            <h4 class="hh-group-name">Mocktails</h4>
+            <ul class="hh-list">
+              <li class="hh-item">
+                <span class="hh-item-name">Virgin Mojito</span>
+                <span class="hh-item-was">$5.600</span>
+              </li>
+              <li class="hh-item">
+                <span class="hh-item-name">Heineken 0,0</span>
+                <span class="hh-item-was">$5.900</span>
+              </li>
+              <li class="hh-item">
+                <span class="hh-item-name">Virgin Piña Colada</span>
+                <span class="hh-item-was">$5.900</span>
+              </li>
+            </ul>
+          </article>
+          <article class="hh-group">
+            <h4 class="hh-group-name">Pisco</h4>
+            <ul class="hh-list">
+              <li class="hh-item">
+                <span class="hh-item-name">Mistral 35</span>
+                <span class="hh-item-was">$5.100</span>
+              </li>
+              <li class="hh-item">
+                <span class="hh-item-name">Mistral Nobel</span>
+                <span class="hh-item-was">$6.200</span>
+              </li>
+            </ul>
+          </article>
+          <article class="hh-group">
+            <h4 class="hh-group-name">Spritz</h4>
+            <ul class="hh-list">
+              <li class="hh-item">
+                <span class="hh-item-name">Ramazzotti Spritz</span>
+                <span class="hh-item-was">$6.500</span>
+              </li>
+            </ul>
+          </article>
+          <article class="hh-group">
+            <h4 class="hh-group-name">Cremosos</h4>
+            <ul class="hh-list">
+              <li class="hh-item">
+                <span class="hh-item-name">Piña Colada</span>
+                <span class="hh-item-was">$7.200</span>
+              </li>
+            </ul>
+          </article>
+          <article class="hh-group">
+            <h4 class="hh-group-name">Red Bull Drinks</h4>
+            <ul class="hh-list">
+              <li class="hh-item">
+                <span class="hh-item-name">Tropical Gin</span>
+                <span class="hh-item-was">$8.200</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+        <p class="hh-foot">Precios tachados: valor de carta. Fuera del horario, cada trago vuelve a su precio normal. Tu precio se aplica solo con el RUT en la mesa.</p>
+      </div>
+    </section>
+    <!-- ==== fin happy hour ==== -->
 
     <!-- ==== TENEDOR LIBRE DE SUSHI (jueves) — bloque desmontable: borrar de aquí a "fin tenedor libre" ==== -->
     <section class="tl-band" id="tenedor-libre" aria-label="Tenedor libre de sushi de los jueves">
@@ -2961,7 +3153,7 @@
           <div class="menu-list">
             <article class="dish">
               <div><h3>Shot Tequila</h3></div>
-              <strong class="price">$1.900</strong>
+              <strong class="price">$1.000</strong>
             </article>
             <article class="dish">
               <div><h3>Shot Jagermeister</h3></div>
@@ -3480,7 +3672,7 @@
           </article>
           <article class="benefit-item">
             <strong>Happy Hour</strong>
-            <span>Barra desde $2.900 socio y $4.500 general en horarios definidos.</span>
+            <span>Los 15 tragos más pedidos a $3.900 para socios VIP y $4.900 general, de lunes a sábado, 17:00 a 20:00. <a href="#happy-hour">Ver la lista</a></span>
           </article>
           <article class="benefit-item">
             <strong>Cumpleaños</strong>

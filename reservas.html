@@ -1229,6 +1229,73 @@
       color: #F2B84B;
     }
 
+    /* ==== Happy Hour — bloque desmontable ==== */
+    .hh-band {
+      padding: clamp(30px, 5vw, 66px) clamp(16px, 4vw, 48px);
+      background:
+        radial-gradient(120% 90% at 100% 0%, rgba(232, 163, 60, .16), transparent 58%),
+        #0e1f24;
+      border-top: 1px solid rgba(212, 155, 90, .25);
+      border-bottom: 1px solid rgba(212, 155, 90, .25);
+    }
+    .hh-inner { max-width: 1120px; margin: 0 auto; }
+    .hh-kicker {
+      margin: 0 0 6px; font-size: 13px; font-weight: 800;
+      letter-spacing: .28em; text-transform: uppercase; color: #E8A33C;
+    }
+    .hh-title {
+      margin: 0; line-height: .95; color: #F5F1EA;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 700; font-size: clamp(46px, 9vw, 92px);
+    }
+    .hh-sub { margin: 10px 0 22px; max-width: 52ch; color: #D8D2C6; font-size: clamp(16px, 2.2vw, 20px); }
+    .hh-sub .hh-lead { color: #F2B84B; font-weight: 800; }
+    /* Dos precios, dos tarjetas. El de socio manda visualmente porque es el que
+       queremos que la gente pida; el general va al lado para que se vea la brecha. */
+    .hh-precios { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0 0 30px; }
+    @media (max-width: 620px) { .hh-precios { grid-template-columns: 1fr; } }
+    .hh-precio {
+      position: relative; display: flex; flex-direction: column;
+      padding: 22px 20px 18px; border-radius: 16px;
+      background: rgba(11, 38, 44, .72); border: 1px solid rgba(232, 163, 60, .34);
+    }
+    .hh-precio--top { background: rgba(232, 163, 60, .13); border-color: rgba(242, 184, 75, .78); }
+    .hh-precio-badge {
+      position: absolute; top: -10px; left: 18px; padding: 3px 10px; border-radius: 20px;
+      background: #F2B84B; color: #0B262C; font-size: 11px; font-weight: 900;
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    .hh-precio-name { margin: 2px 0 6px; font-size: 13px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: #E8A33C; }
+    .hh-precio-price { font-size: clamp(40px, 8vw, 60px); font-weight: 900; color: #F2B84B; line-height: .95; }
+    .hh-precio-desc { margin: 12px 0 0; font-size: clamp(14.5px, 2vw, 16px); line-height: 1.5; color: #F5F1EA; font-weight: 600; }
+    .hh-precio-desc em { font-style: normal; color: #C9C2B4; font-weight: 500; }
+    .hh-listtitle {
+      margin: 0 0 14px; font-size: 13px; font-weight: 800;
+      letter-spacing: .22em; text-transform: uppercase; color: #E8A33C;
+    }
+    /* Multi-columna en vez de grid: los grupos tienen 1 a 4 productos y con
+       filas fijas los de un solo trago dejaban una fila entera vacía. Así se
+       empaquetan por altura y la sección queda un tercio más corta. */
+    .hh-grid { columns: 3; column-gap: 20px; }
+    @media (max-width: 900px) { .hh-grid { columns: 2; } }
+    @media (max-width: 560px) { .hh-grid { columns: 1; } }
+    .hh-group {
+      break-inside: avoid; -webkit-column-break-inside: avoid;
+      display: inline-block; width: 100%; margin: 0 0 12px;
+      padding: 16px 18px; border-radius: 14px;
+      background: rgba(11, 38, 44, .55); border: 1px solid rgba(212, 155, 90, .22);
+    }
+    .hh-group-name {
+      margin: 0 0 10px; font-size: 12px; font-weight: 900;
+      letter-spacing: .14em; text-transform: uppercase; color: #D49B5A;
+    }
+    .hh-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .hh-item { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .hh-item-name { color: #F5F1EA; font-size: 15.5px; font-weight: 600; line-height: 1.3; }
+    /* El precio de carta va tachado: es el ancla que hace legible el descuento. */
+    .hh-item-was { color: #9AA5A3; font-size: 14px; font-weight: 600; text-decoration: line-through; white-space: nowrap; }
+    .hh-foot { margin: 22px 0 0; font-size: 13.5px; color: #B9B2A4; font-style: italic; }
+
     /* ==== Tenedor Libre (jueves) — bloque desmontable ==== */
     .tl-band {
       padding: clamp(30px, 5vw, 66px) clamp(16px, 4vw, 48px);
@@ -1251,18 +1318,28 @@
     .tl-sub { margin: 10px 0 14px; max-width: 44ch; color: #D8D2C6; font-size: clamp(16px, 2.2vw, 20px); }
     .tl-sub .tl-lead { color: #F2B84B; font-weight: 800; font-size: 1.15em; letter-spacing: .005em; }
     .tl-noadd { margin: 0 0 26px; max-width: 56ch; color: #EDC988; font-size: 14.5px; line-height: 1.55; font-weight: 600; }
-    .tl-priceline { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin: 6px 0 4px; }
-    .tl-priceline-main { font-size: clamp(30px, 6vw, 48px); font-weight: 900; color: #F2B84B; line-height: 1; }
-    .tl-priceline-main em { font-style: normal; font-size: .42em; font-weight: 700; color: #D8D2C6; letter-spacing: .02em; }
-    .tl-priceline-kids { font-size: clamp(15px, 2.4vw, 19px); font-weight: 700; color: #E5DFD3; }
-    .tl-priceline-alt { font-size: clamp(15px, 2.4vw, 19px); font-weight: 700; color: #E5DFD3; }
-    .tl-priceline-alt strong { color: #F2B84B; font-weight: 800; }
-    .tl-drinks-note { margin-top: 8px; font-size: clamp(13px, 1.9vw, 15px); color: #C9C2B4; line-height: 1.5; }
-    .tl-priceline-w { display: flex; flex-direction: column; gap: 2px; }
+    /* Dos formatos, dos tarjetas: el de menor precio debe leerse tan claro como
+       el otro o la gente no se entera de que existe. */
+    .tl-planes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 14px 0 22px; }
+    @media (max-width: 900px) { .tl-planes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 620px) { .tl-planes { grid-template-columns: 1fr; } }
+    .tl-plan {
+      position: relative; display: flex; flex-direction: column;
+      padding: 20px 20px 18px; border-radius: 16px;
+      background: rgba(11, 38, 44, .72); border: 1px solid rgba(232, 163, 60, .34);
+    }
+    .tl-plan--top { background: rgba(232, 163, 60, .13); border-color: rgba(242, 184, 75, .78); }
+    .tl-plan-badge {
+      position: absolute; top: -10px; left: 18px; padding: 3px 10px; border-radius: 20px;
+      background: #F2B84B; color: #0B262C; font-size: 11px; font-weight: 900;
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    .tl-plan-name { margin: 2px 0 6px; font-size: 13px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: #E8A33C; }
+    .tl-plan-price { font-size: clamp(38px, 8vw, 58px); font-weight: 900; color: #F2B84B; line-height: .95; }
+    .tl-plan-per { display: block; margin-top: 2px; font-size: 14px; font-weight: 700; color: #D8D2C6; letter-spacing: .02em; }
+    .tl-plan-desc { margin: 12px 0 0; font-size: clamp(15px, 2.1vw, 17px); line-height: 1.5; color: #F5F1EA; font-weight: 600; }
+    .tl-plan-desc em { font-style: normal; color: #C9C2B4; font-weight: 500; }
     .tl-compare { margin: 0 0 22px; font-style: italic; font-size: 13.5px; color: #B9B2A4; }
-    .tl-drinks { margin: 0 0 20px; padding: 16px 18px; border-radius: 14px; background: rgba(11, 38, 44, .75); border: 1px solid rgba(232, 163, 60, .4); }
-    .tl-drinks h4 { margin: 0 0 6px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: #E8A33C; }
-    .tl-drinks p { margin: 0; font-size: clamp(15px, 2.2vw, 18px); font-weight: 600; line-height: 1.5; color: #F5F1EA; }
     .tl-tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
     .tl-tier {
       background: rgba(11, 38, 44, .7); border: 1px solid rgba(212, 155, 90, .28);
