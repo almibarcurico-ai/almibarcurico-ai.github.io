@@ -22,7 +22,7 @@
     /* Qué entra al HH: una sola tarjeta compacta, tragos por categoría, sin precios. */
     .hh-entra {
       border: 1px solid var(--card-line); border-radius: 18px; background: var(--card);
-      padding: clamp(16px, 2.4vw, 24px); margin: clamp(18px, 3vw, 28px) 0 clamp(8px, 2vw, 14px);
+      padding: clamp(12px, 2vw, 18px); margin: clamp(10px, 1.8vw, 16px) 0 clamp(6px, 1.2vw, 10px);
     }
     .hh-entra > h2 {
       font-family: var(--serif); font-weight: 400; font-size: clamp(19px, 2.8vw, 25px);
@@ -35,10 +35,8 @@
     }
     .hh-cat p { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255, 247, 231, .88); }
     .hh-cat .sep { color: rgba(215, 170, 88, .55); padding: 0 3px; }
-    /* Tarjetas de precio un poco más compactas para que todo entre en una plana */
-    .price-cards { margin: clamp(16px, 2.4vw, 22px) 0; }
-    .price-card { padding: clamp(16px, 2.4vw, 22px); }
-    .price-card .pc-desc { font-size: 12px; }
+    /* Precio general y VIP en 2 columnas también en móvil, compactas para que entre todo en una plana. */
+    .price-card .pc-desc { font-size: 11.5px; }
   </style>
 </head>
 <body>
