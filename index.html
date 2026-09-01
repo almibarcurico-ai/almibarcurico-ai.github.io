@@ -431,64 +431,66 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: clamp(14px, 2vw, 18px);
     }
+    /* Tarjetas de acceso: solo ícono + nombre. Compactas, parejas, mismo alto. */
     .card {
       position: relative;
       display: flex;
-      flex-direction: column;
-      gap: 13px;
-      padding: clamp(22px, 3vw, 30px);
-      border-radius: 20px;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+      padding: 16px 18px;
+      border-radius: 15px;
       background: var(--card);
       border: 1px solid var(--card-line);
       overflow: hidden;
-      transition: transform .24s ease, border-color .24s ease, background .24s ease;
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
     }
     .card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(160deg, rgba(215, 170, 88, .10), transparent 55%);
+      background: linear-gradient(160deg, rgba(215, 170, 88, .10), transparent 60%);
       opacity: 0;
-      transition: opacity .24s ease;
+      transition: opacity .22s ease;
     }
-    .card:hover { transform: translateY(-4px); border-color: var(--line); background: rgba(255, 247, 231, .07); }
+    .card:hover { transform: translateY(-3px); border-color: var(--line); background: rgba(255, 247, 231, .07); }
     .card:hover::before { opacity: 1; }
     .card .icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 14px;
+      position: relative;
+      z-index: 1;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
       display: grid;
       place-items: center;
-      background: rgba(215, 170, 88, .12);
+      background: rgba(215, 170, 88, .16);
       border: 1px solid var(--line);
       color: var(--gold);
+      flex-shrink: 0;
     }
-    .card .icon svg { width: 25px; height: 25px; }
+    .card .icon svg { width: 23px; height: 23px; }
     .card h3 {
+      position: relative;
+      z-index: 1;
       font-family: var(--serif);
       font-weight: 400;
-      font-size: clamp(21px, 3vw, 26px);
-      margin: 3px 0 0;
-      color: var(--cream);
-    }
-    .card p {
+      font-size: clamp(18px, 2.4vw, 21px);
       margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-      flex: 1;
+      color: var(--cream);
+      line-height: 1.15;
     }
-    .card .go {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13.5px;
-      letter-spacing: .03em;
+    .card .chev {
+      position: relative;
+      z-index: 1;
+      width: 18px;
+      height: 18px;
+      margin-left: auto;
+      flex-shrink: 0;
       color: var(--gold-soft);
-      font-weight: 500;
+      opacity: .8;
+      transition: transform .22s ease, opacity .22s ease;
     }
-    .card .go svg { width: 15px; height: 15px; transition: transform .24s ease; }
-    .card:hover .go svg { transform: translateX(4px); }
+    .card:hover .chev { opacity: 1; transform: translateX(3px); }
 
     /* ===== Contraportada / contacto ===== */
     .contra {
@@ -645,80 +647,45 @@
       </div>
       <div class="cards">
         <a class="card" href="./carta.html">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h11a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2V4Z"/><path d="M17 8h3v10a2 2 0 0 1-2 2h-1"/><path d="M7.5 8.5h6M7.5 12h6M7.5 15.5h4"/></svg>
-          </div>
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h11a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2V4Z"/><path d="M17 8h3v10a2 2 0 0 1-2 2h-1"/><path d="M7.5 8.5h6M7.5 12h6M7.5 15.5h4"/></svg></span>
           <h3>Ver carta</h3>
-          <p>Coctelería, barra, sushi, pizzas y platos para compartir. Promociones y Happy Hour de la casa.</p>
-          <span class="go">Abrir la carta
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
         </a>
 
         <a class="card" href="./reservas.html">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M8.5 14h3"/></svg>
-          </div>
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M8.5 14h3"/></svg></span>
           <h3>Reservas</h3>
-          <p>Aparta tu mesa para la noche. Grupos, cumpleaños y celebraciones con horario nocturno.</p>
-          <span class="go">Reservar mesa
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
         </a>
 
         <a class="card" href="./socio.html">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5l2.6 5.3 5.9.86-4.25 4.14 1 5.87L12 17.9l-5.25 2.77 1-5.87L3.5 9.66l5.9-.86L12 3.5Z"/></svg>
-          </div>
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5l2.6 5.3 5.9.86-4.25 4.14 1 5.87L12 17.9l-5.25 2.77 1-5.87L3.5 9.66l5.9-.86L12 3.5Z"/></svg></span>
           <h3>Club de socios</h3>
-          <p>Marca tus visitas, cobra tus premios y revisa tu consumo en la mesa. Hazte socio gratis.</p>
-          <span class="go">Ir al Club
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
         </a>
 
         <a class="card" href="./delivery.html">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13l1.5-5h11L17 13"/><path d="M2.5 13h19v3a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1v-3Z"/><circle cx="7" cy="19" r="1.6"/><circle cx="16.5" cy="19" r="1.6"/></svg>
-          </div>
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13l1.5-5h11L17 13"/><path d="M2.5 13h19v3a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1v-3Z"/><circle cx="7" cy="19" r="1.6"/><circle cx="16.5" cy="19" r="1.6"/></svg></span>
           <h3>Delivery</h3>
-          <p>Pide tu picoteo, sushi y tragos para llevar. Arma tu pedido y recíbelo donde estés.</p>
-          <span class="go">Pedir delivery
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
         </a>
 
         <a class="card" href="./happy-hour.html">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16l-8 8-8-8Z"/><path d="M12 13v6M8.5 19h7"/></svg>
-          </div>
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16l-8 8-8-8Z"/><path d="M12 13v6M8.5 19h7"/></svg></span>
           <h3>Happy Hour</h3>
-          <p>Los 15 tragos más pedidos a precio fijo, de lunes a sábado de 17:00 a 20:00.</p>
-          <span class="go">Ver Happy Hour
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
         </a>
 
         <a class="card" href="./promociones.html">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2A2 2 0 0 1 2.8 12V5a2 2 0 0 1 2-2h7a2 2 0 0 1 1.4.6l7.4 7.4a2 2 0 0 1 0 2.4Z"/><circle cx="7.5" cy="7.5" r="1.4" fill="currentColor" stroke="none"/></svg>
-          </div>
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2A2 2 0 0 1 2.8 12V5a2 2 0 0 1 2-2h7a2 2 0 0 1 1.4.6l7.4 7.4a2 2 0 0 1 0 2.4Z"/><circle cx="7.5" cy="7.5" r="1.4" fill="currentColor" stroke="none"/></svg></span>
           <h3>Promociones</h3>
-          <p>El 2x de la barra y los combos para compartir: Sushi para 2, Pizza Night y más.</p>
-          <span class="go">Ver promociones
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
         </a>
 
         <a class="card" href="./tenedor-libre.html">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 10v11"/><path d="M16 3c-1.5 0-2.5 1.8-2.5 4.5S14.5 12 16 12s2.5-1.8 2.5-4.5S17.5 3 16 3Zm0 9v9"/></svg>
-          </div>
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 10v11"/><path d="M16 3c-1.5 0-2.5 1.8-2.5 4.5S14.5 12 16 12s2.5-1.8 2.5-4.5S17.5 3 16 3Zm0 9v9"/></svg></span>
           <h3>Tenedor Libre</h3>
-          <p>Sushi ilimitado los jueves, 2½ horas. Desde $18.900 por persona · niños $11.500.</p>
-          <span class="go">Ver Tenedor Libre
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
         </a>
       </div>
     </section>

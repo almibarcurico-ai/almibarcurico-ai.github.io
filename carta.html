@@ -570,7 +570,7 @@
       position: absolute;
       inset: 0;
       z-index: -1;
-      background: linear-gradient(90deg, rgba(5, 25, 28, .92), rgba(5, 25, 28, .48), rgba(5, 25, 28, .78));
+      background: linear-gradient(90deg, rgba(5, 25, 28, .94), rgba(5, 25, 28, .70), rgba(5, 25, 28, .86));
     }
 
     .section-head-inner {
@@ -2034,18 +2034,36 @@
       }
     }
 
-    /* Cada categoría = tarjeta compacta y uniforme (sin imágenes ni band full-width) */
+    /* Cada categoría = tarjeta compacta y uniforme (sin imágenes ni band full-width).
+       Fondo casi sólido y oscuro para que el texto se lea sobre superficie pareja
+       (no sobre la foto de fondo). Todo el texto forzado a claro y con contraste AA. */
     .station-pane > .menu-band {
       display: block !important;
       width: auto !important;
       min-height: 0 !important;
       margin: 0 0 clamp(12px, 1.6vw, 16px) !important;
       padding: clamp(12px, 1.6vw, 16px) !important;
-      background: rgba(6, 26, 30, .58) !important;
-      border: 1px solid rgba(215, 170, 88, .16) !important;
+      background: #0a2429 !important;
+      color: #fff7e7 !important;
+      border: 1px solid rgba(215, 170, 88, .22) !important;
       border-radius: 12px !important;
-      box-shadow: none !important;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .32) !important;
     }
+    /* Texto legible en TODAS las bandas (las claras traían texto oscuro = invisible) */
+    .station-pane > .menu-band .chapter-title,
+    .station-pane > .menu-band .dish h3,
+    .station-pane > .menu-band .price { color: #fff7e7 !important; }
+    .station-pane > .menu-band .dish p { color: rgba(255, 247, 231, .82) !important; }
+    .station-pane > .menu-band .price { color: #ecd39a !important; }
+    .station-pane > .menu-band .chapter-title small { color: #ecd39a !important; }
+    .station-pane > .menu-band .dish { border-top-color: rgba(255, 247, 231, .14) !important; }
+    /* Sub-bloques (Micheladas, extra sabor, toppings): traían fondo blanco translúcido */
+    .station-pane > .menu-band .menu-addon {
+      background: rgba(255, 247, 231, .06) !important;
+      border-color: rgba(255, 247, 231, .16) !important;
+    }
+    .station-pane > .menu-band .menu-addon h3 { color: #fff7e7 !important; }
+    .station-pane > .menu-band .menu-addon h3 small { color: #ecd39a !important; }
     .station-pane > .menu-band::before,
     .station-pane > .menu-band::after { display: none !important; content: none !important; }
     .station-pane > .menu-band .menu-layout {
