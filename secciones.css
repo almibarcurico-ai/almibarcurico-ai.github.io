@@ -194,3 +194,44 @@ a { color: inherit; text-decoration: none; }
   .navchips { justify-content: flex-start; }
   .site-header .bar { flex-direction: column; align-items: flex-start; }
 }
+
+/* ===== Decoración floral de marca (mismo lenguaje que los flyers de IG) =====
+   Flores tropicales suaves asomando desde las esquinas, DETRÁS del contenido.
+   Sutiles y en los márgenes: no pasan por debajo del texto de las tarjetas, así
+   el contraste (cream sobre teal) se mantiene AA. Cada sección varía el color.
+   Fijas al viewport, sin desbordar el ancho (nunca generan scroll horizontal). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .40;
+  filter: saturate(1.12);
+  /* Ancladas a las esquinas del viewport: en desktop el trozo visible cae en el
+     margen lateral, fuera de la columna de contenido, así no toca el texto.
+     Default (Happy Hour): ámbar + naranja, cálido. */
+  background:
+    url("./flores-soft/flor-amarilla-soft.png") left -120px top 90px / 320px auto no-repeat,
+    url("./flores-soft/flor-naranja-soft.png") right -110px bottom 20px / 300px auto no-repeat;
+}
+/* Promociones: rojo + naranja (temperatura de promo). */
+body.sec-promos::before {
+  background:
+    url("./flores-soft/flor-roja-soft.png") left -120px top 90px / 320px auto no-repeat,
+    url("./flores-soft/flor-naranja-soft.png") right -110px bottom 20px / 300px auto no-repeat;
+}
+/* Tenedor Libre: azul + ámbar (más fresco). */
+body.sec-tl::before {
+  background:
+    url("./flores-soft/flor-azul-soft.png") left -120px top 90px / 320px auto no-repeat,
+    url("./flores-soft/flor-amarilla-soft.png") right -110px bottom 20px / 300px auto no-repeat;
+}
+/* En móvil el contenido llena el ancho: bajamos opacidad y tamaño para que las
+   flores no pasen por debajo del texto de las tarjetas (contraste AA a salvo). */
+@media (max-width: 720px) {
+  body::before {
+    opacity: .16;
+    background-size: 190px auto, 180px auto;
+  }
+}

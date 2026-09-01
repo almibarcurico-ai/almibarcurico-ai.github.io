@@ -70,6 +70,30 @@
 
     a { color: inherit; text-decoration: none; }
 
+    /* Decoración floral de marca (mismo lenguaje que los flyers de IG): flores
+       tropicales suaves asomando desde las esquinas, detrás del contenido. Van
+       en los márgenes de la página, no bajo el texto: el contraste se mantiene.
+       Fijas al viewport, sin desbordar el ancho (nada de scroll horizontal). */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .28;
+      filter: saturate(1.1);
+      background:
+        url("./flores-soft/flor-azul-soft.png") left -130px top 60px / 320px auto no-repeat,
+        url("./flores-soft/flor-amarilla-soft.png") right -120px top 380px / 280px auto no-repeat,
+        url("./flores-soft/flor-naranja-soft.png") left -120px bottom 20px / 300px auto no-repeat;
+    }
+    @media (max-width: 720px) {
+      body::before {
+        opacity: .16;
+        background-size: 210px auto, 195px auto, 205px auto;
+      }
+    }
+
     .shell {
       width: min(1120px, 100%);
       margin: 0 auto;

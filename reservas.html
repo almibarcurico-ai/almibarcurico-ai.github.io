@@ -1575,8 +1575,8 @@
 
     .reservation-hero {
       position: relative;
-      min-height: 100svh;
-      padding: clamp(20px, 4vw, 48px) clamp(18px, 4vw, 64px) clamp(34px, 6vw, 72px);
+      min-height: auto;
+      padding: clamp(20px, 4vw, 44px) clamp(18px, 4vw, 64px) clamp(40px, 7vw, 80px);
       overflow: hidden;
       background:
         linear-gradient(90deg, rgba(5, 25, 28, .96), rgba(5, 25, 28, .76) 46%, rgba(91, 27, 67, .42)),
@@ -1600,12 +1600,79 @@
     }
 
     .reservation-topbar {
-      width: min(1180px, 100%);
-      margin: 0 auto clamp(34px, 6vw, 74px);
+      width: min(640px, 100%);
+      margin: 0 auto clamp(18px, 3vw, 30px);
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 14px;
+    }
+
+    /* Header compacto + una sola columna: el formulario queda a la vista casi
+       de inmediato, sin descripción larga encima. */
+    .reservation-shell {
+      width: min(640px, 100%);
+      margin: 0 auto;
+    }
+
+    .reservation-head {
+      margin: 0 0 clamp(16px, 3vw, 24px);
+      text-align: center;
+    }
+
+    .reservation-head .reservation-title {
+      font-size: clamp(40px, 9vw, 72px);
+    }
+
+    /* Cantidad de personas: chips para tocar y avanzar (mismo lenguaje que los
+       botones de motivo y hora). El input numérico queda para cifras exactas. */
+    .count-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .count-option {
+      min-width: 52px;
+      min-height: 44px;
+      flex: 0 0 auto;
+      border: 1px solid rgba(23, 34, 38, .2);
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, .48);
+      font: inherit;
+      font-size: 15px;
+      font-weight: 850;
+      cursor: pointer;
+      transition: transform .16s ease, border-color .16s ease, background .16s ease, color .16s ease;
+    }
+
+    .count-option:hover {
+      transform: translateY(-1px);
+      border-color: rgba(175, 28, 104, .42);
+    }
+
+    .count-option.active {
+      border-color: var(--gold);
+      color: #211610;
+      background: var(--gold);
+    }
+
+    .count-option:focus-visible {
+      outline: 3px solid rgba(216, 98, 84, .3);
+      outline-offset: 2px;
+      border-color: var(--coral);
+    }
+
+    .count-manual {
+      margin-top: 12px;
+      max-width: 220px;
+    }
+
+    /* Cada paso deja aire arriba al centrarse en la vista tras el auto-avance. */
+    .reserve-section {
+      scroll-margin-top: 76px;
     }
 
     .reservation-topbar nav {
@@ -2023,26 +2090,16 @@
         <a href="./index.html">← Inicio</a>
       </div>
 
-      <div class="reservation-layout">
-        <div class="reservation-copy">
+      <div class="reservation-shell">
+        <header class="reservation-head">
           <h1 class="reservation-title">Reservar mesa</h1>
-          <p class="reservation-lead">Completa tus datos y la solicitud entra directo al POS de Almíbar para que el equipo la gestione desde el mismo flujo de reservas.</p>
-          <div class="reservation-facts">
-            <span>Francisco Moreno 418 · Plaza San Francisco</span>
-            <span>Lun-Sáb desde las 17:00</span>
-            <span>Viernes y sábado hasta las 03:00</span>
-            <span>Reservas, cumpleaños, grupos y celebraciones</span>
-          </div>
-        </div>
+        </header>
 
         <section class="reservation-panel" aria-label="Formulario de reserva">
-          <h2>Datos de la reserva</h2>
-          <p>Selecciona motivo, día y hora. Los horarios después de medianoche pertenecen a la noche elegida.</p>
-
           <form id="reservation-form" novalidate>
-            <section class="reserve-section">
+            <section class="reserve-section" data-step="motivo">
               <fieldset>
-                <legend>Motivo</legend>
+                <legend>¿Qué vienes a celebrar?</legend>
                 <input type="hidden" id="motivo" name="motivo" value="Celebración">
                 <div class="motivo-grid" id="motivo-grid">
                   <button class="motivo-option" type="button" data-motivo="Cumpleaños">Cumpleaños</button>
@@ -2054,16 +2111,46 @@
               </fieldset>
             </section>
 
-            <section class="reserve-section">
-              <div class="reserve-grid">
-                <label class="reserve-field">
-                  <span class="reserve-label">Personas</span>
+            <section class="reserve-section" data-step="personas">
+              <fieldset>
+                <legend>¿Cuántas personas?</legend>
+                <div class="count-grid" id="count-grid">
+                  <button class="count-option active" type="button" data-count="2">2</button>
+                  <button class="count-option" type="button" data-count="3">3</button>
+                  <button class="count-option" type="button" data-count="4">4</button>
+                  <button class="count-option" type="button" data-count="5">5</button>
+                  <button class="count-option" type="button" data-count="6">6</button>
+                  <button class="count-option" type="button" data-count="8">8</button>
+                  <button class="count-option" type="button" data-count="10">10</button>
+                  <button class="count-option" type="button" data-count="12">12</button>
+                  <button class="count-option" type="button" data-count="15">15</button>
+                  <button class="count-option" type="button" data-count="20">20</button>
+                </div>
+                <label class="reserve-field count-manual">
+                  <span class="reserve-label">¿Otra cantidad?</span>
                   <input id="personas" name="personas" type="number" inputmode="numeric" min="2" max="50" value="2" required>
                 </label>
-                <label class="reserve-field">
-                  <span class="reserve-label">Fecha</span>
-                  <input id="fecha" name="fecha" type="date" required>
-                </label>
+              </fieldset>
+            </section>
+
+            <section class="reserve-section" data-step="fecha">
+              <label class="reserve-field">
+                <span class="reserve-label">¿Qué día?</span>
+                <input id="fecha" name="fecha" type="date" required>
+              </label>
+            </section>
+
+            <section class="reserve-section" data-step="hora">
+              <fieldset>
+                <legend>¿A qué hora?</legend>
+                <input type="hidden" id="hora" name="hora" required>
+                <div class="slot-grid" id="slot-grid"></div>
+                <p class="reserve-help" id="hour-help">Los turnos disponibles se ajustan al día elegido.</p>
+              </fieldset>
+            </section>
+
+            <section class="reserve-section" data-step="datos">
+              <div class="reserve-grid">
                 <label class="reserve-field">
                   <span class="reserve-label">Nombre completo</span>
                   <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required>
@@ -2075,16 +2162,7 @@
               </div>
             </section>
 
-            <section class="reserve-section">
-              <fieldset>
-                <legend>Hora</legend>
-                <input type="hidden" id="hora" name="hora" required>
-                <div class="slot-grid" id="slot-grid"></div>
-                <p class="reserve-help" id="hour-help">Los turnos disponibles se ajustan al día elegido.</p>
-              </fieldset>
-            </section>
-
-            <section class="reserve-section">
+            <section class="reserve-section" data-step="notas">
               <label class="reserve-field full">
                 <span class="reserve-label">Notas opcionales</span>
                 <textarea id="notas" name="notas" placeholder="Mesa interior o terraza, cumpleaños, restricciones alimentarias, coche, decoración, etc."></textarea>
@@ -2106,5 +2184,83 @@
     </section>
   </main>
   <script src="./reservas.js"></script>
+  <script>
+    /* Auto-avance guiado: al elegir un dato, la vista sube suave al paso
+       siguiente. Va ENCIMA del flujo de reservas.js (no lo reemplaza):
+       reservas.js sigue manejando motivo, slots, fecha y el envío al POS. */
+    (function () {
+      var form = document.getElementById('reservation-form');
+      if (!form) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var steps = {};
+      form.querySelectorAll('[data-step]').forEach(function (el) { steps[el.dataset.step] = el; });
+
+      function goTo(name) {
+        var el = steps[name];
+        if (!el) return;
+        // rAF: deja que el paso previo termine su render (p.ej. los slots) antes de mover la vista.
+        window.requestAnimationFrame(function () {
+          el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+        });
+      }
+
+      // 1) Motivo -> Personas
+      var motivoGrid = document.getElementById('motivo-grid');
+      if (motivoGrid) {
+        motivoGrid.addEventListener('click', function (e) {
+          if (e.target.closest('[data-motivo]')) goTo('personas');
+        });
+      }
+
+      // 2) Personas: chips rápidos -> Día
+      var countGrid = document.getElementById('count-grid');
+      var personas = document.getElementById('personas');
+      function syncCountChips(n) {
+        if (!countGrid) return;
+        countGrid.querySelectorAll('.count-option').forEach(function (b) {
+          b.classList.toggle('active', Number(b.dataset.count) === n);
+        });
+      }
+      if (countGrid && personas) {
+        countGrid.addEventListener('click', function (e) {
+          var btn = e.target.closest('[data-count]');
+          if (!btn) return;
+          personas.value = btn.dataset.count;
+          syncCountChips(Number(btn.dataset.count));
+          goTo('fecha');
+        });
+      }
+      // 2b) Personas: número manual -> Día (al terminar de escribir)
+      if (personas) {
+        personas.addEventListener('change', function () {
+          var n = Number(personas.value);
+          syncCountChips(n);
+          if (isFinite(n) && n >= 2 && n <= 50) goTo('fecha');
+        });
+      }
+
+      // 3) Día -> Hora (después de que reservas.js pinte los slots del día)
+      var fecha = document.getElementById('fecha');
+      if (fecha) {
+        fecha.addEventListener('change', function () { goTo('hora'); });
+      }
+
+      // 4) Hora: al elegir un slot (delegado, porque se crean dinámicamente) -> Datos
+      var slotGrid = document.getElementById('slot-grid');
+      if (slotGrid) {
+        slotGrid.addEventListener('click', function (e) {
+          if (e.target.closest('.slot-option')) goTo('datos');
+        });
+      }
+
+      // 5) Datos: al completar un WhatsApp válido -> Notas / Enviar
+      var celular = document.getElementById('celular');
+      if (celular) {
+        celular.addEventListener('change', function () {
+          if (String(celular.value).replace(/\D/g, '').length >= 8) goTo('notas');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
