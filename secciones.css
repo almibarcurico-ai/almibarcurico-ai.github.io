@@ -125,15 +125,22 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.04; margin: 0 0 11px; padding-bottom: 9px; border-bottom: 1px solid rgba(215, 170, 88, .22);
 }
 .dish-list { list-style: none; margin: 0; padding: 0; }
+/* Nombre a la izquierda, precio a la derecha, y la descripción corta ocupa el
+   ancho COMPLETO en una segunda fila (pasa por debajo del precio). */
 .dish {
-  display: flex; align-items: baseline; gap: 10px; justify-content: space-between;
-  padding: 7px 0; border-bottom: 1px solid rgba(255,247,231,.07);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 10px;
+  row-gap: 1px;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,247,231,.07);
 }
 .dish:last-child { border-bottom: 0; }
-.dish .d-main { min-width: 0; }
+.dish .d-main { min-width: 0; grid-column: 1; grid-row: 1; }
 .dish .d-name { font-size: 13.5px; color: var(--cream); }
-.dish .d-desc { display: block; margin-top: 3px; font-size: 11.5px; color: var(--muted); line-height: 1.4; }
-.dish .d-price { flex-shrink: 0; font-weight: 600; font-size: 13px; color: var(--gold-soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dish .d-desc { grid-column: 1 / -1; grid-row: 2; display: block; margin: 1px 0 0; font-size: 11.5px; color: rgba(255,247,231,.74); line-height: 1.35; }
+.dish .d-price { grid-column: 2; grid-row: 1; font-weight: 600; font-size: 13px; color: var(--gold-soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .dish .d-price.was { color: var(--muted); text-decoration: line-through; font-weight: 400; }
 
 /* Paneles de bloque (Promociones): la lista de productos fluye en 2 columnas */
