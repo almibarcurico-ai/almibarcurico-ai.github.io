@@ -18,6 +18,28 @@
   <meta property="og:url" content="https://almibar.restoclick.cl/happy-hour.html">
   <meta property="og:image" content="https://almibar.restoclick.cl/promo-2x.jpg">
   <link rel="stylesheet" href="./secciones.css">
+  <style>
+    /* Qué entra al HH: una sola tarjeta compacta, tragos por categoría, sin precios. */
+    .hh-entra {
+      border: 1px solid var(--card-line); border-radius: 18px; background: var(--card);
+      padding: clamp(16px, 2.4vw, 24px); margin: clamp(18px, 3vw, 28px) 0 clamp(8px, 2vw, 14px);
+    }
+    .hh-entra > h2 {
+      font-family: var(--serif); font-weight: 400; font-size: clamp(19px, 2.8vw, 25px);
+      color: var(--cream); margin: 0 0 clamp(12px, 2vw, 18px); text-align: center;
+    }
+    .hh-cats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: clamp(12px, 2vw, 20px) clamp(16px, 2.4vw, 26px); }
+    .hh-cat h3 {
+      font-family: var(--sans); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+      font-weight: 700; color: var(--gold-soft); margin: 0 0 5px;
+    }
+    .hh-cat p { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255, 247, 231, .88); }
+    .hh-cat .sep { color: rgba(215, 170, 88, .55); padding: 0 3px; }
+    /* Tarjetas de precio un poco más compactas para que todo entre en una plana */
+    .price-cards { margin: clamp(16px, 2.4vw, 22px) 0; }
+    .price-card { padding: clamp(16px, 2.4vw, 22px); }
+    .price-card .pc-desc { font-size: 12px; }
+  </style>
 </head>
 <body>
 <main class="wrap">
@@ -42,63 +64,41 @@
       </article>
     </div>
 
-    <h2 class="block-title" style="text-align:center">Qué entra en el Happy Hour</h2>
-    <p class="block-sub" style="text-align:center;margin:6px auto 22px">Precios tachados = valor de carta. En Happy Hour, cualquiera de estos pasa a tu precio fijo.</p>
+    <section class="hh-entra">
+      <h2>Qué entra en el Happy Hour</h2>
+      <div class="hh-cats">
+        <div class="hh-cat">
+          <h3>Cócteles Clásicos</h3>
+          <p>Mojito Sabores <span class="sep">·</span> Mojito Cubano <span class="sep">·</span> Copa Sangría <span class="sep">·</span> Maracazzotti</p>
+        </div>
+        <div class="hh-cat">
+          <h3>Cervezas Schop</h3>
+          <p>Patagonia Hoppy <span class="sep">·</span> Austral Calafate <span class="sep">·</span> Austral TdP</p>
+        </div>
+        <div class="hh-cat">
+          <h3>Mocktails</h3>
+          <p>Virgin Mojito <span class="sep">·</span> Heineken 0,0 <span class="sep">·</span> Virgin Piña Colada</p>
+        </div>
+        <div class="hh-cat">
+          <h3>Pisco</h3>
+          <p>Mistral 35 <span class="sep">·</span> Mistral Nobel</p>
+        </div>
+        <div class="hh-cat">
+          <h3>Spritz</h3>
+          <p>Ramazzotti Spritz</p>
+        </div>
+        <div class="hh-cat">
+          <h3>Cremosos</h3>
+          <p>Piña Colada</p>
+        </div>
+        <div class="hh-cat">
+          <h3>Red Bull Drinks</h3>
+          <p>Tropical Gin</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="groups">
-      <article class="group">
-        <h3>Cócteles Clásicos</h3>
-        <ul class="dish-list">
-          <li class="dish"><div class="d-main"><span class="d-name">Mojito Sabores</span></div><span class="d-price was">$6.800</span></li>
-          <li class="dish"><div class="d-main"><span class="d-name">Mojito Cubano</span></div><span class="d-price was">$6.000</span></li>
-          <li class="dish"><div class="d-main"><span class="d-name">Copa Sangría</span></div><span class="d-price was">$6.700</span></li>
-          <li class="dish"><div class="d-main"><span class="d-name">Maracazzotti</span></div><span class="d-price was">$6.500</span></li>
-        </ul>
-      </article>
-      <article class="group">
-        <h3>Cervezas Schop</h3>
-        <ul class="dish-list">
-          <li class="dish"><div class="d-main"><span class="d-name">Schop Patagonia Hoppy</span></div><span class="d-price was">$5.900</span></li>
-          <li class="dish"><div class="d-main"><span class="d-name">Schop Austral Calafate</span></div><span class="d-price was">$6.200</span></li>
-          <li class="dish"><div class="d-main"><span class="d-name">Schop Austral TdP</span></div><span class="d-price was">$6.200</span></li>
-        </ul>
-      </article>
-      <article class="group">
-        <h3>Mocktails</h3>
-        <ul class="dish-list">
-          <li class="dish"><div class="d-main"><span class="d-name">Virgin Mojito</span></div><span class="d-price was">$5.600</span></li>
-          <li class="dish"><div class="d-main"><span class="d-name">Heineken 0,0</span></div><span class="d-price was">$5.900</span></li>
-          <li class="dish"><div class="d-main"><span class="d-name">Virgin Piña Colada</span></div><span class="d-price was">$5.900</span></li>
-        </ul>
-      </article>
-      <article class="group">
-        <h3>Pisco</h3>
-        <ul class="dish-list">
-          <li class="dish"><div class="d-main"><span class="d-name">Mistral 35</span></div><span class="d-price was">$5.100</span></li>
-          <li class="dish"><div class="d-main"><span class="d-name">Mistral Nobel</span></div><span class="d-price was">$6.200</span></li>
-        </ul>
-      </article>
-      <article class="group">
-        <h3>Spritz</h3>
-        <ul class="dish-list">
-          <li class="dish"><div class="d-main"><span class="d-name">Ramazzotti Spritz</span></div><span class="d-price was">$6.500</span></li>
-        </ul>
-      </article>
-      <article class="group">
-        <h3>Cremosos</h3>
-        <ul class="dish-list">
-          <li class="dish"><div class="d-main"><span class="d-name">Piña Colada</span></div><span class="d-price was">$7.200</span></li>
-        </ul>
-      </article>
-      <article class="group">
-        <h3>Red Bull Drinks</h3>
-        <ul class="dish-list">
-          <li class="dish"><div class="d-main"><span class="d-name">Tropical Gin</span></div><span class="d-price was">$8.200</span></li>
-        </ul>
-      </article>
-    </div>
-
-    <p class="note">Fuera del horario, cada trago vuelve a su precio normal. Tu precio de socio se aplica solo con el RUT en la mesa.</p>
+    <p class="note">Fuera de horario, cada trago vuelve a su precio normal. Tu precio de socio se aplica con el RUT en la mesa.</p>
 
     <div class="section-foot">
       <a class="back-home" href="./index.html">← Volver a Inicio</a>
