@@ -1,0 +1,3348 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Almíbar · Carta completa</title>
+  <meta name="description" content="Carta completa de Almíbar Curicó: promociones, barra y cocina. Coctelería de autor, sushi, pizzas y platos para compartir.">
+  <link rel="canonical" href="https://almibar.restoclick.cl/">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
+  <link rel="icon" href="./favicon.ico">
+  <meta name="theme-color" content="#071F26">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Almíbar">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Almíbar">
+  <meta property="og:title" content="Almíbar · Carta completa">
+  <meta property="og:description" content="Barra, cocina, reservas, delivery y Club de socios de Almíbar en Curicó.">
+  <meta property="og:url" content="https://almibar.restoclick.cl/">
+  <meta property="og:image" content="https://almibar.restoclick.cl/promo-2x.jpg">
+  <meta property="og:locale" content="es_CL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Almíbar · Carta completa">
+  <meta name="twitter:description" content="Barra, cocina, reservas, delivery y Club de socios en Curicó.">
+  <meta name="twitter:image" content="https://almibar.restoclick.cl/promo-2x.jpg">
+  <link rel="stylesheet" href="./acceso.css">
+  <style>
+    :root {
+      --night: #061f24;
+      --deep: #07343a;
+      --leaf: #0d4a42;
+      --teal: #12695f;
+      --paper: #fbf2dc;
+      --cream: #fff7e7;
+      --gold: #d7aa58;
+      --coral: #d86254;
+      --magenta: #af1c68;
+      --blue: #71b7d6;
+      --ink: #172226;
+      --muted: rgba(255, 247, 231, .72);
+      --line: rgba(255, 247, 231, .18);
+      --shadow: 0 30px 70px rgba(0, 0, 0, .34);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--night);
+    }
+
+    body {
+      margin: 0;
+      color: var(--cream);
+      background:
+        linear-gradient(180deg, rgba(6, 31, 36, .32), rgba(6, 31, 36, .98)),
+        url("./assets/src/assets/tropical-bg.61b0e22dfc663a60891e5a20d18f59a4.jpg") center top / cover fixed,
+        var(--night);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .34;
+      background:
+        url("./flores-soft/flor-azul-soft.png") left -120px top 70px / 330px auto no-repeat,
+        url("./flores-soft/flor-roja-soft.png") right -120px top 420px / 290px auto no-repeat,
+        url("./flores-soft/flor-naranja-soft.png") left -130px bottom 20px / 310px auto no-repeat;
+      filter: saturate(1.15);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site {
+      overflow: clip;
+    }
+
+    .hero {
+      min-height: 92svh;
+      display: grid;
+      align-items: stretch;
+      padding: 24px clamp(18px, 4vw, 64px) 38px;
+    }
+
+    .topbar {
+      align-self: start;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 12px 0;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255, 247, 231, .82);
+    }
+
+    .topbar img {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      box-shadow: 0 10px 34px rgba(0, 0, 0, .28);
+    }
+
+    .topbar nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+    }
+
+    .topbar a,
+    .mode-link {
+      border: 1px solid rgba(255, 247, 231, .22);
+      border-radius: 8px;
+      padding: 9px 12px;
+      background: rgba(6, 31, 36, .45);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-grid {
+      align-self: end;
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(340px, .82fr);
+      gap: clamp(28px, 5vw, 86px);
+      align-items: end;
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding-top: 26px;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      padding-bottom: clamp(10px, 4vh, 46px);
+    }
+
+    .brand-script {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(44px, 9vw, 118px);
+      font-weight: 700;
+      line-height: .82;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(52px, 10vw, 150px);
+      line-height: .84;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .hero-copy p {
+      max-width: 58ch;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 22px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .hero-actions a {
+      min-width: 154px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 247, 231, .24);
+    }
+
+    .hero-actions a:first-child {
+      color: #211610;
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .hero-actions a:last-child {
+      background: rgba(255, 247, 231, .08);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-prompt {
+      margin-top: 34px;
+      color: var(--gold);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(26px, 3.4vw, 46px);
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .service-strip {
+      padding: 34px clamp(18px, 4vw, 64px);
+      background:
+        linear-gradient(90deg, rgba(76, 18, 65, .9), rgba(7, 52, 58, .92)),
+        url("./flores-soft/flor-roja-soft.png") right -100px center / 260px auto no-repeat;
+      border-block: 1px solid rgba(255, 247, 231, .14);
+    }
+
+    .service-grid {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .service-card {
+      min-height: 158px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      border: 1px solid rgba(255, 247, 231, .18);
+      border-radius: 8px;
+      padding: 18px;
+      color: var(--cream);
+      background: rgba(5, 25, 28, .38);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, .18);
+    }
+
+    .service-card b {
+      display: block;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(27px, 3.3vw, 42px);
+      line-height: .92;
+    }
+
+    .service-card span {
+      display: block;
+      margin-top: 9px;
+      color: rgba(255, 247, 231, .72);
+      font-size: 14px;
+    }
+
+    .service-card a,
+    .contact-actions a {
+      width: fit-content;
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: #211610;
+      background: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .story-cover {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      align-items: center;
+      padding: clamp(62px, 8vw, 110px) clamp(18px, 4vw, 64px);
+      overflow: hidden;
+      color: var(--cream);
+      background:
+        linear-gradient(90deg, rgba(5, 25, 28, .98) 0%, rgba(5, 25, 28, .78) 45%, rgba(5, 25, 28, .34) 100%),
+        url("./portada-letrero-almibar.jpg") center 42% / cover no-repeat;
+    }
+
+    .story-cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .34;
+      background:
+        url("./flores-soft/flor-azul-soft.png") right -130px top 10% / 360px auto no-repeat,
+        url("./flores-soft/flor-amarilla-soft.png") left -120px bottom 6% / 310px auto no-repeat;
+      pointer-events: none;
+    }
+
+    .story-cover .topbar {
+      position: relative;
+      z-index: 1;
+      align-self: start;
+      padding-top: 0;
+    }
+
+    .story-wrap {
+      position: relative;
+      align-self: center;
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .72fr) minmax(300px, .58fr);
+      gap: clamp(32px, 6vw, 86px);
+      align-items: center;
+    }
+
+    .story-title {
+      max-width: 760px;
+      margin: 0;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(52px, 8.8vw, 128px);
+      line-height: .86;
+      letter-spacing: 0;
+    }
+
+    .story-lead {
+      max-width: 64ch;
+      margin: 28px 0 0;
+      color: rgba(255, 247, 231, .78);
+      font-size: clamp(18px, 2vw, 23px);
+    }
+
+    .story-note {
+      display: grid;
+      gap: 16px;
+      border-radius: 8px;
+      padding: clamp(22px, 3vw, 34px);
+      background: rgba(11, 38, 44, .82);
+      border: 1px solid rgba(212, 155, 90, .28);
+      box-shadow: var(--shadow);
+    }
+
+    .story-note p {
+      margin: 0;
+      color: rgba(255, 247, 231, .82);
+      font-size: clamp(15px, 1.5vw, 17px);
+    }
+
+    .story-note strong {
+      display: block;
+      color: var(--gold);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: .95;
+    }
+
+    .story-lines {
+      display: grid;
+      gap: 10px;
+      margin-top: 26px;
+      color: rgba(255, 247, 231, .72);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .story-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .story-actions a {
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: #211610;
+      background: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .story-actions a:last-child {
+      color: var(--cream);
+      background: rgba(255, 247, 231, .1);
+      border: 1px solid rgba(255, 247, 231, .2);
+    }
+
+    .photo-board {
+      position: relative;
+      min-height: 600px;
+    }
+
+    .photo-frame {
+      position: absolute;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      background: var(--paper);
+    }
+
+    .photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 8px solid rgba(255, 247, 231, .92);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-main {
+      right: 0;
+      bottom: 44px;
+      width: min(430px, 74vw);
+      aspect-ratio: 3 / 4;
+      transform: rotate(2.4deg);
+      animation: hero-photo-main 8s cubic-bezier(.16, 1, .3, 1) infinite alternate;
+    }
+
+    .photo-wide {
+      left: 0;
+      top: 28px;
+      width: min(390px, 70vw);
+      aspect-ratio: 16 / 10;
+      transform: rotate(-3deg);
+    }
+
+    .photo-small {
+      left: 56px;
+      bottom: 0;
+      width: min(230px, 46vw);
+      aspect-ratio: 3 / 4;
+      transform: rotate(5deg);
+      animation: hero-photo-small 7s cubic-bezier(.16, 1, .3, 1) infinite alternate;
+      animation-delay: -1.6s;
+    }
+
+    @keyframes hero-photo-main {
+      from {
+        transform: translate3d(0, 0, 0) rotate(2.4deg);
+      }
+
+      to {
+        transform: translate3d(0, -16px, 0) rotate(.8deg);
+      }
+    }
+
+    @keyframes hero-photo-small {
+      from {
+        transform: translate3d(0, 0, 0) rotate(5deg);
+      }
+
+      to {
+        transform: translate3d(12px, -18px, 0) rotate(8deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .photo-main,
+      .photo-small {
+        animation: none;
+      }
+    }
+
+    .quickbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-block: 1px solid rgba(255, 247, 231, .16);
+      background: rgba(5, 25, 28, .91);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, .22);
+    }
+
+    .quickbar-inner {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .station-nav {
+      display: flex;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .station-nav a {
+      border-radius: 8px;
+      padding: 10px 13px;
+      color: #24190f;
+      background: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .category-rail {
+      min-width: 0;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .category-rail::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-rail a {
+      flex: 0 0 auto;
+      border: 1px solid rgba(255, 247, 231, .18);
+      border-radius: 8px;
+      padding: 9px 12px;
+      color: rgba(255, 247, 231, .86);
+      background: rgba(255, 247, 231, .06);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .category-rail a.active,
+    .category-rail a:focus-visible,
+    .topbar a:focus-visible,
+    .hero-actions a:focus-visible {
+      outline: 3px solid rgba(215, 170, 88, .5);
+      outline-offset: 2px;
+      background: rgba(215, 170, 88, .18);
+    }
+
+    .section-head {
+      position: relative;
+      min-height: 74svh;
+      display: grid;
+      align-items: end;
+      padding: clamp(70px, 10vw, 130px) clamp(18px, 4vw, 64px) clamp(42px, 7vw, 92px);
+      isolation: isolate;
+    }
+
+    .section-head::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: var(--head-image) center / cover no-repeat;
+      filter: saturate(1.08);
+    }
+
+    .section-head::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, rgba(5, 25, 28, .92), rgba(5, 25, 28, .48), rgba(5, 25, 28, .78));
+    }
+
+    .section-head-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .88fr) minmax(250px, .45fr);
+      gap: clamp(28px, 5vw, 70px);
+      align-items: end;
+    }
+
+    .section-kicker {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(58px, 11vw, 156px);
+      line-height: .85;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 52ch;
+      margin: 24px 0 0;
+      color: rgba(255, 247, 231, .78);
+      font-size: clamp(17px, 2vw, 21px);
+    }
+
+    .section-count {
+      border-left: 1px solid rgba(255, 247, 231, .28);
+      padding-left: 22px;
+      color: rgba(255, 247, 231, .82);
+    }
+
+    .section-count strong {
+      display: block;
+      color: var(--cream);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(42px, 7vw, 92px);
+      line-height: .9;
+    }
+
+    .menu-band {
+      position: relative;
+      padding: clamp(56px, 7vw, 92px) clamp(18px, 4vw, 64px);
+      background:
+        url("./flores-soft/flor-amarilla-soft.png") right -140px top 90px / 280px auto no-repeat,
+        var(--paper);
+      color: var(--ink);
+    }
+
+    .menu-band.dark {
+      background:
+        url("./flores-soft/flor-azul-soft.png") left -120px top 120px / 300px auto no-repeat,
+        linear-gradient(180deg, #071f26, #092d31 58%, #061f24);
+      color: var(--cream);
+    }
+
+    .menu-layout {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+      gap: clamp(34px, 5vw, 76px);
+      align-items: start;
+    }
+
+    .menu-layout.flip {
+      grid-template-columns: minmax(260px, 420px) minmax(0, 1fr);
+    }
+
+    .menu-layout.flip .chapter-copy {
+      order: 2;
+    }
+
+    .menu-layout.flip .media-column {
+      order: 1;
+    }
+
+    .chapter-title {
+      margin: 0 0 28px;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(42px, 6.2vw, 86px);
+      line-height: .9;
+      letter-spacing: 0;
+      color: inherit;
+    }
+
+    .chapter-title small {
+      display: block;
+      margin-top: 7px;
+      color: var(--coral);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .dark .chapter-title small {
+      color: var(--blue);
+    }
+
+    .menu-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .dish {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(23, 34, 38, .18);
+    }
+
+    .dark .dish {
+      border-color: rgba(255, 247, 231, .16);
+    }
+
+    .dish h3 {
+      margin: 0;
+      font-size: clamp(17px, 1.7vw, 22px);
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+
+    .dish p {
+      max-width: 62ch;
+      margin: 6px 0 0;
+      color: rgba(23, 34, 38, .66);
+      font-size: clamp(14px, 1.3vw, 16px);
+    }
+
+    .dark .dish p {
+      color: rgba(255, 247, 231, .67);
+    }
+
+    .price {
+      padding-top: 1px;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(19px, 2.2vw, 30px);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .media-column {
+      position: sticky;
+      top: 92px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .media-card {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      background: var(--deep);
+    }
+
+    .media-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      object-fit: cover;
+    }
+
+    .media-card.tall {
+      aspect-ratio: 4 / 5;
+    }
+
+    .media-card.wide {
+      aspect-ratio: 16 / 10;
+    }
+
+    .callout {
+      display: grid;
+      gap: 12px;
+      padding: 22px;
+      border-radius: 8px;
+      color: var(--cream);
+      background: #4c1241;
+      box-shadow: 0 22px 42px rgba(0, 0, 0, .25);
+    }
+
+    .callout b {
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: 34px;
+      line-height: .95;
+    }
+
+    .callout span {
+      color: rgba(255, 247, 231, .72);
+      font-size: 14px;
+    }
+
+    .benefits-band {
+      padding: clamp(58px, 7vw, 96px) clamp(18px, 4vw, 64px);
+      background:
+        url("./flores-soft/flor-naranja-soft.png") left -130px top 70px / 310px auto no-repeat,
+        linear-gradient(135deg, #4c1241 0%, #071f26 54%, #0d4a42 100%);
+      color: var(--cream);
+    }
+
+    .benefits-wrap {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .72fr) minmax(0, 1fr);
+      gap: clamp(32px, 5vw, 76px);
+      align-items: start;
+    }
+
+    .benefits-title {
+      margin: 0;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(50px, 8vw, 116px);
+      line-height: .86;
+      letter-spacing: 0;
+    }
+
+    .benefits-copy p {
+      max-width: 50ch;
+      margin: 22px 0 0;
+      color: rgba(255, 247, 231, .74);
+      font-size: clamp(16px, 1.8vw, 20px);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .benefit-item {
+      min-height: 152px;
+      border: 1px solid rgba(255, 247, 231, .16);
+      border-radius: 8px;
+      padding: 18px;
+      background: rgba(5, 25, 28, .36);
+    }
+
+    .benefit-item strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.12;
+    }
+
+    .benefit-item span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 247, 231, .7);
+      font-size: 14px;
+    }
+
+    .contact-band {
+      padding: clamp(54px, 7vw, 86px) clamp(18px, 4vw, 64px);
+      background:
+        linear-gradient(90deg, rgba(5, 25, 28, .94), rgba(5, 25, 28, .7)),
+        url("./assets/src/assets/almibar-hero.704919b3aa0bc7ca5403bb164550713e.jpg") center / cover no-repeat;
+      color: var(--cream);
+    }
+
+    .contact-wrap {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .75fr) minmax(280px, .55fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: end;
+    }
+
+    .contact-title {
+      margin: 0;
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(46px, 7vw, 98px);
+      line-height: .9;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 24px;
+      color: rgba(255, 247, 231, .8);
+      font-size: 17px;
+    }
+
+    .contact-list b {
+      color: var(--cream);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .contact-actions a:nth-child(2),
+    .contact-actions a:nth-child(3) {
+      color: var(--cream);
+      background: rgba(255, 247, 231, .1);
+      border: 1px solid rgba(255, 247, 231, .2);
+    }
+
+    .sushi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .sushi-tile {
+      position: relative;
+      min-height: 168px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #092d31;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, .28);
+    }
+
+    .sushi-tile img {
+      width: 100%;
+      height: 100%;
+      min-height: 168px;
+      object-fit: cover;
+    }
+
+    .sushi-tile span {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border-radius: 8px;
+      padding: 8px 10px;
+      background: rgba(5, 25, 28, .76);
+      color: var(--cream);
+      font-size: 13px;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
+    }
+
+    .footer {
+      padding: 46px 18px 56px;
+      color: rgba(255, 247, 231, .72);
+      text-align: center;
+      background: #05191c;
+    }
+
+    .footer strong {
+      color: var(--cream);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .section-head-inner,
+      .menu-layout,
+      .menu-layout.flip,
+      .story-wrap,
+      .benefits-wrap,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .photo-board {
+        min-height: 430px;
+      }
+
+      .photo-main {
+        width: min(330px, 78vw);
+        right: 4vw;
+      }
+
+      .photo-wide {
+        width: min(320px, 78vw);
+      }
+
+      .photo-small {
+        left: 18vw;
+      }
+
+      .section-count {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 247, 231, .28);
+        padding: 18px 0 0;
+      }
+
+      .menu-layout.flip .chapter-copy,
+      .menu-layout.flip .media-column {
+        order: initial;
+      }
+
+      .media-column {
+        position: relative;
+        top: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .media-column .callout {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 680px) {
+      body::before {
+        opacity: .24;
+        background-size: 230px auto, 220px auto, 250px auto;
+      }
+
+      .hero {
+        padding-inline: 16px;
+      }
+
+      .topbar {
+        display: block;
+        align-items: flex-start;
+      }
+
+      .topbar nav {
+        width: 100%;
+        margin-left: 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .topbar a {
+        padding: 8px 10px;
+        font-size: 11px;
+      }
+
+      .story-title {
+        max-width: 6.2em;
+        font-size: clamp(42px, 13vw, 50px);
+      }
+
+      .story-wrap,
+      .story-wrap > *,
+      .story-note {
+        width: 100%;
+        max-width: calc(100vw - 40px);
+        min-width: 0;
+      }
+
+      .story-lead {
+        max-width: 31ch;
+        font-size: 17px;
+      }
+
+      .story-lines {
+        max-width: 31ch;
+        font-size: 12px;
+        letter-spacing: .06em;
+      }
+
+      .story-lines span,
+      .story-note p {
+        overflow-wrap: anywhere;
+      }
+
+      .story-note {
+        padding: 22px;
+      }
+
+      .story-note strong {
+        font-size: 32px;
+      }
+
+      .hero-copy p {
+        margin-top: 20px;
+      }
+
+      .quickbar-inner {
+        width: calc(100% - 18px);
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .station-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .station-nav a {
+        text-align: center;
+      }
+
+      .section-head {
+        min-height: 65svh;
+        padding-inline: 16px;
+      }
+
+      .menu-band {
+        padding-inline: 16px;
+      }
+
+      .dish {
+        gap: 12px;
+        padding: 16px 0;
+      }
+
+      .price {
+        font-size: 21px;
+      }
+
+      .media-column,
+      .sushi-grid,
+      .service-grid,
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card,
+      .benefit-item {
+        min-height: auto;
+      }
+
+      .story-cover {
+        min-height: auto;
+      }
+    }
+    }
+    }
+      .addon-list {
+        grid-template-columns: 1fr;
+      }
+    }
+      .addon-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* generated menu detail styles */
+    .media-spritz .media-card.tall {
+      aspect-ratio: 1 / 1;
+    }
+
+    .media-spritz .media-card img {
+      object-fit: contain;
+      background: transparent;
+    }
+
+    .menu-layout.full {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .menu-layout.full .chapter-copy {
+      max-width: none;
+    }
+
+    [id^="barra-"],
+    [id^="cocina-"],
+    [id^="club-"] {
+      scroll-margin-top: 136px;
+    }
+
+    .menu-list.dense {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(24px, 4vw, 54px);
+    }
+
+    .menu-list.dense .dish:nth-child(1),
+    .menu-list.dense .dish:nth-child(2) {
+      border-top-color: rgba(23, 34, 38, .18);
+    }
+
+    .dark .menu-list.dense .dish:nth-child(1),
+    .dark .menu-list.dense .dish:nth-child(2) {
+      border-top-color: rgba(255, 247, 231, .16);
+    }
+
+    .menu-note {
+      max-width: 58ch;
+      margin: 16px 0 0;
+      color: rgba(255, 247, 231, .7);
+      font-size: 15px;
+    }
+
+    .photo-frame img {
+      transition: opacity .5s ease, filter .5s ease, transform .5s ease;
+    }
+
+    .photo-frame img.is-changing {
+      opacity: .1;
+      filter: blur(4px);
+      transform: scale(1.035);
+    }
+
+    .menu-addon {
+      margin-top: 28px;
+      padding: 18px 20px 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(23, 34, 38, .18);
+      background: rgba(255, 255, 255, .35);
+    }
+
+    .dark .menu-addon {
+      border-color: rgba(255, 247, 231, .16);
+      background: rgba(255, 247, 231, .08);
+    }
+
+    .menu-addon h3 {
+      margin: 0 0 4px;
+      font-size: clamp(20px, 2.2vw, 29px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .menu-addon h3 small {
+      display: block;
+      margin-top: 5px;
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .dark .menu-addon h3 small {
+      color: var(--blue);
+    }
+
+    .category-rail[hidden],
+    .station-pane[hidden] {
+      display: none;
+    }
+
+    .station-nav a[aria-pressed="true"] {
+      color: #24190f;
+      background: var(--gold);
+    }
+
+    /* "Promociones": categoría destacada, siempre con color visible. */
+    .station-nav a[data-station-toggle="promos"] {
+      background: linear-gradient(135deg, #E0533B 0%, #E8A33C 100%);
+      color: #fff;
+      border-color: transparent;
+      font-weight: 800;
+    }
+    .station-nav a[data-station-toggle="promos"][aria-pressed="true"] {
+      color: #fff;
+      background: linear-gradient(135deg, #E0533B 0%, #E8A33C 100%);
+      box-shadow: 0 8px 20px -8px rgba(224, 83, 59, .6);
+    }
+    .section-head-promos .section-title {
+      color: #F2B84B;
+    }
+
+    /* ==== Happy Hour — bloque desmontable ==== */
+    .hh-band {
+      padding: clamp(30px, 5vw, 66px) clamp(16px, 4vw, 48px);
+      background:
+        radial-gradient(120% 90% at 100% 0%, rgba(232, 163, 60, .16), transparent 58%),
+        #0e1f24;
+      border-top: 1px solid rgba(212, 155, 90, .25);
+      border-bottom: 1px solid rgba(212, 155, 90, .25);
+    }
+    .hh-inner { max-width: 1120px; margin: 0 auto; }
+    .hh-kicker {
+      margin: 0 0 6px; font-size: 13px; font-weight: 800;
+      letter-spacing: .28em; text-transform: uppercase; color: #E8A33C;
+    }
+    .hh-title {
+      margin: 0; line-height: .95; color: #F5F1EA;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 700; font-size: clamp(46px, 9vw, 92px);
+    }
+    .hh-sub { margin: 10px 0 22px; max-width: 52ch; color: #D8D2C6; font-size: clamp(16px, 2.2vw, 20px); }
+    .hh-sub .hh-lead { color: #F2B84B; font-weight: 800; }
+    /* Dos precios, dos tarjetas. El de socio manda visualmente porque es el que
+       queremos que la gente pida; el general va al lado para que se vea la brecha. */
+    .hh-precios { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0 0 30px; }
+    @media (max-width: 620px) { .hh-precios { grid-template-columns: 1fr; } }
+    .hh-precio {
+      position: relative; display: flex; flex-direction: column;
+      padding: 22px 20px 18px; border-radius: 16px;
+      background: rgba(11, 38, 44, .72); border: 1px solid rgba(232, 163, 60, .34);
+    }
+    .hh-precio--top { background: rgba(232, 163, 60, .13); border-color: rgba(242, 184, 75, .78); }
+    .hh-precio-badge {
+      position: absolute; top: -10px; left: 18px; padding: 3px 10px; border-radius: 20px;
+      background: #F2B84B; color: #0B262C; font-size: 11px; font-weight: 900;
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    .hh-precio-name { margin: 2px 0 6px; font-size: 13px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: #E8A33C; }
+    .hh-precio-price { font-size: clamp(40px, 8vw, 60px); font-weight: 900; color: #F2B84B; line-height: .95; }
+    .hh-precio-desc { margin: 12px 0 0; font-size: clamp(14.5px, 2vw, 16px); line-height: 1.5; color: #F5F1EA; font-weight: 600; }
+    .hh-precio-desc em { font-style: normal; color: #C9C2B4; font-weight: 500; }
+    .hh-listtitle {
+      margin: 0 0 14px; font-size: 13px; font-weight: 800;
+      letter-spacing: .22em; text-transform: uppercase; color: #E8A33C;
+    }
+    /* Multi-columna en vez de grid: los grupos tienen 1 a 4 productos y con
+       filas fijas los de un solo trago dejaban una fila entera vacía. Así se
+       empaquetan por altura y la sección queda un tercio más corta. */
+    .hh-grid { columns: 3; column-gap: 20px; }
+    @media (max-width: 900px) { .hh-grid { columns: 2; } }
+    @media (max-width: 560px) { .hh-grid { columns: 1; } }
+    .hh-group {
+      break-inside: avoid; -webkit-column-break-inside: avoid;
+      display: inline-block; width: 100%; margin: 0 0 12px;
+      padding: 16px 18px; border-radius: 14px;
+      background: rgba(11, 38, 44, .55); border: 1px solid rgba(212, 155, 90, .22);
+    }
+    .hh-group-name {
+      margin: 0 0 10px; font-size: 12px; font-weight: 900;
+      letter-spacing: .14em; text-transform: uppercase; color: #D49B5A;
+    }
+    .hh-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .hh-item { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .hh-item-name { color: #F5F1EA; font-size: 15.5px; font-weight: 600; line-height: 1.3; }
+    /* El precio de carta va tachado: es el ancla que hace legible el descuento. */
+    .hh-item-was { color: #9AA5A3; font-size: 14px; font-weight: 600; text-decoration: line-through; white-space: nowrap; }
+    .hh-foot { margin: 22px 0 0; font-size: 13.5px; color: #B9B2A4; font-style: italic; }
+
+    /* ==== Tenedor Libre (jueves) — bloque desmontable ==== */
+    .tl-band {
+      padding: clamp(30px, 5vw, 66px) clamp(16px, 4vw, 48px);
+      background:
+        radial-gradient(120% 90% at 0% 0%, rgba(224, 83, 59, .18), transparent 55%),
+        #0b262c;
+      border-top: 1px solid rgba(212, 155, 90, .25);
+      border-bottom: 1px solid rgba(212, 155, 90, .25);
+    }
+    .tl-inner { max-width: 1120px; margin: 0 auto; }
+    .tl-kicker {
+      margin: 0 0 6px; font-size: 13px; font-weight: 800;
+      letter-spacing: .28em; text-transform: uppercase; color: #E8A33C;
+    }
+    .tl-title {
+      margin: 0; line-height: .95; color: #F5F1EA;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 700; font-size: clamp(46px, 9vw, 92px);
+    }
+    .tl-sub { margin: 10px 0 14px; max-width: 44ch; color: #D8D2C6; font-size: clamp(16px, 2.2vw, 20px); }
+    .tl-sub .tl-lead { color: #F2B84B; font-weight: 800; font-size: 1.15em; letter-spacing: .005em; }
+    .tl-noadd { margin: 0 0 26px; max-width: 56ch; color: #EDC988; font-size: 14.5px; line-height: 1.55; font-weight: 600; }
+    /* Dos formatos, dos tarjetas: el de menor precio debe leerse tan claro como
+       el otro o la gente no se entera de que existe. */
+    .tl-planes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 14px 0 22px; }
+    @media (max-width: 900px) { .tl-planes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 620px) { .tl-planes { grid-template-columns: 1fr; } }
+    .tl-plan {
+      position: relative; display: flex; flex-direction: column;
+      padding: 20px 20px 18px; border-radius: 16px;
+      background: rgba(11, 38, 44, .72); border: 1px solid rgba(232, 163, 60, .34);
+    }
+    .tl-plan--top { background: rgba(232, 163, 60, .13); border-color: rgba(242, 184, 75, .78); }
+    /* El bebestible ya no es un plan alternativo sino un complemento del de
+       $18.900: se muestra como "+$8.000" y con borde punteado para que se lea
+       como algo que se suma, no como otro precio con el que hay que comparar. */
+    .tl-plan--add { border-style: dashed; border-color: rgba(232, 163, 60, .55); }
+    .tl-plan-badge--add { background: #0B262C; color: #F2B84B; border: 1px solid rgba(242, 184, 75, .78); }
+    .tl-plan-plus { font-size: .62em; vertical-align: .22em; margin-right: .04em; color: #E8A33C; }
+    .tl-plan-badge {
+      position: absolute; top: -10px; left: 18px; padding: 3px 10px; border-radius: 20px;
+      background: #F2B84B; color: #0B262C; font-size: 11px; font-weight: 900;
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    .tl-plan-name { margin: 2px 0 6px; font-size: 13px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: #E8A33C; }
+    .tl-plan-price { font-size: clamp(38px, 8vw, 58px); font-weight: 900; color: #F2B84B; line-height: .95; }
+    .tl-plan-per { display: block; margin-top: 2px; font-size: 14px; font-weight: 700; color: #D8D2C6; letter-spacing: .02em; }
+    .tl-plan-desc { margin: 12px 0 0; font-size: clamp(15px, 2.1vw, 17px); line-height: 1.5; color: #F5F1EA; font-weight: 600; }
+    .tl-plan-desc em { font-style: normal; color: #C9C2B4; font-weight: 500; }
+    .tl-compare { margin: 0 0 22px; font-style: italic; font-size: 13.5px; color: #B9B2A4; }
+    .tl-tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .tl-tier {
+      background: rgba(11, 38, 44, .7); border: 1px solid rgba(212, 155, 90, .28);
+      border-radius: 14px; padding: 18px;
+    }
+    .tl-tier-premium {
+      border-color: #E0533B;
+      background: linear-gradient(160deg, rgba(224, 83, 59, .16), rgba(11, 38, 44, .7));
+    }
+    .tl-tier h3 { margin: 0 0 8px; font-size: 20px; font-weight: 800; color: #F5F1EA; }
+    .tl-price { margin: 0; font-size: 26px; font-weight: 900; color: #F2B84B; }
+    .tl-price span { display: block; font-size: 12px; font-weight: 600; letter-spacing: .04em; color: #B9B2A4; }
+    .tl-price-alt { margin: 2px 0 10px; font-size: 13px; color: #C9BCA8; }
+    .tl-inc { margin: 0; font-size: 13px; line-height: 1.5; color: #C9C2B4; }
+    .tl-schop {
+      display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px;
+      margin-top: 16px; padding: 16px 18px; border-radius: 14px;
+      background: rgba(11, 38, 44, .75); border: 1px solid rgba(232, 163, 60, .5);
+    }
+    .tl-schop-price { font-size: clamp(22px, 4vw, 30px); font-weight: 900; color: #F2B84B; }
+    .tl-schop-copy { font-size: 14.5px; line-height: 1.5; color: #D8D2C6; }
+    .tl-schop-copy em { color: #B9B2A4; font-style: normal; }
+    .tl-cols { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-top: 20px; align-items: start; }
+    .tl-how h4, .tl-nowaste h4 {
+      margin: 0 0 10px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: #E8A33C;
+    }
+    .tl-how ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+    .tl-how li { font-size: 14px; line-height: 1.5; color: #D3CCBE; }
+    .tl-nowaste { background: rgba(11, 38, 44, .82); border: 1px solid rgba(212, 155, 90, .32); border-top: 3px solid #E66A5B; border-radius: 16px; padding: 22px; }
+    .tl-nowaste h4 { color: #D9C29C; }
+    .tl-nowaste p { margin: 0; font-size: 15px; line-height: 1.6; font-weight: 500; color: #F5F1EA; }
+    @media (max-width: 760px) {
+      .tl-tiers { grid-template-columns: 1fr; }
+      .tl-cols { grid-template-columns: 1fr; }
+    }
+
+    /* ==== Marcador de visitas (Club) ==== */
+    .visit-tracker {
+      display: flex; align-items: center; gap: 14px;
+      margin: 4px 0 18px; padding: 14px 16px;
+      background: rgba(11, 38, 44, .55);
+      border: 1px solid rgba(212, 155, 90, .3); border-radius: 14px;
+    }
+    .visit-stamps { display: flex; gap: 8px; flex-shrink: 0; }
+    .visit-stamps .stamp {
+      width: 30px; height: 30px; border-radius: 50%;
+      border: 2px dashed rgba(212, 155, 90, .6); background: transparent; position: relative;
+    }
+    .visit-stamps .stamp.filled {
+      border-style: solid; border-color: #E8A33C;
+      background: linear-gradient(135deg, #E0533B, #E8A33C);
+    }
+    .visit-stamps .stamp.filled::after {
+      content: "★"; position: absolute; inset: 0;
+      display: grid; place-items: center; color: #2a0f0a; font-size: 15px;
+    }
+    .visit-tracker-copy { display: grid; gap: 2px; min-width: 0; }
+    .visit-tracker-copy strong { color: #F5F1EA; font-size: 15px; }
+    .visit-tracker-copy span { color: #C9BCA8; font-size: 12.5px; }
+
+    /* Portada: foto de la fachada con el letrero iluminado, anclada abajo en la
+       columna derecha (proporción natural 4:3 → letrero completo, sin recortar,
+       y deja ver la muralla del fondo por arriba). */
+    .story-photo {
+      margin: 0; align-self: center; position: relative;
+      aspect-ratio: 16 / 6; border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(212, 155, 90, .38);
+      box-shadow: 0 26px 64px rgba(0, 0, 0, .55);
+    }
+    .story-photo img {
+      display: block; width: 100%; height: 100%;
+      object-fit: cover; object-position: 50% 30%;
+    }
+    @media (max-width: 900px) { .story-photo { aspect-ratio: 16 / 8; } }
+
+    /* Botón "Estoy en Almíbar" para marcar visita (solo socios reconocidos) */
+    .visit-actions { margin: -6px 0 18px; display: grid; gap: 8px; }
+    .visit-mark-btn {
+      display: inline-flex; align-items: center; gap: 12px; width: 100%;
+      padding: 13px 16px; border: none; border-radius: 14px; cursor: pointer;
+      background: linear-gradient(135deg, #E0533B, #E8A33C); color: #2a0f0a;
+      text-align: left; font: inherit;
+      box-shadow: 0 8px 20px rgba(224, 83, 59, .28);
+      transition: transform .16s ease, box-shadow .16s ease, opacity .16s ease;
+    }
+    .visit-mark-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 26px rgba(224, 83, 59, .34); }
+    .visit-mark-btn:active { transform: translateY(0); }
+    .visit-mark-btn[disabled] { opacity: .65; cursor: default; box-shadow: none; transform: none; }
+    .visit-mark-btn__pin { font-size: 22px; flex-shrink: 0; }
+    .visit-mark-btn__txt { display: grid; gap: 1px; }
+    .visit-mark-btn__txt strong { font-size: 15.5px; font-weight: 800; }
+    .visit-mark-btn__txt span { font-size: 12px; opacity: .85; }
+    .visit-mark-status { margin: 0; font-size: 12.5px; color: #C9BCA8; min-height: 1em; }
+    .visit-mark-status.ok { color: #8FE3A6; }
+    .visit-mark-status.err { color: #F1B0A2; }
+
+    /* Botón flotante de ayuda por WhatsApp */
+    .wa-fab {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 12px 18px 12px 14px; border-radius: 999px;
+      background: #25D366; color: #063d1e; text-decoration: none;
+      font-weight: 700; font-size: 15px; letter-spacing: .1px;
+      box-shadow: 0 10px 26px rgba(3, 40, 20, .38), 0 2px 6px rgba(0, 0, 0, .25);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .wa-fab:hover { transform: translateY(-2px); background: #22c15e; box-shadow: 0 14px 32px rgba(3, 40, 20, .45); }
+    .wa-fab:active { transform: translateY(0); }
+    .wa-fab__icon { flex-shrink: 0; }
+    .wa-fab__label { white-space: nowrap; }
+    @media (max-width: 620px) {
+      .wa-fab { right: 14px; bottom: 14px; padding: 13px; gap: 0; }
+      .wa-fab__label { display: none; }
+    }
+
+    .station-rails {
+      min-width: 0;
+      width: 100%;
+    }
+
+    .addon-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(18px, 3vw, 34px);
+    }
+
+    .addon-list .dish {
+      padding: 12px 0;
+    }
+
+    .addon-list .dish h3 {
+      font-size: clamp(15px, 1.5vw, 18px);
+    }
+
+    .addon-list .dish p {
+      font-size: 13px;
+    }
+
+    @media (max-width: 680px) {
+      .quickbar-inner,
+      .station-nav,
+      .station-rails,
+      .category-rail {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .station-nav {
+        width: 100%;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow: hidden;
+      }
+
+      .station-nav a {
+        min-width: 0;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 12.5px;
+        letter-spacing: 0;
+        padding-left: 6px;
+        padding-right: 6px;
+      }
+
+      .category-rail {
+        width: 100%;
+      }
+
+      .section-head {
+        min-height: 42svh;
+        padding: 56px 16px 42px;
+      }
+
+      .section-title {
+        font-size: 58px;
+      }
+
+      .section-head p {
+        margin-top: 16px;
+        font-size: 16px;
+      }
+
+      .section-count {
+        padding-top: 14px;
+      }
+
+      .section-count strong {
+        font-size: 54px;
+      }
+
+      .dish h3,
+      .dish p {
+        overflow-wrap: anywhere;
+      }
+
+      .category-rail {
+        padding-bottom: 3px;
+        scroll-snap-type: x proximity;
+      }
+
+      .category-rail a {
+        scroll-snap-align: start;
+      }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .reservation-page {
+      min-height: 100svh;
+      overflow-x: hidden;
+      color: var(--cream);
+      background:
+        linear-gradient(180deg, rgba(6, 31, 36, .34), rgba(6, 31, 36, .98)),
+        url("./assets/src/assets/tropical-bg.61b0e22dfc663a60891e5a20d18f59a4.jpg") center top / cover fixed,
+        var(--night);
+    }
+
+    .reservation-hero {
+      position: relative;
+      min-height: 100svh;
+      padding: clamp(20px, 4vw, 48px) clamp(18px, 4vw, 64px) clamp(34px, 6vw, 72px);
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(5, 25, 28, .96), rgba(5, 25, 28, .76) 46%, rgba(91, 27, 67, .42)),
+        url("./portada-letrero-almibar.jpg") center 44% / cover no-repeat;
+    }
+
+    .reservation-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .32;
+      background:
+        url("./flores-soft/flor-azul-soft.png") right -118px top 8% / 330px auto no-repeat,
+        url("./flores-soft/flor-amarilla-soft.png") left -105px bottom 8% / 290px auto no-repeat;
+      pointer-events: none;
+    }
+
+    .reservation-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .reservation-topbar {
+      width: min(1180px, 100%);
+      margin: 0 auto clamp(34px, 6vw, 74px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .reservation-topbar nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+    }
+
+    .reservation-topbar a {
+      border: 1px solid rgba(255, 247, 231, .22);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: rgba(6, 31, 36, .48);
+      color: rgba(255, 247, 231, .86);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(14px);
+    }
+
+    .reservation-layout {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .76fr) minmax(360px, .74fr);
+      gap: clamp(28px, 5vw, 76px);
+      align-items: start;
+      min-width: 0;
+    }
+
+    .reservation-copy {
+      max-width: 650px;
+      padding-top: clamp(4px, 5vw, 42px);
+    }
+
+    .reservation-title {
+      margin: 0;
+      color: var(--cream);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(58px, 9vw, 126px);
+      line-height: .86;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .reservation-lead {
+      max-width: 58ch;
+      margin: 26px 0 0;
+      color: rgba(255, 247, 231, .78);
+      font-size: clamp(18px, 2vw, 22px);
+    }
+
+    .reservation-facts {
+      display: grid;
+      gap: 11px;
+      margin-top: 30px;
+      color: rgba(255, 247, 231, .73);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .reservation-facts span {
+      overflow-wrap: anywhere;
+    }
+
+    .reservation-panel {
+      min-width: 0;
+      border-radius: 8px;
+      padding: clamp(20px, 3vw, 34px);
+      color: var(--ink);
+      background: rgba(251, 242, 220, .96);
+      box-shadow: var(--shadow);
+    }
+
+    .reservation-panel h2 {
+      margin: 0 0 6px;
+      color: var(--ink);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: .95;
+      letter-spacing: 0;
+    }
+
+    .reservation-panel > p {
+      margin: 0 0 22px;
+      color: rgba(23, 34, 38, .72);
+      font-size: 14px;
+    }
+
+    .reserve-section {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(23, 34, 38, .14);
+    }
+
+    .reserve-section:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .reserve-section legend,
+    .reserve-label {
+      display: block;
+      margin: 0 0 9px;
+      color: rgba(23, 34, 38, .82);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .reserve-section fieldset {
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .motivo-grid,
+    .slot-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .motivo-option,
+    .slot-option {
+      min-width: 0;
+      min-height: 44px;
+      border: 1px solid rgba(23, 34, 38, .2);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, .48);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 850;
+      cursor: pointer;
+      transition: transform .16s ease, border-color .16s ease, background .16s ease, color .16s ease;
+    }
+
+    .motivo-option:hover,
+    .slot-option:hover {
+      transform: translateY(-1px);
+      border-color: rgba(175, 28, 104, .42);
+    }
+
+    .motivo-option.active,
+    .slot-option.active {
+      border-color: var(--gold);
+      color: #211610;
+      background: var(--gold);
+    }
+
+    .slot-option:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .reserve-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .reserve-field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .reserve-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .reserve-field input,
+    .reserve-field textarea {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid rgba(23, 34, 38, .2);
+      border-radius: 8px;
+      padding: 12px 13px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, .66);
+      font: inherit;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .reserve-field textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .reserve-field input::placeholder,
+    .reserve-field textarea::placeholder {
+      color: rgba(23, 34, 38, .46);
+    }
+
+    .reserve-field input:focus,
+    .reserve-field textarea:focus,
+    .motivo-option:focus-visible,
+    .slot-option:focus-visible,
+    .reserve-submit:focus-visible,
+    .reservation-topbar a:focus-visible {
+      outline: 3px solid rgba(216, 98, 84, .3);
+      outline-offset: 2px;
+      border-color: var(--coral);
+    }
+
+    .reserve-help {
+      margin: 8px 0 0;
+      color: rgba(23, 34, 38, .62);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .reserve-submit {
+      width: 100%;
+      min-height: 56px;
+      margin-top: 22px;
+      border: 0;
+      border-radius: 8px;
+      color: #211610;
+      background: var(--gold);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, .2);
+    }
+
+    .reserve-submit:disabled {
+      opacity: .62;
+      cursor: wait;
+      box-shadow: none;
+    }
+
+    .reserve-status {
+      min-height: 20px;
+      margin-top: 14px;
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .reserve-status.ok {
+      color: #0f6b52;
+    }
+
+    .reservation-success {
+      display: none;
+      padding: 30px 0 6px;
+    }
+
+    .reservation-success.show {
+      display: grid;
+      gap: 12px;
+    }
+
+    .reservation-success strong {
+      color: var(--magenta);
+      font-family: "Bodoni 72", Didot, Georgia, serif;
+      font-size: clamp(36px, 4vw, 54px);
+      line-height: .96;
+    }
+
+    .reservation-success p {
+      margin: 0;
+      color: rgba(23, 34, 38, .76);
+    }
+
+    .success-benefits {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(15, 107, 82, .18);
+      background: rgba(15, 107, 82, .08);
+    }
+
+    .success-benefits span {
+      color: #0f6b52;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .success-benefits ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding-left: 18px;
+      color: rgba(23, 34, 38, .78);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .reservation-success a {
+      width: fit-content;
+      margin-top: 10px;
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: #211610;
+      background: var(--gold);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .menu-layout.full {
+        grid-template-columns: 1fr;
+      }
+
+      .reservation-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .reservation-copy {
+        padding-top: 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .menu-list.dense {
+        grid-template-columns: 1fr;
+      }
+
+      .addon-list {
+        grid-template-columns: 1fr;
+      }
+
+      .reservation-hero {
+        padding-inline: 16px;
+      }
+
+      .reservation-topbar {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+      }
+
+      .reservation-topbar nav {
+        width: 100%;
+        margin-left: 0;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+      }
+
+      .reservation-topbar a {
+        text-align: center;
+        padding-inline: 9px;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .reserve-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reservation-panel {
+        padding: 20px 16px 22px;
+      }
+
+      .reservation-title {
+        font-size: clamp(42px, 13vw, 56px);
+      }
+
+      .reservation-lead {
+        font-size: 16px;
+      }
+
+      .reservation-facts {
+        font-size: 12px;
+        letter-spacing: .045em;
+      }
+
+      .motivo-option {
+        flex: 1 1 100%;
+      }
+
+      .slot-option {
+        flex: 1 1 calc(33.333% - 8px);
+        padding-inline: 8px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <!--
+    THESIS: Almíbar se lee como carta de mesa y capítulos de noche, no como app de delivery con carrito.
+    OWN-WORLD: fondo vegetal real, teal profundo, placas doradas/magenta, fotos editoriales y filas de carta con precios claros.
+    STORY: el cliente entra por la historia de Plaza San Francisco, luego baja a Carta, Barra y Cocina.
+    FIRST VIEWPORT: portada histórica desde 2018, patente nocturna, comunidad y accesos superiores a Club, Reservas y Contacto.
+    FORM: dirección fijada por referencias Bar La Virgen/PDF y assets Almíbar; seed manual-user-reference.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+  -->
+  <main class="site">
+    <header class="carta-head" id="carta" style="position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:20px clamp(16px,4vw,34px) 4px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <a href="./index.html" style="font-family:'Bodoni 72',Didot,Georgia,serif;font-size:20px;letter-spacing:.18em;text-transform:uppercase;color:#fff7e7;text-decoration:none;text-shadow:0 2px 12px rgba(0,0,0,.6);">ALM&Iacute;BAR</a>
+        <a href="./index.html" style="font-size:13px;color:#241a08;background:#d7aa58;padding:8px 15px;border-radius:999px;text-decoration:none;font-weight:600;">&larr; Inicio</a>
+      </div>
+      <h1 style="font-family:'Bodoni 72',Didot,Georgia,serif;font-weight:400;font-size:clamp(30px,6vw,54px);color:#fff7e7;margin:22px 0 8px;line-height:1;text-shadow:0 3px 18px rgba(0,0,0,.6);">Carta de barra y cocina</h1>
+      <p style="color:#fff7e7;opacity:.82;font-size:15px;line-height:1.5;margin:0;max-width:60ch;text-shadow:0 2px 10px rgba(0,0,0,.5);">Coctelería de casa, sushi, picoteos, pizzas y platos para compartir en mesa.</p>
+    </header>
+
+
+    <nav class="quickbar" id="menu" aria-label="Navegación rápida de carta">
+      <div class="quickbar-inner">
+        <div class="station-nav">
+          <a href="./index.html">← Inicio</a>
+          <a href="#barra" data-station-toggle="barra" aria-pressed="true">Barra</a>
+          <a href="#cocina" data-station-toggle="cocina" aria-pressed="false">Cocina</a>
+        </div>
+        <div class="station-rails">
+          <div class="category-rail" data-station-rail="barra">
+            <a href="#barra-bebidas-y-jugos">Bebidas y Jugos</a>
+          <a href="#barra-cervezas-schop">Cervezas Schop</a>
+          <a href="#barra-botellines">Botellines</a>
+          <a href="#barra-cocteles-clasicos">Cócteles Clásicos</a>
+          <a href="#barra-mojitos-1l">Mojitos 1L</a>
+          <a href="#barra-red-bull-drinks">Red Bull Drinks</a>
+          <a href="#barra-cocteleria-de-autor">Coctelería de Autor</a>
+          <a href="#barra-spritz">Spritz</a>
+          <a href="#barra-sours">Sours</a>
+          <a href="#barra-cremosos">Cremosos</a>
+          <a href="#barra-old-schools">Old Schools</a>
+          <a href="#barra-mocktails">Mocktails</a>
+          <a href="#barra-gin">Gin</a>
+          <a href="#barra-vodka">Vodka</a>
+          <a href="#barra-pisco">Pisco</a>
+          <a href="#barra-whisky">Whisky</a>
+          <a href="#barra-shots">Shots</a>
+          <a href="#barra-licores">Licores</a>
+          <a href="#barra-vinos-y-espumantes">Vinos y Espumantes</a>
+          </div>
+          <div class="category-rail" data-station-rail="cocina" hidden>
+            <a href="#cocina-platos-frios">Platos Fríos</a>
+          <a href="#cocina-sushi">Sushi</a>
+          <a href="#cocina-picoteos-y-tablas">Picoteos &amp; Tablas</a>
+          <a href="#cocina-pizzas">Pizzas</a>
+          <a href="#cocina-papas">Papas</a>
+          <a href="#cocina-cafe">Café</a>
+          <a href="#cocina-postres">Postres</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="station-pane" data-station-pane="barra">
+      <section class="section-head section-head-barra" id="barra" style="--head-image: url('./assets/src/assets/promo-2x-drinks.8268f6c688f9e603c8066272dc05222d.jpg');">
+      <div class="section-head-inner">
+        <div>
+          <h2 class="section-title">Barra</h2>
+          <p>Coctelería de autor, clásicos, sours, spritz, cervezas tiradas, micheladas, destilados, vinos y alternativas sin alcohol.</p>
+        </div>
+        <div class="section-count">
+          <strong>20</strong>
+          categorías · 119 productos activos.
+        </div>
+      </div>
+    </section>
+      <section class="menu-band" id="barra-bebidas-y-jugos">
+      <div class="menu-layout flip">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Bebidas y Jugos <small>6 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Bebida Lata</h3><p>Pepsi, pepsi zero, ginger ale, bilz, pap, crush...</p></div>
+              <strong class="price">$2.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Jugo Natural 500cc</h3><p>Jugo natural preparado al momento</p></div>
+              <strong class="price">$3.700</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Jugo Mix 500cc</h3><p>Mezcla de 2 frutas · Preparado al momento</p></div>
+              <strong class="price">$4.500</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Limonada Natural 500cc</h3><p>Limonada fresca preparada al momento</p></div>
+              <strong class="price">$3.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Agua Mineral</h3></div>
+              <strong class="price">$2.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Red Bull</h3></div>
+              <strong class="price">$3.000</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-bebidas-y-jugos">
+          <figure class="media-card tall">
+            <img src="./menu/sours-jarra-roja.jpg" alt="Imagen de barra Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band dark" id="barra-cervezas-schop">
+      <div class="menu-layout">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Cervezas Schop <small>5 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Schop Gran Torobayo</h3><p>500cc</p></div>
+              <strong class="price">$7.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Schop Heineken</h3><p>Cerveza tirada 500cc</p></div>
+              <strong class="price">$4.000</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Schop Patagonia Hoppy</h3></div>
+              <strong class="price">$5.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Schop Austral TdP</h3></div>
+              <strong class="price">$6.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Schop Austral Calafate</h3><p>Cerveza tirada 500cc</p></div>
+              <strong class="price">$6.200</strong>
+            </article>
+          </div>
+          <div class="menu-addon" id="barra-micheladas">
+            <h3>Micheladas <small>3 productos</small></h3>
+            <div class="menu-list addon-list">
+              <article class="dish">
+              <div><h3>Michelada</h3><p>Limón natural y sal</p></div>
+              <strong class="price">$1.500</strong>
+            </article>
+              <article class="dish">
+              <div><h3>Chelada</h3><p>Limón natural y sal</p></div>
+              <strong class="price">$1.100</strong>
+            </article>
+              <article class="dish">
+              <div><h3>Sal y Merkén</h3><p>Limón natural, sal y merkén</p></div>
+              <strong class="price">$1.500</strong>
+            </article>
+            </div>
+          </div>
+        </div>
+        <aside class="media-column media-cervezas-schop">
+          <figure class="media-card tall">
+            <img src="./menu/barra-hero-foto.jpg" alt="Imagen de barra Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band" id="barra-botellines">
+      <div class="menu-layout full">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Botellines <small>4 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Sol</h3><p>Botellín 330cc</p></div>
+              <strong class="price">$2.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Austral Yagan</h3></div>
+              <strong class="price">$3.400</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Kunstman Miel</h3><p>Botellín de 330cc</p></div>
+              <strong class="price">$4.800</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Kunstman Gran Torobayo</h3></div>
+              <strong class="price">$6.800</strong>
+            </article>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="menu-band" id="barra-cocteles-clasicos">
+      <div class="menu-layout">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Cócteles Clásicos <small>17 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Daiquiri Sabores</h3></div>
+              <strong class="price">$6.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>maracazzotti</h3><p>Espumante, Ramazzotti, pulpa de maracuyá y limón de maracuyá</p></div>
+              <strong class="price">$6.500</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Martini Dry</h3><p>Martini y Gin</p></div>
+              <strong class="price">$7.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mojito Sandia</h3><p>Tu mojito de siempre ahora en un nuevo sabor</p></div>
+              <strong class="price">$6.800</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mojito Cubano</h3><p>Ron blanco, limón, menta, agua gasificada</p></div>
+              <strong class="price">$6.000</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mojito Sabores</h3><p>Frutilla, piña, maracuyá, mango, frambuesa o cubano</p></div>
+              <strong class="price">$6.800</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Caipirinha</h3><p>Limón de pica, azúcar flor y cachaza</p></div>
+              <strong class="price">$6.500</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Electric</h3><p>Vodka, limón, naranja, curazao y ginger ale</p></div>
+              <strong class="price">$7.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Margarita</h3><p>Tequila, triple sec, limón y goma</p></div>
+              <strong class="price">$6.500</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Tom Collins</h3><p>Gin, limón y soda</p></div>
+              <strong class="price">$6.500</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mojito Diablo</h3><p>Tequila, limón, menta, pulpa de frutilla y licor de cassis</p></div>
+              <strong class="price">$6.800</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Daiquiri</h3></div>
+              <strong class="price">$5.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Moscow Mule</h3><p>Vodka, jugo de limón, hojas de menta y ginger beer</p></div>
+              <strong class="price">$7.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>London Mule</h3><p>Gin, limón, menta y ginger beer</p></div>
+              <strong class="price">$7.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Tequila Sunrise</h3><p>Jugo naranja, tequila y granadina</p></div>
+              <strong class="price">$6.700</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Copa Sangría</h3><p>Vino merlot, sirop canela, limón, licor cassis, ramazzotti violetto</p></div>
+              <strong class="price">$6.700</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mojito Sol</h3><p>Mojito tradicional más cerveza Sol</p></div>
+              <strong class="price">$7.900</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-cocteles-clasicos">
+          <figure class="media-card tall">
+            <img src="./assets/src/assets/almibar-hero.704919b3aa0bc7ca5403bb164550713e.jpg" alt="Imagen de barra Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band dark" id="barra-mojitos-1l">
+      <div class="menu-layout full">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Mojitos 1L <small>6 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Mojito Mango 1L</h3></div>
+              <strong class="price">$10.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mojito Cubano 1L</h3></div>
+              <strong class="price">$9.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mojito Maracuyá 1L</h3></div>
+              <strong class="price">$10.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mojito Frambuesa 1L</h3><p>Ron blanco, hojas de menta, jugo de limón y pulpa de fruta</p></div>
+              <strong class="price">$10.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mojito Frutilla 1L</h3><p>Ron blanco, hojas de menta, jugo de limón y pulpa de fruta</p></div>
+              <strong class="price">$10.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mojito Piña 1L</h3><p>Ron blanco, hojas de menta, jugo de limón y pulpa de fruta</p></div>
+              <strong class="price">$10.900</strong>
+            </article>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="menu-band" id="barra-red-bull-drinks">
+      <div class="menu-layout">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Red Bull Drinks <small>2 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Tropical Gin</h3><p>Gin más Red Bull Yellow</p></div>
+              <strong class="price">$8.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Red Bull Bomb</h3><p>Jägermeister más Red Bull</p></div>
+              <strong class="price">$8.300</strong>
+            </article>
+          </div>
+          <div class="menu-addon" id="barra-red-bull-drinks-extra-sabor">
+            <h3>Extra sabor <small>5 opciones</small></h3>
+            <div class="menu-list addon-list">
+              <article class="dish">
+              <div><h3>Pulpa de Frambuesa</h3></div>
+              <strong class="price">$950</strong>
+            </article>
+              <article class="dish">
+              <div><h3>Pulpa de Frutilla</h3></div>
+              <strong class="price">$950</strong>
+            </article>
+              <article class="dish">
+              <div><h3>Pulpa de Mango</h3></div>
+              <strong class="price">$950</strong>
+            </article>
+              <article class="dish">
+              <div><h3>Pulpa de Maracuyá</h3></div>
+              <strong class="price">$950</strong>
+            </article>
+              <article class="dish">
+              <div><h3>Pulpa de Piña</h3></div>
+              <strong class="price">$950</strong>
+            </article>
+            </div>
+          </div>
+        </div>
+        <aside class="media-column media-red-bull-drinks">
+          <figure class="media-card tall">
+            <img src="./menu/sours-redbull-yellow.jpg" alt="Imagen de barra Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band" id="barra-cocteleria-de-autor">
+      <div class="menu-layout flip">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Coctelería de Autor <small>10 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Almíbar Sour</h3><p>Pisco, maracuyá, limón, licor de cassis, espuma de clara · El trago de la casa</p></div>
+              <strong class="price">$6.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Fuego Latino</h3><p>Tequila, mango, ají, limón · Borde de merkén</p></div>
+              <strong class="price">$6.500</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Sandía Punch</h3><p>Gin, sandía, pepino, limón, soda · Refrescante y ligero</p></div>
+              <strong class="price">$6.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Atardecer Almíbar</h3><p>Aperol, maracuyá, limón, tónica · Frutal y refrescante</p></div>
+              <strong class="price">$6.400</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Rosa Salvaje</h3><p>Gin, frambuesa, limón, espuma de clara · Pink drink elegante</p></div>
+              <strong class="price">$7.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Isla Pirata</h3><p>Ron, curazao, piña, crema de coco, limón, goma · Estilo tiki tropical</p></div>
+              <strong class="price">$6.500</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Humo &amp; Miel</h3><p>Mistral Honey, jugo de naranja, jengibre · Burbuja saborizada</p></div>
+              <strong class="price">$7.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Noche Negra</h3><p>Jägermeister, frutilla, limón, Red Bull · Intenso y nocturno</p></div>
+              <strong class="price">$7.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Medianoche</h3><p>Vodka, espresso, Jäger, almíbar · Espresso Martini con twist herbal</p></div>
+              <strong class="price">$7.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Amargo Italiano</h3><p>Gin, Campari, Ramazzotti, naranja, tónica · Amargo refrescante</p></div>
+              <strong class="price">$7.600</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-cocteleria-de-autor">
+          <figure class="media-card tall">
+            <img src="./menu/cocteleria-autor.jpg" alt="Imagen de barra Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band dark" id="barra-spritz">
+      <div class="menu-layout">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Spritz <small>3 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Ramazzotti Violetto Spritz</h3></div>
+              <strong class="price">$6.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Ramazzotti Spritz</h3><p>Ramazzotti, espumante y agua gasificada</p></div>
+              <strong class="price">$6.500</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Aperol Spritz</h3><p>Aperol, espumante y agua gasificada</p></div>
+              <strong class="price">$6.600</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-spritz">
+          <figure class="media-card tall">
+            <img src="./menu/cocteleria-autor.jpg" alt="Imagen de barra Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band" id="barra-sours">
+      <div class="menu-layout full">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Sours <small>4 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Sour Tradicional</h3><p>Base tres R</p></div>
+              <strong class="price">$5.000</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Sour Amaretto</h3></div>
+              <strong class="price">$5.700</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Sour Peruano Catedral</h3></div>
+              <strong class="price">$6.700</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Peruano Sour</h3><p>Pisco peruano Barsol, limón de pica, goma y albúmina</p></div>
+              <strong class="price">$5.400</strong>
+            </article>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="menu-band" id="barra-cremosos">
+      <div class="menu-layout full">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Cremosos <small>3 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Ruso Blanco</h3><p>Vodka, licor de café y crema de leche</p></div>
+              <strong class="price">$6.700</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Piña Colada</h3><p>Ron blanco, pulpa de piña, crema de coco y crema de leche</p></div>
+              <strong class="price">$7.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Amaretto Colado</h3><p>Amaretto, crema de coco, pulpa de piña</p></div>
+              <strong class="price">$7.200</strong>
+            </article>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="menu-band dark" id="barra-old-schools">
+      <div class="menu-layout full">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Old Schools <small>2 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Negroni</h3><p>Gin, campari y vermut rosso</p></div>
+              <strong class="price">$6.700</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Clavo Oxidado</h3><p>Ballantines finest y drambuie</p></div>
+              <strong class="price">$7.200</strong>
+            </article>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="menu-band" id="barra-mocktails">
+      <div class="menu-layout">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Mocktails <small>8 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Virgin Mojito</h3><p>Menta, limón, almíbar, ginger ale · Sin alcohol, mismo sabor</p></div>
+              <strong class="price">$5.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Virgin Piña Colada</h3><p>Piña, crema de coco, limón · Cremoso y tropical sin alcohol</p></div>
+              <strong class="price">$5.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Beso Boreal</h3><p>Jugo arándano, limón, syrup romero, agua gasificada</p></div>
+              <strong class="price">$5.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Tropical Sunset</h3><p>Jugo piña, jugo maracuyá, granadina</p></div>
+              <strong class="price">$4.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Heineken 0,0</h3><p>Botellín Heineken de 330cc sin alcohol</p></div>
+              <strong class="price">$5.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Sunset Fizz</h3><p>Jugo de naranja, maracuyá, agua tónica, granadina · Refrescante y vibrante</p></div>
+              <strong class="price">$5.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Kunstman Sin Alcohol</h3><p>Botellín 330cc sin alcohol</p></div>
+              <strong class="price">$5.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mango Chileno</h3><p>Pulpa de mango, limón, jengibre, merkén, soda · Fresco con un toque picante</p></div>
+              <strong class="price">$5.900</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-mocktails">
+          <figure class="media-card tall">
+            <img src="./menu/sours-redbull-yellow.jpg" alt="Imagen de barra Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band" id="barra-gin">
+      <div class="menu-layout flip">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Gin <small>8 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Beefeater</h3><p>9 botánicos, naranja, enebro, cilantro</p></div>
+              <strong class="price">$7.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Beefeater Pink</h3><p>Sabor a frutilla</p></div>
+              <strong class="price">$7.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Bull Dog</h3><p>Flores, fruta y cítricos</p></div>
+              <strong class="price">$8.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Beefeater 24</h3><p>12 botánicos, macerados 24 horas</p></div>
+              <strong class="price">$8.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Malfy</h3><p>Gin clásico estilo DRY italiano</p></div>
+              <strong class="price">$10.300</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Malfy Lemon</h3><p>Limones italianos de Amalfi</p></div>
+              <strong class="price">$10.300</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Hendricks</h3><p>Pétalos de rosas búlgaras y pepino</p></div>
+              <strong class="price">$10.400</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Malfy Rose</h3><p>Pomelos rosados sicilianos</p></div>
+              <strong class="price">$10.300</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-gin">
+          <figure class="media-card tall">
+            <img src="./menu/cervezas-gin-pisco.jpg" alt="Imagen de barra Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band dark" id="barra-vodka">
+      <div class="menu-layout full">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Vodka <small>3 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>absolut original</h3><p>Vodka Absolut</p></div>
+              <strong class="price">$6.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Stolichnaya</h3><p>Incluye bebida 220cc</p></div>
+              <strong class="price">$4.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Absolut Elyx</h3></div>
+              <strong class="price">$9.900</strong>
+            </article>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="menu-band" id="barra-pisco">
+      <div class="menu-layout flip">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Pisco <small>12 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Mistral 35</h3><p>Pisco mistral 35° con bebida</p></div>
+              <strong class="price">$5.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Republicano Moscatel</h3><p>40° incluye bebida 220cc</p></div>
+              <strong class="price">$6.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Republicano Roble</h3><p>40° incluye bebida 220cc</p></div>
+              <strong class="price">$6.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Tres R 35°</h3></div>
+              <strong class="price">$4.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Espíritu De Los Andes</h3></div>
+              <strong class="price">$5.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Alto del Carmen 35°</h3><p>Incluye bebida 220cc</p></div>
+              <strong class="price">$5.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mistral Cristalino</h3></div>
+              <strong class="price">$6.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mistral Nobel</h3><p>Incluye bebida 220cc</p></div>
+              <strong class="price">$6.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mistral Honey</h3></div>
+              <strong class="price">$6.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mistral Apple</h3></div>
+              <strong class="price">$6.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mistral Barrica Tostada</h3></div>
+              <strong class="price">$6.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Horcón Quemado 3 años</h3></div>
+              <strong class="price">$7.000</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-pisco">
+          <figure class="media-card tall">
+            <img src="./menu/cervezas-gin-pisco.jpg" alt="Imagen de barra Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band" id="barra-whisky">
+      <div class="menu-layout">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Whisky <small>8 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Jack Daniels</h3><p>Incluye bebida 220cc</p></div>
+              <strong class="price">$9.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Ballantines Finest</h3><p>Incluye bebida 220cc</p></div>
+              <strong class="price">$6.700</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Jack Daniels Honey</h3><p>Incluye bebida 220cc</p></div>
+              <strong class="price">$9.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Jack Daniels Apple</h3></div>
+              <strong class="price">$9.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Red Label</h3><p>Incluye bebida 220cc</p></div>
+              <strong class="price">$7.400</strong>
+            </article>
+            <article class="dish">
+              <div><h3>JW Black Label</h3></div>
+              <strong class="price">$9.300</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Jameson</h3></div>
+              <strong class="price">$6.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Chivas 12</h3></div>
+              <strong class="price">$10.400</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-whisky">
+          <figure class="media-card tall">
+            <img src="./menu/cervezas-gin-pisco.jpg" alt="Imagen de barra Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band dark" id="barra-shots">
+      <div class="menu-layout full">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Shots <small>3 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Shot Tequila</h3></div>
+              <strong class="price">$1.000</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Shot Jagermeister</h3></div>
+              <strong class="price">$4.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Olmeca Reposado</h3></div>
+              <strong class="price">$3.400</strong>
+            </article>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="menu-band" id="barra-licores">
+      <div class="menu-layout full">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Licores <small>3 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Jagermeister</h3><p>Incluye bebida</p></div>
+              <strong class="price">$7.200</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Baileys Copa</h3></div>
+              <strong class="price">$4.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Fernet Branca</h3></div>
+              <strong class="price">$5.900</strong>
+            </article>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="menu-band" id="barra-vinos-y-espumantes">
+      <div class="menu-layout flip">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Vinos y Espumantes <small>4 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>SB misiones de rengo 375</h3></div>
+              <strong class="price">$8.400</strong>
+            </article>
+            <article class="dish">
+              <div><h3>viña mar 187</h3></div>
+              <strong class="price">$2.500</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Copa Castillo Molina CS</h3></div>
+              <strong class="price">$3.700</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Espumante Viña Mar 375ml</h3></div>
+              <strong class="price">$7.400</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-vinos-y-espumantes">
+          <figure class="media-card tall">
+            <img src="./assets/src/assets/almibar-hero.f43c9f39fc8bf78f0b9c0ceb04cb3222.jpg" alt="Imagen de barra Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+    </div>
+
+    <div class="station-pane" data-station-pane="cocina" hidden>
+      <section class="section-head section-head-cocina" id="cocina" style="--head-image: url('./menu/cocina/cocina-hero.jpg');">
+      <div class="section-head-inner">
+        <div>
+          <h2 class="section-title">Cocina</h2>
+          <p>Sushi, fríos, picoteos, pizzas, papas y postres para completar la mesa.</p>
+        </div>
+        <div class="section-count">
+          <strong>8</strong>
+          categorías · 60 productos activos.
+        </div>
+      </div>
+    </section>
+      <section class="menu-band dark" id="cocina-platos-frios">
+      <div class="menu-layout">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Platos Fríos <small>2 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Ceviche Salmón</h3></div>
+              <strong class="price">$14.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Ceviche Salmón-Camarón</h3><p>Salmón, camarón, cebolla morada, pimentón, cilantro y leche de tigre</p></div>
+              <strong class="price">$17.900</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-platos-frios">
+          <figure class="media-card tall">
+            <img src="./menu/cocina/ceviche-salmon.jpg" alt="Imagen de cocina Almíbar">
+          </figure>
+          <figure class="media-card wide">
+            <img src="./menu/cocina/ceviche-spicy.jpg" alt="Imagen de cocina Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band" id="cocina-sushi">
+      <div class="menu-layout flip">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Sushi <small>14 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Promo 20 Piezas</h3><p>Mix de 20 rolls. Perfecto para compartir.</p></div>
+              <strong class="price">$15.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Promo 40 Piezas</h3><p>Mix de 40 rolls. Perfecto para compartir.</p></div>
+              <strong class="price">$28.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Salmón Roll</h3><p>Salmón, queso crema y palta envuelto en palta.</p></div>
+              <strong class="price">$8.990</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Ebi Roll</h3><p>Camarón, pepino y ciboulette envuelto en palta.</p></div>
+              <strong class="price">$8.490</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Sake Sésamo Roll</h3><p>Salmón y palta envuelto en ciboulette y sésamo.</p></div>
+              <strong class="price">$8.990</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Rainbow Roll</h3><p>Camarón, queso crema y palta envuelto en láminas de salmón.</p></div>
+              <strong class="price">$9.990</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Tuna Roll</h3><p>Atún, palta y ciboulette envuelto en queso crema (sin nori).</p></div>
+              <strong class="price">$9.490</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pollo Crispy Roll</h3><p>Pollo, queso crema y palta apanado en panko.</p></div>
+              <strong class="price">$8.990</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pollo Champi Roll</h3><p>Pollo y champiñón apanado en panko.</p></div>
+              <strong class="price">$8.990</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Camarón Panko Roll</h3><p>Camarón, queso crema y palta apanado en panko.</p></div>
+              <strong class="price">$9.490</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Ebi Crispy Roll</h3><p>Camarón, queso crema y cebollín apanado en panko.</p></div>
+              <strong class="price">$9.490</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Salmón Panko Roll</h3><p>Salmón, queso crema y palta apanado en panko.</p></div>
+              <strong class="price">$9.490</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Veggie Panko Roll</h3><p>Pepino, pimentón, palta y cebollín apanado en panko.</p></div>
+              <strong class="price">$8.490</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Atún Panko Roll</h3><p>Atún, palta y ciboulette apanado en panko.</p></div>
+              <strong class="price">$9.990</strong>
+            </article>
+          </div>
+          <div class="menu-addon" id="cocina-toppings-sushi">
+            <h3>Toppings Sushi <small>6 productos</small></h3>
+            <div class="menu-list addon-list">
+              <article class="dish">
+              <div><h3>Acevichado Salmón</h3><p>Topping de salmón fresco, cebolla morada, pimentones, cilantro y leche de tigre.</p></div>
+              <strong class="price">$2.990</strong>
+            </article>
+              <article class="dish">
+              <div><h3>Acevichado Camarón</h3><p>Topping de camarón, cebolla morada, pimentones, cilantro y leche de tigre.</p></div>
+              <strong class="price">$1.990</strong>
+            </article>
+              <article class="dish">
+              <div><h3>Acevichado Champiñón</h3><p>Topping de champiñones frescos, cebolla morada, pimentones, cilantro y leche de tigre.</p></div>
+              <strong class="price">$1.990</strong>
+            </article>
+              <article class="dish">
+              <div><h3>Tartar de Atún</h3><p>Atún fresco, palta, sésamo, cebolla morada y aceite de sésamo.</p></div>
+              <strong class="price">$2.990</strong>
+            </article>
+              <article class="dish">
+              <div><h3>Cubos Pollo Apanados</h3><p>Cubos de pollo apanado con salsa de la casa.</p></div>
+              <strong class="price">$2.500</strong>
+            </article>
+              <article class="dish">
+              <div><h3>Cubos Camarón Apanado</h3><p>Cubos de camarón apanado con salsa de la casa.</p></div>
+              <strong class="price">$1.990</strong>
+            </article>
+            </div>
+          </div>
+        </div>
+        <aside class="media-column media-sushi">
+          <figure class="media-card tall">
+            <img src="./menu/cocina/sushi-pollo-teriyaki.jpg" alt="Imagen de cocina Almíbar">
+          </figure>
+          <figure class="media-card wide">
+            <img src="./menu/cocina/sushi-luco.jpg" alt="Imagen de cocina Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band" id="cocina-picoteos-y-tablas">
+      <div class="menu-layout">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Picoteos &amp; Tablas <small>8 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Camarones al Pil Pil o al Ajillo</h3><p>12 camarones al Pil pil o ajillo</p></div>
+              <strong class="price">$9.300</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Tabla Almíbar</h3><p>Empanadas camarón queso, ceviche salmón, bombas de queso, bruschettas atún, brochetas pollo</p></div>
+              <strong class="price">$26.000</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Tabla Carnes</h3><p>Lomo cerdo BBQ, salteado peruano, pinchos de pollo con tocino, papas fritas</p></div>
+              <strong class="price">$28.800</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Tabla Pacífico</h3><p>Ceviche salmón, camarones ecuatorianos apanados, empanadas camarón</p></div>
+              <strong class="price">$20.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Mix Fritos</h3><p>Empanadas camarón queso, esferas queso, aros cebolla, tiras pollo, papas fritas</p></div>
+              <strong class="price">$19.500</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Esferas de Queso</h3></div>
+              <strong class="price">$8.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Trilogía Empanadas</h3></div>
+              <strong class="price">$10.400</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pil Pil</h3><p>Pollo, champiñones y camarones con tostadas. Picor leve</p></div>
+              <strong class="price">$10.400</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-picoteos-tablas">
+          <figure class="media-card tall">
+            <img src="./menu/cocina/mix-fritos.jpg" alt="Imagen de cocina Almíbar">
+          </figure>
+          <figure class="media-card wide">
+            <img src="./menu/cocina/empanadas.jpg" alt="Imagen de cocina Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band dark" id="cocina-pizzas">
+      <div class="menu-layout flip">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Pizzas <small>16 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Pizza la Suprema</h3><p>Pepperoni, jamón pierna, champiñón, aceitunas negras, pimentón, cebolla</p></div>
+              <strong class="price">$15.990</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Napolitana Cargada</h3><p>Jamón pierna, tomate fresco, aceitunas negras, champiñón, pesto de albahaca</p></div>
+              <strong class="price">$14.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Pollo Crema</h3><p>Base crema, pollo, champiñón, tocino, cebolla, choclo</p></div>
+              <strong class="price">$15.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Pollo Doble</h3><p>Pollo, tocino, champiñón, cebolla, salsa BBQ</p></div>
+              <strong class="price">$15.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Ricotta</h3><p>Masa fresca de 35 cm, salsa pomodoro artesanal, queso mozzarella, ricotta, pesto de albahaca, tomates cherry y hojas de albahaca.</p></div>
+              <strong class="price">$14.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Todas las carnes</h3><p>Pepperoni, jamón pierna, salame, tocino, carne mechada</p></div>
+              <strong class="price">$17.800</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Lomo Saltado</h3><p>Preparación peruana hecha pizza</p></div>
+              <strong class="price">$17.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Mechona</h3><p>Carne mechada, champiñón, pimentón, cebolla caramelizada</p></div>
+              <strong class="price">$16.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Al Ajillo</h3><p>Camarón, pollo, cebollín, ajo asado, crema de leche</p></div>
+              <strong class="price">$16.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Desmechada</h3><p>Carne mechada, tomate, aceituna negra, cebolla morada</p></div>
+              <strong class="price">$15.500</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Ranchera</h3><p>Pollo, champiñones, choclo con crema, cebolla morada</p></div>
+              <strong class="price">$16.400</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Pollo BBQ</h3><p>Pollo, tocino, cebolla morada, salsa BBQ</p></div>
+              <strong class="price">$14.400</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Napolitana</h3><p>Tomate, jamón, aceituna, orégano</p></div>
+              <strong class="price">$12.400</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Vegetariana</h3><p>Masa fresca de 35 cm, salsa pomodoro artesanal, queso mozzarella, tomate cherry, pimentón, champiñón y choclo. Bañado en pesto de albahaca</p></div>
+              <strong class="price">$14.900</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Pizza Doble Pepperoni</h3><p>Extra pepperoni</p></div>
+              <strong class="price">$14.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Doble Queso (extra)</h3></div>
+              <strong class="price">$4.000</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-pizzas">
+          <figure class="media-card tall">
+            <img src="./menu/cocina/pizza-mechona.jpg" alt="Imagen de cocina Almíbar">
+          </figure>
+          <figure class="media-card wide">
+            <img src="./menu/cocina/pizza-al-ajillo.jpg" alt="Imagen de cocina Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band" id="cocina-papas">
+      <div class="menu-layout">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Papas <small>9 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Papas Pil Pil</h3></div>
+              <strong class="price">$17.700</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Papas Fritas</h3><p>Papas fritas crocantes con salsa de la casa</p></div>
+              <strong class="price">$7.400</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Papas La Mortal</h3><p>600g papas fritas crocantes, generosa porción de carne desmechada, queso cheddar y cebollín fresco</p></div>
+              <strong class="price">$18.800</strong>
+            </article>
+            <article class="dish">
+              <div><h3>La Peruana</h3><p>Salteado al estilo peruano, trozos de carne de vacuno, tomate, cebolla morada y salsa de ostras sobre papas fritas</p></div>
+              <strong class="price">$20.800</strong>
+            </article>
+            <article class="dish">
+              <div><h3>La Suprema</h3><p>Salteado de pollo, champiñón, crema de leche, salsa de ajo y cebollín fresco sobre papas fritas</p></div>
+              <strong class="price">$16.700</strong>
+            </article>
+            <article class="dish">
+              <div><h3>La Chilena</h3><p>Filete de vacuno, longaniza artesanal, cebolla caramelizada y huevos fritos sobre papas fritas doradas</p></div>
+              <strong class="price">$19.800</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Papas La Vegetal</h3><p>Champiñones, pimentones, tomate cherry, cebolla morada, toques de soya y salsa tártara sobre papas fritas</p></div>
+              <strong class="price">$15.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>La Crocante</h3><p>Pollo apanado, cebolla crispy, mayo sriracha y guacamole sobre papas fritas</p></div>
+              <strong class="price">$16.700</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Queso Derretido (extra)</h3><p>Baño de queso mozzarella derretido para agregar a tus papas</p></div>
+              <strong class="price">$4.000</strong>
+            </article>
+          </div>
+          
+        </div>
+        <aside class="media-column media-papas">
+          <figure class="media-card tall">
+            <img src="./menu/cocina/papas-saltadas.jpg" alt="Imagen de cocina Almíbar">
+          </figure>
+          <figure class="media-card wide">
+            <img src="./menu/cocina/papas-supremas.jpg" alt="Imagen de cocina Almíbar">
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-band" id="cocina-cafe">
+      <div class="menu-layout full">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Café <small>3 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>Té English</h3></div>
+              <strong class="price">$1.600</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Espresso</h3></div>
+              <strong class="price">$2.100</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Café Latte</h3></div>
+              <strong class="price">$2.300</strong>
+            </article>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="menu-band dark" id="cocina-postres">
+      <div class="menu-layout full">
+        <div class="chapter-copy">
+          <h2 class="chapter-title">Postres <small>2 productos</small></h2>
+          <div class="menu-list">
+            <article class="dish">
+              <div><h3>cheesecake</h3></div>
+              <strong class="price">$5.000</strong>
+            </article>
+            <article class="dish">
+              <div><h3>Volcán de Chocolate</h3></div>
+              <strong class="price">$5.900</strong>
+            </article>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+    </div>
+
+
+    <section class="contact-band" id="contacto">
+      <div class="contact-wrap">
+        <div>
+          <h2 class="contact-title">Redes y contacto</h2>
+          <div class="contact-list">
+            <div><b>WhatsApp:</b> +56 9 5658 1436</div>
+            <div><b>Dirección:</b> Plaza San Francisco · Francisco Moreno 418, Curicó</div>
+            <div><b>Horario:</b> Lun-Mar 17:00-00:00 · Mié 17:00-01:00 · Jue 17:00-02:00 · Vie-Sáb 17:00-03:00</div>
+            <div><b>Instagram:</b> @almibar.bar</div>
+          </div>
+          <div class="contact-actions">
+            <a href="https://wa.me/56956581436?text=Hola!%20Quiero%20reservar%20en%20Alm%C3%ADbar" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://maps.google.com/?q=-34.9858389,-71.2294986" target="_blank" rel="noopener">Cómo llegar</a>
+            <a href="https://instagram.com/almibar.bar" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="callout">
+          <b>Horario nocturno</b>
+          <span>Desde las 17:00 de lunes a sábado. Cierre: lunes y martes 00:00, miércoles 01:00, jueves 02:00, viernes y sábado 03:00.</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <strong>Almíbar · Carta completa</strong><br>
+      32 categorías activas · 194 productos visibles desde la carta pública.
+    </footer>
+  </main>
+
+  <a class="wa-fab" href="https://wa.me/56956581436?text=Hola!%20Tengo%20una%20consulta%20sobre%20Alm%C3%ADbar"
+     target="_blank" rel="noopener" aria-label="Ayuda por WhatsApp">
+    <svg class="wa-fab__icon" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M16.04 3.2c-7.06 0-12.8 5.73-12.8 12.79 0 2.25.59 4.45 1.71 6.39L3.2 28.8l6.6-1.73a12.76 12.76 0 0 0 6.23 1.59h.01c7.06 0 12.8-5.74 12.8-12.8 0-3.42-1.33-6.63-3.75-9.05a12.7 12.7 0 0 0-9.05-3.61zm0 23.3h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.6 10.6 0 0 1-1.62-5.63c0-5.86 4.77-10.63 10.64-10.63a10.6 10.6 0 0 1 7.51 3.12 10.55 10.55 0 0 1 3.11 7.52c0 5.87-4.77 10.63-10.63 10.63zm5.83-7.96c-.32-.16-1.89-.93-2.18-1.04-.29-.11-.5-.16-.72.16-.21.32-.82 1.04-1.01 1.25-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.73-.99-2.37-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.65 0 1.57 1.14 3.08 1.3 3.29.16.21 2.25 3.44 5.46 4.82.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.89-.77 2.16-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37z"/>
+    </svg>
+    <span class="wa-fab__label">¿Dudas?</span>
+  </a>
+
+  <script>
+    const stationToggles = Array.from(document.querySelectorAll("[data-station-toggle]"));
+    const stationPanes = Array.from(document.querySelectorAll("[data-station-pane]"));
+    const stationRails = Array.from(document.querySelectorAll("[data-station-rail]"));
+    const links = Array.from(document.querySelectorAll(".category-rail a"));
+    const sections = links
+      .map((link) => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
+
+    function setStation(station, shouldScroll) {
+      stationToggles.forEach((toggle) => {
+        toggle.setAttribute("aria-pressed", String(toggle.dataset.stationToggle === station));
+      });
+      stationRails.forEach((rail) => {
+        rail.hidden = rail.dataset.stationRail !== station;
+      });
+      stationPanes.forEach((pane) => {
+        pane.hidden = pane.dataset.stationPane !== station;
+      });
+      if (shouldScroll) {
+        const target = document.querySelector('[data-station-pane="' + station + '"]');
+        target?.querySelector('.section-head')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    stationToggles.forEach((toggle) => {
+      toggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        setStation(toggle.dataset.stationToggle, true);
+      });
+    });
+
+    // Enlaces del hero que apuntan a una estación: cambian de estación al hacer click
+    // (si no, apuntan a un panel oculto y "no hacen nada").
+    document.querySelectorAll('.hero-actions a[href^="#"]').forEach((a) => {
+      const target = a.getAttribute('href').slice(1);
+      if (!['promos', 'barra', 'cocina'].includes(target)) return;
+      a.addEventListener('click', (event) => {
+        event.preventDefault();
+        setStation(target, true);
+      });
+    });
+
+    setStation(location.hash.startsWith('#cocina') ? 'cocina' : 'barra', false);
+
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      links.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${visible.target.id}`);
+      });
+    }, { rootMargin: "-28% 0px -58% 0px", threshold: [.01, .18, .36] });
+
+    sections.forEach((section) => observer.observe(section));
+
+    const rotatingPhotos = Array.from(document.querySelectorAll("[data-rotating-photo]"));
+    const shouldRotatePhotos = !window.matchMedia || !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (shouldRotatePhotos) {
+      rotatingPhotos.forEach((img, slotIndex) => {
+        const images = (img.dataset.images || "").split("|").filter(Boolean);
+        if (images.length < 2) return;
+
+        images.forEach((src) => {
+          const preload = new Image();
+          preload.src = src;
+        });
+
+        let imageIndex = Math.max(0, images.indexOf(img.getAttribute("src")));
+        window.setInterval(() => {
+          imageIndex = (imageIndex + 1) % images.length;
+          img.classList.add("is-changing");
+          window.setTimeout(() => {
+            img.src = images[imageIndex];
+            img.classList.remove("is-changing");
+          }, 260);
+        }, 4200 + slotIndex * 850);
+      });
+    }
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("./sw.js").catch(function () {});
+      });
+    }
+  </script>
+<script src="./acceso.js" defer></script>
+</body>
+</html>
