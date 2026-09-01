@@ -876,4 +876,8 @@
     lookup.addEventListener('click', function (event) { event.preventDefault(); ingresar(); });
     form.addEventListener('submit', function (event) { event.preventDefault(); ingresar(); });
   });
+
+  // Reutilizada desde la portada (index.html): el socio ya reconocido por RUT abre
+  // su mesa (ver consumo / pedir / llamar garzón) sin pasar por el muro de la carta.
+  try { window.AlmibarMesa = { open: openMesa }; } catch (_) {}
 })();

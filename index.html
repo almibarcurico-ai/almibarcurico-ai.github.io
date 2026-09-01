@@ -11,6 +11,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
   <link rel="icon" href="./favicon.ico">
+  <link rel="stylesheet" href="./acceso.css">
   <meta name="theme-color" content="#061f24">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -428,8 +429,8 @@
     }
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: clamp(14px, 2vw, 18px);
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(10px, 1.6vw, 16px);
     }
     /* Tarjetas de acceso: solo ícono + nombre. Compactas, parejas, mismo alto. */
     .card {
@@ -566,10 +567,17 @@
     .footer-bar a:hover { color: var(--cream); }
 
     @media (max-width: 720px) {
-      .cards { grid-template-columns: 1fr; }
       .contra-grid { grid-template-columns: 1fr; }
       .topbar .ig span { display: none; }
       .socio-form .submit { width: 100%; justify-content: center; align-self: stretch; }
+    }
+    /* Tarjetas de acceso: 2 por fila también en móvil, compactas. */
+    @media (max-width: 560px) {
+      .card { padding: 12px 13px; gap: 11px; }
+      .card .icon { width: 40px; height: 40px; border-radius: 11px; }
+      .card .icon svg { width: 21px; height: 21px; }
+      .card h3 { font-size: 15px; }
+      .card .chev { display: none; }
     }
   </style>
 </head>
@@ -627,6 +635,9 @@
           <button type="button" class="visit-btn" id="sc-visit">
             <span aria-hidden="true">📍</span> Estoy en Almíbar
           </button>
+          <button type="button" class="visit-btn" id="sc-mesa">
+            <span aria-hidden="true">🧾</span> Ver mi mesa
+          </button>
           <a class="socio-cta" href="./carta.html">
             Ver la carta
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -655,12 +666,6 @@
         <a class="card" href="./reservas.html">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M8.5 14h3"/></svg></span>
           <h3>Reservas</h3>
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
-        </a>
-
-        <a class="card" href="./socio.html">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.5l2.6 5.3 5.9.86-4.25 4.14 1 5.87L12 17.9l-5.25 2.77 1-5.87L3.5 9.66l5.9-.86L12 3.5Z"/></svg></span>
-          <h3>Club de socios</h3>
           <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
         </a>
 
@@ -743,6 +748,8 @@
     </footer>
   </div>
 
+  <!-- Motor de "mesa pública" (ver consumo / pedir / llamar garzón). Expone window.AlmibarMesa. -->
+  <script src="./acceso.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     if ("serviceWorker" in navigator) {
@@ -775,6 +782,7 @@
       var scProgress = document.getElementById('sc-progress');
       var scSaved = document.getElementById('sc-saved');
       var scVisit = document.getElementById('sc-visit');
+      var scMesa = document.getElementById('sc-mesa');
       var scVisitStatus = document.getElementById('sc-visit-status');
       var scLogout = document.getElementById('sc-logout');
       var socioAlt = document.getElementById('socio-alt');
@@ -947,6 +955,18 @@
       form.addEventListener('submit', function (e) { e.preventDefault(); ingresar(); });
       scVisit.addEventListener('click', markVisit);
       scLogout.addEventListener('click', logout);
+
+      // Ver mi mesa: reutiliza el motor de mesa pública de acceso.js (ver consumo,
+      // pedir y llamar al garzón). El socio ingresa el número de su mesa; el RPC
+      // public_table_state lo valida contra la cuenta abierta a su nombre.
+      scMesa.addEventListener('click', function () {
+        if (!current || !current.clientId) return;
+        if (window.AlmibarMesa && typeof window.AlmibarMesa.open === 'function') {
+          window.AlmibarMesa.open(current);
+        } else {
+          setVisit('No pudimos abrir tu mesa ahora. Recarga la página e intenta de nuevo.', 'err');
+        }
+      });
 
       // Socio que ya entró antes: mostramos su tarjeta al tiro, sin volver a pedir RUT.
       var saved = readMember();
