@@ -4,7 +4,7 @@
 // - Imágenes/estáticos same-origin: stale-while-revalidate
 // - Fuentes de Google: cache-first (woff2 inmutables)
 // - *.supabase.co y demás APIs: NUNCA se interceptan
-var VERSION='v72';
+var VERSION='v73';
 var STATIC='almibar-static-'+VERSION;
 var PAGES='almibar-pages-'+VERSION;
 var ASSETS='almibar-assets-'+VERSION;
