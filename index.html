@@ -1023,9 +1023,27 @@
         }
       });
 
-      // Socio que ya entró antes: mostramos su tarjeta al tiro, sin volver a pedir RUT.
+      // Socio que ya entró antes: mostramos su tarjeta al tiro y la REFRESCAMOS
+      // contra la base, así "Llevas N visitas" y el progreso no quedan con datos
+      // viejos del localStorage (bug: mostraba 0 visitas aunque hubiera marcado).
       var saved = readMember();
-      if (saved && saved.clientId) showCard(saved);
+      if (saved && saved.clientId) {
+        showCard(saved);
+        if (saved.rut) {
+          fetch(SUPABASE + '/rest/v1/rpc/find_member_by_rut', {
+            method: 'POST',
+            headers: { apikey: API_KEY, Authorization: 'Bearer ' + API_KEY, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ p_rut: saved.rut, p_restaurant_id: RESTAURANT_ID })
+          }).then(function (r) { return r.ok ? r.json() : null; }).then(function (out) {
+            if (out && out.found && out.member) {
+              var fresh = mapMember(out.member, saved.rut);
+              if (!fresh.clientId) fresh.clientId = saved.clientId;
+              saveMember(fresh);
+              if (current && current.clientId === fresh.clientId) { current = fresh; paintCard(fresh); }
+            }
+          }).catch(function () {});
+        }
+      }
     })();
   </script>
 </body>
