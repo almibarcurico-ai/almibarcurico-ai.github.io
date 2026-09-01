@@ -812,6 +812,7 @@
       var scVisitStatus = document.getElementById('sc-visit-status');
       var scLogout = document.getElementById('sc-logout');
       var socioAlt = document.getElementById('socio-alt');
+      var socioHead = document.querySelector('.socio-head');
       var busy = false;
       var current = null;
 
@@ -889,6 +890,8 @@
       function showCard(m) {
         current = m;
         paintCard(m);
+        // Socio reconocido: la tarjeta reemplaza por completo el bloque de login.
+        if (socioHead) socioHead.hidden = true;
         form.hidden = true;
         socioAlt.hidden = true;
         card.hidden = false;
@@ -903,6 +906,7 @@
         } catch (_) {}
         current = null;
         card.hidden = true;
+        if (socioHead) socioHead.hidden = false;
         form.hidden = false;
         socioAlt.hidden = false;
         rutInput.value = '';
