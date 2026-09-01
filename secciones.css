@@ -231,7 +231,8 @@ body.sec-tl::before {
    flores no pasen por debajo del texto de las tarjetas (contraste AA a salvo). */
 @media (max-width: 720px) {
   body::before {
-    opacity: .16;
-    background-size: 190px auto, 180px auto;
+    opacity: .38;
+    background-position: left -50px top 58px, right -45px bottom 8px;
+    background-size: 215px auto, 200px auto;
   }
 }
