@@ -181,6 +181,30 @@
     }
 
     /* ===== Acceso de socio (primer bloque de acción) ===== */
+    /* Desktop: dos mitades 50/50 — panel de socio a la izquierda, accesos a la
+       derecha. Ambas columnas del mismo alto. Móvil (≤900px): apilado. */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(20px, 3vw, 40px);
+      align-items: stretch;
+      margin-top: clamp(18px, 3vw, 30px);
+    }
+    .split > .socio {
+      margin: 0;
+      width: auto;
+      max-width: none;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .split > .access { margin-top: 0; }
+    @media (max-width: 900px) {
+      .split { grid-template-columns: 1fr; gap: clamp(16px, 4vw, 26px); }
+      .split > .socio { justify-content: flex-start; }
+    }
+
     .socio {
       margin-top: clamp(18px, 3vw, 30px);
       position: relative;
@@ -591,6 +615,7 @@
       </a>
     </header>
 
+    <div class="split">
     <!-- ===== ACCESO DE SOCIO — lo primero que ve el cliente (el QR de mesa llega acá) ===== -->
     <section class="socio" id="socios" aria-label="Acceso de socios del Club Almíbar">
       <div class="socio-head">
@@ -694,6 +719,7 @@
         </a>
       </div>
     </section>
+    </div>
 
     <!-- ===== Contraportada / contacto ===== -->
     <footer class="contra" id="contacto">
