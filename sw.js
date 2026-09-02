@@ -4,7 +4,7 @@
 // - Imágenes/estáticos same-origin: stale-while-revalidate
 // - Fuentes de Google: cache-first (woff2 inmutables)
 // - *.supabase.co y demás APIs: NUNCA se interceptan
-var VERSION='v76';
+var VERSION='v77';
 var STATIC='almibar-static-'+VERSION;
 var PAGES='almibar-pages-'+VERSION;
 var ASSETS='almibar-assets-'+VERSION;
@@ -93,6 +93,9 @@ self.addEventListener('fetch',function(e){
 
   if(url.origin===location.origin){
     if(url.pathname.indexOf('/_expo/static/')===0){ e.respondWith(cacheFirst(req,STATIC)); return; }
+    // JS/CSS/HTML propios del sitio: network-first para que los cambios lleguen SIEMPRE
+    // frescos sin tener que forzar caché (cae al cache sólo si no hay red).
+    if(/\.(?:js|css|html)$/i.test(url.pathname)){ e.respondWith(networkFirst(req,PAGES,3000)); return; }
     e.respondWith(staleWhileRevalidate(req,ASSETS)); return;
   }
 
