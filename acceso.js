@@ -880,4 +880,5 @@
   // Reutilizada desde la portada (index.html): el socio ya reconocido por RUT abre
   // su mesa (ver consumo / pedir / llamar garzón) sin pasar por el muro de la carta.
   try { window.AlmibarMesa = { open: openMesa }; } catch (_) {}
+  try { window.AlmibarPremio = { open: openRedeemModal }; } catch (_) {}
 })();

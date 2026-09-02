@@ -720,6 +720,7 @@
         <div class="socio-progress" id="sc-progress">Junta 3 visitas y gana un premio.</div>
         <p class="socio-saved" id="sc-saved" hidden></p>
         <div class="socio-card-actions">
+          <button type="button" class="socio-cta" id="sc-premio" hidden>🎁 Cobrar mi premio</button>
           <button type="button" class="visit-btn" id="sc-visit">
             <span aria-hidden="true">📍</span> Estoy en Almíbar
           </button>
@@ -872,6 +873,7 @@
       var scSaved = document.getElementById('sc-saved');
       var scVisit = document.getElementById('sc-visit');
       var scMesa = document.getElementById('sc-mesa');
+      var scPremio = document.getElementById('sc-premio');
       var scVisitStatus = document.getElementById('sc-visit-status');
       var scLogout = document.getElementById('sc-logout');
       var socioAlt = document.getElementById('socio-alt');
@@ -939,9 +941,11 @@
         var stamps = scStamps.querySelectorAll('.stamp');
         for (var i = 0; i < stamps.length; i++) stamps[i].classList.toggle('filled', reward || i < prog);
         if (reward) {
-          scProgress.textContent = '¡Tienes un premio disponible! Canjéalo con el equipo en tu mesa.';
+          scProgress.textContent = '¡Completaste 3 visitas! Elige y cobra tu premio. 🎁';
           scProgress.classList.add('reward');
+          if (scPremio) scPremio.hidden = false;
         } else {
+          if (scPremio) scPremio.hidden = true;
           var faltan = Math.max(3 - prog, 0);
           scProgress.textContent = 'Llevas ' + (m.visitas || 0) + (m.visitas === 1 ? ' visita' : ' visitas') + ' · te ' + (faltan === 1 ? 'falta 1 visita' : ('faltan ' + faltan + ' visitas')) + ' para tu premio.';
           scProgress.classList.remove('reward');
@@ -1048,6 +1052,11 @@
       form.addEventListener('submit', function (e) { e.preventDefault(); ingresar(); });
       scVisit.addEventListener('click', markVisit);
       scLogout.addEventListener('click', logout);
+      if (scPremio) scPremio.addEventListener('click', function () {
+        if (!current || !current.clientId) return;
+        if (window.AlmibarPremio && typeof window.AlmibarPremio.open === 'function') { window.AlmibarPremio.open(current); }
+        else { setVisit('No pudimos abrir el canje ahora. Recarga la página e intenta de nuevo.', 'err'); }
+      });
 
       // Ver mi mesa: reutiliza el motor de mesa pública de acceso.js (ver consumo,
       // pedir y llamar al garzón). El socio ingresa el número de su mesa; el RPC
