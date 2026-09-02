@@ -628,9 +628,47 @@
       .card h3 { font-size: 15px; }
       .card .chev { display: none; }
     }
+
+    /* Aviso legal: patente de restaurante (alcohol solo con alimentos) */
+    .aviso-overlay {
+      position: fixed; inset: 0; z-index: 12000;
+      display: flex; align-items: center; justify-content: center; padding: 24px;
+      background: rgba(3, 14, 17, .74);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease;
+    }
+    .aviso-overlay.show { opacity: 1; visibility: visible; }
+    .aviso-card {
+      width: min(460px, 100%);
+      background: linear-gradient(160deg, #0a2a2f, #07343a);
+      border: 1px solid var(--line); border-radius: 20px;
+      padding: clamp(24px, 5vw, 34px); text-align: center;
+      box-shadow: 0 40px 90px rgba(0, 0, 0, .5);
+    }
+    .aviso-card .ico { font-size: 32px; margin-bottom: 8px; }
+    .aviso-card h2 {
+      font-family: var(--serif); font-weight: 400; color: var(--cream);
+      font-size: clamp(20px, 3.4vw, 26px); margin: 0 0 12px;
+    }
+    .aviso-card p { color: rgba(255, 247, 231, .9); font-size: 14.5px; line-height: 1.55; margin: 0 0 10px; }
+    .aviso-card p b { color: var(--gold-soft); font-weight: 600; }
+    .aviso-card .ok {
+      margin-top: 16px; cursor: pointer; font-size: 15px; font-weight: 600; color: #241a08;
+      background: var(--gold); border: 0; border-radius: 999px; padding: 12px 30px;
+    }
+    .aviso-card .ok:active { transform: scale(.98); }
   </style>
 </head>
 <body>
+  <div class="aviso-overlay" id="avisoOverlay" role="dialog" aria-modal="true" aria-labelledby="avisoTitle" hidden>
+    <div class="aviso-card">
+      <div class="ico">🍽️🍹</div>
+      <h2 id="avisoTitle">El alcohol va acompañado de comida</h2>
+      <p>En Almíbar tenemos <b>patente de restaurante</b>: la ley nos autoriza a vender bebidas alcohólicas <b>solo acompañadas de alimentos</b>.</p>
+      <p>Por eso, para pedir alcohol siempre debe haber algo para comer en la mesa. ¡Gracias por tu comprensión! 💛</p>
+      <button class="ok" id="avisoOk" type="button">Entendido</button>
+    </div>
+  </div>
   <div class="shell">
     <header class="topbar">
       <div class="mark">Alm<b>í</b>bar</div>
@@ -1044,6 +1082,27 @@
           }).catch(function () {});
         }
       }
+    })();
+  </script>
+  <script>
+    // Aviso legal (patente de restaurante: alcohol solo con alimentos). Se muestra
+    // al abrir, una vez por sesión de navegador para no repetir en cada navegación.
+    (function () {
+      try {
+        var ov = document.getElementById('avisoOverlay');
+        if (!ov) return;
+        if (sessionStorage.getItem('@almibar_aviso_alcohol') === '1') return;
+        ov.hidden = false;
+        requestAnimationFrame(function () { ov.classList.add('show'); });
+        function cerrar() {
+          ov.classList.remove('show');
+          try { sessionStorage.setItem('@almibar_aviso_alcohol', '1'); } catch (_) {}
+          setTimeout(function () { ov.hidden = true; }, 260);
+        }
+        var ok = document.getElementById('avisoOk');
+        if (ok) ok.addEventListener('click', cerrar);
+        ov.addEventListener('click', function (e) { if (e.target === ov) cerrar(); });
+      } catch (_) {}
     })();
   </script>
 </body>
