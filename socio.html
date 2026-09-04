@@ -97,6 +97,8 @@
 
     <label for="nombre">Nombre completo</label>
     <input id="nombre" placeholder="Tu nombre" autocomplete="name" autocapitalize="words">
+    <label for="rut">RUT</label>
+    <input id="rut" placeholder="12.345.678-9" inputmode="text" autocapitalize="characters" autocomplete="off">
     <label for="telefono">WhatsApp</label>
     <input id="telefono" type="tel" inputmode="tel" placeholder="+56 9 ..." autocomplete="tel">
     <label for="cumple">Cumpleaños <span class="opt">(para tu regalo)</span></label>
@@ -151,6 +153,7 @@
   }
   async function enviar(){
     const nombre=document.getElementById('nombre').value.trim();
+    const rut=document.getElementById('rut').value.trim();
     const telefono=document.getElementById('telefono').value.trim();
     const cumple=document.getElementById('cumple').value||null;
     const email=document.getElementById('email').value.trim()||null;
@@ -160,6 +163,7 @@
     const err=document.getElementById('err'); err.textContent='';
     if(nombre.length<2){err.textContent='Escribe tu nombre.';return}
     if(telefono.replace(/\D/g,'').length<8){err.textContent='Escribe un WhatsApp válido.';return}
+    if(rut.replace(/[^0-9kK]/g,'').length<8){err.textContent='Escribe tu RUT completo (lo usarás para ingresar y marcar visitas).';return}
     if(!edadOk){err.textContent='El Club es solo para mayores de 18 años.';return}
     if(cumple&&!esMayorDe18(cumple)){err.textContent='Debes ser mayor de 18 años para unirte al Club.';return}
     if(!acepto){err.textContent='Necesitas aceptar la Política de Privacidad para continuar.';return}
@@ -168,7 +172,7 @@
       const r=await fetch(SB+'/rest/v1/rpc/almibar_socio_vip_register',{method:'POST',
         headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json'},
         body:JSON.stringify({p_name:nombre, p_phone:telefono, p_birthday:cumple, p_email:email,
-          p_acepta_promos:promos, p_consent_version:CONSENT_VERSION})});
+          p_acepta_promos:promos, p_consent_version:CONSENT_VERSION, p_rut:rut})});
       if(!r.ok) throw new Error(await r.text());
       const _d=await r.json(); if(_d && _d.ok===false) throw new Error('datos');
       document.getElementById('form').style.display='none';
