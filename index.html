@@ -542,6 +542,25 @@
     }
     .card:hover .chev { opacity: 1; transform: translateX(3px); }
 
+    /* Tarjeta destacada dieciochera (temporal · Fiestas Patrias). Mismo tamaño y
+       estructura que las demás; solo suma el acento rojo y un detalle tricolor. */
+    .card--fonda {
+      border-color: rgba(213, 43, 30, .55);
+      background: linear-gradient(160deg, rgba(213, 43, 30, .16), rgba(0, 57, 166, .06) 70%);
+    }
+    .card--fonda::before {
+      background: linear-gradient(160deg, rgba(213, 43, 30, .18), transparent 60%);
+    }
+    .card--fonda:hover { border-color: rgba(213, 43, 30, .8); background: linear-gradient(160deg, rgba(213, 43, 30, .22), rgba(0, 57, 166, .08) 70%); }
+    /* Cinta tricolor en el borde izquierdo (bandera). */
+    .card--fonda::after {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; z-index: 1;
+      background: linear-gradient(180deg, #D52B1E 0 33.33%, #ffffff 33.33% 66.66%, #0039A6 66.66% 100%);
+    }
+    .card--fonda .icon { background: rgba(213, 43, 30, .18); border-color: rgba(213, 43, 30, .5); color: #ef6a5e; }
+    .card--fonda h3 { color: var(--cream); }
+    .card--fonda .chev { color: #ef6a5e; }
+
     /* ===== Contraportada / contacto ===== */
     .contra {
       margin-top: clamp(40px, 6vw, 72px);
@@ -746,6 +765,12 @@
         <h2>¿Qué quieres hacer hoy?</h2>
       </div>
       <div class="cards">
+        <a class="card card--fonda" href="./fonda.html">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 21V4M5 4c3-1.6 6 1.6 9 0s5 0 5 0v8s-2 1.6-5 0-6-1.6-9 0"/></svg></span>
+          <h3>🇨🇱 Fonda</h3>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+        </a>
+
         <a class="card" href="./carta.html">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h11a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2V4Z"/><path d="M17 8h3v10a2 2 0 0 1-2 2h-1"/><path d="M7.5 8.5h6M7.5 12h6M7.5 15.5h4"/></svg></span>
           <h3>Ver carta</h3>

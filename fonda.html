@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fonda dieciochera · Almíbar Curicó</title>
+  <meta name="description" content="La Fonda de Almíbar para Fiestas Patrias: terremoto, réplica, sopaipillas con pebre y tabla dieciochera para compartir.">
+  <link rel="canonical" href="https://almibar.restoclick.cl/fonda.html">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" href="./favicon.ico">
+  <meta name="theme-color" content="#061f24">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Almíbar">
+  <meta property="og:title" content="Fonda dieciochera · Almíbar Curicó">
+  <meta property="og:description" content="Terremoto, réplica, sopaipillas y tabla dieciochera. Solo por Fiestas Patrias.">
+  <meta property="og:url" content="https://almibar.restoclick.cl/fonda.html">
+  <meta property="og:image" content="https://almibar.restoclick.cl/promo-2x.jpg">
+  <link rel="stylesheet" href="./secciones.css">
+  <style>
+    /* ===== Toque dieciochero (Fiestas Patrias) sobre la base premium ===== */
+    :root {
+      --rojo: #D52B1E;
+      --azul: #0039A6;
+    }
+    /* Acento rojo en el kicker y la línea del hero. */
+    body.sec-fonda .sec-hero .kicker { color: #f2b3ac; }
+    body.sec-fonda .sec-hero .kicker::after { background: var(--rojo); opacity: 1; }
+    body.sec-fonda .sec-hero h1 .flag { font-size: .8em; vertical-align: middle; margin-left: .08em; }
+
+    /* Banderín tricolor (detalle dieciochero): triángulos colgando de un hilo. */
+    .banderin {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0;
+      margin: clamp(14px, 2.6vw, 22px) auto 0; padding: 0;
+      max-width: 520px; line-height: 0;
+      border-top: 1px solid rgba(215, 170, 88, .45);
+      padding-top: 10px;
+    }
+    .banderin span {
+      width: 0; height: 0;
+      border-left: 13px solid transparent;
+      border-right: 13px solid transparent;
+      border-top: 22px solid var(--rojo);
+      margin: 0 3px;
+      filter: drop-shadow(0 3px 5px rgba(0,0,0,.28));
+    }
+    .banderin span:nth-child(3n+2) { border-top-color: #ffffff; }
+    .banderin span:nth-child(3n)   { border-top-color: var(--azul); }
+
+    /* Bloque de productos con acento rojo en el título y borde del panel. */
+    body.sec-fonda .block-title { color: var(--cream); }
+    body.sec-fonda .block-title .flag { color: var(--rojo); }
+    body.sec-fonda .card-panel {
+      border-color: rgba(213, 43, 30, .40);
+      background: linear-gradient(160deg, rgba(213, 43, 30, .10), rgba(0, 57, 166, .05) 70%), var(--card);
+    }
+    /* Cinta tricolor sutil al pie del panel. */
+    body.sec-fonda .card-panel {
+      position: relative; overflow: hidden;
+    }
+    body.sec-fonda .card-panel::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px;
+      background: linear-gradient(90deg, var(--rojo) 0 33.33%, #ffffff 33.33% 66.66%, var(--azul) 66.66% 100%);
+      opacity: .9;
+    }
+    body.sec-fonda .dish .d-name { font-size: 14.5px; }
+    body.sec-fonda .dish { padding: 9px 0; }
+
+    /* Botón volver con acento rojo (se mantiene legible: texto crema sobre rojo). */
+    body.sec-fonda .back-home { background: var(--rojo); color: var(--cream); }
+    body.sec-fonda .back-home:hover { background: #e3392c; }
+
+    /* Decoración floral: rojo + azul, a tono con la bandera (override del default). */
+    body.sec-fonda::before {
+      background:
+        url("./flores-soft/flor-roja-soft.png") left -120px top 90px / 320px auto no-repeat,
+        url("./flores-soft/flor-azul-soft.png") right -110px bottom 20px / 300px auto no-repeat;
+    }
+    @media (max-width: 720px) {
+      body.sec-fonda::before {
+        background-position: left -50px top 58px, right -45px bottom 8px;
+        background-size: 215px auto, 200px auto;
+      }
+      .banderin span { border-left-width: 11px; border-right-width: 11px; border-top-width: 19px; }
+    }
+  </style>
+</head>
+<body class="sec-fonda">
+<main class="wrap">
+    <section class="sec-hero">
+      <a class="sec-back" href="./index.html">← Inicio</a>
+      <p class="kicker">Solo por Fiestas Patrias</p>
+      <h1>Fonda dieciochera <span class="flag" aria-hidden="true">🇨🇱</span></h1>
+      <p class="lead">Terremoto en mano y algo rico para compartir. <strong>El dieciocho se celebra en Almíbar.</strong></p>
+      <div class="banderin" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="block-title">La Fonda <span class="flag" aria-hidden="true">🇨🇱</span></h2>
+      <p class="block-sub">Lo clásico del dieciocho, a la mesa: para partir con un terremoto y seguir picando.</p>
+      <div class="card-panel">
+        <ul class="dish-list">
+          <li class="dish">
+            <div class="d-main"><span class="d-name">Terremoto</span></div>
+            <span class="d-price">$4.500</span>
+            <span class="d-desc">Pipeño, helado de piña y granadina</span>
+          </li>
+          <li class="dish">
+            <div class="d-main"><span class="d-name">Réplica</span></div>
+            <span class="d-price">$4.500</span>
+            <span class="d-desc">Pipeño, helado de piña y curazao</span>
+          </li>
+          <li class="dish">
+            <div class="d-main"><span class="d-name">Sopaipillas</span></div>
+            <span class="d-price">$3.900</span>
+            <span class="d-desc">6 sopaipillas con pebre</span>
+          </li>
+          <li class="dish">
+            <div class="d-main"><span class="d-name">Tabla dieciochera</span></div>
+            <span class="d-price">$15.900</span>
+            <span class="d-desc">2 brochetas de pollo, 2 anticuchos de cerdo, 6 mini sopaipillas con pebre y chimichurri</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <p class="note">¿Buscas la carta completa o el 2x de la barra? Están en <a href="./carta.html" style="color:var(--gold-soft)">la carta</a> y en <a href="./promociones.html" style="color:var(--gold-soft)">Promociones</a>.</p>
+
+    <div class="section-foot">
+      <a class="back-home" href="./index.html">← Volver a Inicio</a>
+      <p class="contact">Francisco Moreno 418, Curicó · <a href="https://wa.me/56956581436" target="_blank" rel="noopener">WhatsApp +56 9 5658 1436</a> · <a href="https://instagram.com/almibar.bar" target="_blank" rel="noopener">@almibar.bar</a></p>
+    </div>
+  </main>
+</body>
+</html>
