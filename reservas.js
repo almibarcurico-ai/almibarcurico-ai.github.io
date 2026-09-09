@@ -140,32 +140,29 @@
   function benefitsForReservation(payload) {
     const people = Number(payload.p_personas) || 0;
     const selected = parseLocalDate(payload.p_fecha);
-    const normalizedMotivo = String(payload.p_motivo || '')
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .toLowerCase();
-    const isBirthday = normalizedMotivo === 'cumpleanos';
-
     if (people < 2) return [];
 
+    // Solo se anuncia el beneficio del día, y solo para socios.
+    //
+    // Hasta el 09-sep-2026 acá decía "40% de descuento en el total de la
+    // cuenta" los miércoles. Ese 40% se había reemplazado en agosto por el
+    // trago del día, pero este texto quedó viejo y le prometía a cada persona
+    // que reservaba un descuento que el local ya no aplica.
+    //
+    // Esta página es estática y no sabe si quien reserva es socio, así que el
+    // beneficio se enuncia condicionado ("si eres socio"), nunca como algo ya
+    // concedido.
+    //
+    // OJO: el trago del día y su precio viven de verdad en el POS, en
+    // business_rules.pricing_v2.vip_daily del tenant Almíbar (regla con
+    // days:[3] y tier:'vip'). Si rota el producto o cambia el precio, hay que
+    // actualizar también esta línea y subir la VERSION de sw.js, o los
+    // navegadores seguirán sirviendo el texto viejo desde el caché.
     if (selected && selected.getDay() === 3) {
-      return ['40% de descuento en el total de la cuenta (no aplica sobre productos en promoción ni Happy Hour).'];
+      return ['Si eres socio: Schop Patagonia Hoppy a $2.900 en vez de $5.900 (no acumulable con otras promociones).'];
     }
 
-    const benefits = [];
-
-    if (people >= 16) {
-      benefits.push('50% de descuento en barra: cócteles, piscos, sours, spritz y schop.');
-    } else if (isBirthday) {
-      if (people >= 2 && people <= 5) benefits.push('1 cóctel gratis para el festejado/a.');
-      if (people >= 6 && people <= 15) benefits.push('2 cócteles gratis para el festejado/a.');
-    }
-
-    if (people >= 10) {
-      benefits.push('Ronda de tequila gratis para todos.');
-    }
-
-    return benefits;
+    return [];
   }
 
   function benefitNotes(benefits) {
