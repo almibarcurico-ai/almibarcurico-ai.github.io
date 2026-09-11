@@ -162,6 +162,14 @@
       return ['Si eres socio: Schop Patagonia Hoppy a $2.900 en vez de $5.900 (no acumulable con otras promociones).'];
     }
 
+    // Viernes 11-sep-2026: promo de barra $2.900 SOLO para reservas de hoy desde
+    // 4 personas. Los precios se cobran en el POS vía los productos "Reserva ..."
+    // (categoría Promo Reserva Viernes). Fecha exacta, no recurrente: al pasar el
+    // día deja de anunciarse solo. Al retirarla, quitar este bloque y subir sw.js.
+    if (payload.p_fecha === '2026-09-11' && people >= 4) {
+      return ['Productos seleccionados de barra a $2.900 toda la noche: Mojito Cubano, Electric, Margarita, Piña Colada, Terremoto, Sangría, Pisco Mistral y Schop Patagonia Hoppy. Beneficio por reservar (desde 4 personas).'];
+    }
+
     return [];
   }
 
