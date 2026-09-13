@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manual de uso · RestoClick</title>
+<meta name="description" content="Manual de uso de RestoClick: cómo abrir el turno de caja, tomar pedidos, cerrar mesas, editar productos y usar cada módulo del sistema.">
+<meta name="theme-color" content="#1b1a5e">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="canonical" href="https://almibarcurico-ai.github.io/manual-restoclick.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul:#2D2BFF; --azul-osc:#1b1a5e; --tinta:#1c2430; --gris:#5b6673;
+    --fondo:#f5f6fa; --papel:#ffffff; --borde:#e3e7ee;
+    --verde:#16A34A; --ambar:#F59E0B; --rojo:#DC2626; --indigo:#6366F1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Montserrat',sans-serif;background:var(--fondo);color:var(--tinta);
+       line-height:1.65;padding:0 0 60px}
+  .hero{background:linear-gradient(135deg,var(--azul-osc) 0%, #2d2bb0 60%, var(--azul) 100%);
+        color:#fff;padding:52px 20px 44px;text-align:center}
+  .hero .kick{font-size:12px;letter-spacing:.3em;text-transform:uppercase;opacity:.85;font-weight:600}
+  .hero h1{font-size:clamp(30px,7vw,44px);font-weight:800;margin:10px 0 8px;letter-spacing:-.01em}
+  .hero p{max-width:640px;margin:0 auto;font-size:15px;opacity:.92}
+  .hero .meta{margin-top:16px;font-size:12.5px;opacity:.7}
+  .doc{max-width:820px;margin:0 auto;padding:0 18px}
+  .indice{background:var(--papel);border:1px solid var(--borde);border-radius:16px;
+          padding:22px 24px;margin:-26px auto 34px;position:relative;box-shadow:0 8px 30px rgba(27,26,94,.10)}
+  .indice h2{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gris);margin-bottom:12px}
+  .indice ol{margin:0 0 0 22px;columns:2;column-gap:34px;font-size:14.5px}
+  .indice li{margin:4px 0;break-inside:avoid}
+  .indice a{color:var(--azul);text-decoration:none;font-weight:600}
+  .indice a:hover{text-decoration:underline}
+  @media(max-width:620px){.indice ol{columns:1}}
+  section{background:var(--papel);border:1px solid var(--borde);border-radius:16px;
+          padding:26px 26px 22px;margin:0 0 26px;scroll-margin-top:20px}
+  h2.mod{display:flex;align-items:center;gap:12px;font-size:21px;font-weight:800;margin-bottom:4px}
+  h2.mod .num{flex:none;width:34px;height:34px;border-radius:10px;background:var(--azul);color:#fff;
+              display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800}
+  .quien{font-size:12.5px;color:var(--gris);margin-bottom:14px}
+  .quien b{color:var(--azul-osc)}
+  h3{font-size:15.5px;font-weight:700;margin:20px 0 8px;color:var(--azul-osc)}
+  p,li{font-size:14.5px;color:#2a3442}
+  ul,ol{margin:8px 0 10px 22px}
+  li{margin:5px 0}
+  b,strong{color:var(--tinta)}
+  .btn{display:inline-block;background:#eef0ff;border:1px solid #d5d7ff;color:var(--azul-osc);
+       border-radius:7px;padding:0 7px;font-size:13px;font-weight:700;white-space:nowrap}
+  .tip{background:#f0faf3;border-left:4px solid var(--verde);border-radius:10px;
+       padding:12px 15px;margin:14px 0;font-size:13.5px}
+  .ojo{background:#fff8ec;border-left:4px solid var(--ambar);border-radius:10px;
+       padding:12px 15px;margin:14px 0;font-size:13.5px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--borde);vertical-align:top}
+  th{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--gris)}
+  .estado{display:inline-block;border-radius:20px;padding:1px 10px;font-size:11.5px;font-weight:700;color:#fff}
+  .e-libre{background:var(--verde)} .e-ocupada{background:var(--azul)}
+  .e-cuenta{background:var(--ambar)} .e-reservada{background:var(--indigo)}
+  .tablewrap{overflow-x:auto}
+  .foot{text-align:center;margin-top:34px;font-size:12px;color:var(--gris)}
+  .foot .brand{font-weight:800;letter-spacing:.2em;color:var(--azul-osc);display:block;margin-bottom:4px}
+  @media print{
+    body{background:#fff;padding:0}
+    .hero{background:var(--azul-osc);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    section,.indice{box-shadow:none;border-color:#ccc;break-inside:avoid-page}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="kick">RestoClick · Punto de venta</div>
+  <h1>Manual de uso</h1>
+  <p>Guía rápida para el equipo: cómo abrir el turno de caja, atender mesas, cobrar,
+     mantener la carta de productos y usar cada módulo del sistema.</p>
+  <div class="meta">Versión agosto 2026 · Modo restaurante</div>
+</div>
+
+<div class="doc">
+
+  <nav class="indice">
+    <h2>Contenido</h2>
+    <ol>
+      <li><a href="#ingreso">Ingreso al sistema</a></li>
+      <li><a href="#mesas">Mesas: mapa y apertura</a></li>
+      <li><a href="#comandas">Comandas: tomar el pedido</a></li>
+      <li><a href="#cobro">Cobrar y cerrar la mesa</a></li>
+      <li><a href="#caja">Caja: turnos y arqueos</a></li>
+      <li><a href="#productos">Productos e inventario</a></li>
+      <li><a href="#delivery">Delivery</a></li>
+      <li><a href="#reservas">Reservas</a></li>
+      <li><a href="#reportes">Reportes</a></li>
+      <li><a href="#admin">Administración</a></li>
+      <li><a href="#faq">Preguntas frecuentes</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============================================================ -->
+  <section id="ingreso">
+    <h2 class="mod"><span class="num">1</span> Ingreso al sistema</h2>
+    <div class="quien">Para: <b>todo el equipo</b></div>
+
+    <h3>Equipo (garzones, cajeros): PIN de 4 dígitos</h3>
+    <ol>
+      <li>Abre la dirección del local, por ejemplo <b>restoclick.cl/almibar</b>.</li>
+      <li>En la pantalla <b>“Acceso del equipo”</b> escribe tu <b>código de 4 dígitos</b> y toca <span class="btn">Entrar</span>.</li>
+      <li>Para cambiar de usuario, cierra sesión con <span class="btn">Salir</span> y entra con otro PIN.</li>
+    </ol>
+
+    <h3>Dueño / administrador: email y contraseña</h3>
+    <ol>
+      <li>Entra a <b>restoclick.cl/login</b>.</li>
+      <li>Escribe <b>Email</b> y <b>Contraseña</b> y toca <span class="btn">Ingresar</span>. Si administras más de un local, primero eliges el restaurante.</li>
+    </ol>
+
+    <p>Las pestañas que ves dependen de tu rol: el <b>garzón</b> solo ve Mesas y Reservas;
+    el <b>cajero</b> suma Caja, Delivery y Socios; <b>admin y dueño</b> ven todo
+    (Productos, Reportes y Admin incluidos). La barra muestra solo íconos: pasa el mouse por encima para ver el nombre.</p>
+
+    <div class="tip">💡 Si te equivocas varias veces con el PIN, el sistema bloquea los intentos por un minuto. Espera y vuelve a probar.</div>
+  </section>
+
+  <!-- ============================================================ -->
+  <section id="mesas">
+    <h2 class="mod"><span class="num">2</span> Mesas: mapa y apertura</h2>
+    <div class="quien">Para: <b>garzón, cajero, admin</b> · Pestaña <b>Mesas</b></div>
+
+    <h3>Cómo leer el mapa</h3>
+    <div class="tablewrap"><table>
+      <tr><th>Color</th><th>Estado</th><th>Qué significa</th></tr>
+      <tr><td><span class="estado e-libre">LIBRE</span></td><td>Verde</td><td>Disponible para abrir</td></tr>
+      <tr><td><span class="estado e-ocupada">OCUPADA</span></td><td>Azul</td><td>Con consumo activo; muestra el monto y el garzón</td></tr>
+      <tr><td><span class="estado e-cuenta">CUENTA</span></td><td>Ámbar</td><td>Ya se imprimió la pre-cuenta</td></tr>
+      <tr><td><span class="estado e-reservada">RESERVADA</span></td><td>Índigo</td><td>Tiene reserva asignada</td></tr>
+    </table></div>
+    <ul>
+      <li>Arriba se ven los contadores <b>Total · Libres · Ocupadas · Cuenta</b> y las pestañas de cada <b>salón</b>.</li>
+      <li>Botón <span class="btn">Mapa / Lista</span>: alterna entre el plano del salón y una grilla ordenada por número.</li>
+      <li>Una mesa que <b>parpadea en naranjo con 📱</b> tiene un pedido hecho por el cliente desde la app: tócala para confirmarlo o rechazarlo.</li>
+    </ul>
+
+    <h3>Abrir una mesa</h3>
+    <ol>
+      <li>Toca una mesa <b>libre</b>. Se abre el formulario <b>“Abrir Mesa N”</b>.</li>
+      <li>Busca al cliente en el <b>buscador de socios</b> (nombre, teléfono o RUT). Si no es socio, usa
+          <span class="btn">Continuar sin socio</span> o <span class="btn">Registrar socio</span> (nombre, RUT y celular).</li>
+      <li>Indica los <b>comensales</b> con los botones <b>+ / −</b> (puedes escribir el nombre de cada uno para dividir la cuenta después).</li>
+      <li>Toca <span class="btn">Abrir Mesa</span>. La mesa queda <b>ocupada</b> y entras directo a la comanda.</li>
+    </ol>
+    <p>Para volver a una mesa ya abierta, simplemente tócala en el mapa.</p>
+    <div class="ojo">⚠️ <b>Liberar una mesa a la fuerza</b> (mantener presionada la mesa) solo lo pueden hacer cajero, admin o dueño; si tenía consumo sin pagar, queda anulado.</div>
+  </section>
+
+  <!-- ============================================================ -->
+  <section id="comandas">
+    <h2 class="mod"><span class="num">3</span> Comandas: tomar el pedido</h2>
+    <div class="quien">Para: <b>garzón, cajero, admin</b> · Dentro de la mesa</div>
+
+    <h3>Agregar productos</h3>
+    <ol>
+      <li>En la sección <b>ADICIONAR</b>, escribe en <b>“Buscar producto…”</b> y toca el producto (o usa los chips de productos recientes).</li>
+      <li>Si el producto tiene opciones (punto de la carne, toppings, combos), se abre el selector: elige lo pedido y toca <span class="btn">Agregar</span>.</li>
+      <li>Ajusta cantidades con <b>+ / −</b>. Con el botón <b>💬</b> agregas una <b>nota</b> ("sin cebolla", "extra picante"…).</li>
+      <li>Si hay varios comensales, primero toca la pestaña del comensal (1. Juan, 2. Ana…) y luego agrega su producto.</li>
+      <li>Revisa el <b>“Total a confirmar”</b> y toca <span class="btn">Confirmar</span>.</li>
+    </ol>
+    <div class="tip">💡 Al confirmar, la comanda <b>se imprime sola</b> en cocina o barra según la categoría del producto. No hay que imprimir a mano. Puedes seguir agregando productos cuando quieras: cada envío genera una comanda nueva.</div>
+
+    <h3>Seguimiento de lo enviado</h3>
+    <p>Cada ítem muestra su estado: <b>NUEVO</b> (sin enviar) → <b>ENVIADO</b> (comanda impresa) → <b>ENTREGADO</b>.
+    El botón <span class="btn">🔔 Bajar fondo</span> imprime un aviso en cocina sin afectar el pedido.</p>
+
+    <h3>Anular un producto</h3>
+    <ul>
+      <li><b>Si aún no se envió</b>: quítalo con la <b>✕</b>, sin más trámite.</li>
+      <li><b>Si ya se imprimió en cocina</b>: requiere autorización. Un <b>capitán o superior</b> ingresa su PIN,
+          se elige el <b>motivo</b> (producto defectuoso, cliente se arrepintió, error del garzón…) y se escribe un detalle.
+          Se imprime un ticket de anulación y todo queda registrado para auditoría.</li>
+    </ul>
+
+    <h3>Mover, juntar o separar mesas</h3>
+    <ul>
+      <li><span class="btn">Cambiar mesa</span>: traslada toda la cuenta a una mesa libre.</li>
+      <li><span class="btn">Juntar</span>: fusiona otra mesa ocupada con la actual (se suman productos y pagos).</li>
+      <li><span class="btn">Separar</span>: marca productos y muévelos a otra mesa (libre u ocupada).</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <section id="cobro">
+    <h2 class="mod"><span class="num">4</span> Cobrar y cerrar la mesa</h2>
+    <div class="quien">Para: <b>cajero, admin, dueño</b> (el garzón puede imprimir la pre-cuenta, pero no cobrar)</div>
+
+    <h3>Paso 1 · Pre-cuenta</h3>
+    <ol>
+      <li>Dentro de la mesa, toca el ícono <b>🧾</b> o el botón <span class="btn">🧾 Imprimir precuenta</span>.</li>
+      <li>Elige el modo: <b>💳 Pagar Todo</b>, <b>✂️ Selección</b> (marcar solo algunos productos) o <b>👥 Por Cliente</b> (una cuenta por comensal).</li>
+      <li>Si corresponde, aplica un <b>descuento</b> (botones 10 % a 40 % o monto fijo).</li>
+      <li>Toca <span class="btn">🖨 Imprimir</span>: sale el ticket por la impresora de caja y la mesa pasa a estado <b>CUENTA</b> (ámbar).</li>
+    </ol>
+
+    <h3>Paso 2 · Cobro</h3>
+    <ol>
+      <li>Toca <span class="btn">Cerrar mesa N</span> (barra inferior) o <span class="btn">💳 Pagar</span> desde la pre-cuenta.</li>
+      <li>Revisa las <b>ADICIONES</b> y el total. Aplica <b>descuento</b> manual o del catálogo si corresponde
+          (los descuentos altos pueden pedir PIN de un encargado).</li>
+      <li>Registra la <b>PROPINA</b> (viene sugerido el 10 %; puedes repartirla en varios medios).</li>
+      <li>En <b>PAGO</b>, elige el medio tocando el botón (💵 Efectivo · 💳 Débito · 💳 Crédito · 🏦 Transferencia, más los medios propios del local)
+          y escribe el monto. Con <span class="btn">+ Agregar método de pago</span> puedes combinar varios.</li>
+      <li>Con efectivo, el sistema calcula el <b>vuelto</b> y ofrece <span class="btn">🤝 Sumar a propina</span> si sobra.
+          Si falta plata, el botón de cierre queda bloqueado hasta cuadrar.</li>
+      <li>Toca <span class="btn">Cerrar mesa N</span>. Verás el resumen “Mesa cerrada — Consumo / Propina / Vuelto”.</li>
+    </ol>
+    <p>Después del cobro la mesa vuelve a <b>LIBRE</b>, se abre la gaveta si hubo efectivo, y la venta queda registrada en Caja y Reportes.</p>
+
+    <h3>Pagos parciales</h3>
+    <p>Desde la pre-cuenta en modo <b>✂️ Selección</b> o <b>👥 Por Cliente</b> puedes cobrar solo una parte:
+    los productos pagados quedan tachados y la mesa sigue abierta hasta cubrir todo.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <section id="caja">
+    <h2 class="mod"><span class="num">5</span> Caja: turnos y arqueos</h2>
+    <div class="quien">Para: <b>cajero, admin, dueño</b> · Pestaña <b>Caja → Arqueos</b></div>
+
+    <p>En RestoClick el turno de caja se llama <b>arqueo</b>. Hay <b>un solo arqueo abierto por local</b>,
+    y aunque no bloquea las ventas, conviene abrirlo <b>antes del primer cobro</b> para que el cuadre calce.</p>
+
+    <h3>Abrir el turno</h3>
+    <ol>
+      <li>Ve a la pestaña <b>Caja</b>, sub-pestaña <b>Arqueos</b>.</li>
+      <li>Toca <span class="btn">+ Nuevo arqueo de caja</span>.</li>
+      <li>Revisa <b>fecha y hora</b> (hay atajos “Ahora” y “Hoy 17:00”) y escribe el <b>Monto Inicial</b>: el fondo de caja con que partes.</li>
+      <li>Toca <span class="btn">Iniciar Arqueo</span>. Verás “✅ Arqueo iniciado”.</li>
+    </ol>
+
+    <h3>Durante el turno</h3>
+    <ul>
+      <li>Las tarjetas muestran <b>Saldo actual, Total de ventas, Ingresos y Egresos</b> en vivo.</li>
+      <li><b>Ingresos de efectivo</b> (fondo extra, reembolsos): botón <span class="btn">📥 Ingreso</span> → monto + descripción → <span class="btn">Registrar</span>.</li>
+      <li><b>Egresos</b> (proveedores, gas, propinas retiradas): sub-pestaña <b>Movimientos</b> → <span class="btn">📤 Egreso</span>.
+          Hay motivos rápidos (Insumos, Gas, Proveedor…) para no tipear.</li>
+      <li>Cada movimiento guarda hora y quién lo registró, y se puede eliminar con 🗑.</li>
+    </ul>
+    <div class="ojo">⚠️ Si el garzón se lleva sus propinas en efectivo durante el turno, regístralo como <b>Egreso</b>; si no, al cierre aparecerá un faltante.</div>
+
+    <h3>Cerrar el turno</h3>
+    <ol>
+      <li>Toca el botón rojo <span class="btn">Cerrar Caja</span>.</li>
+      <li>El sistema muestra <b>“SEGÚN SISTEMA”</b>: monto inicial + ventas y propinas por método + ingresos − egresos = <b>Total esperado</b>.
+          Con “▾ Ver detalle” revisas ventas por método, descuentos y propinas.</li>
+      <li>En <b>“SEGÚN USUARIO”</b> cuenta la caja real y anota lo que hay: <b>💵 Efectivo, 💳 Tarjeta, 📱 Transferencia, 🛵 PedidosYa</b>
+          y 🍽️ Consumo de personal (este último no suma al cuadre).</li>
+      <li>El sistema calcula la <b>DIFERENCIA</b> al instante: ✅ Exacto, ⬆ Sobrante o ⬇ Faltante. Puedes dejar <b>Notas</b>.</li>
+      <li>Toca <span class="btn">Cerrar Caja</span>. Si la diferencia supera el 5 %, pide confirmar; si hay mesas abiertas del turno, avisa antes de cerrar.</li>
+    </ol>
+    <p>El <b>Historial</b> (parte baja de Arqueos) guarda cada turno con quién abrió, quién cerró y la diferencia.
+    Al abrir un arqueo del historial puedes ver el detalle completo e imprimirlo con <span class="btn">🖨 Imprimir</span> (ticket con ventas por método, cuadre y resultado).</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <section id="productos">
+    <h2 class="mod"><span class="num">6</span> Productos e inventario</h2>
+    <div class="quien">Para: <b>admin y dueño</b> · Pestaña <b>Productos</b></div>
+
+    <p>La pestaña Productos agrupa sub-pestañas: 🍕 <b>Productos</b>, 🏭 Producción, 🥩 <b>Ingredientes</b>,
+    🎛️ Modificadores, 📦 <b>Inventario</b>, 🚚 Proveedores, 🧾 <b>Compras</b>, 💰 Costos, 🛒 Pedidos y 📋 Fichas.
+    Lo esencial del día a día está en las cuatro destacadas.</p>
+
+    <h3>Crear un producto</h3>
+    <ol>
+      <li>En 🍕 <b>Productos</b>, toca <span class="btn">+ Nuevo</span>.</li>
+      <li>Completa <b>Nombre</b>, <b>Descripción</b> (opcional), <b>Precio</b> y <b>Categoría</b>.</li>
+      <li>El interruptor <b>“Mostrar en la carta”</b> controla si aparece en la carta digital pública (apagado, sigue disponible en el POS).</li>
+      <li>Toca <span class="btn">Guardar</span>. Los cambios llegan a la carta digital en segundos.</li>
+    </ol>
+
+    <h3>Editar un producto</h3>
+    <ol>
+      <li>Toca la fila del producto en la tabla: se abre el panel <b>“Producto: nombre”</b>.</li>
+      <li>Cambia nombre, precio, categoría o visibilidad y toca <span class="btn">Guardar</span>.</li>
+      <li>Con el producto ya guardado aparecen dos bloques extra:
+        <b>Receta</b> (agrega ingredientes con cantidad para calcular el food cost y ver el margen) y
+        <b>Grupos Modificadores</b> (asocia opciones como punto de cocción o toppings).</li>
+    </ol>
+    <ul>
+      <li><b>Sacar un producto de circulación</b>: apaga “Mostrar en la carta” (desaparece de la carta pero se sigue vendiendo en el POS)
+          o desactívalo con <b>🗑️</b> (desaparece de todo; no se borra el historial).</li>
+      <li><b>Categorías</b>: botón <span class="btn">+ Categoría</span>. Una categoría vacía no se ve en la barra lateral hasta que tenga su primer producto.
+          Para renombrar u ordenar categorías, pide apoyo a soporte.</li>
+    </ul>
+
+    <h3>Stock e inventario (ingredientes)</h3>
+    <ul>
+      <li>En restaurante el stock vive en 🥩 <b>Ingredientes</b>, no en los platos: cada ingrediente tiene stock, mínimo y costo,
+          y se descuenta según la receta. Stock bajo se marca <b>en rojo</b>.</li>
+      <li><b>Conteo de inventario</b> (📦 Inventario): <span class="btn">📥 Descargar Stock Actual</span> genera un Excel (hojas Cocina y Barra),
+          completas la columna <b>Stock_Contado</b> y lo subes con <span class="btn">📤 Subir Conteo</span>.
+          El sistema muestra las diferencias, pide un <b>reconteo de mermas</b> y al final aplicas el resultado con <span class="btn">✅ Aplicar al Stock</span>.</li>
+      <li><b>Compras</b> (🧾): con <span class="btn">📸 Escanear</span> le sacas foto a la factura y la IA la lee: revisas proveedor, montos y líneas,
+          emparejas cada línea con su ingrediente y al guardar <b>se suma el stock y se actualiza el costo</b>.
+          Puedes marcar “Descontar del arqueo actual” si se pagó de la caja.</li>
+      <li>En 🥩 Ingredientes también hay <span class="btn">📥 Importar</span> / <span class="btn">📤 Exportar</span> por Excel,
+          con un reporte de diferencias antes de aplicar cambios.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <section id="delivery">
+    <h2 class="mod"><span class="num">7</span> Delivery</h2>
+    <div class="quien">Para: <b>cajero, admin, rol delivery</b> · Pestaña <b>Delivery</b></div>
+
+    <p>Es un tablero con columnas: <b>🔔 Pendiente → 🔥 En Preparación → 📦 Listo → 🛵 En Camino</b>.
+    Cuando entra un pedido nuevo <b>suena una campana</b> y la app salta sola a esta pestaña.</p>
+
+    <h3>Atender un pedido</h3>
+    <ol>
+      <li>En la tarjeta pendiente toca <span class="btn">Aceptar y a cocina</span>.
+          Si el pago es por transferencia o web y aún no llega, primero confirma con <span class="btn">💰 Confirmar pago recibido</span> en el panel derecho.</li>
+      <li>Cuando está cocinado: <span class="btn">Marcar listo</span>.</li>
+      <li>En “Listo”, asigna el <b>repartidor</b> (panel derecho) y toca <span class="btn">🛵 Despachar</span>.</li>
+      <li>Al volver el repartidor: <span class="btn">✔️ Confirmar Entrega y Cerrar</span> → se abre el modal de cobro
+          (descuento, propina, uno o varios medios de pago, vuelto) → <span class="btn">Cerrar pedido</span>.</li>
+    </ol>
+    <ul>
+      <li><span class="btn">➕ Nuevo Pedido</span> registra pedidos por WhatsApp o teléfono: origen, cliente (busca socios automáticamente),
+          teléfono, dirección, costo de despacho y productos.</li>
+      <li><span class="btn">❌ Rechazar</span> pide un motivo, que queda visible en la tarjeta.</li>
+      <li><span class="btn">📋 Cerrados</span> muestra el resumen del día (entregados, rechazados y sus totales).</li>
+      <li>Desde el panel derecho puedes <b>escribirle por WhatsApp</b> al cliente e <span class="btn">🖨 Imprimir Precuenta</span> para el repartidor.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <section id="reservas">
+    <h2 class="mod"><span class="num">8</span> Reservas</h2>
+    <div class="quien">Para: <b>garzón, cajero, admin</b> · Pestaña <b>Reservas</b></div>
+
+    <h3>Crear una reserva</h3>
+    <ol>
+      <li>Toca <span class="btn">+ Nueva</span>.</li>
+      <li>Completa <b>Nombre</b> (busca socios automáticamente), <b>Celular</b>, <b>Fecha</b>, <b>Hora</b>, <b>Personas</b>,
+          <b>Mesa</b> (opcional), <b>Motivo</b> (cumpleaños, celebración, empresa…) y <b>Notas</b>.</li>
+      <li>Toca <span class="btn">Crear</span>. Si le asignaste mesa, nace <b>Confirmada</b>; si no, queda <b>Pendiente</b>.</li>
+    </ol>
+
+    <h3>Gestionar</h3>
+    <ul>
+      <li>Filtros <b>Hoy · Mañana · Semana · Todas</b>. Las reservas nuevas <b>suenan</b> y se marcan con “N pendientes”.</li>
+      <li>Atajo: escribe el número de mesa directo en la casilla <b>MESA</b> de la lista y la reserva se confirma sola.</li>
+      <li>Al abrir una reserva: <span class="btn">✅ Confirmar</span> / <span class="btn">❌ Rechazar</span>,
+          y luego <span class="btn">🎉 Marcar completada</span> o <span class="btn">👻 No asistió</span>.</li>
+      <li><span class="btn">💬 Enviar WhatsApp</span> arma solo el mensaje de confirmación con fecha, hora, mesa y beneficio.</li>
+      <li>El sistema calcula solo el <b>beneficio</b> que corresponde (descuentos por día, cortesías de cumpleaños, etc.) y lo muestra en el detalle.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <section id="reportes">
+    <h2 class="mod"><span class="num">9</span> Reportes</h2>
+    <div class="quien">Para: <b>admin y dueño</b> · Pestaña <b>Reportes</b></div>
+    <ul>
+      <li>Menú lateral con secciones: 💰 Ventas · 🍕 Productos · 🪑 Mesas · 👤 Garzones · 💳 Medios de Pago ·
+          🪙 Propinas · 🏷️ Descuentos · 🚫 Anulaciones · 🧾 Gastos · 💵 Efectivo en caja.</li>
+      <li>Período: <b>Turno actual, Diario, Semanal, Mensual, Anual o Rango</b> de fechas, navegando con ◀ ▶.</li>
+      <li>La sub-pestaña <b>Caja → Ventas</b> complementa con filtros por método de pago, garzón, mesa y turno horario.</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <section id="admin">
+    <h2 class="mod"><span class="num">10</span> Administración</h2>
+    <div class="quien">Para: <b>admin y dueño</b> · Pestaña <b>Admin</b></div>
+
+    <p>Es un menú de tarjetas; entra a la que necesites y vuelve con <span class="btn">← Volver</span>.</p>
+    <div class="tablewrap"><table>
+      <tr><th>Tarjeta</th><th>Qué se hace</th></tr>
+      <tr><td>📱 <b>Carta digital</b></td><td>Logo, colores, enlace y QR de la carta pública</td></tr>
+      <tr><td>📊 <b>Reportes</b></td><td>Financiero, efectivo, gastos, anulaciones, propinas y descuentos</td></tr>
+      <tr><td>🖨️ <b>Impresión</b></td><td>Impresoras de cocina/barra/caja y opciones de impresión</td></tr>
+      <tr><td>🏪 <b>Datos del local</b></td><td>Razón social, dirección, datos bancarios, logo</td></tr>
+      <tr><td>💳 <b>Métodos de pago</b></td><td>Activar/desactivar medios y crear métodos propios (ej. Sodexo, consumo trabajador)</td></tr>
+      <tr><td>👥 <b>Usuarios y PINes</b></td><td>Crear usuarios, roles, PINes y permisos por perfil</td></tr>
+      <tr><td>⏰ <b>Turnos</b></td><td>Franjas horarias (ej. Almuerzo, Noche) para filtrar ventas en reportes</td></tr>
+      <tr><td>💳 <b>Suscripción y contrato</b></td><td>Plan, pagos y términos del servicio</td></tr>
+      <tr><td>🗺 <b>Editor Mesas</b></td><td>Plano del salón: crear salones y mesas, arrastrarlas a su posición</td></tr>
+    </table></div>
+
+    <h3>Usuarios y PINes</h3>
+    <ol>
+      <li>En <b>Usuarios y PINes</b>, toca <span class="btn">+ Nuevo</span>.</li>
+      <li>Completa nombre, email, clave inicial, <b>rol</b> (Admin, Cajero, Garzón, Cocina, Delivery…) y el <b>PIN de 4 dígitos</b>.</li>
+      <li><b>Anota los datos al crearlo</b>: la clave no se vuelve a mostrar.</li>
+      <li>Con <span class="btn">Editar</span> cambias rol, PIN o reseteas la clave; el interruptor activa/desactiva al usuario.</li>
+      <li>En <span class="btn">🔐 Permisos</span> defines qué puede hacer cada perfil: anular ítems, cerrar caja,
+          ver reportes, editar catálogo y liberar mesas ajenas.</li>
+    </ol>
+
+    <h3>Editor de mesas</h3>
+    <ol>
+      <li>Crea salones con <span class="btn">+ Salón</span> y mesas con <span class="btn">+ Mesa</span> (número y capacidad).</li>
+      <li><b>Arrastra</b> cada mesa a su posición; selecciónala para cambiar forma (rectángulo/círculo), rotación y tamaño.</li>
+      <li>Guarda con <span class="btn">💾 Guardar</span>. El plano queda igual en el modo Mapa del POS.</li>
+    </ol>
+
+    <h3>Ayuda</h3>
+    <p>El botón <span class="btn">Ayuda</span> (arriba, o la burbuja flotante) abre el chat de <b>Soporte RestoClick</b>,
+    atendido de lunes a domingo, 10:00 a 02:00.</p>
+  </section>
+
+  <!-- ============================================================ -->
+  <section id="faq">
+    <h2 class="mod"><span class="num">11</span> Preguntas frecuentes</h2>
+
+    <h3>¿Puedo vender sin abrir el turno de caja?</h3>
+    <p>Sí, el sistema no bloquea las ventas, pero muestra el aviso “No hay arqueo de caja abierto”.
+    Ábrelo siempre antes del primer cobro: las ventas del turno se asocian al arqueo y el cuadre del cierre depende de eso.
+    Lo que sí exige arqueo abierto es registrar ingresos o egresos de caja.</p>
+
+    <h3>¿Por qué me pide PIN para anular un producto?</h3>
+    <p>Los productos ya impresos en cocina solo se anulan con autorización de capitán o superior, con motivo y detalle obligatorios.
+    Es una protección contra errores y pérdidas; todo queda registrado.</p>
+
+    <h3>Marqué mal la propina o el medio de pago al cerrar la caja, ¿puedo corregir?</h3>
+    <p>Sí. En <b>Caja → Arqueos → Historial</b>, abre el arqueo y usa <span class="btn">✏️ Editar</span> para corregir el conteo declarado y las notas.
+    Las ventas individuales también se pueden abrir desde el detalle del arqueo.</p>
+
+    <h3>Las comandas no se están imprimiendo</h3>
+    <p>Mira el punto de estado junto al nombre del local en el mapa de mesas: si está rojo (“SIN IMPRESORA”),
+    el agente de impresión de la PC de caja está caído. Reinícialo o avisa al encargado; los pedidos se guardan igual.</p>
+
+    <h3>¿Cómo saco un plato de la carta por hoy?</h3>
+    <p>Productos → toca el plato → apaga <b>“Mostrar en la carta”</b> → Guardar. Deja de verse en la carta digital
+    pero el POS lo sigue vendiendo (útil cuando solo quieres frenar pedidos por app). Para bloquearlo del todo, desactívalo con 🗑️
+    y vuelve a crearlo o pide a soporte reactivarlo cuando regrese.</p>
+  </section>
+
+  <div class="foot">
+    <span class="brand">RESTOCLICK</span>
+    Manual de uso · Modo restaurante · Actualizado en agosto de 2026<br>
+    ¿Dudas? Usa el botón <b>Ayuda</b> dentro de la app.
+  </div>
+
+</div>
+</body>
+</html>
