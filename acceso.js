@@ -53,8 +53,9 @@
   // se entere y elija. Sin este bloque el premio se gana y nadie lo ve.
   var REWARD_CHOICES = ['Mojito Cubano', 'Schop Patagonia Hoppy', 'Mistral 35'];
   var REDEEM_REASONS = {
-    socio_invalido: 'No pudimos identificarte como socio. Vuelve a ingresar con tu RUT.',
+    socio_invalido: 'No pudimos identificarte como socio. Vuelve a ingresar con tu RUT y celular.',
     identidad_invalida: 'No pudimos verificar tu identidad. Pídele al equipo que revise el teléfono de tu ficha.',
+    sesion_invalida: 'Tu sesión de socio venció. Vuelve a ingresar con tu RUT y celular.',
     eleccion_invalida: 'Esa opción no está disponible. Elige una de las tres.',
     mesa_sin_cuenta: 'Esa mesa todavía no tiene cuenta abierta. Pídele al garzón que la abra y vuelve a intentar.',
     sin_premio: 'No tienes premios disponibles en este momento.'
@@ -62,13 +63,46 @@
 
   // El socio guardado en localStorage envejece: un premio ganado ayer no
   // aparecería hasta marcar otra visita. Se refresca contra el servidor.
+  // Seguridad (1-oct-2026): la ficha se pide con la credencial de socio que
+  // entrega club_ingresar_v1 (RUT + celular), ya no con el RUT solo.
   async function refreshMemberState(member) {
-    if (!member || !member.rut) return member;
+    if (!member || !member.token) return member;
     try {
-      var fresh = await findMember(member.celular || '', member.rut);
-      if (fresh) { localStorage.setItem(MEMBER_KEY, JSON.stringify(fresh)); return fresh; }
+      var out = await rpc('club_mi_ficha_v1', { p_token: member.token });
+      if (out && out.ok && out.member) {
+        var fresh = memberFromFicha(out.member, member.token);
+        localStorage.setItem(MEMBER_KEY, JSON.stringify(fresh));
+        return fresh;
+      }
+      if (out && out.error === 'sesion_invalida') {
+        try { document.dispatchEvent(new CustomEvent('almibar:sesion-vencida')); } catch (_) {}
+      }
     } catch (_) { /* si falla, seguimos con lo que había */ }
     return member;
+  }
+
+  // Ficha del servidor (misma forma que find_member_by_rut) → socio de la web.
+  function memberFromFicha(data, token) {
+    return {
+      token: token,
+      clientId: data.clientId,
+      nombre: data.name || 'Socio Almíbar',
+      celular: data.phone || '',
+      rut: data.rut || '',
+      email: data.email || '',
+      fechaNac: data.birthday || '',
+      memberId: data.memberId || '',
+      memberNumber: data.memberNumber || null,
+      visitas: data.total_visits || 0,
+      premios: data.rewards_claimed || 0,
+      tier: data.tier || 'normal',
+      vipExpiresAt: data.vip_expires_at || null,
+      isVip: data.tier === 'vip',
+      visitsForReward: data.visits_for_reward || 0,
+      rewardsAvailable: data.rewards_available || 0,
+      rewardAvailable: !!data.reward_available,
+      totalSaved: data.total_saved || 0
+    };
   }
 
   function formatCLP(n) {
@@ -171,15 +205,13 @@
     statusEl.className = 'reward-status';
     statusEl.textContent = 'Enviando tu premio a la mesa...';
     try {
-      var res = await api('/rest/v1/rpc/redeem_reward', {
+      var res = await api('/rest/v1/rpc/club_canjear_premio_v1', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          p_client_id: member.clientId,
+          p_token: member.token || '',
           p_table_number: mesa,
-          p_reward_choice: choiceEl.value,
-          // 2do factor: el RPC acepta member_number o los últimos 8 dígitos del teléfono
-          p_verify: String(member.memberNumber || member.celular || '')
+          p_reward_choice: choiceEl.value
         })
       });
       var data = res.ok ? await res.json() : null;
@@ -213,7 +245,8 @@
   // modificadores y premios del Club (esos van por el flujo de canje).
   var CAT_OCULTAS = ['Tenedor Libre', 'Toppings Sushi', 'Socios', 'Happy Hour', 'Alojamiento'];
   var MESA_REASONS = {
-    socio_invalido: 'No pudimos identificarte. Vuelve a ingresar con tu RUT.',
+    socio_invalido: 'No pudimos identificarte. Vuelve a ingresar con tu RUT y celular.',
+    sesion_invalida: 'Tu sesión de socio venció. Vuelve a ingresar con tu RUT y celular.',
     identidad_invalida: 'No pudimos verificar tu identidad. Pídele al equipo que revise el teléfono de tu ficha.',
     mesa_inexistente: 'Esa mesa no existe. Revisa el número en tu mesa.',
     mesa_sin_cuenta: 'Esa mesa todavía no tiene cuenta abierta. Pídele al garzón que la abra y te registre en ella.',
@@ -224,15 +257,12 @@
     tipo_invalido: 'No pudimos procesar esa acción.',
     no_items_matched: 'No pudimos encontrar esos productos en la carta. Refresca la página e intenta de nuevo.',
     invalid_table: 'Ese número de mesa no es válido.',
-    not_authenticated: 'No pudimos validar tu sesión. Vuelve a ingresar con tu RUT.',
-    no_tenant: 'No pudimos validar tu sesión. Vuelve a ingresar con tu RUT.'
+    not_authenticated: 'No pudimos validar tu sesión. Vuelve a ingresar con tu RUT y celular.',
+    no_tenant: 'No pudimos validar tu sesión. Vuelve a ingresar con tu RUT y celular.'
   };
 
   var mesaState = { numero: null, member: null, carta: null, carrito: [], data: null };
 
-  function verifyOf(member) {
-    return String((member && (member.memberNumber || member.celular)) || '');
-  }
   function readMesa() {
     try { return localStorage.getItem(MESA_KEY) || null; } catch (_) { return null; }
   }
@@ -349,8 +379,8 @@
     bodyEl().innerHTML = '<p class="mesa-lead">Cargando tu cuenta…</p>';
     var m = mesaState.member;
     try {
-      var d = await rpc('public_table_state', {
-        p_client_id: m.clientId, p_verify: verifyOf(m), p_table_number: parseInt(mesaState.numero, 10)
+      var d = await rpc('club_mi_mesa_v1', {
+        p_token: m.token || '', p_table_number: parseInt(mesaState.numero, 10)
       });
       if (!d.ok) {
         // Sin vínculo no se puede seguir, pero sí llamar al garzón para que
@@ -423,8 +453,8 @@
     btn.disabled = true;
     setMesaStatus(tipo === 'cuenta' ? 'Avisando que quieres la cuenta…' : 'Llamando al garzón…', '');
     try {
-      var d = await rpc('public_call_waiter', {
-        p_client_id: m.clientId, p_verify: verifyOf(m),
+      var d = await rpc('club_llamar_garzon_v1', {
+        p_token: m.token || '',
         p_table_number: parseInt(mesaState.numero, 10), p_type: tipo
       });
       if (!d.ok) { setMesaStatus(MESA_REASONS[d.reason] || 'No pudimos avisar. Llama al garzón a la antigua.', 'err'); btn.disabled = false; return; }
@@ -586,9 +616,8 @@
     // el pedido — app_send_order es idempotente por este valor.
     if (!mesaState.reqId) mesaState.reqId = uuidv4();
     try {
-      var d = await rpc('public_send_order', {
-        p_client_id: m.clientId,
-        p_verify: verifyOf(m),
+      var d = await rpc('club_enviar_pedido_v1', {
+        p_token: m.token || '',
         p_table_number: parseInt(mesaState.numero, 10),
         p_items: mesaState.carrito.map(function (l) { return { product_id: l.id, quantity: l.qty }; }),
         p_notes: null,
@@ -685,7 +714,8 @@
     sin_servicio: 'El local no está en servicio ahora. Vuelve en horario de atención.',
     sin_gps: 'Necesitamos tu ubicación para marcar la visita. Activa el GPS y permite el acceso.',
     fuera_de_zona: 'Parece que no estás en Almíbar. Marca tu visita cuando estés en el local. 📍',
-    socio_invalido: 'No pudimos identificarte como socio. Vuelve a ingresar con tu RUT.'
+    socio_invalido: 'No pudimos identificarte como socio. Vuelve a ingresar con tu RUT y celular.',
+    sesion_invalida: 'Tu sesión de socio venció. Vuelve a ingresar con tu RUT y celular.'
   };
 
   function setVisitStatus(el, msg, kind) {
@@ -714,7 +744,7 @@
 
   async function markVisit(member, btn) {
     var statusEl = document.querySelector('[data-visit-status]');
-    if (!member || !member.clientId) return;
+    if (!member || !member.token) return;
     btn.disabled = true;
     setVisitStatus(statusEl, 'Obteniendo tu ubicación…', '');
     var coords;
@@ -726,10 +756,10 @@
       return;
     }
     try {
-      var res = await api('/rest/v1/rpc/register_visit', {
+      var res = await api('/rest/v1/rpc/club_registrar_visita_v1', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ p_client_id: member.clientId, p_lat: coords.lat, p_lng: coords.lng })
+        body: JSON.stringify({ p_token: member.token || '', p_lat: coords.lat, p_lng: coords.lng })
       });
       var data = res.ok ? await res.json() : null;
       if (!data || !data.ok) {
@@ -762,7 +792,7 @@
   function setupMarkVisit(member) {
     var wrap = document.querySelector('[data-visit-actions]');
     var btn = wrap && wrap.querySelector('[data-mark-visit]');
-    if (!wrap || !btn || !member || !member.clientId) return;
+    if (!wrap || !btn || !member || !member.token) return;
     wrap.hidden = false;
     if (btn.dataset.wired === '1') return;
     btn.dataset.wired = '1';
@@ -782,42 +812,17 @@
     el.classList.toggle('error', !!isError);
   }
 
+  // Ingreso del socio con DOS datos: RUT + celular (club_ingresar_v1). Devuelve
+  // el socio con su credencial, o null si los datos no coinciden.
   async function findMember(phone) {
     var rut = arguments[1] || '';
     var cleanRut = rut.trim();
+    var cleanPhone = String(phone || '').replace(/\D/g, '');
     if (cleanRut.replace(/[^0-9kK]/g, '').length < 8) throw new Error('Ingresa tu RUT completo para reconocer tu membresía.');
-    var response = await api('/rest/v1/rpc/find_member_by_rut', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ p_rut: cleanRut, p_restaurant_id: RESTAURANT_ID })
-    });
-    if (!response.ok) throw new Error('No pudimos consultar el registro.');
-    var result = await response.json();
-    if (result && result.found && result.member) {
-      var data = result.member;
-      return {
-        clientId: data.clientId,
-        nombre: data.name || 'Socio Almíbar',
-        celular: data.phone || phone,
-        rut: data.rut || cleanRut,
-        email: data.email || '',
-        fechaNac: data.birthday || '',
-        memberId: data.memberId || '',
-        memberNumber: data.memberNumber || null,
-        visitas: data.total_visits || 0,
-        premios: data.rewards_claimed || 0,
-        tier: data.tier || 'normal',
-        vipExpiresAt: data.vip_expires_at || null,
-        isVip: data.tier === 'vip',
-        // Estado REAL del ciclo y del premio. El RPC ya los entrega y antes se
-        // descartaban: la tarjeta calculaba "visitas % 3", que se desfasa del
-        // backend porque visits_for_reward se resetea al ganar el premio.
-        visitsForReward: data.visits_for_reward || 0,
-        rewardsAvailable: data.rewards_available || 0,
-        rewardAvailable: !!data.reward_available,
-        totalSaved: data.total_saved || 0
-      };
-    }
+    if (cleanPhone.length < 8) throw new Error('Ingresa tu celular (el que registraste en el Club).');
+    var out = await rpc('club_ingresar_v1', { p_restaurant_id: RESTAURANT_ID, p_rut: cleanRut, p_telefono: cleanPhone });
+    if (out && out.ok && out.member && out.token) return memberFromFicha(out.member, out.token);
+    if (out && out.error === 'demasiados_intentos') throw new Error('Demasiados intentos. Espera 15 minutos e intenta de nuevo.');
     return null;
   }
 
@@ -833,13 +838,15 @@
     if (!gate) return;
     var member = readMember();
     var priorConsent = consentAccepted();
-    if (priorConsent && priorConsent.mode === 'member' && member) { renderCard(member); closeGate(); return; }
+    // Socio guardado sin credencial (versión anterior): vuelve a ingresar.
+    if (priorConsent && priorConsent.mode === 'member' && member && member.token) { renderCard(member); closeGate(); return; }
     // Invitado que ya entró antes: va directo a la carta, sin volver a mostrar el muro.
     // El sitio es principalmente carta + reservas, así que no se re-bloquea en cada visita.
     if (priorConsent && priorConsent.mode === 'guest') { closeGate(); return; }
 
     var form = gate.querySelector('[data-entry-form]');
     var rutInput = gate.querySelector('[name="entry-rut"]');
+    var phoneInput = gate.querySelector('[name="entry-phone"]');
     var consent = gate.querySelector('[name="entry-consent"]');
     var lookup = gate.querySelector('[data-entry-lookup]');
     var guest = gate.querySelector('[data-entry-guest]');
@@ -858,14 +865,14 @@
       busy = true; lookup.disabled = true;
       status('Buscando tu registro...');
       try {
-        var found = await findMember('', rut);
+        var found = await findMember(phoneInput ? phoneInput.value : '', rut);
         if (found) {
           saveConsent('member', found);
           renderCard(found);
           closeGate();
           return;
         }
-        status('No encontramos ese RUT como socio. Revisa el número, o entra como invitado.', true);
+        status('Ese RUT y ese celular no coinciden con un socio. Revísalos, o entra como invitado.', true);
       } catch (error) {
         status(error.message || 'No pudimos buscar tu registro.', true);
       } finally {

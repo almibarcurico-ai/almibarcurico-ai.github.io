@@ -707,7 +707,7 @@
         </span>
         <div>
           <h2>Acceso socios Club Almíbar</h2>
-          <p>Escribe tu RUT y entra directo con tus beneficios. ¿Aún no eres socio? Únete gratis.</p>
+          <p>Escribe tu RUT y tu celular para entrar con tus beneficios. ¿Aún no eres socio? Únete gratis.</p>
         </div>
       </div>
 
@@ -716,6 +716,10 @@
         <div class="field">
           <label for="socio-rut">Tu RUT</label>
           <input id="socio-rut" name="socio-rut" type="text" inputmode="text" autocomplete="off" placeholder="12.345.678-9" required>
+        </div>
+        <div class="field">
+          <label for="socio-phone">Tu celular</label>
+          <input id="socio-phone" name="socio-phone" type="text" inputmode="tel" autocomplete="tel" placeholder="9 1234 5678" required>
         </div>
         <button class="submit" type="submit" id="socio-submit">
           Ingresar
@@ -875,8 +879,9 @@
     }
 
     /* ===== Acceso de socio por RUT — paso único =====
-       Reutiliza el mismo backend y contratos que acceso.js: find_member_by_rut para
-       reconocer, register_visit (con GPS) para "Estoy en Almíbar", y las mismas llaves
+       Reutiliza el mismo backend y contratos que acceso.js: club_ingresar_v1 (RUT +
+       celular) para reconocer y dar la credencial, club_registrar_visita_v1 (con GPS)
+       para "Estoy en Almíbar", y las mismas llaves
        de localStorage. El socio existente NO re-acepta condiciones ni da un segundo
        submit: escribe el RUT, y si existe, entra directo a su tarjeta. El consentimiento
        y el registro viven en socio.html (para quien aún no es socio). */
@@ -889,6 +894,7 @@
 
       var form = document.getElementById('socio-form');
       var rutInput = document.getElementById('socio-rut');
+      var phoneInput = document.getElementById('socio-phone');
       var submit = document.getElementById('socio-submit');
       var statusEl = document.getElementById('socio-status');
       var card = document.getElementById('socio-card');
@@ -911,8 +917,19 @@
         sin_servicio: 'El local no está en servicio ahora. Vuelve en horario de atención.',
         sin_gps: 'Necesitamos tu ubicación para marcar la visita. Activa el GPS y permite el acceso.',
         fuera_de_zona: 'Parece que no estás en Almíbar. Marca tu visita cuando estés en el local. 📍',
-        socio_invalido: 'No pudimos identificarte como socio. Vuelve a ingresar con tu RUT.'
+        socio_invalido: 'No pudimos identificarte como socio. Vuelve a ingresar con tu RUT y celular.',
+        sesion_invalida: 'Tu sesión de socio venció. Vuelve a ingresar con tu RUT y celular.'
       };
+
+      async function rpc(name, body) {
+        var res = await fetch(SUPABASE + '/rest/v1/rpc/' + name, {
+          method: 'POST',
+          headers: { apikey: API_KEY, Authorization: 'Bearer ' + API_KEY, 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        if (!res.ok) throw new Error('No pudimos conectar. Revisa tu señal e intenta de nuevo.');
+        return res.json();
+      }
 
       function setStatus(msg, isError) {
         statusEl.textContent = msg || '';
@@ -936,8 +953,9 @@
         try { return JSON.parse(localStorage.getItem(MEMBER_KEY) || 'null'); } catch (_) { return null; }
       }
 
-      function mapMember(data, rut) {
+      function mapMember(data, rut, token) {
         return {
+          token: token,
           clientId: data.clientId,
           nombre: data.name || 'Socio Almíbar',
           celular: data.phone || '',
@@ -991,7 +1009,8 @@
       }
 
       // Salir: limpia la sesión recordada y vuelve al validador de RUT.
-      function logout() {
+      function logout(msg) {
+        if (current && current.token) { rpc('club_salir_v1', { p_token: current.token }).catch(function () {}); }
         try {
           localStorage.removeItem(MEMBER_KEY);
           localStorage.removeItem(CONSENT_KEY);
@@ -1003,7 +1022,8 @@
         form.hidden = false;
         socioAlt.hidden = false;
         rutInput.value = '';
-        setStatus('');
+        if (phoneInput) phoneInput.value = '';
+        setStatus(typeof msg === 'string' ? msg : '', typeof msg === 'string');
         setVisit('');
         rutInput.focus();
       }
@@ -1020,19 +1040,15 @@
       }
 
       async function markVisit() {
-        if (!current || !current.clientId) return;
+        if (!current || !current.token) return;
         scVisit.disabled = true;
         setVisit('Obteniendo tu ubicación…', '');
         var coords;
         try { coords = await getCoords(); }
         catch (e) { setVisit('Activa el GPS y permite la ubicación: necesitamos confirmar que estás en Almíbar. 📍', 'err'); scVisit.disabled = false; return; }
         try {
-          var res = await fetch(SUPABASE + '/rest/v1/rpc/register_visit', {
-            method: 'POST',
-            headers: { apikey: API_KEY, Authorization: 'Bearer ' + API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ p_client_id: current.clientId, p_lat: coords.lat, p_lng: coords.lng })
-          });
-          var data = res.ok ? await res.json() : null;
+          var data = await rpc('club_registrar_visita_v1', { p_token: current.token, p_lat: coords.lat, p_lng: coords.lng });
+          if (data && data.reason === 'sesion_invalida') { logout(VISIT_REASONS.sesion_invalida); return; }
           if (!data || !data.ok) { setVisit(VISIT_REASONS[data && data.reason] || 'No pudimos marcar tu visita. Intenta de nuevo en un momento.', 'err'); scVisit.disabled = false; return; }
           current.visitsForReward = data.visits_for_reward || 0;
           current.rewardAvailable = !!data.reward_available;
@@ -1046,27 +1062,28 @@
         } catch (e) { setVisit('No pudimos registrar tu visita. Revisa tu conexión.', 'err'); scVisit.disabled = false; }
       }
 
+      // Seguridad (1-oct-2026): el socio entra con RUT + celular. El servidor
+      // (club_ingresar_v1) entrega una credencial de sesión; con ella se ve la
+      // ficha, la mesa y se canjean premios. El RUT solo ya no basta.
       async function ingresar() {
         if (busy) return;
         var rut = rutInput.value.trim();
+        var phone = (phoneInput ? phoneInput.value : '').replace(/\D/g, '');
         if (rut.replace(/[^0-9kK]/g, '').length < 8) { setStatus('Ingresa tu RUT completo para reconocer tu membresía.', true); rutInput.focus(); return; }
+        if (phone.length < 8) { setStatus('Ingresa tu celular (el que registraste en el Club).', true); if (phoneInput) phoneInput.focus(); return; }
         busy = true; submit.disabled = true;
         setStatus('Buscando tu registro…');
         try {
-          var res = await fetch(SUPABASE + '/rest/v1/rpc/find_member_by_rut', {
-            method: 'POST',
-            headers: { apikey: API_KEY, Authorization: 'Bearer ' + API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ p_rut: rut, p_restaurant_id: RESTAURANT_ID })
-          });
-          if (!res.ok) throw new Error('No pudimos consultar el registro.');
-          var out = await res.json();
-          if (out && out.found && out.member) {
-            var member = mapMember(out.member, rut);
+          var out = await rpc('club_ingresar_v1', { p_restaurant_id: RESTAURANT_ID, p_rut: rut, p_telefono: phone });
+          if (out && out.ok && out.member && out.token) {
+            var member = mapMember(out.member, rut, out.token);
             saveMember(member);
             setStatus('');
             showCard(member);
+          } else if (out && out.error === 'demasiados_intentos') {
+            setStatus('Demasiados intentos. Espera 15 minutos e intenta de nuevo.', true);
           } else {
-            setStatus('No encontramos ese RUT como socio. Revisa el número o únete gratis abajo.', true);
+            setStatus('Ese RUT y ese celular no coinciden con un socio. Revísalos o únete gratis abajo.', true);
           }
         } catch (err) {
           setStatus((err && err.message) || 'No pudimos buscar tu registro. Revisa tu conexión.', true);
@@ -1079,7 +1096,7 @@
       scVisit.addEventListener('click', markVisit);
       scLogout.addEventListener('click', logout);
       if (scPremio) scPremio.addEventListener('click', function () {
-        if (!current || !current.clientId) return;
+        if (!current || !current.token) return;
         if (window.AlmibarPremio && typeof window.AlmibarPremio.open === 'function') { window.AlmibarPremio.open(current); }
         else { setVisit('No pudimos abrir el canje ahora. Recarga la página e intenta de nuevo.', 'err'); }
       });
@@ -1088,7 +1105,7 @@
       // pedir y llamar al garzón). El socio ingresa el número de su mesa; el RPC
       // public_table_state lo valida contra la cuenta abierta a su nombre.
       scMesa.addEventListener('click', function () {
-        if (!current || !current.clientId) return;
+        if (!current || !current.token) return;
         if (window.AlmibarMesa && typeof window.AlmibarMesa.open === 'function') {
           window.AlmibarMesa.open(current);
         } else {
@@ -1100,23 +1117,25 @@
       // contra la base, así "Llevas N visitas" y el progreso no quedan con datos
       // viejos del localStorage (bug: mostraba 0 visitas aunque hubiera marcado).
       var saved = readMember();
-      if (saved && saved.clientId) {
+      if (saved && saved.token) {
         showCard(saved);
-        if (saved.rut) {
-          fetch(SUPABASE + '/rest/v1/rpc/find_member_by_rut', {
-            method: 'POST',
-            headers: { apikey: API_KEY, Authorization: 'Bearer ' + API_KEY, 'Content-Type': 'application/json' },
-            body: JSON.stringify({ p_rut: saved.rut, p_restaurant_id: RESTAURANT_ID })
-          }).then(function (r) { return r.ok ? r.json() : null; }).then(function (out) {
-            if (out && out.found && out.member) {
-              var fresh = mapMember(out.member, saved.rut);
-              if (!fresh.clientId) fresh.clientId = saved.clientId;
-              saveMember(fresh);
-              if (current && current.clientId === fresh.clientId) { current = fresh; paintCard(fresh); }
-            }
-          }).catch(function () {});
-        }
+        rpc('club_mi_ficha_v1', { p_token: saved.token }).then(function (out) {
+          if (out && out.ok && out.member) {
+            var fresh = mapMember(out.member, saved.rut, saved.token);
+            saveMember(fresh);
+            if (current && current.token === fresh.token) { current = fresh; paintCard(fresh); }
+          } else if (out && out.error === 'sesion_invalida') {
+            logout('Tu sesión de socio venció. Vuelve a ingresar con tu RUT y celular.');
+          }
+        }).catch(function () {});
+      } else if (saved && saved.clientId) {
+        // Socio guardado por la versión anterior (sin credencial): una sola vez
+        // tiene que volver a entrar, ahora con RUT y celular.
+        logout('Por seguridad, ahora entras con tu RUT y tu celular. Ingresa de nuevo, es una sola vez.');
       }
+      document.addEventListener('almibar:sesion-vencida', function () {
+        logout('Tu sesión de socio venció. Vuelve a ingresar con tu RUT y celular.');
+      });
     })();
   </script>
   <script>
