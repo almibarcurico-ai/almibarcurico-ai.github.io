@@ -1,17 +1,107 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<meta name="theme-color" content="#0D0B1A">
-<title>Almíbar</title>
-<style>
-html,body{height:100%;margin:0;background:#0D0B1A;color:#F4EFE6;font-family:Georgia,'Times New Roman',serif}
-main{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;text-align:center}
-h1{font-size:34px;font-weight:400;letter-spacing:.08em;margin:0 0 12px}
-p{font-size:17px;line-height:1.5;margin:0;color:#CFC8BA}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Happy Hour · Almíbar Curicó</title>
+  <meta name="description" content="Happy Hour de Almíbar: los 15 tragos más pedidos a precio fijo, de lunes a sábado de 17:00 a 20:00. $3.900 socio VIP · $4.900 general.">
+  <link rel="canonical" href="https://almibar.restoclick.cl/happy-hour.html">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" href="./favicon.ico">
+  <meta name="theme-color" content="#061f24">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Almíbar">
+  <meta property="og:title" content="Happy Hour · Almíbar Curicó">
+  <meta property="og:description" content="Los 15 tragos más pedidos a precio fijo, de lunes a sábado 17:00 a 20:00.">
+  <meta property="og:url" content="https://almibar.restoclick.cl/happy-hour.html">
+  <meta property="og:image" content="https://almibar.restoclick.cl/promo-2x.jpg">
+  <link rel="stylesheet" href="./secciones.css">
+  <style>
+    /* Qué entra al HH: una sola tarjeta compacta, tragos por categoría, sin precios. */
+    .hh-entra {
+      border: 1px solid var(--card-line); border-radius: 18px; background: var(--card);
+      padding: clamp(12px, 2vw, 18px); margin: clamp(10px, 1.8vw, 16px) 0 clamp(6px, 1.2vw, 10px);
+    }
+    .hh-entra > h2 {
+      font-family: var(--serif); font-weight: 400; font-size: clamp(19px, 2.8vw, 25px);
+      color: var(--cream); margin: 0 0 clamp(12px, 2vw, 18px); text-align: center;
+    }
+    .hh-cats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: clamp(12px, 2vw, 20px) clamp(16px, 2.4vw, 26px); }
+    .hh-cat h3 {
+      font-family: var(--sans); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+      font-weight: 700; color: var(--gold-soft); margin: 0 0 5px;
+    }
+    .hh-cat p { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255, 247, 231, .88); }
+    .hh-cat .sep { color: rgba(215, 170, 88, .55); padding: 0 3px; }
+    /* Precio general y VIP en 2 columnas también en móvil, compactas para que entre todo en una plana. */
+    .price-card .pc-desc { font-size: 11.5px; }
+  </style>
 </head>
-<body><main><h1>Almíbar</h1><p>La carta no está disponible en este momento.</p></main></body>
+<body>
+<main class="wrap">
+    <section class="sec-hero">
+      <a class="sec-back" href="./index.html">← Inicio</a>
+      <p class="kicker">Lunes a sábado · 17:00 a 20:00</p>
+      <h1>Happy Hour</h1>
+      <p class="lead">Los 15 tragos que más nos piden, a precio fijo. <strong>Sin letra chica:</strong> el precio es el mismo para todos los de la lista.</p>
+    </section>
+
+    <div class="price-cards">
+      <article class="price-card top">
+        <span class="badge">Socio VIP</span>
+        <p class="pc-name">Cualquiera de la lista</p>
+        <div class="pc-price">$3.900</div>
+        <p class="pc-desc">Llegas a VIP en tu <em>tercera visita</em>. Después lo mantienes con 2 visitas al mes.</p>
+      </article>
+      <article class="price-card">
+        <p class="pc-name">Precio general</p>
+        <div class="pc-price">$4.900</div>
+        <p class="pc-desc">Para todos, con o sin registro. <em>Registrarte es gratis y es el primer paso al VIP.</em></p>
+      </article>
+    </div>
+
+    <section class="hh-entra">
+      <h2>Qué entra en el Happy Hour</h2>
+      <div class="hh-cats">
+        <div class="hh-cat">
+          <h3>Cócteles Clásicos</h3>
+          <p>Mojito Sabores <span class="sep">·</span> Mojito Cubano <span class="sep">·</span> Copa Sangría <span class="sep">·</span> Maracazzotti</p>
+        </div>
+        <div class="hh-cat">
+          <h3>Cervezas Schop</h3>
+          <p>Patagonia Hoppy <span class="sep">·</span> Austral Calafate <span class="sep">·</span> Austral TdP</p>
+        </div>
+        <div class="hh-cat">
+          <h3>Mocktails</h3>
+          <p>Virgin Mojito <span class="sep">·</span> Heineken 0,0 <span class="sep">·</span> Virgin Piña Colada</p>
+        </div>
+        <div class="hh-cat">
+          <h3>Pisco</h3>
+          <p>Mistral 35 <span class="sep">·</span> Mistral Nobel</p>
+        </div>
+        <div class="hh-cat">
+          <h3>Spritz</h3>
+          <p>Ramazzotti Spritz</p>
+        </div>
+        <div class="hh-cat">
+          <h3>Cremosos</h3>
+          <p>Piña Colada</p>
+        </div>
+        <div class="hh-cat">
+          <h3>Red Bull Drinks</h3>
+          <p>Tropical Gin</p>
+        </div>
+      </div>
+    </section>
+
+    <p class="note">Fuera de horario, cada trago vuelve a su precio normal. Tu precio de socio se aplica con el RUT en la mesa.</p>
+
+    <div class="section-foot">
+      <a class="back-home" href="./index.html">← Volver a Inicio</a>
+      <p class="contact">Francisco Moreno 418, Curicó · <a href="https://wa.me/56956581436" target="_blank" rel="noopener">WhatsApp +56 9 5658 1436</a> · <a href="https://instagram.com/almibar.bar" target="_blank" rel="noopener">@almibar.bar</a></p>
+    </div>
+  </main>
+</body>
 </html>

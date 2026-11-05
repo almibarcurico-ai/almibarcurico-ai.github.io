@@ -1,17 +1,61 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<meta name="theme-color" content="#0D0B1A">
-<title>Almíbar</title>
-<style>
-html,body{height:100%;margin:0;background:#0D0B1A;color:#F4EFE6;font-family:Georgia,'Times New Roman',serif}
-main{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;text-align:center}
-h1{font-size:34px;font-weight:400;letter-spacing:.08em;margin:0 0 12px}
-p{font-size:17px;line-height:1.5;margin:0;color:#CFC8BA}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0D0B1A">
+  <title>Delivery Almíbar</title>
+  <style>
+    html,
+    body,
+    #root {
+      height: 100%;
+      height: 100dvh;
+      min-height: 100%;
+      margin: 0;
+      background: #0D0B1A;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    #root {
+      display: flex;
+      width: 100%;
+    }
+
+    #root > * {
+      flex: 1 1 auto;
+      min-width: 0;
+      height: 100%;
+    }
+  </style>
+  <script>
+    (function () {
+      try {
+        if (!localStorage.getItem('@almibar_member')) {
+          localStorage.setItem('@almibar_guest', 'true');
+          localStorage.setItem('@almibar_onboarding_done', 'true');
+        }
+      } catch (_) {}
+
+      if (!location.pathname.startsWith('/menu')) {
+        history.replaceState(null, '', '/menu?isDelivery=true');
+        return;
+      }
+
+      var params = new URLSearchParams(location.search);
+      if (params.get('isDelivery') !== 'true') {
+        params.set('isDelivery', 'true');
+        history.replaceState(null, '', location.pathname + '?' + params.toString());
+      }
+    })();
+  </script>
 </head>
-<body><main><h1>Almíbar</h1><p>La carta no está disponible en este momento.</p></main></body>
+<body>
+  <a href="/index.html" aria-label="Volver a Inicio" style="position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:calc(env(safe-area-inset-left,0px) + 10px);z-index:99999;display:inline-flex;align-items:center;gap:6px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;font-weight:600;color:#fff7e7;background:rgba(5,20,24,.78);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(215,170,88,.5);border-radius:999px;padding:7px 13px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3)">← Inicio</a>
+  <div id="root"></div>
+  <script src="/_expo/static/js/web/index-25dcd3fce6e3df512d5934ec133c90d0.js?v=delivery-direct-3" defer></script>
+</body>
 </html>
